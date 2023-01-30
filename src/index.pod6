@@ -1,0 +1,75 @@
+=begin pod  
+= :postsPerPage<4> :favicon<./favicon.png>
+= :url<http://example.com>
+= :pathPrefix("/")
+= :globalStyles("./site/page.styles.css")
+= :pubdate_DISABLED<2018-01-01>
+
+
+=TITLE Knowledge base
+
+=for AUTHOR 
+= :name<Your name here>
+= :photo<./photo.png>
+= :bio<Keeping this page up to date 💻.>
+= :contact
+
+=useReact {HeaderCol,Section,SectionCol} from './site/testComponent'
+
+=begin React :component<HeaderCol> :id<header> 
+=begin para
+=head1 Александр Загацкий
+=para
+Интересуюсь персональным издательством и системами знаний, децентрализованными протоколами, а также инженерией программного обеспечения.
+=end para
+=begin para
+=comment
+Интересуюсь персональным издательством и системами знаний, децентрализованными протоколами, а также инженерией программного обеспечения.
+=end para
+
+=end React
+
+
+=begin React :component<SectionCol> :id<intro> 
+=begin para
+
+=head2 🖥 Проекты
+=begin defn
+Podlite (.pod6)
+Современный язык разметки, сочетающий в себе лаконичность и расширяемость.
+Статьи на этом сайте L<написаны в формате Podlite|https://zag.ru/2020/3/25/1/isxodniki-etogo-bloga>
+=end defn
+=item L<Podlite - open source редактор для Linux, Mac и Windows|https://github.com/zag/podlite-desktop/>
+=item L<Pod6.in - online редактор|https://pod6.in>
+=begin defn
+L<Axona|https://zag.ru/2020/4/9/1/plany-po-razvitiyu-personal-noj-sistemy-znanij>
+персональная база знаний
+=end defn
+
+=head2 🗄 L<Архив проектов | file:./pages/about.pod6>
+
+=end para
+
+=begin para
+
+=head2 📄 Информация
+
+=item L<Оглавление|file:./site/Contents.pod6>
+
+=end para
+
+=end React
+
+
+=head2 Недавнее:
+
+=useReact  {TestComponent,LastArticles} from '@Components/service'
+
+=begin React :component<LastArticles>
+=end React
+
+=begin para :id<copyright> 
+© All rights reserved. 2022. L<CC BY-SA 4.0|https://creativecommons.org/licenses/by-sa/4.0/>. I<L<Made with 🌶️ and podlite|https://zahatski.com/2020/5/8/1/sources-of-this-blog>>
+=end para
+
+=end pod
