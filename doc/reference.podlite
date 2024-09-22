@@ -1,0 +1,16 @@
+=begin pod  
+= :puburl</doc/reference>
+=useReact {ListFiles} from 'raku-knowledge/components'
+
+=TITLE Language References
+=SUBTITLE Broader explanations of fundamental topics and descriptions of Types and slangs
+
+=toc
+
+=head2 Fundamental topics
+=for React :component<ListFiles> :id<menu> :select{ kind=>'Language', category => 'fundamental' }
+
+=head2 General reference
+=for React :component<ListFiles> :id<menu> :select{ kind=>'Language', category => 'reference' }
+
+=end pod

@@ -1,0 +1,13 @@
+=begin pod  
+= :puburl</mods>
+
+=useReact {ListMods} from 'raku-knowledge/components'
+
+
+=TITLE Raku Modules Documentation
+
+
+=for React :component<ListMods> :id<menu>
+
+
+=end pod

@@ -1,0 +1,18 @@
+=begin pod  
+= :puburl</doc/miscellaneous>
+=useReact {ListFiles} from 'raku-knowledge/components'
+
+=TITLE Miscellaneous
+=SUBTITLE Miscellaneous categories
+
+=toc
+
+Documents explaining experimental topics and Raku programs rather than the language itself.
+
+=head2 Advanced topics
+=for React :component<ListFiles> :id<menu> :select{ kind=>'Language', category => 'advanced' }
+
+=head2 Programs
+=for React :component<ListFiles> :id<menu> :select{ kind=>'Programs'}
+
+=end pod

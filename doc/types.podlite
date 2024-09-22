@@ -1,0 +1,52 @@
+=begin pod  
+= :puburl</doc/types>
+=useReact {ListFiles} from 'raku-knowledge/components'
+
+=TITLE Documented Types
+=SUBTITLE Built-in types
+
+=toc
+
+This is a list of the built-in types that are documented, sorted by class/enum/module/role
+and by categories.
+
+=head2 Basic classes
+=for React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'class', category => 'basic' }
+
+=head2 Composite classes
+=for React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'class', category => 'composite' }
+
+=head2 Domain-specific classes
+=for React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'class', category => 'domain-specific' }
+
+=head2 Exception classes
+=for React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'class', category => 'exception' }
+
+=head2 Metamodel classes
+=for React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'class', category => 'metamodel' }
+
+=head2 Basic enums
+=for React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'enum', category => 'basic' }
+
+=head2 Domain-specific enums
+=for React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'enum', category => 'domain-specific' }
+
+=head2 Module modules
+=for React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'module', category => 'module' }
+
+=head2 Basic roles
+=for React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'role', category => 'basic' }
+
+=head2 Composite roles
+=for React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'role', category => 'composite' }
+
+=head2 Domain-specific roles
+=for React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'role', category => 'domain-specific' }
+
+=head2 Exception roles
+=for React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'role', category => 'exception' }
+
+=head2 Metamodel roles
+=for React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'role', category => 'metamodel' }
+
+=end pod
