@@ -1,0 +1,55 @@
+/* Breadcrumb.module.css */
+
+.breadcrumb {
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-bottom: 20px;
+    max-width: var(--spacing-width-max);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .separator {
+    margin: 0 8px;
+    color: #666;
+    font-size: 0.8rem;
+  }
+  
+  .item a {
+    /* color: #0066cc; */
+    font-size: 0.8rem;
+    color: var(--color-dim);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    color: grey;
+    filter: grayscale(100%);
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+    color: #004499;
+  }
+  
+  .active {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .active:hover {
+    text-decoration: none;
+    cursor: default;
+  }
