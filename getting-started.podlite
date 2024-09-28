@@ -1,0 +1,33 @@
+=begin pod  
+= :puburl</getting-started>
+
+=useReact {HeaderCol} from '@Components/service'
+
+=TITLE 📝 Getting started with Raku
+
+=begin React :component<HeaderCol> 
+=begin nested
+=head3 The Main Track
+
+=item # Install a compiler — follow these instructions to build and install Rakudo Star, a Raku distribution with a number of useful modules included.
+=item # Read about Raku — explore the documentation to start learning Raku.
+=item # Find available modules — use the zef module manager (comes with Rakudo Star) to install modules listed at the Raku modules directory.
+=item # Write a program in Raku
+=item # Write another program in Raku☺
+=item # Get involved!
+
+=end nested
+=begin nested
+=head3 The Side Track
+
+Parallel to the main track, you can read examples or talk to the community, and ask when you have questions or get stuck.
+
+=item Read example Raku code.
+=item Get in touch with the community for questions, suggestions, and inspiration.
+=item Found a bug in Rakudo? Submit a bug report by creating a new issue in the Github repository. There is also a list of already known issues.
+=item Read Raku blogs.
+
+=end nested
+=end React 
+
+=end pod
