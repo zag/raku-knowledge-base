@@ -1,0 +1,63 @@
+=begin pod  
+= :puburl</examples>
+=useReact {ShowExamplesCategory} from 'raku-knowledge/components'
+=TITLE Examples collection
+
+Welcome to the examples collection of the Raku programming language!
+
+
+=head1 Categories
+
+=toc head2
+
+=head2 Best of Rosettacode
+=para The best of the rosettacode.org examples
+=for React :component<ShowExamplesCategory> :category<'best-of-rosettacode'>
+
+=head2 99 Problems
+=para Based on lisp 99 problems
+
+=head2 Cookbook
+=para Cookbook examples
+
+=head2 Project Euler
+=para Answers for Project Euler
+
+=head2 Games
+=para Games written in Perl 6
+
+=head2 Interpreters
+=para Language or DSL interpreters
+
+=head2 Module Management
+=para Examples of organising modules
+
+=head2 Parsers
+
+=para Example grammars
+
+=head2 Perlmonks
+
+=para Answers to perlmonks.org questions
+
+=head2 Project Rosalind
+
+=para Bioinformatics-related programming problems
+
+=head2 Shootout
+
+=para Implementations for the Computer Language Benchmark Game
+
+=head2 Perl6 Tutorial Examples
+
+=para Initial work in collecting Perl 6 tutorial examples
+
+=head2 Winter Scripting Games
+
+=para Answers for the Winter Scripting Games
+
+=head2 Other examples
+
+=para Other examples which aren't yet categorized
+
+=end pod
