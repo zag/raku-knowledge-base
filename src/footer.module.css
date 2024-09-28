@@ -1,0 +1,10 @@
+
+.footer {
+    color: rgb(209, 36, 47)
+}
+
+  @media screen and (max-width: 600px) {
+    .footer {
+        display: block;
+    }
+  }
