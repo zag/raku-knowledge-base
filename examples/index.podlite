@@ -40,7 +40,7 @@ Welcome to the examples collection of the Raku programming language!
 
 =head2 Parsers
 =para Example grammars
-=for React :component<ShowExamplesCategory> :category<'parsers>
+=for React :component<ShowExamplesCategory> :category<'parsers'>
 
 =head2 Perlmonks
 =para Answers to perlmonks.org questions
