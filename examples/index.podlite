@@ -16,48 +16,54 @@ Welcome to the examples collection of the Raku programming language!
 
 =head2 99 Problems
 =para Based on lisp 99 problems
+=for React :component<ShowExamplesCategory> :category<'99-problems'>
 
 =head2 Cookbook
 =para Cookbook examples
+=for React :component<ShowExamplesCategory> :category<'cookbook'>
 
 =head2 Project Euler
 =para Answers for Project Euler
+=for React :component<ShowExamplesCategory> :category<'euler'>
 
 =head2 Games
 =para Games written in Perl 6
+=for React :component<ShowExamplesCategory> :category<'games'>
 
 =head2 Interpreters
 =para Language or DSL interpreters
+=for React :component<ShowExamplesCategory> :category<'interpreters'>
 
 =head2 Module Management
 =para Examples of organising modules
+=for React :component<ShowExamplesCategory> :category<'module-management'>
 
 =head2 Parsers
-
 =para Example grammars
+=for React :component<ShowExamplesCategory> :category<'parsers>
 
 =head2 Perlmonks
-
 =para Answers to perlmonks.org questions
+=for React :component<ShowExamplesCategory> :category<'perlmonks'>
 
 =head2 Project Rosalind
-
 =para Bioinformatics-related programming problems
+=for React :component<ShowExamplesCategory> :category<'rosalind'>
 
 =head2 Shootout
-
 =para Implementations for the Computer Language Benchmark Game
+=for React :component<ShowExamplesCategory> :category<'shootout'>
 
 =head2 Perl6 Tutorial Examples
-
 =para Initial work in collecting Perl 6 tutorial examples
+=for React :component<ShowExamplesCategory> :category<'tutorial'>
 
 =head2 Winter Scripting Games
-
 =para Answers for the Winter Scripting Games
+=for React :component<ShowExamplesCategory> :category<'wsg'>
 
 =head2 Other examples
-
 =para Other examples which aren't yet categorized
+=for React :component<ShowExamplesCategory> :category<'other'>
 
 =end pod
