@@ -1,0 +1,32 @@
+.group {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: grid;
+    gap: 1.5rem;
+    list-style: none;
+}
+.title {
+    color: rgb(209, 36, 47)
+}
+.title  a:visited {
+    text-decoration: none;
+    color: var(--color-dim);
+ }
+
+.subtitle {
+    color: rgb(209, 36, 47)
+}
+.subtitle a {
+    color: var(--color-dim);
+    text-decoration: none;
+    display: block;
+}
+.choose {
+    display: flex;
+    flex-flow: nowrap;
+    justify-content: space-between;
+}
+  @media screen and (max-width: 600px) {
+    .footer {
+        display: block;
+    }
+  }

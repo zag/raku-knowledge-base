@@ -1,0 +1,21 @@
+
+.title {
+    color: rgb(209, 36, 47)
+}
+.title  a:visited {
+    text-decoration: none;
+    color: var(--color-dim);
+ }
+
+.subtitle {
+    color: rgb(209, 36, 47)
+}
+.subtitle a {
+    color: var(--color-dim);
+    text-decoration: none;
+}
+  @media screen and (max-width: 600px) {
+    .footer {
+        display: block;
+    }
+  }
