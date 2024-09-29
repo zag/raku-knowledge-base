@@ -1,0 +1,2216 @@
+{
+  "categoryIndex": {
+    "99-problems": [
+      {
+        "file": "work_examples/categories/99-problems/P01-scottp.pl",
+        "publishUrl": "/examples/99-problems/P01-scottp.pl",
+        "title": "P01 - Find the last box of a list.\n",
+        "category": "99-problems",
+        "filename": "P01-scottp.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P01-topo.pl",
+        "publishUrl": "/examples/99-problems/P01-topo.pl",
+        "title": "P01 - Find the last element of a list.\n",
+        "category": "99-problems",
+        "filename": "P01-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P02-scottp.pl",
+        "publishUrl": "/examples/99-problems/P02-scottp.pl",
+        "title": "P02 - Find the last but one box of a list.\n",
+        "category": "99-problems",
+        "filename": "P02-scottp.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P02-topo.pl",
+        "publishUrl": "/examples/99-problems/P02-topo.pl",
+        "title": "P02 - Find the last two elements of a list.\n",
+        "category": "99-problems",
+        "filename": "P02-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P03-scottp.pl",
+        "publishUrl": "/examples/99-problems/P03-scottp.pl",
+        "title": "P03 - Find the K'th element of a list.\n",
+        "category": "99-problems",
+        "filename": "P03-scottp.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P03-topo.pl",
+        "publishUrl": "/examples/99-problems/P03-topo.pl",
+        "title": "P03 - Find the kth element of a list.\n",
+        "category": "99-problems",
+        "filename": "P03-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P04-scottp.pl",
+        "publishUrl": "/examples/99-problems/P04-scottp.pl",
+        "title": "P04 - Find the number of elements of a list\n",
+        "category": "99-problems",
+        "filename": "P04-scottp.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P04-topo.pl",
+        "publishUrl": "/examples/99-problems/P04-topo.pl",
+        "title": "P04 - Find the number of elements in a list.\n",
+        "category": "99-problems",
+        "filename": "P04-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P05-scottp.pl",
+        "publishUrl": "/examples/99-problems/P05-scottp.pl",
+        "title": "P05 - Reverse a list\n",
+        "category": "99-problems",
+        "filename": "P05-scottp.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P05-topo.pl",
+        "publishUrl": "/examples/99-problems/P05-topo.pl",
+        "title": "P05 - Reverse a list.\n",
+        "category": "99-problems",
+        "filename": "P05-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P06-ajs.pl",
+        "publishUrl": "/examples/99-problems/P06-ajs.pl",
+        "title": "P06 - Find out whether a list is a palindrome.\n",
+        "category": "99-problems",
+        "filename": "P06-ajs.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P06-scottp.pl",
+        "publishUrl": "/examples/99-problems/P06-scottp.pl",
+        "title": "P06 - Find out whether a list is a palindrome.\n",
+        "category": "99-problems",
+        "filename": "P06-scottp.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P06-topo.pl",
+        "publishUrl": "/examples/99-problems/P06-topo.pl",
+        "title": "P06 - Find out whether a list is a palindrome.\n",
+        "category": "99-problems",
+        "filename": "P06-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P07-eric256.pl",
+        "publishUrl": "/examples/99-problems/P07-eric256.pl",
+        "title": "P07 - Flatten a nested array structure.\n",
+        "category": "99-problems",
+        "filename": "P07-eric256.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P07-topo.pl",
+        "publishUrl": "/examples/99-problems/P07-topo.pl",
+        "title": "P07 - Flatten a nested array structure.\n",
+        "category": "99-problems",
+        "filename": "P07-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P07-viklund.pl",
+        "publishUrl": "/examples/99-problems/P07-viklund.pl",
+        "title": "P07 - Flatten a nested array structure.\n",
+        "category": "99-problems",
+        "filename": "P07-viklund.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P08-eric256.pl",
+        "publishUrl": "/examples/99-problems/P08-eric256.pl",
+        "title": "P08 - Eliminate consecutive duplicates of list elements.\n",
+        "category": "99-problems",
+        "filename": "P08-eric256.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P08-topo.pl",
+        "publishUrl": "/examples/99-problems/P08-topo.pl",
+        "title": "P08 - Eliminate consecutive duplicates of list elements.\n",
+        "category": "99-problems",
+        "filename": "P08-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P08-viklund.pl",
+        "publishUrl": "/examples/99-problems/P08-viklund.pl",
+        "title": "P08 - Eliminate consecutive duplicates of list elements.\n",
+        "category": "99-problems",
+        "filename": "P08-viklund.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P09-rje.pl",
+        "publishUrl": "/examples/99-problems/P09-rje.pl",
+        "title": "P09 - Pack consecutive duplicates of list elements into sublists.\n",
+        "category": "99-problems",
+        "filename": "P09-rje.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P09-scottp.pl",
+        "publishUrl": "/examples/99-problems/P09-scottp.pl",
+        "title": "P09 - Pack consecutive duplicates of list elements into sublists.\n",
+        "category": "99-problems",
+        "filename": "P09-scottp.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P09-topo.pl",
+        "publishUrl": "/examples/99-problems/P09-topo.pl",
+        "title": "P09 - Pack consecutive duplicate elements of a list into sublists.\n",
+        "category": "99-problems",
+        "filename": "P09-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P09-unobe.pl",
+        "publishUrl": "/examples/99-problems/P09-unobe.pl",
+        "title": "P09 - Pack consecutive duplicates of list elements into sublists.\n",
+        "category": "99-problems",
+        "filename": "P09-unobe.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P10-scottp.pl",
+        "publishUrl": "/examples/99-problems/P10-scottp.pl",
+        "title": "P10 - Run-length encoding of a list.\n",
+        "category": "99-problems",
+        "filename": "P10-scottp.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P10-topo.pl",
+        "publishUrl": "/examples/99-problems/P10-topo.pl",
+        "title": "P10 - Run-length encoding of a list.\n",
+        "category": "99-problems",
+        "filename": "P10-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P10-unobe.pl",
+        "publishUrl": "/examples/99-problems/P10-unobe.pl",
+        "title": "P10 - Run-length encoding of a list.\n",
+        "category": "99-problems",
+        "filename": "P10-unobe.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P11-topo.pl",
+        "publishUrl": "/examples/99-problems/P11-topo.pl",
+        "title": "P11 - Modified run-length encoding.\n",
+        "category": "99-problems",
+        "filename": "P11-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P11-unobe.pl",
+        "publishUrl": "/examples/99-problems/P11-unobe.pl",
+        "title": "P11 - Modified run-length encoding.\n",
+        "category": "99-problems",
+        "filename": "P11-unobe.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P12-rhebus.pl",
+        "publishUrl": "/examples/99-problems/P12-rhebus.pl",
+        "title": "P12 - Decode a run-length encoded list.\n",
+        "category": "99-problems",
+        "filename": "P12-rhebus.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P12-topo.pl",
+        "publishUrl": "/examples/99-problems/P12-topo.pl",
+        "title": "P12 - Decode modified run-length encoding.\n",
+        "category": "99-problems",
+        "filename": "P12-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P12-unobe.pl",
+        "publishUrl": "/examples/99-problems/P12-unobe.pl",
+        "title": "P12 - Decode a run-length encoded list.\n",
+        "category": "99-problems",
+        "filename": "P12-unobe.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P13-rhebus.pl",
+        "publishUrl": "/examples/99-problems/P13-rhebus.pl",
+        "title": "P13 - Run-length encoding of a list (direct solution).\n",
+        "category": "99-problems",
+        "filename": "P13-rhebus.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P13-topo.pl",
+        "publishUrl": "/examples/99-problems/P13-topo.pl",
+        "title": "P13 - Direct run-length encoding.\n",
+        "category": "99-problems",
+        "filename": "P13-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P13-viklund.pl",
+        "publishUrl": "/examples/99-problems/P13-viklund.pl",
+        "title": "P13 - Run-length encoding of a list (direct solution).\n",
+        "category": "99-problems",
+        "filename": "P13-viklund.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P14-scottp.pl",
+        "publishUrl": "/examples/99-problems/P14-scottp.pl",
+        "title": "P14 - Duplicate the elements of a list.\n",
+        "category": "99-problems",
+        "filename": "P14-scottp.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P14-topo.pl",
+        "publishUrl": "/examples/99-problems/P14-topo.pl",
+        "title": "P14 - Duplicate the elements in a list.\n",
+        "category": "99-problems",
+        "filename": "P14-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P14-viklund.pl",
+        "publishUrl": "/examples/99-problems/P14-viklund.pl",
+        "title": "P14 - Duplicate the elements of a list.\n",
+        "category": "99-problems",
+        "filename": "P14-viklund.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P15-rhebus.pl",
+        "publishUrl": "/examples/99-problems/P15-rhebus.pl",
+        "title": "P15 - Replicate the elements of a list a given number of times.\n",
+        "category": "99-problems",
+        "filename": "P15-rhebus.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P15-topo.pl",
+        "publishUrl": "/examples/99-problems/P15-topo.pl",
+        "title": "P15 - Replicate the elements of a list a given number of times.\n",
+        "category": "99-problems",
+        "filename": "P15-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P15-unobe.pl",
+        "publishUrl": "/examples/99-problems/P15-unobe.pl",
+        "title": "P15 - Replicate the elements of a list a given number of times.\n",
+        "category": "99-problems",
+        "filename": "P15-unobe.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P16-edpratomo.pl",
+        "publishUrl": "/examples/99-problems/P16-edpratomo.pl",
+        "title": "P16 (**) Drop every N'th element from a list.\n",
+        "category": "99-problems",
+        "filename": "P16-edpratomo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P16-topo.pl",
+        "publishUrl": "/examples/99-problems/P16-topo.pl",
+        "title": "P16 - Drop every nth element from a list.\n",
+        "category": "99-problems",
+        "filename": "P16-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P17-topo.pl",
+        "publishUrl": "/examples/99-problems/P17-topo.pl",
+        "title": "P17 - Split a list into two parts; the length of the first part is given.\n",
+        "category": "99-problems",
+        "filename": "P17-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P17-unobe.pl",
+        "publishUrl": "/examples/99-problems/P17-unobe.pl",
+        "title": "P17 - Split a list into two parts; the length of the first part is given.\n",
+        "category": "99-problems",
+        "filename": "P17-unobe.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P18-topo.pl",
+        "publishUrl": "/examples/99-problems/P18-topo.pl",
+        "title": "P18 - Extract a slice from a list. Indices start at 1.\n",
+        "category": "99-problems",
+        "filename": "P18-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P19-topo.pl",
+        "publishUrl": "/examples/99-problems/P19-topo.pl",
+        "title": "P19 - Rotate a list n places to the left.\n",
+        "category": "99-problems",
+        "filename": "P19-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P20-rhebus.pl",
+        "publishUrl": "/examples/99-problems/P20-rhebus.pl",
+        "title": "P20 - Remove the K'th element from a list.\n",
+        "category": "99-problems",
+        "filename": "P20-rhebus.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P20-topo.pl",
+        "publishUrl": "/examples/99-problems/P20-topo.pl",
+        "title": "P20 - Remove the kth element of a list.\n",
+        "category": "99-problems",
+        "filename": "P20-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P21-scottp.pl",
+        "publishUrl": "/examples/99-problems/P21-scottp.pl",
+        "title": "P21 - Insert an element at a given position into an array.\n",
+        "category": "99-problems",
+        "filename": "P21-scottp.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P21-topo.pl",
+        "publishUrl": "/examples/99-problems/P21-topo.pl",
+        "title": "P21 - Insert an element at a given position into a list.\n",
+        "category": "99-problems",
+        "filename": "P21-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P22-scottp.pl",
+        "publishUrl": "/examples/99-problems/P22-scottp.pl",
+        "title": "P22 - Create a list containing all integers within a given range.\n",
+        "category": "99-problems",
+        "filename": "P22-scottp.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P22-topo.pl",
+        "publishUrl": "/examples/99-problems/P22-topo.pl",
+        "title": "P22 - Create a list containing all integers within a given range.\n",
+        "category": "99-problems",
+        "filename": "P22-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P23-topo.pl",
+        "publishUrl": "/examples/99-problems/P23-topo.pl",
+        "title": "P23 - Extract a given number of randomly selected elements from a list.\n",
+        "category": "99-problems",
+        "filename": "P23-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P24-topo.pl",
+        "publishUrl": "/examples/99-problems/P24-topo.pl",
+        "title": "P24 - Draw N different random numbers from the set 1..M.\n",
+        "category": "99-problems",
+        "filename": "P24-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P25-topo.pl",
+        "publishUrl": "/examples/99-problems/P25-topo.pl",
+        "title": "P25 - Generate a random permutation of the elements of a list.\n",
+        "category": "99-problems",
+        "filename": "P25-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P26-topo.pl",
+        "publishUrl": "/examples/99-problems/P26-topo.pl",
+        "title": "P26 - Generate the combinations of k distinct objects chosen from the n elements of a list.\n",
+        "category": "99-problems",
+        "filename": "P26-topo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P31-rhebus.pl",
+        "publishUrl": "/examples/99-problems/P31-rhebus.pl",
+        "title": "P31 - Determine whether a given integer number is prime.\n",
+        "category": "99-problems",
+        "filename": "P31-rhebus.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P32-rhebus.pl",
+        "publishUrl": "/examples/99-problems/P32-rhebus.pl",
+        "title": "P32 - Determine the greatest common divisor of two positive integer\n",
+        "category": "99-problems",
+        "filename": "P32-rhebus.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P33-rhebus.pl",
+        "publishUrl": "/examples/99-problems/P33-rhebus.pl",
+        "title": "P33 - Determine whether two positive integer numbers are coprime.\n",
+        "category": "99-problems",
+        "filename": "P33-rhebus.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P34-rhebus.pl",
+        "publishUrl": "/examples/99-problems/P34-rhebus.pl",
+        "title": "P34 - Calculate Euler's totient function phi(m).\n",
+        "category": "99-problems",
+        "filename": "P34-rhebus.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P35-rhebus.pl",
+        "publishUrl": "/examples/99-problems/P35-rhebus.pl",
+        "title": "P35 - Determine the prime factors of a given positive integer.\n",
+        "category": "99-problems",
+        "filename": "P35-rhebus.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P36-ovid.pl",
+        "publishUrl": "/examples/99-problems/P36-ovid.pl",
+        "title": "P36 - Determine the prime factors of a given positive integer (2).\n",
+        "category": "99-problems",
+        "filename": "P36-ovid.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P36-rhebus.pl",
+        "publishUrl": "/examples/99-problems/P36-rhebus.pl",
+        "title": "P36 - Determine the prime factors of a given positive integer (2).\n",
+        "category": "99-problems",
+        "filename": "P36-rhebus.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P37-rhebus.pl",
+        "publishUrl": "/examples/99-problems/P37-rhebus.pl",
+        "title": "P37 - Calculate Euler's totient function phi(m) (improved).\n",
+        "category": "99-problems",
+        "filename": "P37-rhebus.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P39-rhebus.pl",
+        "publishUrl": "/examples/99-problems/P39-rhebus.pl",
+        "title": "P39 - A list of prime numbers.\n",
+        "category": "99-problems",
+        "filename": "P39-rhebus.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P40-rhebus.pl",
+        "publishUrl": "/examples/99-problems/P40-rhebus.pl",
+        "title": "P40 - Goldbach's conjecture.\n",
+        "category": "99-problems",
+        "filename": "P40-rhebus.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P41-rhebus.pl",
+        "publishUrl": "/examples/99-problems/P41-rhebus.pl",
+        "title": "P41 - A list of Goldbach compositions.\n",
+        "category": "99-problems",
+        "filename": "P41-rhebus.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/P91-edpratomo.pl",
+        "publishUrl": "/examples/99-problems/P91-edpratomo.pl",
+        "title": "P91 - Knight's tour.\n",
+        "category": "99-problems",
+        "filename": "P91-edpratomo.pl"
+      },
+      {
+        "file": "work_examples/categories/99-problems/README.md",
+        "publishUrl": "/examples/99-problems/README.md",
+        "category": "99-problems",
+        "filename": "README.md"
+      }
+    ],
+    "best-of-rosettacode": [
+      {
+        "file": "work_examples/categories/best-of-rosettacode/100-doors.pl",
+        "publishUrl": "/examples/best-of-rosettacode/100-doors.pl",
+        "title": "100 Doors\n",
+        "category": "best-of-rosettacode",
+        "filename": "100-doors.pl"
+      },
+      {
+        "file": "work_examples/categories/best-of-rosettacode/24-game.pl",
+        "publishUrl": "/examples/best-of-rosettacode/24-game.pl",
+        "title": "24 game\n",
+        "category": "best-of-rosettacode",
+        "filename": "24-game.pl"
+      },
+      {
+        "file": "work_examples/categories/best-of-rosettacode/accumulator-factory.pl",
+        "publishUrl": "/examples/best-of-rosettacode/accumulator-factory.pl",
+        "title": "Accumulator factory\n",
+        "category": "best-of-rosettacode",
+        "filename": "accumulator-factory.pl"
+      },
+      {
+        "file": "work_examples/categories/best-of-rosettacode/ackermann-function.pl",
+        "publishUrl": "/examples/best-of-rosettacode/ackermann-function.pl",
+        "title": "Ackermann function\n",
+        "category": "best-of-rosettacode",
+        "filename": "ackermann-function.pl"
+      },
+      {
+        "file": "work_examples/categories/best-of-rosettacode/arbitrary-precision-integers.pl",
+        "publishUrl": "/examples/best-of-rosettacode/arbitrary-precision-integers.pl",
+        "title": "Arbitrary-precision integers (included)\n",
+        "category": "best-of-rosettacode",
+        "filename": "arbitrary-precision-integers.pl"
+      },
+      {
+        "file": "work_examples/categories/best-of-rosettacode/balanced-brackets.pl",
+        "publishUrl": "/examples/best-of-rosettacode/balanced-brackets.pl",
+        "title": "Balanced brackets\n",
+        "category": "best-of-rosettacode",
+        "filename": "balanced-brackets.pl"
+      },
+      {
+        "file": "work_examples/categories/best-of-rosettacode/binomial-coefficient.pl",
+        "publishUrl": "/examples/best-of-rosettacode/binomial-coefficient.pl",
+        "title": "Binomial Coefficient\n",
+        "category": "best-of-rosettacode",
+        "filename": "binomial-coefficient.pl"
+      },
+      {
+        "file": "work_examples/categories/best-of-rosettacode/copy-a-string.pl",
+        "publishUrl": "/examples/best-of-rosettacode/copy-a-string.pl",
+        "title": "Copy a string\n",
+        "category": "best-of-rosettacode",
+        "filename": "copy-a-string.pl"
+      },
+      {
+        "file": "work_examples/categories/best-of-rosettacode/create-a-two-dimensional-array-at-runtime.pl",
+        "publishUrl": "/examples/best-of-rosettacode/create-a-two-dimensional-array-at-runtime.pl",
+        "title": "Create a two-dimensional array at runtime\n",
+        "category": "best-of-rosettacode",
+        "filename": "create-a-two-dimensional-array-at-runtime.pl"
+      },
+      {
+        "file": "work_examples/categories/best-of-rosettacode/hailstone-sequence.pl",
+        "publishUrl": "/examples/best-of-rosettacode/hailstone-sequence.pl",
+        "title": "Hailstone sequence\n",
+        "category": "best-of-rosettacode",
+        "filename": "hailstone-sequence.pl"
+      },
+      {
+        "file": "work_examples/categories/best-of-rosettacode/last-fridays-of-year.pl",
+        "publishUrl": "/examples/best-of-rosettacode/last-fridays-of-year.pl",
+        "title": "Last fridays of the year\n",
+        "category": "best-of-rosettacode",
+        "filename": "last-fridays-of-year.pl"
+      },
+      {
+        "file": "work_examples/categories/best-of-rosettacode/prime-decomposition.pl",
+        "publishUrl": "/examples/best-of-rosettacode/prime-decomposition.pl",
+        "title": "Prime decomposition\n",
+        "category": "best-of-rosettacode",
+        "filename": "prime-decomposition.pl"
+      },
+      {
+        "file": "work_examples/categories/best-of-rosettacode/README.md",
+        "publishUrl": "/examples/best-of-rosettacode/README.md",
+        "category": "best-of-rosettacode",
+        "filename": "README.md"
+      }
+    ],
+    "cookbook": [
+      {
+        "file": "work_examples/categories/cookbook/01strings/01-00introduction.raku",
+        "publishUrl": "/examples/cookbook/01strings/01-00introduction.raku",
+        "title": "Perl 6 Cookbook: Introduction to Strings\n",
+        "category": "cookbook",
+        "filename": "01strings"
+      },
+      {
+        "file": "work_examples/categories/cookbook/01strings/01-01substrings.raku",
+        "publishUrl": "/examples/cookbook/01strings/01-01substrings.raku",
+        "title": "Substrings\n",
+        "category": "cookbook",
+        "filename": "01strings"
+      },
+      {
+        "file": "work_examples/categories/cookbook/01strings/01-03exchanging-values.raku",
+        "publishUrl": "/examples/cookbook/01strings/01-03exchanging-values.raku",
+        "title": "Swapping values\n",
+        "category": "cookbook",
+        "filename": "01strings"
+      },
+      {
+        "file": "work_examples/categories/cookbook/01strings/01-04converting-values.raku",
+        "publishUrl": "/examples/cookbook/01strings/01-04converting-values.raku",
+        "title": "Converting between characters and numbers.\n",
+        "category": "cookbook",
+        "filename": "01strings"
+      },
+      {
+        "file": "work_examples/categories/cookbook/01strings/01-05namedunicode.raku",
+        "publishUrl": "/examples/cookbook/01strings/01-05namedunicode.raku",
+        "title": "Using Named Unicode Chars\n",
+        "category": "cookbook",
+        "filename": "01strings"
+      },
+      {
+        "file": "work_examples/categories/cookbook/01strings/01-07reversing-strings.raku",
+        "publishUrl": "/examples/cookbook/01strings/01-07reversing-strings.raku",
+        "title": "Reversing a String by Word or Character\n",
+        "category": "cookbook",
+        "filename": "01strings"
+      },
+      {
+        "file": "work_examples/categories/cookbook/01strings/01-13upper-lower-case.raku",
+        "publishUrl": "/examples/cookbook/01strings/01-13upper-lower-case.raku",
+        "title": "Upper/Lower Case\n",
+        "category": "cookbook",
+        "filename": "01strings"
+      },
+      {
+        "file": "work_examples/categories/cookbook/01strings/01-19trim-whitespace.raku",
+        "publishUrl": "/examples/cookbook/01strings/01-19trim-whitespace.raku",
+        "title": "Trimming whitespace from both ends of a string\n",
+        "category": "cookbook",
+        "filename": "01strings"
+      },
+      {
+        "file": "work_examples/categories/cookbook/01strings/01-22soundex-matching.raku",
+        "publishUrl": "/examples/cookbook/01strings/01-22soundex-matching.raku",
+        "title": "Soundex Matching\n",
+        "category": "cookbook",
+        "filename": "01strings"
+      },
+      {
+        "file": "work_examples/categories/cookbook/02numbers/02-01valid-number.raku",
+        "publishUrl": "/examples/cookbook/02numbers/02-01valid-number.raku",
+        "title": "Valid Number\n",
+        "category": "cookbook",
+        "filename": "02numbers"
+      },
+      {
+        "file": "work_examples/categories/cookbook/02numbers/02-05-roman-numerals.raku",
+        "publishUrl": "/examples/cookbook/02numbers/02-05-roman-numerals.raku",
+        "title": "Convert to/from Roman Numerals\n",
+        "category": "cookbook",
+        "filename": "02numbers"
+      },
+      {
+        "file": "work_examples/categories/cookbook/02numbers/02-12taking-logarithms.raku",
+        "publishUrl": "/examples/cookbook/02numbers/02-12taking-logarithms.raku",
+        "title": "Logarithms\n",
+        "category": "cookbook",
+        "filename": "02numbers"
+      },
+      {
+        "file": "work_examples/categories/cookbook/02numbers/02-14complex-number.raku",
+        "publishUrl": "/examples/cookbook/02numbers/02-14complex-number.raku",
+        "title": "Complex Numbers\n",
+        "category": "cookbook",
+        "filename": "02numbers"
+      },
+      {
+        "file": "work_examples/categories/cookbook/02numbers/02-15convert-bases.raku",
+        "publishUrl": "/examples/cookbook/02numbers/02-15convert-bases.raku",
+        "title": "Convert Bases\n",
+        "category": "cookbook",
+        "filename": "02numbers"
+      },
+      {
+        "file": "work_examples/categories/cookbook/03dates-and-times/03-01-todays-date.raku",
+        "publishUrl": "/examples/cookbook/03dates-and-times/03-01-todays-date.raku",
+        "title": "Today's Date\n",
+        "category": "cookbook",
+        "filename": "03dates-and-times"
+      },
+      {
+        "file": "work_examples/categories/cookbook/03dates-and-times/03-02-datetime-to-epoch.raku",
+        "publishUrl": "/examples/cookbook/03dates-and-times/03-02-datetime-to-epoch.raku",
+        "title": "DateTime to Epoch Seconds\n",
+        "category": "cookbook",
+        "filename": "03dates-and-times"
+      },
+      {
+        "file": "work_examples/categories/cookbook/03dates-and-times/03-03-epoch-to-datetime.raku",
+        "publishUrl": "/examples/cookbook/03dates-and-times/03-03-epoch-to-datetime.raku",
+        "title": "Epoch Seconds to DateTime\n",
+        "category": "cookbook",
+        "filename": "03dates-and-times"
+      },
+      {
+        "file": "work_examples/categories/cookbook/03dates-and-times/03-04-date-add-sub.raku",
+        "publishUrl": "/examples/cookbook/03dates-and-times/03-04-date-add-sub.raku",
+        "title": "Adding and Subtracting Dates\n",
+        "category": "cookbook",
+        "filename": "03dates-and-times"
+      },
+      {
+        "file": "work_examples/categories/cookbook/03dates-and-times/03-05-sub-two-dates.raku",
+        "publishUrl": "/examples/cookbook/03dates-and-times/03-05-sub-two-dates.raku",
+        "title": "Subtracting Two Dates From Each other\n",
+        "category": "cookbook",
+        "filename": "03dates-and-times"
+      },
+      {
+        "file": "work_examples/categories/cookbook/03dates-and-times/03-06-day-to-num-wmy.raku",
+        "publishUrl": "/examples/cookbook/03dates-and-times/03-06-day-to-num-wmy.raku",
+        "title": "From date to week of year, month of year, day of year\n",
+        "category": "cookbook",
+        "filename": "03dates-and-times"
+      },
+      {
+        "file": "work_examples/categories/cookbook/03dates-and-times/03-09-hires-times.raku",
+        "publishUrl": "/examples/cookbook/03dates-and-times/03-09-hires-times.raku",
+        "title": "Hi-Res Timings\n",
+        "category": "cookbook",
+        "filename": "03dates-and-times"
+      },
+      {
+        "file": "work_examples/categories/cookbook/04arrays/04-01specifying-a-list-in-your-program.raku",
+        "publishUrl": "/examples/cookbook/04arrays/04-01specifying-a-list-in-your-program.raku",
+        "title": "Specifying a list in your program\n",
+        "category": "cookbook",
+        "filename": "04arrays"
+      },
+      {
+        "file": "work_examples/categories/cookbook/04arrays/04-02printing-a-list-with-commas.raku",
+        "publishUrl": "/examples/cookbook/04arrays/04-02printing-a-list-with-commas.raku",
+        "title": "Printing a list with commas\n",
+        "category": "cookbook",
+        "filename": "04arrays"
+      },
+      {
+        "file": "work_examples/categories/cookbook/04arrays/04-05iterating-over-an-array.raku",
+        "publishUrl": "/examples/cookbook/04arrays/04-05iterating-over-an-array.raku",
+        "title": "Iterating Over an Array\n",
+        "category": "cookbook",
+        "filename": "04arrays"
+      },
+      {
+        "file": "work_examples/categories/cookbook/05hashes/05-05traversing.raku",
+        "publishUrl": "/examples/cookbook/05hashes/05-05traversing.raku",
+        "title": "Traversing a hash\n",
+        "category": "cookbook",
+        "filename": "05hashes"
+      },
+      {
+        "file": "work_examples/categories/cookbook/06pattern-matching/06-01-copy-subst.raku",
+        "publishUrl": "/examples/cookbook/06pattern-matching/06-01-copy-subst.raku",
+        "title": "Copy and substitute simultaneously \n",
+        "category": "cookbook",
+        "filename": "06pattern-matching"
+      },
+      {
+        "file": "work_examples/categories/cookbook/06pattern-matching/06-02-match-letters.raku",
+        "publishUrl": "/examples/cookbook/06pattern-matching/06-02-match-letters.raku",
+        "title": "Matching alphabetic wide characters\n",
+        "category": "cookbook",
+        "filename": "06pattern-matching"
+      },
+      {
+        "file": "work_examples/categories/cookbook/07file-access/07-01opening_file.raku",
+        "publishUrl": "/examples/cookbook/07file-access/07-01opening_file.raku",
+        "title": "Opening a file\n",
+        "category": "cookbook",
+        "filename": "07file-access"
+      },
+      {
+        "file": "work_examples/categories/cookbook/08file-contents/08-02-count-lines.raku",
+        "publishUrl": "/examples/cookbook/08file-contents/08-02-count-lines.raku",
+        "title": "Count File Lines\n",
+        "category": "cookbook",
+        "filename": "08file-contents"
+      },
+      {
+        "file": "work_examples/categories/cookbook/08file-contents/08-03-process-words.raku",
+        "publishUrl": "/examples/cookbook/08file-contents/08-03-process-words.raku",
+        "title": "Process every word in a file\n",
+        "category": "cookbook",
+        "filename": "08file-contents"
+      },
+      {
+        "file": "work_examples/categories/cookbook/08file-contents/08-04-read-file-lines-backwards.raku",
+        "publishUrl": "/examples/cookbook/08file-contents/08-04-read-file-lines-backwards.raku",
+        "title": "Read file lines backwards\n",
+        "category": "cookbook",
+        "filename": "08file-contents"
+      },
+      {
+        "file": "work_examples/categories/cookbook/09directories/09-01-get-set-filetime.raku",
+        "publishUrl": "/examples/cookbook/09directories/09-01-get-set-filetime.raku",
+        "title": "Get/Set Filetime\n",
+        "category": "cookbook",
+        "filename": "09directories"
+      },
+      {
+        "file": "work_examples/categories/cookbook/09directories/09-02-delete-file.raku",
+        "publishUrl": "/examples/cookbook/09directories/09-02-delete-file.raku",
+        "title": "Delete File\n",
+        "category": "cookbook",
+        "filename": "09directories"
+      },
+      {
+        "file": "work_examples/categories/cookbook/09directories/09-03-copy-move-file.raku",
+        "publishUrl": "/examples/cookbook/09directories/09-03-copy-move-file.raku",
+        "title": "Copy/Move File\n",
+        "category": "cookbook",
+        "filename": "09directories"
+      },
+      {
+        "file": "work_examples/categories/cookbook/09directories/09-05-all-files-dir.raku",
+        "publishUrl": "/examples/cookbook/09directories/09-05-all-files-dir.raku",
+        "title": "Process all files in a directory\n",
+        "category": "cookbook",
+        "filename": "09directories"
+      },
+      {
+        "file": "work_examples/categories/cookbook/09directories/09-06-filenames-matching-pattern.raku",
+        "publishUrl": "/examples/cookbook/09directories/09-06-filenames-matching-pattern.raku",
+        "title": "Get list of files matching a pattern\n",
+        "category": "cookbook",
+        "filename": "09directories"
+      },
+      {
+        "file": "work_examples/categories/cookbook/09directories/09-07-all-files-process.raku",
+        "publishUrl": "/examples/cookbook/09directories/09-07-all-files-process.raku",
+        "title": "Process files recursively\n",
+        "category": "cookbook",
+        "filename": "09directories"
+      },
+      {
+        "file": "work_examples/categories/cookbook/09directories/09-10-filename-splitting.raku",
+        "publishUrl": "/examples/cookbook/09directories/09-10-filename-splitting.raku",
+        "title": "Splitting up a filename\n",
+        "category": "cookbook",
+        "filename": "09directories"
+      },
+      {
+        "file": "work_examples/categories/cookbook/09directories/09-11-all-files-lazy.raku",
+        "publishUrl": "/examples/cookbook/09directories/09-11-all-files-lazy.raku",
+        "title": "Process files lazy\n",
+        "category": "cookbook",
+        "filename": "09directories"
+      },
+      {
+        "file": "work_examples/categories/cookbook/10subroutines/10-01arguments.raku",
+        "publishUrl": "/examples/cookbook/10subroutines/10-01arguments.raku",
+        "title": "Accessing subroutine arguments\n",
+        "category": "cookbook",
+        "filename": "10subroutines"
+      },
+      {
+        "file": "work_examples/categories/cookbook/13classes-objects-and-ties/13-01constructing-an-object.raku",
+        "publishUrl": "/examples/cookbook/13classes-objects-and-ties/13-01constructing-an-object.raku",
+        "title": "Constructing an object\n",
+        "category": "cookbook",
+        "filename": "13classes-objects-and-ties"
+      },
+      {
+        "file": "work_examples/categories/cookbook/13classes-objects-and-ties/13-03managing-instance-data.raku",
+        "publishUrl": "/examples/cookbook/13classes-objects-and-ties/13-03managing-instance-data.raku",
+        "title": "Managing Instance data\n",
+        "category": "cookbook",
+        "filename": "13classes-objects-and-ties"
+      },
+      {
+        "file": "work_examples/categories/cookbook/13classes-objects-and-ties/13-04managing-class-data.raku",
+        "publishUrl": "/examples/cookbook/13classes-objects-and-ties/13-04managing-class-data.raku",
+        "title": "Managing Instance data\n",
+        "category": "cookbook",
+        "filename": "13classes-objects-and-ties"
+      },
+      {
+        "file": "work_examples/categories/cookbook/13classes-objects-and-ties/13-14overloading-operators.raku",
+        "publishUrl": "/examples/cookbook/13classes-objects-and-ties/13-14overloading-operators.raku",
+        "title": "Overloading operators\n",
+        "category": "cookbook",
+        "filename": "13classes-objects-and-ties"
+      },
+      {
+        "file": "work_examples/categories/cookbook/14database-access/14-09-dbi-sql.raku",
+        "publishUrl": "/examples/cookbook/14database-access/14-09-dbi-sql.raku",
+        "title": "Executing SQL with DBIish\n",
+        "category": "cookbook",
+        "filename": "14database-access"
+      },
+      {
+        "file": "work_examples/categories/cookbook/15interactivity/15-01-parse-program-args.raku",
+        "publishUrl": "/examples/cookbook/15interactivity/15-01-parse-program-args.raku",
+        "title": "Parsing program arguments\n",
+        "category": "cookbook",
+        "filename": "15interactivity"
+      },
+      {
+        "file": "work_examples/categories/cookbook/15interactivity/15-02-test-interactive-program.raku",
+        "publishUrl": "/examples/cookbook/15interactivity/15-02-test-interactive-program.raku",
+        "title": "Test whether program is interactive or not\n",
+        "category": "cookbook",
+        "filename": "15interactivity"
+      },
+      {
+        "file": "work_examples/categories/cookbook/15interactivity/15-03-clear-screen.raku",
+        "publishUrl": "/examples/cookbook/15interactivity/15-03-clear-screen.raku",
+        "title": "Clear the screen\n",
+        "category": "cookbook",
+        "filename": "15interactivity"
+      },
+      {
+        "file": "work_examples/categories/cookbook/15interactivity/15-04-changing-text-colour.raku",
+        "publishUrl": "/examples/cookbook/15interactivity/15-04-changing-text-colour.raku",
+        "title": "Change text colour\n",
+        "category": "cookbook",
+        "filename": "15interactivity"
+      },
+      {
+        "file": "work_examples/categories/cookbook/16processes/16-01-operation-timeout.raku",
+        "publishUrl": "/examples/cookbook/16processes/16-01-operation-timeout.raku",
+        "title": "Timeout Operation\n",
+        "category": "cookbook",
+        "filename": "16processes"
+      },
+      {
+        "file": "work_examples/categories/cookbook/16processes/16-13-listing-signals.raku",
+        "publishUrl": "/examples/cookbook/16processes/16-13-listing-signals.raku",
+        "title": "List Signals\n",
+        "category": "cookbook",
+        "filename": "16processes"
+      },
+      {
+        "file": "work_examples/categories/cookbook/16processes/16-14-send-signal.raku",
+        "publishUrl": "/examples/cookbook/16processes/16-14-send-signal.raku",
+        "title": "Send a signal to a process\n",
+        "category": "cookbook",
+        "filename": "16processes"
+      },
+      {
+        "file": "work_examples/categories/cookbook/16processes/16-18-catch-control-c.raku",
+        "publishUrl": "/examples/cookbook/16processes/16-18-catch-control-c.raku",
+        "title": "Catch ctrl-c\n",
+        "category": "cookbook",
+        "filename": "16processes"
+      },
+      {
+        "file": "work_examples/categories/cookbook/17sockets/17-01tcp_client.raku",
+        "publishUrl": "/examples/cookbook/17sockets/17-01tcp_client.raku",
+        "title": "Writing a TCP Client\n",
+        "category": "cookbook",
+        "filename": "17sockets"
+      },
+      {
+        "file": "work_examples/categories/cookbook/17sockets/17-02tcp_server.raku",
+        "publishUrl": "/examples/cookbook/17sockets/17-02tcp_server.raku",
+        "title": "Writing a TCP Server\n",
+        "category": "cookbook",
+        "filename": "17sockets"
+      },
+      {
+        "file": "work_examples/categories/cookbook/19cgi-programming/19-01cgi-script.raku",
+        "publishUrl": "/examples/cookbook/19cgi-programming/19-01cgi-script.raku",
+        "title": "Writing a CGI Script\n",
+        "category": "cookbook",
+        "filename": "19cgi-programming"
+      },
+      {
+        "file": "work_examples/categories/cookbook/20web-automation/20-01-fetching-uri.raku",
+        "publishUrl": "/examples/cookbook/20web-automation/20-01-fetching-uri.raku",
+        "title": "Fetch uri\n",
+        "category": "cookbook",
+        "filename": "20web-automation"
+      },
+      {
+        "file": "work_examples/categories/cookbook/README.md",
+        "publishUrl": "/examples/cookbook/README.md",
+        "category": "cookbook",
+        "filename": "README.md"
+      }
+    ],
+    "euler": [
+      {
+        "file": "work_examples/categories/euler/prob001-cspencer.pl",
+        "publishUrl": "/examples/euler/prob001-cspencer.pl",
+        "title": "Multiples of 3 and 5\n",
+        "category": "euler",
+        "filename": "prob001-cspencer.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob001-eric256.pl",
+        "publishUrl": "/examples/euler/prob001-eric256.pl",
+        "title": "Multiples of 3 and 5\n",
+        "category": "euler",
+        "filename": "prob001-eric256.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob001-grondilu.pl",
+        "publishUrl": "/examples/euler/prob001-grondilu.pl",
+        "title": "Multiples of 3 and 5\n",
+        "category": "euler",
+        "filename": "prob001-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob001-hexmode.pl",
+        "publishUrl": "/examples/euler/prob001-hexmode.pl",
+        "title": "Multiples of 3 and 5\n",
+        "category": "euler",
+        "filename": "prob001-hexmode.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob001-unobe.pl",
+        "publishUrl": "/examples/euler/prob001-unobe.pl",
+        "title": "Multiples of 3 and 5\n",
+        "category": "euler",
+        "filename": "prob001-unobe.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob002-eric256.pl",
+        "publishUrl": "/examples/euler/prob002-eric256.pl",
+        "title": "Even Fibonacci numbers\n",
+        "category": "euler",
+        "filename": "prob002-eric256.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob002-gerdr.pl",
+        "publishUrl": "/examples/euler/prob002-gerdr.pl",
+        "title": "Even Fibonacci numbers\n",
+        "category": "euler",
+        "filename": "prob002-gerdr.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob002-hexmode.pl",
+        "publishUrl": "/examples/euler/prob002-hexmode.pl",
+        "title": "Even Fibonacci numbers\n",
+        "category": "euler",
+        "filename": "prob002-hexmode.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob003-eric256.pl",
+        "publishUrl": "/examples/euler/prob003-eric256.pl",
+        "title": "Largest prime factor\n",
+        "category": "euler",
+        "filename": "prob003-eric256.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob003-gerdr.pl",
+        "publishUrl": "/examples/euler/prob003-gerdr.pl",
+        "title": "Largest prime factor\n",
+        "category": "euler",
+        "filename": "prob003-gerdr.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob003-hexmode.pl",
+        "publishUrl": "/examples/euler/prob003-hexmode.pl",
+        "title": "Largest prime factor\n",
+        "category": "euler",
+        "filename": "prob003-hexmode.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob003-lanny.pl",
+        "publishUrl": "/examples/euler/prob003-lanny.pl",
+        "title": "Largest prime factor\n",
+        "category": "euler",
+        "filename": "prob003-lanny.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob004-unobe.pl",
+        "publishUrl": "/examples/euler/prob004-unobe.pl",
+        "title": "Largest palindrome product\n",
+        "category": "euler",
+        "filename": "prob004-unobe.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob004-xfix.pl",
+        "publishUrl": "/examples/euler/prob004-xfix.pl",
+        "title": "Largest palindrome product\n",
+        "category": "euler",
+        "filename": "prob004-xfix.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob005-unobe.pl",
+        "publishUrl": "/examples/euler/prob005-unobe.pl",
+        "title": "Smallest multiple\n",
+        "category": "euler",
+        "filename": "prob005-unobe.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob005-xfix.pl",
+        "publishUrl": "/examples/euler/prob005-xfix.pl",
+        "title": "Smallest multiple\n",
+        "category": "euler",
+        "filename": "prob005-xfix.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob006-polettix.pl",
+        "publishUrl": "/examples/euler/prob006-polettix.pl",
+        "title": "Sum square difference\n",
+        "category": "euler",
+        "filename": "prob006-polettix.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob007-polettix.pl",
+        "publishUrl": "/examples/euler/prob007-polettix.pl",
+        "title": "10001st prime\n",
+        "category": "euler",
+        "filename": "prob007-polettix.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob008-duff.pl",
+        "publishUrl": "/examples/euler/prob008-duff.pl",
+        "title": "Largest product in a series\n",
+        "category": "euler",
+        "filename": "prob008-duff.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob008-duff2.pl",
+        "publishUrl": "/examples/euler/prob008-duff2.pl",
+        "title": "Largest product in a series\n",
+        "category": "euler",
+        "filename": "prob008-duff2.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob009-gerdr-feeds.raku",
+        "publishUrl": "/examples/euler/prob009-gerdr-feeds.raku",
+        "title": "Special Pythagorean triplet\n",
+        "category": "euler",
+        "filename": "prob009-gerdr-feeds.raku"
+      },
+      {
+        "file": "work_examples/categories/euler/prob009-gerdr.raku",
+        "publishUrl": "/examples/euler/prob009-gerdr.raku",
+        "title": "Special Pythagorean triplet\n",
+        "category": "euler",
+        "filename": "prob009-gerdr.raku"
+      },
+      {
+        "file": "work_examples/categories/euler/prob009-polettix.pl",
+        "publishUrl": "/examples/euler/prob009-polettix.pl",
+        "title": "Special Pythagorean triplet\n",
+        "category": "euler",
+        "filename": "prob009-polettix.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob010-polettix.pl",
+        "publishUrl": "/examples/euler/prob010-polettix.pl",
+        "title": "Summation of primes\n",
+        "category": "euler",
+        "filename": "prob010-polettix.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob011-moritz.pl",
+        "publishUrl": "/examples/euler/prob011-moritz.pl",
+        "title": "Largest product in a grid\n",
+        "category": "euler",
+        "filename": "prob011-moritz.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob012-polettix.pl",
+        "publishUrl": "/examples/euler/prob012-polettix.pl",
+        "title": "Highly divisible triangular number\n",
+        "category": "euler",
+        "filename": "prob012-polettix.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob013-grondilu.pl",
+        "publishUrl": "/examples/euler/prob013-grondilu.pl",
+        "title": "Large sum\n",
+        "category": "euler",
+        "filename": "prob013-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob014-felher.pl",
+        "publishUrl": "/examples/euler/prob014-felher.pl",
+        "title": "Longest Collatz sequence\n",
+        "category": "euler",
+        "filename": "prob014-felher.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob015-felher.pl",
+        "publishUrl": "/examples/euler/prob015-felher.pl",
+        "title": "Lattice paths\n",
+        "category": "euler",
+        "filename": "prob015-felher.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob016-grondilu.pl",
+        "publishUrl": "/examples/euler/prob016-grondilu.pl",
+        "title": "Power digit sum\n",
+        "category": "euler",
+        "filename": "prob016-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob017-duff.pl",
+        "publishUrl": "/examples/euler/prob017-duff.pl",
+        "title": "Number letter counts\n",
+        "category": "euler",
+        "filename": "prob017-duff.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob018-felher.pl",
+        "publishUrl": "/examples/euler/prob018-felher.pl",
+        "title": "Maximum path sum I\n",
+        "category": "euler",
+        "filename": "prob018-felher.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob019-grondilu.pl",
+        "publishUrl": "/examples/euler/prob019-grondilu.pl",
+        "title": "Counting Sundays\n",
+        "category": "euler",
+        "filename": "prob019-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob020-grondilu.pl",
+        "publishUrl": "/examples/euler/prob020-grondilu.pl",
+        "title": "Factorial digit sum\n",
+        "category": "euler",
+        "filename": "prob020-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob021-gerdr.pl",
+        "publishUrl": "/examples/euler/prob021-gerdr.pl",
+        "title": "Amicable numbers\n",
+        "category": "euler",
+        "filename": "prob021-gerdr.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob022-grondilu.pl",
+        "publishUrl": "/examples/euler/prob022-grondilu.pl",
+        "title": "Names scores\n",
+        "category": "euler",
+        "filename": "prob022-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob023-shlomif.pl",
+        "publishUrl": "/examples/euler/prob023-shlomif.pl",
+        "title": "Non-abundant sums\n",
+        "category": "euler",
+        "filename": "prob023-shlomif.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob024-moritz.pl",
+        "publishUrl": "/examples/euler/prob024-moritz.pl",
+        "title": "Lexicographic permutations\n",
+        "category": "euler",
+        "filename": "prob024-moritz.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob025-polettix.pl",
+        "publishUrl": "/examples/euler/prob025-polettix.pl",
+        "title": "1000-digit Fibonacci number\n",
+        "category": "euler",
+        "filename": "prob025-polettix.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob026-shlomif.pl",
+        "publishUrl": "/examples/euler/prob026-shlomif.pl",
+        "title": "Reciprocal cycles\n",
+        "category": "euler",
+        "filename": "prob026-shlomif.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob027-shlomif.pl",
+        "publishUrl": "/examples/euler/prob027-shlomif.pl",
+        "title": "Quadratic primes\n",
+        "category": "euler",
+        "filename": "prob027-shlomif.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob028-shlomif.pl",
+        "publishUrl": "/examples/euler/prob028-shlomif.pl",
+        "title": "Number spiral diagonals\n",
+        "category": "euler",
+        "filename": "prob028-shlomif.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob029-gerdr.pl",
+        "publishUrl": "/examples/euler/prob029-gerdr.pl",
+        "title": "Distinct powers\n",
+        "category": "euler",
+        "filename": "prob029-gerdr.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob029-polettix.pl",
+        "publishUrl": "/examples/euler/prob029-polettix.pl",
+        "title": "Distinct powers\n",
+        "category": "euler",
+        "filename": "prob029-polettix.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob031-shlomif.pl",
+        "publishUrl": "/examples/euler/prob031-shlomif.pl",
+        "title": "Coin sums\n",
+        "category": "euler",
+        "filename": "prob031-shlomif.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob033-andreoss.pl",
+        "publishUrl": "/examples/euler/prob033-andreoss.pl",
+        "title": "Digit cancelling fractions\n",
+        "category": "euler",
+        "filename": "prob033-andreoss.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob034-quinny.pl",
+        "publishUrl": "/examples/euler/prob034-quinny.pl",
+        "title": "Digit factorials\n",
+        "category": "euler",
+        "filename": "prob034-quinny.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob036-xenu.pl",
+        "publishUrl": "/examples/euler/prob036-xenu.pl",
+        "title": "Double-base palindromes\n",
+        "category": "euler",
+        "filename": "prob036-xenu.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob038-andreoss.pl",
+        "publishUrl": "/examples/euler/prob038-andreoss.pl",
+        "title": "Pandigital multiples\n",
+        "category": "euler",
+        "filename": "prob038-andreoss.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob039-quinny.pl",
+        "publishUrl": "/examples/euler/prob039-quinny.pl",
+        "title": "Integer right triangles\n",
+        "category": "euler",
+        "filename": "prob039-quinny.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob041-heyajulia-alternative.raku",
+        "publishUrl": "/examples/euler/prob041-heyajulia-alternative.raku",
+        "title": "Pandigital Prime\n",
+        "category": "euler",
+        "filename": "prob041-heyajulia-alternative.raku"
+      },
+      {
+        "file": "work_examples/categories/euler/prob041-heyajulia.raku",
+        "publishUrl": "/examples/euler/prob041-heyajulia.raku",
+        "title": "Pandigital Prime\n",
+        "category": "euler",
+        "filename": "prob041-heyajulia.raku"
+      },
+      {
+        "file": "work_examples/categories/euler/prob042-shlomif.p6",
+        "publishUrl": "/examples/euler/prob042-shlomif.p6",
+        "title": "Coded triangle numbers\n",
+        "category": "euler",
+        "filename": "prob042-shlomif.p6"
+      },
+      {
+        "file": "work_examples/categories/euler/prob047-gerdr.pl",
+        "publishUrl": "/examples/euler/prob047-gerdr.pl",
+        "title": "Distinct primes factors\n",
+        "category": "euler",
+        "filename": "prob047-gerdr.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob052-duff.pl",
+        "publishUrl": "/examples/euler/prob052-duff.pl",
+        "title": "Permuted multiples\n",
+        "category": "euler",
+        "filename": "prob052-duff.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob053-duff.pl",
+        "publishUrl": "/examples/euler/prob053-duff.pl",
+        "title": "Combinatoric selections\n",
+        "category": "euler",
+        "filename": "prob053-duff.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob053-gerdr.pl",
+        "publishUrl": "/examples/euler/prob053-gerdr.pl",
+        "title": "Combinatoric selections\n",
+        "category": "euler",
+        "filename": "prob053-gerdr.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob054-andreoss.pl",
+        "publishUrl": "/examples/euler/prob054-andreoss.pl",
+        "title": "Poker hands\n",
+        "category": "euler",
+        "filename": "prob054-andreoss.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob055-shlomif.p6",
+        "publishUrl": "/examples/euler/prob055-shlomif.p6",
+        "title": "Lychrel numbers\n",
+        "category": "euler",
+        "filename": "prob055-shlomif.p6"
+      },
+      {
+        "file": "work_examples/categories/euler/prob056-shlomif.p6",
+        "publishUrl": "/examples/euler/prob056-shlomif.p6",
+        "title": "",
+        "category": "euler",
+        "filename": "prob056-shlomif.p6"
+      },
+      {
+        "file": "work_examples/categories/euler/prob059-andreoss.pl",
+        "publishUrl": "/examples/euler/prob059-andreoss.pl",
+        "title": "XOR decryption\n",
+        "category": "euler",
+        "filename": "prob059-andreoss.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob063-moritz.pl",
+        "publishUrl": "/examples/euler/prob063-moritz.pl",
+        "title": "Powerful digit counts\n",
+        "category": "euler",
+        "filename": "prob063-moritz.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob063-polettix.pl",
+        "publishUrl": "/examples/euler/prob063-polettix.pl",
+        "title": "Powerful digit counts\n",
+        "category": "euler",
+        "filename": "prob063-polettix.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob065-andreoss.pl",
+        "publishUrl": "/examples/euler/prob065-andreoss.pl",
+        "title": "Convergents of e\n",
+        "category": "euler",
+        "filename": "prob065-andreoss.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob065-grondilu.pl",
+        "publishUrl": "/examples/euler/prob065-grondilu.pl",
+        "title": "",
+        "category": "euler",
+        "filename": "prob065-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob066-andreoss.pl",
+        "publishUrl": "/examples/euler/prob066-andreoss.pl",
+        "title": "Diophantine equation\n",
+        "category": "euler",
+        "filename": "prob066-andreoss.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob067-felher.pl",
+        "publishUrl": "/examples/euler/prob067-felher.pl",
+        "title": "Maximum path sum II\n",
+        "category": "euler",
+        "filename": "prob067-felher.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob080-andreoss.pl",
+        "publishUrl": "/examples/euler/prob080-andreoss.pl",
+        "title": "Square root digital expansion\n",
+        "category": "euler",
+        "filename": "prob080-andreoss.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob081-moritz.pl",
+        "publishUrl": "/examples/euler/prob081-moritz.pl",
+        "title": "Path sum: two ways\n",
+        "category": "euler",
+        "filename": "prob081-moritz.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob089-andreoss.pl",
+        "publishUrl": "/examples/euler/prob089-andreoss.pl",
+        "title": "Roman numerals\n",
+        "category": "euler",
+        "filename": "prob089-andreoss.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob092-moritz.pl",
+        "publishUrl": "/examples/euler/prob092-moritz.pl",
+        "title": "Square digit chains\n",
+        "category": "euler",
+        "filename": "prob092-moritz.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob097-andreoss.pl",
+        "publishUrl": "/examples/euler/prob097-andreoss.pl",
+        "title": "Large non-Mersenne prime\n",
+        "category": "euler",
+        "filename": "prob097-andreoss.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob098-andreoss.pl",
+        "publishUrl": "/examples/euler/prob098-andreoss.pl",
+        "title": "Anagramic squares\n",
+        "category": "euler",
+        "filename": "prob098-andreoss.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/prob099-andreoss.pl",
+        "publishUrl": "/examples/euler/prob099-andreoss.pl",
+        "title": "Largest exponential\n",
+        "category": "euler",
+        "filename": "prob099-andreoss.pl"
+      },
+      {
+        "file": "work_examples/categories/euler/README.md",
+        "publishUrl": "/examples/euler/README.md",
+        "category": "euler",
+        "filename": "README.md"
+      }
+    ],
+    "games": [
+      {
+        "file": "work_examples/categories/games/blackjack.p6",
+        "publishUrl": "/examples/games/blackjack.p6",
+        "title": "Blackjack\n",
+        "category": "games",
+        "filename": "blackjack.p6"
+      },
+      {
+        "file": "work_examples/categories/games/connect4.p6",
+        "publishUrl": "/examples/games/connect4.p6",
+        "title": "Connect4\n",
+        "category": "games",
+        "filename": "connect4.p6"
+      },
+      {
+        "file": "work_examples/categories/games/flashcard.p6",
+        "publishUrl": "/examples/games/flashcard.p6",
+        "title": "Flashcard\n",
+        "category": "games",
+        "filename": "flashcard.p6"
+      },
+      {
+        "file": "work_examples/categories/games/hangman.p6",
+        "publishUrl": "/examples/games/hangman.p6",
+        "title": "Hangman\n",
+        "category": "games",
+        "filename": "hangman.p6"
+      },
+      {
+        "file": "work_examples/categories/games/tictactoe.p6",
+        "publishUrl": "/examples/games/tictactoe.p6",
+        "title": "Tic Tac Toe\n",
+        "category": "games",
+        "filename": "tictactoe.p6"
+      },
+      {
+        "file": "work_examples/categories/games/yahtzee.p6",
+        "publishUrl": "/examples/games/yahtzee.p6",
+        "title": "Yahtzee\n",
+        "category": "games",
+        "filename": "yahtzee.p6"
+      }
+    ],
+    "interpreters": [
+      {
+        "file": "work_examples/categories/interpreters/brainfuck.p6",
+        "publishUrl": "/examples/interpreters/brainfuck.p6",
+        "title": "Brainfuck Interpreter\n",
+        "category": "interpreters",
+        "filename": "brainfuck.p6"
+      },
+      {
+        "file": "work_examples/categories/interpreters/calc.p6",
+        "publishUrl": "/examples/interpreters/calc.p6",
+        "title": "Simple Infix Arithmetic Calculator\n",
+        "category": "interpreters",
+        "filename": "calc.p6"
+      },
+      {
+        "file": "work_examples/categories/interpreters/lisp.pl",
+        "publishUrl": "/examples/interpreters/lisp.pl",
+        "title": "Simple Lisp Interpreter\n",
+        "category": "interpreters",
+        "filename": "lisp.pl"
+      },
+      {
+        "file": "work_examples/categories/interpreters/RPN.pl",
+        "publishUrl": "/examples/interpreters/RPN.pl",
+        "title": "Reverse Polish Notation Calculator\n",
+        "category": "interpreters",
+        "filename": "RPN.pl"
+      }
+    ],
+    "module-management": [
+      {
+        "file": "work_examples/categories/module-management/Fletcher.pl",
+        "publishUrl": "/examples/module-management/Fletcher.pl",
+        "title": "Unique module names with the Fletcher-16 hash\n",
+        "category": "module-management",
+        "filename": "Fletcher.pl"
+      }
+    ],
+    "other": [
+      {
+        "file": "work_examples/categories/other/array-contains-a-value.pl",
+        "publishUrl": "/examples/other/array-contains-a-value.pl",
+        "title": "Determine whether an array contains a value\n",
+        "category": "other",
+        "filename": "array-contains-a-value.pl"
+      },
+      {
+        "file": "work_examples/categories/other/bottles.pl",
+        "publishUrl": "/examples/other/bottles.pl",
+        "title": "99 bottles of beer\n",
+        "category": "other",
+        "filename": "bottles.pl"
+      },
+      {
+        "file": "work_examples/categories/other/combinations.pl",
+        "publishUrl": "/examples/other/combinations.pl",
+        "title": "Combinations\n",
+        "category": "other",
+        "filename": "combinations.pl"
+      },
+      {
+        "file": "work_examples/categories/other/malware_analysis.raku",
+        "publishUrl": "/examples/other/malware_analysis.raku",
+        "title": "",
+        "category": "other",
+        "filename": "malware_analysis.raku"
+      }
+    ],
+    "parsers": [
+      {
+        "file": "work_examples/categories/parsers/CSSGrammar.pm",
+        "publishUrl": "/examples/parsers/CSSGrammar.pm",
+        "title": "CSS2.1 Grammar\n",
+        "category": "parsers",
+        "filename": "CSSGrammar.pm"
+      },
+      {
+        "file": "work_examples/categories/parsers/Newick.pm",
+        "publishUrl": "/examples/parsers/Newick.pm",
+        "title": "Newick tree format\n",
+        "category": "parsers",
+        "filename": "Newick.pm"
+      },
+      {
+        "file": "work_examples/categories/parsers/SimpleStrings.pm",
+        "publishUrl": "/examples/parsers/SimpleStrings.pm",
+        "title": "Simple strings\n",
+        "category": "parsers",
+        "filename": "SimpleStrings.pm"
+      }
+    ],
+    "perlmonks": [
+      {
+        "file": "work_examples/categories/perlmonks/combinations-731808.pl",
+        "publishUrl": "/examples/perlmonks/combinations-731808.pl",
+        "title": "Combinations\n",
+        "category": "perlmonks",
+        "filename": "combinations-731808.pl"
+      },
+      {
+        "file": "work_examples/categories/perlmonks/README.md",
+        "publishUrl": "/examples/perlmonks/README.md",
+        "category": "perlmonks",
+        "filename": "README.md"
+      },
+      {
+        "file": "work_examples/categories/perlmonks/weighted-roll-731696.pl",
+        "publishUrl": "/examples/perlmonks/weighted-roll-731696.pl",
+        "title": "Weighted roll\n",
+        "category": "perlmonks",
+        "filename": "weighted-roll-731696.pl"
+      }
+    ],
+    "rosalind": [
+      {
+        "file": "work_examples/categories/rosalind/afrq-grondilu.pl",
+        "publishUrl": "/examples/rosalind/afrq-grondilu.pl",
+        "title": "Counting Disease Carriers\n",
+        "category": "rosalind",
+        "filename": "afrq-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/aspc-grondilu.pl",
+        "publishUrl": "/examples/rosalind/aspc-grondilu.pl",
+        "title": "Introduction to Alternative Splicing\n",
+        "category": "rosalind",
+        "filename": "aspc-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/cons-grondilu.pl",
+        "publishUrl": "/examples/rosalind/cons-grondilu.pl",
+        "title": "Consensus and Profile\n",
+        "category": "rosalind",
+        "filename": "cons-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/conv-grondilu.pl",
+        "publishUrl": "/examples/rosalind/conv-grondilu.pl",
+        "title": "Comparing Spectra with the Spectral Convolution\n",
+        "category": "rosalind",
+        "filename": "conv-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/cstr-grondilu.pl",
+        "publishUrl": "/examples/rosalind/cstr-grondilu.pl",
+        "title": "Creating a Character Table from Genetic Strings\n",
+        "category": "rosalind",
+        "filename": "cstr-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/ctbl-grondilu.pl",
+        "publishUrl": "/examples/rosalind/ctbl-grondilu.pl",
+        "title": "Creating a Character Table\n",
+        "category": "rosalind",
+        "filename": "ctbl-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/dbpr-grondilu.pl",
+        "publishUrl": "/examples/rosalind/dbpr-grondilu.pl",
+        "title": "Introduction to Protein Databases\n",
+        "category": "rosalind",
+        "filename": "dbpr-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/dna-gerdr.pl",
+        "publishUrl": "/examples/rosalind/dna-gerdr.pl",
+        "title": "Counting DNA Nucleotides\n",
+        "category": "rosalind",
+        "filename": "dna-gerdr.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/dna-grondilu.pl",
+        "publishUrl": "/examples/rosalind/dna-grondilu.pl",
+        "title": "Counting DNA Nucleotides\n",
+        "category": "rosalind",
+        "filename": "dna-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/eubt-grondilu.pl",
+        "publishUrl": "/examples/rosalind/eubt-grondilu.pl",
+        "title": "Enumerating Unrooted Binary Trees\n",
+        "category": "rosalind",
+        "filename": "eubt-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/eval-grondilu.pl",
+        "publishUrl": "/examples/rosalind/eval-grondilu.pl",
+        "title": "Expected Number of Restriction Sites\n",
+        "category": "rosalind",
+        "filename": "eval-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/fib-grondilu.pl",
+        "publishUrl": "/examples/rosalind/fib-grondilu.pl",
+        "title": "Rabbits and Recurrence Relations\n",
+        "category": "rosalind",
+        "filename": "fib-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/fibd-grondilu.pl",
+        "publishUrl": "/examples/rosalind/fibd-grondilu.pl",
+        "title": "Mortal Fibonacci Rabbits\n",
+        "category": "rosalind",
+        "filename": "fibd-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/gc-gerdr.pl",
+        "publishUrl": "/examples/rosalind/gc-gerdr.pl",
+        "title": "Computing GC Content\n",
+        "category": "rosalind",
+        "filename": "gc-gerdr.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/grph-grondilu.pl",
+        "publishUrl": "/examples/rosalind/grph-grondilu.pl",
+        "title": "Overlap Graphs\n",
+        "category": "rosalind",
+        "filename": "grph-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/hamm-grondilu.pl",
+        "publishUrl": "/examples/rosalind/hamm-grondilu.pl",
+        "title": "Counting Point Mutations\n",
+        "category": "rosalind",
+        "filename": "hamm-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/iev-grondilu.pl",
+        "publishUrl": "/examples/rosalind/iev-grondilu.pl",
+        "title": "Calculating Expected Offspring\n",
+        "category": "rosalind",
+        "filename": "iev-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/indc-grondilu.pl",
+        "publishUrl": "/examples/rosalind/indc-grondilu.pl",
+        "title": "Independent Segregation of Chromosomes\n",
+        "category": "rosalind",
+        "filename": "indc-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/iprb-grondilu.pl",
+        "publishUrl": "/examples/rosalind/iprb-grondilu.pl",
+        "title": "Mendel's First Law\n",
+        "category": "rosalind",
+        "filename": "iprb-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/itwv-grondilu.pl",
+        "publishUrl": "/examples/rosalind/itwv-grondilu.pl",
+        "title": "Finding Disjoint Motifs in a Gene\n",
+        "category": "rosalind",
+        "filename": "itwv-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/lcsq-grondilu.pl",
+        "publishUrl": "/examples/rosalind/lcsq-grondilu.pl",
+        "title": "Finding a Shared Spliced Motif\n",
+        "category": "rosalind",
+        "filename": "lcsq-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/lia-grondilu.pl",
+        "publishUrl": "/examples/rosalind/lia-grondilu.pl",
+        "title": "Independent Alleles\n",
+        "category": "rosalind",
+        "filename": "lia-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/lrep-grondilu-p5.pl",
+        "publishUrl": "/examples/rosalind/lrep-grondilu-p5.pl",
+        "title": "",
+        "category": "rosalind",
+        "filename": "lrep-grondilu-p5.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/mmch-grondilu.pl",
+        "publishUrl": "/examples/rosalind/mmch-grondilu.pl",
+        "title": "Maximum Matchings and RNA Secondary Structures\n",
+        "category": "rosalind",
+        "filename": "mmch-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/mprt-grondilu.pl",
+        "publishUrl": "/examples/rosalind/mprt-grondilu.pl",
+        "title": "Finding a Protein Motif\n",
+        "category": "rosalind",
+        "filename": "mprt-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/mrna-grondilu.pl",
+        "publishUrl": "/examples/rosalind/mrna-grondilu.pl",
+        "title": "Inferring mRNA from Protein\n",
+        "category": "rosalind",
+        "filename": "mrna-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/nwck-grondilu.pl",
+        "publishUrl": "/examples/rosalind/nwck-grondilu.pl",
+        "title": "Distances in Trees\n",
+        "category": "rosalind",
+        "filename": "nwck-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/orf-grondilu.pl",
+        "publishUrl": "/examples/rosalind/orf-grondilu.pl",
+        "title": "Open Reading Frames\n",
+        "category": "rosalind",
+        "filename": "orf-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/pmch-grondilu.pl",
+        "publishUrl": "/examples/rosalind/pmch-grondilu.pl",
+        "title": "Perfect Matchings and RNA Secondary Structures\n",
+        "category": "rosalind",
+        "filename": "pmch-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/pper-grondilu.pl",
+        "publishUrl": "/examples/rosalind/pper-grondilu.pl",
+        "title": "Partial Permutations\n",
+        "category": "rosalind",
+        "filename": "pper-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/prob-grondilu.pl",
+        "publishUrl": "/examples/rosalind/prob-grondilu.pl",
+        "title": "Introduction to Random Strings\n",
+        "category": "rosalind",
+        "filename": "prob-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/qrt-grondilu.pl",
+        "publishUrl": "/examples/rosalind/qrt-grondilu.pl",
+        "title": "Quartets\n",
+        "category": "rosalind",
+        "filename": "qrt-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/README.md",
+        "publishUrl": "/examples/rosalind/README.md",
+        "category": "rosalind",
+        "filename": "README.md"
+      },
+      {
+        "file": "work_examples/categories/rosalind/revc-gerdr.pl",
+        "publishUrl": "/examples/rosalind/revc-gerdr.pl",
+        "title": "Complementing a Strand of DNA\n",
+        "category": "rosalind",
+        "filename": "revc-gerdr.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/rna-gerdr.pl",
+        "publishUrl": "/examples/rosalind/rna-gerdr.pl",
+        "title": "Transcribing DNA into RNA\n",
+        "category": "rosalind",
+        "filename": "rna-gerdr.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/rstr-grondilu.pl",
+        "publishUrl": "/examples/rosalind/rstr-grondilu.pl",
+        "title": "Matching Random Motifs\n",
+        "category": "rosalind",
+        "filename": "rstr-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/sexl-grondilu.pl",
+        "publishUrl": "/examples/rosalind/sexl-grondilu.pl",
+        "title": "Sex-Linked Inheritance\n",
+        "category": "rosalind",
+        "filename": "sexl-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/sgra-grondilu.pl",
+        "publishUrl": "/examples/rosalind/sgra-grondilu.pl",
+        "title": "Using the Spectrum Graph to Infer Peptides\n",
+        "category": "rosalind",
+        "filename": "sgra-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/spec-grondilu.pl",
+        "publishUrl": "/examples/rosalind/spec-grondilu.pl",
+        "title": "Inferring Protein from Spectrum\n",
+        "category": "rosalind",
+        "filename": "spec-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/sseq-grondilu.pl",
+        "publishUrl": "/examples/rosalind/sseq-grondilu.pl",
+        "title": "Finding a Spliced Motif\n",
+        "category": "rosalind",
+        "filename": "sseq-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/subs-grondilu.pl",
+        "publishUrl": "/examples/rosalind/subs-grondilu.pl",
+        "title": "Finding a Motif in DNA\n",
+        "category": "rosalind",
+        "filename": "subs-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/suff-grondilu.pl",
+        "publishUrl": "/examples/rosalind/suff-grondilu.pl",
+        "title": "Encoding Suffix Trees\n",
+        "category": "rosalind",
+        "filename": "suff-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/tran-grondilu.pl",
+        "publishUrl": "/examples/rosalind/tran-grondilu.pl",
+        "title": "Transitions and Transversions\n",
+        "category": "rosalind",
+        "filename": "tran-grondilu.pl"
+      },
+      {
+        "file": "work_examples/categories/rosalind/trie-grondilu.pl",
+        "publishUrl": "/examples/rosalind/trie-grondilu.pl",
+        "title": "Introduction to Pattern Matching\n",
+        "category": "rosalind",
+        "filename": "trie-grondilu.pl"
+      }
+    ],
+    "shootout": [
+      {
+        "file": "work_examples/categories/shootout/fasta.p5.pl",
+        "publishUrl": "/examples/shootout/fasta.p5.pl",
+        "title": "",
+        "category": "shootout",
+        "filename": "fasta.p5.pl"
+      },
+      {
+        "file": "work_examples/categories/shootout/fasta.p6",
+        "publishUrl": "/examples/shootout/fasta.p6",
+        "title": "Generate and write random DNA sequences\n",
+        "category": "shootout",
+        "filename": "fasta.p6"
+      },
+      {
+        "file": "work_examples/categories/shootout/k-nucleotide.p5.pl",
+        "publishUrl": "/examples/shootout/k-nucleotide.p5.pl",
+        "title": "",
+        "category": "shootout",
+        "filename": "k-nucleotide.p5.pl"
+      },
+      {
+        "file": "work_examples/categories/shootout/k-nucleotide.p6",
+        "publishUrl": "/examples/shootout/k-nucleotide.p6",
+        "title": "Repeatedly update hashtables and k-nucleotide strings\n",
+        "category": "shootout",
+        "filename": "k-nucleotide.p6"
+      },
+      {
+        "file": "work_examples/categories/shootout/mandelbrot.p6",
+        "publishUrl": "/examples/shootout/mandelbrot.p6",
+        "title": "Generates the Mandelbrot Set fractal\n",
+        "category": "shootout",
+        "filename": "mandelbrot.p6"
+      },
+      {
+        "file": "work_examples/categories/shootout/n-body-v2.p6",
+        "publishUrl": "/examples/shootout/n-body-v2.p6",
+        "title": "Perform an N-body simulation of the Jovian planets\n",
+        "category": "shootout",
+        "filename": "n-body-v2.p6"
+      },
+      {
+        "file": "work_examples/categories/shootout/n-body.p5.pl",
+        "publishUrl": "/examples/shootout/n-body.p5.pl",
+        "title": "",
+        "category": "shootout",
+        "filename": "n-body.p5.pl"
+      },
+      {
+        "file": "work_examples/categories/shootout/n-body.p6",
+        "publishUrl": "/examples/shootout/n-body.p6",
+        "title": "Perform an N-body simulation of the Jovian planets\n",
+        "category": "shootout",
+        "filename": "n-body.p6"
+      },
+      {
+        "file": "work_examples/categories/shootout/regex-dna.p5.pl",
+        "publishUrl": "/examples/shootout/regex-dna.p5.pl",
+        "title": "",
+        "category": "shootout",
+        "filename": "regex-dna.p5.pl"
+      },
+      {
+        "file": "work_examples/categories/shootout/regex-dna.p6",
+        "publishUrl": "/examples/shootout/regex-dna.p6",
+        "title": "Match DNA 8-mers and substitute nucleotides for IUB code\n",
+        "category": "shootout",
+        "filename": "regex-dna.p6"
+      },
+      {
+        "file": "work_examples/categories/shootout/revcomp-v2.p6",
+        "publishUrl": "/examples/shootout/revcomp-v2.p6",
+        "title": "Read DNA sequences and write their reverse-complement\n",
+        "category": "shootout",
+        "filename": "revcomp-v2.p6"
+      },
+      {
+        "file": "work_examples/categories/shootout/revcomp.p5.pl",
+        "publishUrl": "/examples/shootout/revcomp.p5.pl",
+        "title": "",
+        "category": "shootout",
+        "filename": "revcomp.p5.pl"
+      },
+      {
+        "file": "work_examples/categories/shootout/revcomp.p6",
+        "publishUrl": "/examples/shootout/revcomp.p6",
+        "title": "Read DNA sequences and write their reverse-complement\n",
+        "category": "shootout",
+        "filename": "revcomp.p6"
+      }
+    ],
+    "tutorial": [
+      {
+        "file": "work_examples/categories/tutorial/01-read-from-file.pl",
+        "publishUrl": "/examples/tutorial/01-read-from-file.pl",
+        "title": "Reading from a file\n",
+        "category": "tutorial",
+        "filename": "01-read-from-file.pl"
+      },
+      {
+        "file": "work_examples/categories/tutorial/01-read-from-terminal.pl",
+        "publishUrl": "/examples/tutorial/01-read-from-terminal.pl",
+        "title": "Reading from the terminal\n",
+        "category": "tutorial",
+        "filename": "01-read-from-terminal.pl"
+      },
+      {
+        "file": "work_examples/categories/tutorial/01-word-wrap.pl",
+        "publishUrl": "/examples/tutorial/01-word-wrap.pl",
+        "title": "Word-wrap paragraphs to a given length\n",
+        "category": "tutorial",
+        "filename": "01-word-wrap.pl"
+      },
+      {
+        "file": "work_examples/categories/tutorial/01-write-to-file.pl",
+        "publishUrl": "/examples/tutorial/01-write-to-file.pl",
+        "title": "Write to a file\n",
+        "category": "tutorial",
+        "filename": "01-write-to-file.pl"
+      },
+      {
+        "file": "work_examples/categories/tutorial/lazy-evaluation.pl",
+        "publishUrl": "/examples/tutorial/lazy-evaluation.pl",
+        "title": "Lazily evaluate items in a list\n",
+        "category": "tutorial",
+        "filename": "lazy-evaluation.pl"
+      }
+    ],
+    "wsg": [
+      {
+        "file": "work_examples/categories/wsg/advanced-2008/event001-eric256.pl",
+        "publishUrl": "/examples/wsg/advanced-2008/event001-eric256.pl",
+        "title": "Could I Get Your Phone Number?\n",
+        "category": "wsg",
+        "filename": "advanced-2008"
+      },
+      {
+        "file": "work_examples/categories/wsg/advanced-2008/event002-eric256.pl",
+        "publishUrl": "/examples/wsg/advanced-2008/event002-eric256.pl",
+        "title": "Skating on Thin Ice\n",
+        "category": "wsg",
+        "filename": "advanced-2008"
+      },
+      {
+        "file": "work_examples/categories/wsg/advanced-2008/event005-eric256.pl",
+        "publishUrl": "/examples/wsg/advanced-2008/event005-eric256.pl",
+        "title": "You Call That a Strong Password?\n",
+        "category": "wsg",
+        "filename": "advanced-2008"
+      },
+      {
+        "file": "work_examples/categories/wsg/advanced-2008/event010-dwhipp.p6",
+        "publishUrl": "/examples/wsg/advanced-2008/event010-dwhipp.p6",
+        "title": "Blackjack!\n",
+        "category": "wsg",
+        "filename": "advanced-2008"
+      },
+      {
+        "file": "work_examples/categories/wsg/beginner-2007/event003-eric256.pl",
+        "publishUrl": "/examples/wsg/beginner-2007/event003-eric256.pl",
+        "title": "One of These Things is not Like the Others\n",
+        "category": "wsg",
+        "filename": "beginner-2007"
+      },
+      {
+        "file": "work_examples/categories/wsg/beginner-2008/event001-eric256.pl",
+        "publishUrl": "/examples/wsg/beginner-2008/event001-eric256.pl",
+        "title": "Pairing Off\n",
+        "category": "wsg",
+        "filename": "beginner-2008"
+      },
+      {
+        "file": "work_examples/categories/wsg/beginner-2008/event001-j1n3l0.pl",
+        "publishUrl": "/examples/wsg/beginner-2008/event001-j1n3l0.pl",
+        "title": "Pairing off\n",
+        "category": "wsg",
+        "filename": "beginner-2008"
+      },
+      {
+        "file": "work_examples/categories/wsg/beginner-2008/event001-unobe.pl",
+        "publishUrl": "/examples/wsg/beginner-2008/event001-unobe.pl",
+        "title": "Pairing Off\n",
+        "category": "wsg",
+        "filename": "beginner-2008"
+      },
+      {
+        "file": "work_examples/categories/wsg/beginner-2008/event003-unobe.pl",
+        "publishUrl": "/examples/wsg/beginner-2008/event003-unobe.pl",
+        "title": "Let's Get Together\n",
+        "category": "wsg",
+        "filename": "beginner-2008"
+      },
+      {
+        "file": "work_examples/categories/wsg/beginner-2008/event006-eric256.pl",
+        "publishUrl": "/examples/wsg/beginner-2008/event006-eric256.pl",
+        "title": "Coffee Break\n",
+        "category": "wsg",
+        "filename": "beginner-2008"
+      },
+      {
+        "file": "work_examples/categories/wsg/beginner-2008/event006-j1n3l0.pl",
+        "publishUrl": "/examples/wsg/beginner-2008/event006-j1n3l0.pl",
+        "title": "Coffee Break\n",
+        "category": "wsg",
+        "filename": "beginner-2008"
+      },
+      {
+        "file": "work_examples/categories/wsg/beginner-2008/event008-eric256.pl",
+        "publishUrl": "/examples/wsg/beginner-2008/event008-eric256.pl",
+        "title": "Random Guess\n",
+        "category": "wsg",
+        "filename": "beginner-2008"
+      },
+      {
+        "file": "work_examples/categories/wsg/beginner-2008/event008-j1n3l0.pl",
+        "publishUrl": "/examples/wsg/beginner-2008/event008-j1n3l0.pl",
+        "title": "Random Guess\n",
+        "category": "wsg",
+        "filename": "beginner-2008"
+      },
+      {
+        "file": "work_examples/categories/wsg/beginner-2008/event010-eric256.pl",
+        "publishUrl": "/examples/wsg/beginner-2008/event010-eric256.pl",
+        "title": "Bowling\n",
+        "category": "wsg",
+        "filename": "beginner-2008"
+      },
+      {
+        "file": "work_examples/categories/wsg/README.md",
+        "publishUrl": "/examples/wsg/README.md",
+        "category": "wsg",
+        "filename": "README.md"
+      }
+    ]
+  }
+}
