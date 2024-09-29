@@ -1,0 +1,154 @@
+@import "@Styles/default.css";
+body,html {
+    padding: 0em;
+    margin-top: 0em;
+}
+h1 {
+    font-size: 48px;
+}
+h2 {
+    font-size: 24px;
+}
+
+#menu  {
+    /* border-bottom: 1px solid #ccc; */
+    background-color: rgb(227 227 227 / 44%);
+    /* border-radius: 1rem; */
+    text-align: center;
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: center; 
+    width: 100%;
+}
+#menu > div {
+    max-width: calc( var(--spacing-width-max) * 1.2);
+}
+#menu a {
+    color: black;
+    text-decoration: none;
+    padding: 0.5em 1em;
+}
+
+#footer {
+    background-color: rgb(227 227 227 / 44%);
+    text-align: center;
+    padding: 1em;
+    margin-top: 1em;
+    border-top: 1px solid #ccc;
+    
+}
+#footer ul, #footer li, #footer p {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    text-align: start;
+}
+#footer  a:link, #footer a:visited  {
+        text-decoration: none
+}
+#footer  a:hover{
+    text-decoration: underline;
+}
+#footer a {
+    color: #515154;;
+}
+#footer ul {
+    margin-top: 0.7em;
+}
+
+main#body  h1 {
+    font-size: 80px;
+}
+main#body  h2 {
+    font-size: 60px;
+}
+main#body  h2 {
+    font-size: 40px;
+}
+
+main#body > h1,  main#body > h2, main#body > h3{
+    line-height: 1.05;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+aside.notify p {
+    font-size: small;
+}
+
+.pagefind-ui__form {
+    position: sticky !important;
+    top: 20px;
+}
+.pagefind-ui__search-clear,.pagefind-ui__form:before  {
+    display: none !important;
+
+}
+input.pagefind-ui__search-input {
+    position: sticky !important;
+    top: 20px;
+    z-index: 200;
+}
+#search {
+    max-height: 50%;
+}
+kbd {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 0.8em;
+    padding: 0.2em 0.2em;
+}
+caption {
+    white-space: nowrap;
+}
+#body>header#menu, #body>header#footer {
+    max-width: initial;
+    justify-content: center;
+}
+
+
+h1#Raku\(r\)-knowledge-base {
+    color: rgba(0, 0, 0, 0);
+    background-clip: text;
+    background-image:linear-gradient(to right, rgb(8, 181, 234), rgb(224, 56, 231))
+
+}
+
+h2#Get-started, h2#Get-started > a {
+    color: #ff503a;
+
+}
+
+h2#Documentation, h2#Documentation > a {
+    color:  rgb(99 195 240);
+
+}
+h2#Modules, h2#Modules > a {
+    color: rgb(15 220 149);
+}
+
+
+h2#Examples, h2#Examples > a {
+    color: rgb(220 15 217);
+}
+h2#Index, h2#Index > a {
+    color:#e0e02d;
+}
+
+#body>header img {
+    display: block;
+    border-radius: unset;
+    height: calc(4* var(--spacing));
+    width: auto;
+    filter: none;
+    background-color: unset;
+}
+
+
+

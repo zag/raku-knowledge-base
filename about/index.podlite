@@ -2,7 +2,9 @@
 = :puburl</about>
 =TITLE Welcome to the Raku Knowledge Base!
 
-This resource is all about the Raku programming language. It's packed with info from:
+This resource is all about the Raku programming language. 
+
+It's packed with info from:
 
 =item The official Raku docs [L<https://github.com/Raku/doc>]
 =item Module docs from both ecosystems
@@ -11,18 +13,20 @@ This resource is all about the Raku programming language. It's packed with info 
 
 A L<term index|/indexterms> and search feature are included to help find things easily.
 
-📄 Sourse code of this site is available on GitHub L<https://github.com/zag/raku-knowledge-base>.
+=head2 Also
 
-🌟 Like what you see? Give it a star!  - L<https://github.com/zag/raku-knowledge-base>
+=item 📄 Sourse code of this site is available on GitHub L<https://github.com/zag/raku-knowledge-base>.
 
-🙌 Spotted a mistake? Report it at L<https://github.com/zag/raku-knowledge-base/issues>
+=item 🌟 Like what you see? Give it a star!  - L<https://github.com/zag/raku-knowledge-base>
+
+=item 🙌 Spotted a mistake? Report it at L<https://github.com/zag/raku-knowledge-base/issues>
 
 =head2 TODO
 
 =item Routines in Raku L</doc/types>
 =item  L<Download page|file:../download/index.podlite>
 
-More ideas are always welcome!
+More ideas are L<always welcome|https://github.com/zag/raku-knowledge-base/discussions>!
 
 =head2 More...
 
