@@ -1,0 +1,20 @@
+=begin pod  
+= :puburl</doc/types>
+=useReact {ListFiles} from 'raku-knowledge/components'
+
+
+=TITLE Routines in Raku
+
+There are many routines in Raku because operators are treated as routines. Search in the table
+below for routines that have been documented.
+
+=begin nested :notify<warning> :caption<🚧 Page Under Development 🚧>
+It’s on our L<to-do list|/about#TODO>, so stay tuned—great things are coming soon!
+Thank you for your support!
+=end nested
+
+
+=toc
+
+
+=end pod

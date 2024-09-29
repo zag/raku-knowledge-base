@@ -1,5 +1,39 @@
 =begin pod  
 = :puburl</about>
-=TITLE About this site
+=TITLE Welcome to the Raku Knowledge Base!
+
+This resource is all about the Raku programming language. It's packed with info from:
+
+=item The official Raku docs [L<https://github.com/Raku/doc>]
+=item Module docs from both ecosystems
+=item The main Raku website [L<https://raku.org/>]
+=item Examples from the examples repo [L<https://github.com/Raku/examples>]
+
+A L<term index|/indexterms> and search feature are included to help find things easily.
+
+📄 Sourse code of this site is available on GitHub L<https://github.com/zag/raku-knowledge-base>.
+
+🌟 Like what you see? Give it a star!  - L<https://github.com/zag/raku-knowledge-base>
+
+🙌 Spotted a mistake? Report it at L<https://github.com/zag/raku-knowledge-base/issues>
+
+=head2 TODO
+
+=item Routines in Raku L</doc/types>
+=item  L<Download page|file:../download/index.podlite>
+
+More ideas are always welcome!
+
+=head2 More...
+
+It is an experiment in designing information systems and knowledge bases using L<Podlite|https://podlite.org>,
+a markup language designed for flexibility and ease of use.
+
+=begin nested :notify<note> :caption<Heads up! >
+👋 It's possible to develop and provide support for information systems like this for commercial use. 
+Got a project in mind? Email zag@cpan.org with your ideas. 🤝
+=end nested
+
+thank you
 
 =end pod
