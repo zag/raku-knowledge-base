@@ -3,9 +3,9 @@
 =begin React :component<HeaderCol> :id<menu> 
 =para L<Documentation|/doc/introduction>
 =para L<Modules| /mods>
+=para L<Examples| file:../examples/index.podlite>
 =para L<Resources | https://github.com/podlite>
-=para L<Download | https://twitter.com>
-=para L<About|file:./about.pod6>
+=para L<About|file:../about/index.podlite>
 =para 🔍 K<⌘K>/K<ctrl-K>
 =end React
 =begin React :component<ShowBreadcrumb> 
@@ -32,42 +32,72 @@
 =begin React :component<HeaderCol> :id<footer>  
 =begin nested :!nested
 =item1 B<Language>
-=item2 L<get started|file:../getting-started.podlite>
-=item2 L<empty|#>
-=item2 L<empty|#>
-=item2 L<empty|#>
-=item2 L<empty|#>
-=item2 L<empty|#>
-=item2 L<empty|#>
-=item2 L<empty|#>
-=item2 L<empty|#>
+    =item2 L<Get started|file:../getting-started/getting-started.podlite>
+    =item2 L<empty|#>
+    =item2 L<empty|#>
+    =item2 L<empty|#>
+    =item2 L<empty|#>
+    =item2 L<Raku on Exercism|https://exercism.org/tracks/raku>
+    =item2 L<Wikipedia|https://en.wikipedia.org/wiki/Raku_(programming_language)>
+    =item2 L<empty|#>
+    =item2 L<empty|#>
+    =item2 L<empty|#>
+
 =end nested
 =begin nested :!nested
-=item1 B<Resoures>
-=item2 L<empty|#>
-=item2 L<empty|#>
-=item2 L<empty|#>
-=item2 L<empty|#>
-=item2 L<empty|#>
-=item2 L<empty|#>
-=item2 L<empty|#>
+
+=item1 B<L<Documentation|/doc>>
+    =item2 L<Getting started, Migration guides from other languages, & Tutorials | file:../doc/introduction.podlite>
+    =item2 L<Language References|file:../doc/reference.podlite>
+    =item2 L<Type Reference| file:../doc/types.podlite>
+    =item2 L<Miscellaneous| file:../doc/miscellaneous.podlite>
+    =item2 L<FAQs (Frequently Asked Questions)|/doc/language/faq>
+    =item2 L<Community|/doc/language/community>
+    =item2 L<The list of all documents|file:../doc/index.podlite>
+
 =item1 B<Resources>
-=item2 L<The Raku Guide|https://raku.guide/>
-=item2 L<Books |https://perl6book.com/>
-=item2 L<Rosetta Code | https://www.raku.org/community/rosettacode>
+    =item2 L<The Raku Guide|https://raku.guide/>
+    =item2 L<Books |https://perl6book.com/>
+    =item2 L<Rosetta Code | https://www.raku.org/community/rosettacode>
+
 =end nested
 =begin nested :!nested
+
+=item1 B<Resoures>
+    =item2 L<Download | file:../download/index.podlite>
+    =item2 L<empty|#>
+    =item2 L<empty|#>
+    =item2 L<empty|#>
+    =item2 L<empty|#>
+    =item2 L<empty|#>
+    =item2 L<empty|#>
+    =item2 L<empty|#>
+
+=item1 B<Resources>
+    =item2 L<The Raku Guide|https://raku.guide/>
+    =item2 L<Books |https://perl6book.com/>
+    =item2 L<Rosetta Code | https://www.raku.org/community/rosettacode>
+
+=end nested
+=begin nested :!nested
+
 =item1 B<Explore>
-=item2 L<Raku Blog Aggregator|https://planet.raku.org/>
-=item2 L<Rakudo Weekly|https://rakudoweekly.blog/>
-=item2 L<The Weekly Challenge |https://perlweeklychallenge.org/>
-=item2 L<Raku Advent Calendar|https://raku-advent.blog/>
-=item2 L<empty|#>
-=item2 L<empty|#>
-=item2 L<empty|#>
-=item2 L<empty|#>
-=item2 L<empty|#>
+    =item2 L<Raku Blog Aggregator|https://planet.raku.org/>
+    =item2 L<Rakudo Weekly|https://rakudoweekly.blog/>
+    =item2 L<The Weekly Challenge |https://perlweeklychallenge.org/>
+    =item2 L<Raku Advent Calendar|https://raku-advent.blog/>
+    =item2 L<empty|#>
+    =item2 L<empty|#>
+    =item2 L<empty|#>
+    =item2 L<empty|#>
+    =item2 L<empty|#>
+
 =end nested
 =end React
+
+
+The Camelia image is copyright 2009 by Larry Wall. "Raku" is trademark of the Yet Another Society.
+All rights reserved.
+
 =end FOOTER
 =end pod
