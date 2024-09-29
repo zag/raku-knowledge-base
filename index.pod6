@@ -1,5 +1,5 @@
 =begin pod  
-= :favicon<./256x256.png>
+= :favicon<./logo.png>
 = :puburl<http://example.com>
 = :globalStyles("./page.styles.css")
 
@@ -38,8 +38,6 @@ L<object-oriented|/doc/language/objects> and L<functional programming|/doc/langu
 Hi, my name is Camelia. I'm the spokesbug for the Raku Programming Language.
 
 =end React 
-
-
 
 =head3 Сode examples
 
@@ -105,7 +103,6 @@ L<Get started| file:./getting-started/getting-started.podlite>
 
 =head2 L<Modules|/mods>
 
-
 =head3 L<Index all modules|/mods>
 =para       Index of all modules in the modules section for both zef and ecosystem
 
@@ -130,8 +127,6 @@ L<Get started| file:./getting-started/getting-started.podlite>
 =head3 L<Cookbook| /examples#Cookbook>
 =para  Cookbook examples
 
-
-
 =end nested
 =begin nested :!nested
 
@@ -152,7 +147,8 @@ L<Get started| file:./getting-started/getting-started.podlite>
 Index of all examples in the examples section
 
 
-=head2 Index
+=head2 L<Index|/indexterms>
+
 
 =head3 L<Index terms|/indexterms>
 
