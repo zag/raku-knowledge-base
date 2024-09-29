@@ -1,0 +1,160 @@
+=begin pod  
+= :favicon<./256x256.png>
+= :puburl<http://example.com>
+= :globalStyles("./page.styles.css")
+
+=useReact {HeaderCol,LastArticles,CookieConsent} from '@Components/service'
+=useReact {Test,IndexAllDocs} from 'raku-knowledge/components'
+
+=TITLE Raku knowledge base
+
+=begin nested :notify<warning>
+This website is not affiliated with the official Raku project: L<https://raku.org/>. 
+It serves as a demonstration of L<Podlite's web publishing|https://github.com/podlite/podlite-web> capabilities, 
+which is part of the larger L<Podlite|https://podlite.org> project. For more information, please visit L<About|/about> page.
+=end nested
+
+=head1 Raku® knowledge base
+
+This site is a collection of documentation, articles, links, examples about the Raku programming language.
+All it being putted together in one information space to help you learn Raku faster and more efficiently.
+
+=head2 L<Get started| file:./getting-started/getting-started.podlite>
+
+=begin React :component<HeaderCol>   
+=begin nested :!nested
+Raku is a modern, multi-paradigm language. Raku offers L<procedural|/doc/language/functions>, 
+L<object-oriented|/doc/language/objects> and L<functional programming|/doc/language/functions#Functions-are-first-class-objects> methodologies.
+
+=head3 Raku’s mottos:
+
+=item "Raku is designed to make the easy jobs easy, without making the hard jobs impossible."
+=item "There Is More Than One Way To Do It - now with even more -Ofun (optimized for fun) added."
+
+
+=end nested
+
+=Image getting-started/camelia-logo.png
+Hi, my name is Camelia. I'm the spokesbug for the Raku Programming Language.
+
+=end React 
+
+
+
+=head3 Сode examples
+
+=begin code :lang<raku> :caption<Grammars>
+grammar Parser {
+    rule  TOP  { I <love> <lang> }
+    token love { '♥' | love }
+    token lang { < Raku Perl Rust Go Python Ruby > }
+}
+
+say Parser.parse: 'I ♥ Raku';
+# OUTPUT: ｢I ♥ Raku｣ love => ｢♥｣ lang => ｢Raku｣
+
+say Parser.parse: 'I love Perl';
+# OUTPUT: ｢I love Perl｣ love => ｢love｣ lang => ｢Perl｣
+
+=end code
+
+=begin code :lang<raku> :caption<Async & Parallelism>
+start { sleep 1.5; print "hi" }
+await Supply.from-list(<A B C D E F>).throttle: 2, {
+    sleep 0.5;
+    .print
+}
+
+# OUTPUT: ABCDhiEF
+=end code
+
+L<Get started| file:./getting-started/getting-started.podlite>
+
+=head2 L<Documentation|/doc>
+
+=begin React :component<HeaderCol>  
+=begin nested :!nested
+
+=head3 L<Getting started, Migration guides from other languages, & Tutorials | file:./doc/introduction.podlite>
+=para   Documents introducing the language for various audiences.
+
+=head3 L<Language References|file:./doc/reference.podlite>
+=para   Documents explaining the various conceptual parts of the language.
+
+=head3 L<Type Reference| file:./doc/types.podlite>
+=para   Index of built-in classes, roles and enums.
+
+=head3 L<Miscellaneous| file:./doc/miscellaneous.podlite>
+=para   Documents explaining experimental topics and Raku programs rather than the language itself.
+
+=end nested
+=begin nested :!nested
+
+=head3 L<FAQs (Frequently Asked Questions)|/doc/language/faq>
+=para   A collection of questions that have cropped up often, along with answers.
+
+=head3 L<Community|/doc/language/community>
+=para   Information about the Raku development community, email lists, IRC and IRC bots, and blogs.
+
+=head3 L<The list of all documents|file:./doc/index.podlite>
+=para   The list of all documents in the documentation section
+
+=end nested
+=end React
+
+
+=head2 L<Modules|/mods>
+
+
+=head3 L<Index all modules|/mods>
+=para       Index of all modules in the modules section for both zef and ecosystem
+
+=head3 L< Most Wanted Modules |https://github.com/Raku/raku-most-wanted/blob/master/most-wanted/modules.md>
+=para       These are the most-wanted pure Raku modules
+
+=head3 L< Most Wanted Native Bindings |https://github.com/Raku/raku-most-wanted/blob/master/most-wanted/bindings.md>
+=para      These are the native libraries that are most wanted as L<NativeCall|/doc/language/nativecall> bindings rather than 
+           as Raku source ports.
+
+=head2 L<Examples|/examples>
+
+=begin React :component<HeaderCol>  
+=begin nested :!nested
+
+=head3 L<Best of Rosettacode | /examples#Best-of-Rosettacode>
+=para   The best of the rosettacode.org examples
+
+=head3 L<99 Problems|/examples#99-Problems>
+=para   Based on lisp 99 problems
+
+=head3 L<Cookbook| /examples#Cookbook>
+=para  Cookbook examples
+
+
+
+=end nested
+=begin nested :!nested
+
+=head3 L<Games| /examples#Games>
+=para   Games written in Perl 6
+
+=head3 L<Interpreters|/examples#Interpreters>
+=para   Language or DSL interpreters
+
+=head3 L<Parsers|/examples#Parsers>
+=para   Example grammars
+
+=end nested
+=end React
+
+=head3 L<The list of all examples|/examples>
+
+Index of all examples in the examples section
+
+
+=head2 Index
+
+=head3 L<Index terms|/indexterms>
+
+
+=end pod
