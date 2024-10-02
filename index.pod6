@@ -131,7 +131,7 @@ L<Get started| file:./getting-started/getting-started.podlite>
 =begin nested :!nested
 
 =head3 L<Games| /examples#Games>
-=para   Games written in Perl 6
+=para   Games written in Raku
 
 =head3 L<Interpreters|/examples#Interpreters>
 =para   Language or DSL interpreters
@@ -139,18 +139,17 @@ L<Get started| file:./getting-started/getting-started.podlite>
 =head3 L<Parsers|/examples#Parsers>
 =para   Example grammars
 
+=head3 L<... The complete list of examples|/examples>
+=para   The list of all examples in the examples section
+
 =end nested
 =end React
-
-=head3 L<The list of all examples|/examples>
-
-Index of all examples in the examples section
 
 
 =head2 L<Index|/indexterms>
 
 
-=head3 L<Index terms|/indexterms>
+=head3 L<The index of all terms|/indexterms>
 
 
 =end pod

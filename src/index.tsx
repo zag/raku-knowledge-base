@@ -427,6 +427,8 @@ export const examplesPlugin = ({ rootdir }): PodliteWebPlugin => {
         })
      // process body
       const bodyProcessed = addedUrls.map((item) => {
+            // skip md files
+            if (item.file.endsWith('.md')) return item
             return splitDocAndCode(item)
       })
       // get template
