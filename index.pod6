@@ -2,19 +2,22 @@
 = :favicon<./logo.png>
 = :puburl<http://example.com>
 = :globalStyles("./page.styles.css")
+= :gtmId("GTM-K6GTN98T")
 
 =useReact {HeaderCol,LastArticles,CookieConsent} from '@Components/service'
 =useReact {Test,IndexAllDocs} from 'raku-knowledge/components'
 
-=TITLE Raku knowledge base
+=TITLE The Raku Knowledge Base
 
 =begin nested :notify<warning>
 This website is not affiliated with the official Raku project: L<https://raku.org/>. 
+=comment
 It serves as a demonstration of L<Podlite's web publishing|https://github.com/podlite/podlite-web> capabilities, 
 which is part of the larger L<Podlite|https://podlite.org> project. For more information, please visit L<About|/about> page.
 =end nested
 
-=head1 Raku® knowledge base
+=for head1 :id<page-title>
+The Raku® Knowledge Base
 
 This site is a collection of documentation, articles, links, examples about the Raku programming language.
 All it being putted together in one information space to help you learn Raku faster and more efficiently.
@@ -73,6 +76,7 @@ L<Get started| file:./getting-started/getting-started.podlite>
 =begin React :component<HeaderCol>  
 =begin nested :!nested
 
+
 =head3 L<Getting started, Migration guides from other languages, & Tutorials | file:./doc/introduction.podlite>
 =para   Documents introducing the language for various audiences.
 
@@ -85,8 +89,10 @@ L<Get started| file:./getting-started/getting-started.podlite>
 =head3 L<Miscellaneous| file:./doc/miscellaneous.podlite>
 =para   Documents explaining experimental topics and Raku programs rather than the language itself.
 
+
 =end nested
 =begin nested :!nested
+
 
 =head3 L<FAQs (Frequently Asked Questions)|/doc/language/faq>
 =para   A collection of questions that have cropped up often, along with answers.
@@ -97,14 +103,16 @@ L<Get started| file:./getting-started/getting-started.podlite>
 =head3 L<The list of all documents|file:./doc/index.podlite>
 =para   The list of all documents in the documentation section
 
+
 =end nested
 =end React
 
 
 =head2 L<Modules|/mods>
 
-=head3 L<Index all modules|/mods>
-=para       Index of all modules in the modules section for both zef and ecosystem
+=begin React :component<HeaderCol> 
+=begin nested :!nested
+
 
 =head3 L< Most Wanted Modules |https://github.com/Raku/raku-most-wanted/blob/master/most-wanted/modules.md>
 =para       These are the most-wanted pure Raku modules
@@ -113,10 +121,30 @@ L<Get started| file:./getting-started/getting-started.podlite>
 =para      These are the native libraries that are most wanted as L<NativeCall|/doc/language/nativecall> bindings rather than 
            as Raku source ports.
 
+
+=end nested
+=begin nested :!nested
+
+
+=head3 L< How-to | /doc/language/modules>
+=para       How to write your own module
+
+=head3 L<App::Mi6 | /mods/zef/App::Mi6> L<App::Mi6 on gihub|https://github.com/skaji/mi6 >
+=para       Helper for writing modules.
+
+=head3 L<Index all modules|/mods>
+=para       Index of all modules in the modules section for both zef and ecosystem
+
+
+=end nested
+=end React
+
+
 =head2 L<Examples|/examples>
 
 =begin React :component<HeaderCol>  
 =begin nested :!nested
+
 
 =head3 L<Best of Rosettacode | /examples#Best-of-Rosettacode>
 =para   The best of the rosettacode.org examples
@@ -127,8 +155,10 @@ L<Get started| file:./getting-started/getting-started.podlite>
 =head3 L<Cookbook| /examples#Cookbook>
 =para  Cookbook examples
 
+
 =end nested
 =begin nested :!nested
+
 
 =head3 L<Games| /examples#Games>
 =para   Games written in Raku
@@ -142,6 +172,7 @@ L<Get started| file:./getting-started/getting-started.podlite>
 =head3 L<... The complete list of examples|/examples>
 =para   The list of all examples in the examples section
 
+
 =end nested
 =end React
 
@@ -150,6 +181,5 @@ L<Get started| file:./getting-started/getting-started.podlite>
 
 
 =head3 L<The index of all terms|/indexterms>
-
 
 =end pod

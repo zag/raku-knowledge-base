@@ -14,7 +14,7 @@
     "mods:parse": "node ./bin/parsesrc.mjs 'work_mods/**/*.{pod6,md,rakudoc,rakumod,raku,pm6,pl,pm,p6}'  > ./built/mods-tree.json",
     "examples:clean": "rimraf work_examples",
     "examples:download": "git clone https://github.com/Raku/examples.git work_examples",
-    "examples:parse": "mkdir ./built ; node ./bin/parsesrc.mjs 'work_examples/categories/**/*.{pod6,md,rakudoc,rakumod,raku,pm6,pl,pm,p6}' > ./built/examples-tree.json",
+    "examples:parse": "mkdir ./built ; node ./bin/parsesrc.mjs 'work_examples/categories/**/*.{pod6,md,rakudoc,rakumod,raku,pm6,pl,pm,p6,pod}' > ./built/examples-tree.json",
     "test": "jest",
     "build_plugin": "yarn ci && yarn clean && yarn build",
     "post_plugin": "yarn clean && rimraf node_modules",
