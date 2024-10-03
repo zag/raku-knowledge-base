@@ -11,9 +11,8 @@
 
 =begin nested :notify<warning>
 This website is not affiliated with the official Raku project: L<https://raku.org/>. 
-=comment
 It serves as a demonstration of L<Podlite's web publishing|https://github.com/podlite/podlite-web> capabilities, 
-which is part of the larger L<Podlite|https://podlite.org> project. For more information, please visit L<About|/about> page.
+which is part of the larger L<Podlite|https://podlite.org> project. For more information, read the announcement on the Podlite website: L<podlite.org/a5ZK1|https://podlite.org/a5ZK1>.
 =end nested
 
 =for head1 :id<page-title>

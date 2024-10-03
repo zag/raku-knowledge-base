@@ -1,8 +1,20 @@
 @import "@Styles/default.css";
-body,html {
+body {
     padding: 0em;
     margin-top: 0em;
 }
+
+html {
+    padding: 0.5em;
+    margin-top: 0.5em;
+}
+@media (min-width: 600px) {
+    html {
+        padding: 0em;
+        margin-top: 0em;
+    }
+}
+
 h1 {
     font-size: 48px;
 }
