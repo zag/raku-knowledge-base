@@ -1,5 +1,7 @@
 # The Raku® Knowledge Base
 
+![raku-knowledge-base-social](https://github.com/user-attachments/assets/adf187c7-0fbb-45e3-a5e3-d253ed7e4d8d)
+
 Welcome to the Raku Knowledge Base repository! This project aims to provide a comprehensive, easily navigable resource for all things related to the Raku programming language.
 
 ## About
