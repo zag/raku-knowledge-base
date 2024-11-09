@@ -42,7 +42,7 @@ const styles: Record<string, React.CSSProperties> = {
     overflowY: "auto",
   },
   rightColumn: {
-    width: "375px",
+    // width: "375px",
     // padding: "24px",
     // backgroundColor: "#f3f4f6",
     position: "sticky",
@@ -216,7 +216,7 @@ const RakuModuleInfo: React.FC<{ data: ModuleInfo }> = ({ data }) => {
         {`
             .card {
               width: 100%;
-              max-width: 48rem;
+              max-width: 25rem;
             //   border: 1px solid #e2e8f0;
             //   border-radius: 0.5rem;
             //   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);

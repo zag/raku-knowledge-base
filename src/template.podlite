@@ -1,4 +1,4 @@
-=begin pod  :puburl</TEMPLATE>
+=begin pod
 =begin HEADER
 =begin React :component<HeaderCol> :id<menu> 
 =para L<Documentation|/doc/introduction>

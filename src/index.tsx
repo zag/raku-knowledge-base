@@ -21,7 +21,7 @@ import {
 import { url } from "inspector";
 
 export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
-  const mods_state = require("../built/mods-tree.json"); //.splice(0, 10)
+  const mods_state = require("../built/mods-tree.json");//.splice(0, 10)
   const all_mods = require("../built/ecosystem.json");
   const zef_mods = require("../built/mods.json");
 
@@ -226,7 +226,7 @@ export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
             .replace(/\.\S+$/, "")),
     );
     console.log("finishg modPlugin");
-    return [...recs, ...addedUrls, ...modulePages].filter((i) => i.publishUrl); //.filter(i => !i.file.match(/src.template.podlite$/))
+    return [...recs, ...addedUrls, ...modulePages]
   };
 
   return [onProcess, onExit];
@@ -352,7 +352,7 @@ export const docPlugin = ({ rootdir }): PodliteWebPlugin => {
       }
     });
 
-    return [...recs, ...addedUrls].filter((i) => i.publishUrl);
+    return [...recs, ...addedUrls]
   };
 
   return [onProcess, onExit];
@@ -495,7 +495,7 @@ export const examplesPlugin = ({ rootdir }): PodliteWebPlugin => {
               .pop()
               .replace(/\.\S+$/, "")),
       );
-      return [...recs, ...bodyProcessed].filter((i) => i.publishUrl);
+      return [...recs, ...bodyProcessed]
     };
   
     return [onProcess, onExit];
