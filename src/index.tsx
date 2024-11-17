@@ -204,16 +204,7 @@ export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
       );
     }
     console.log("[modPlugin] collect all doc records - ok");
-    // get template
-    const [template] = [...recs, ...addedUrls, ...modulePages].filter((i) =>
-      i.file.match(/src.template.podlite$/),
-    );
-    if (!template) throw new Error("template : src/template.podlite not found");
-    const all = [...recs, ...addedUrls, ...modulePages].filter(
-      (i) => !i.file.match(/src.template.podlite$/),
-    );
-    // add template to each doc
-    all.forEach((i) => (i.template_file = template.file));
+    const all = [...recs, ...addedUrls, ...modulePages];
     console.log("[modPlugin] fix title");
     // fix title
     all.forEach(
@@ -278,16 +269,6 @@ export const docPlugin = ({ rootdir }): PodliteWebPlugin => {
       );
 
     console.log(`docPlugin is running: ${rootdir}`);
-    // get template
-    const [template] = [...recs, ...addedUrls].filter((i) =>
-      i.file.match(/src.template.podlite$/),
-    );
-    if (!template) throw new Error("template : src/template.podlite not found");
-    const all = [...recs, ...addedUrls].filter(
-      (i) => !i.file.match(/src.template.podlite$/),
-    );
-    // add template to each doc
-    all.forEach((i) => (i.template_file = template.file));
 
     // collect all doc records
     const controlJson = addedUrls.reduce((acc, item) => {
