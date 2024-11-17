@@ -1,5 +1,5 @@
 =begin pod
-=begin HEADER
+
 =begin React :component<HeaderCol> :id<menu> 
 =para L<Documentation|/doc/introduction>
 =para L<Modules| /mods>
@@ -11,7 +11,6 @@
 =begin React :component<ShowBreadcrumb> 
 =end React
 
-=end HEADER
 
 =useReact {HeaderCol} from '@Components/service'
 =useReact {Test,ShowBreadcrumb,SearchComponent,SeeAlso} from 'raku-knowledge/components'
@@ -22,7 +21,6 @@
 =begin React :component<SeeAlso> :id<seealso>
 =end React
 
-=begin FOOTER
 =useReact {Footer} from 'raku-knowledge/footer'
 
 =for React :component<ShowBreadcrumb>  :isShowRoot<1>
@@ -109,5 +107,4 @@ All rights reserved.
 This website uses cookies for analytics.
 =end React
 
-=end FOOTER
 =end pod
