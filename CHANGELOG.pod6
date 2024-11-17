@@ -1,0 +1,13 @@
+=TITLE CHANGES 
+
+=head1 Upcoming
+
+
+=head1 v1.0
+=item1 official Raku project documentation
+=item1 documentation for all user modules
+=item1 collections of code examples
+=item1 markdown files from various sources
+=item1 global index of terms
+=item1 global real-time search
+

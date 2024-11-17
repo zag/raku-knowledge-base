@@ -2,12 +2,13 @@
 = :favicon<./logo.png>
 = :puburl<http://example.com>
 = :globalStyles("./page.styles.css")
+= :templateFile<src/template.podlite>
 = :gtmId("GTM-K6GTN98T")
 
 =useReact {HeaderCol,LastArticles,CookieConsent} from '@Components/service'
 =useReact {Test,IndexAllDocs} from 'raku-knowledge/components'
 
-=TITLE The Raku Knowledge Base
+=TITLE The Raku programming language knowledge base  - 
 
 =begin nested :notify<warning>
 This website is not affiliated with the official Raku project: L<https://raku.org/>. 
@@ -16,9 +17,9 @@ which is part of the larger L<Podlite|https://podlite.org> project. For more inf
 =end nested
 
 =for head1 :id<page-title>
-The Raku® Knowledge Base
+The Raku Knowledge Base
 
-This site is a collection of documentation, articles, links, examples about the Raku programming language.
+This site is a collection of documentation, articles, links, examples about the Raku® programming language.
 All it being putted together in one information space to help you learn Raku faster and more efficiently.
 
 =head2 L<Get started| file:./getting-started/getting-started.podlite>
@@ -37,7 +38,7 @@ L<object-oriented|/doc/language/objects> and L<functional programming|/doc/langu
 =end nested
 
 =Image getting-started/camelia-logo.png
-Hi, my name is Camelia. I'm the spokesbug for the Raku Programming Language.
+Hi, my name is Camelia. I'm the spokesbug for the Raku® Programming Language.
 
 =end React 
 
