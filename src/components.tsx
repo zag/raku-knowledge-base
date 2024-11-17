@@ -52,33 +52,43 @@ const styles: Record<string, React.CSSProperties> = {
   },
 };
 
-export const ShowExamplesCategory = ({ id: er, children, item, renderNode, category }) => {
-    const d: any = require("../built/examples-index-category.json");
-    const categorySelected =  d.categoryIndex[category]
-    if (!categorySelected) { return <><h1>Category {category} not found</h1>
-    <pre><code>${JSON.stringify(Object.keys(d.categoryIndex), null,2)}</code></pre>
-    </> }
-    
+export const ShowExamplesCategory = ({
+  id: er,
+  children,
+  item,
+  renderNode,
+  category,
+}) => {
+  const d: any = require("../built/examples-index-category.json");
+  const categorySelected = d.categoryIndex[category];
+  if (!categorySelected) {
     return (
-        <>
-          <ul>
-            {categorySelected.map(({publishUrl,title,filename}, index) => (
-              <li key={index}>
-                <span className={listfilesstyles.subtitle}>
-                  <a href={publishUrl}>{title}</a>{" "}
-                </span>
-                <span className={listfilesstyles.title}>
-                  <a href={publishUrl}>
-                    {filename.trim()}{" "}
-                  </a>
-                </span>
+      <>
+        <h1>Category {category} not found</h1>
+        <pre>
+          <code>${JSON.stringify(Object.keys(d.categoryIndex), null, 2)}</code>
+        </pre>
+      </>
+    );
+  }
 
-              </li>
-            ))}
-          </ul>
-        </>
-      );
-}
+  return (
+    <>
+      <ul>
+        {categorySelected.map(({ publishUrl, title, filename }, index) => (
+          <li key={index}>
+            <span className={listfilesstyles.subtitle}>
+              <a href={publishUrl}>{title}</a>{" "}
+            </span>
+            <span className={listfilesstyles.title}>
+              <a href={publishUrl}>{filename.trim()} </a>
+            </span>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+};
 
 export const Test = ({ id: er, children, item, renderNode }) => {
   const { id, title, subtitle, footer, template, header } = item;
