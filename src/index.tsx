@@ -21,7 +21,7 @@ import {
 import { url } from "inspector";
 
 export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
-  const mods_state = require("../built/mods-tree.json");//.splice(0, 10)
+  const mods_state = require("../built/mods-tree.json")//.splice(0, 10);
   const all_mods = require("../built/ecosystem.json");
   const zef_mods = require("../built/mods.json");
 
@@ -217,7 +217,7 @@ export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
             .replace(/\.\S+$/, "")),
     );
     console.log("finishg modPlugin");
-    return [...recs, ...addedUrls, ...modulePages]
+    return [...recs, ...addedUrls, ...modulePages];
   };
 
   return [onProcess, onExit];
@@ -333,154 +333,155 @@ export const docPlugin = ({ rootdir }): PodliteWebPlugin => {
       }
     });
 
-    return [...recs, ...addedUrls]
+    return [...recs, ...addedUrls];
   };
 
   return [onProcess, onExit];
 };
 
 export const splitDocAndCode = (doc: publishRecord) => {
-    const blocks:PodNode[] = []
-    const code:PodNode[] = []
-    const processNode = (node: PodNode, srcfile: string) => {
-        const rules = {
-        ':ambient' : (node) => {
-            const {text, location, type} = node
-            code.push(text)
-        },
-         ':block': (node, ctx, interator) => {
-            if ( node.name === 'root') {
-                if (node.content) {
-                  return interator(node.content, ctx)
-                }
-                return
-              }
-            blocks.push(node)
-          },
+  const blocks: PodNode[] = [];
+  const code: PodNode[] = [];
+  const processNode = (node: PodNode, srcfile: string) => {
+    const rules = {
+      ":ambient": (node) => {
+        const { text, location, type } = node;
+        code.push(text);
+      },
+      ":block": (node, ctx, interator) => {
+        if (node.name === "root") {
+          if (node.content) {
+            return interator(node.content, ctx);
+          }
+          return;
         }
-        return makeInterator(rules)(node, {})
-      }
-    processNode(doc.node, doc.file)
-    const getCodePod = (text)=>{
-return `=begin code :lang<raku>
+        blocks.push(node);
+      },
+    };
+    return makeInterator(rules)(node, {});
+  };
+  processNode(doc.node, doc.file);
+  const getCodePod = (text) => {
+    return `=begin code :lang<raku>
 ${text}
 =end code
-`        
-    }
-    const { node } = processFile('src/file2', getCodePod(code.join('\n')), 'text/podlite')
-    const root  = mkRootBlock({},[...blocks, node])
-    return { ...doc, node: root}
-}
+`;
+  };
+  const { node } = processFile(
+    "src/file2",
+    getCodePod(code.join("\n")),
+    "text/podlite",
+  );
+  const root = mkRootBlock({}, [...blocks, node]);
+  return { ...doc, node: root };
+};
 
 export const examplesPlugin = ({ rootdir }): PodliteWebPlugin => {
-    const examples_state = require("../built/examples-tree.json")
-  
-    const outCtx: PodliteWebPluginContext = {};
-    const onExit = (ctx) => ({ ...ctx, ...outCtx });
-    const processNode = (node: PodNode, file: string) => {
-      function isRemoteUrl(url: string): boolean {
-        try {
-          const parsedUrl = new URL(url);
-          return ["http:", "https:"].includes(parsedUrl.protocol);
-        } catch (error) {
-          // If URL parsing fails, assume it's a local path
-          return false;
-        }
+  const examples_state = require("../built/examples-tree.json");
+
+  const outCtx: PodliteWebPluginContext = {};
+  const onExit = (ctx) => ({ ...ctx, ...outCtx });
+  const processNode = (node: PodNode, file: string) => {
+    function isRemoteUrl(url: string): boolean {
+      try {
+        const parsedUrl = new URL(url);
+        return ["http:", "https:"].includes(parsedUrl.protocol);
+      } catch (error) {
+        // If URL parsing fails, assume it's a local path
+        return false;
       }
-  
-      const rules = {
-        // we need add prefic to all /doc/ links
-        "L<>": (node) => {
-          const { meta, content } = node;
-          const link = meta ? meta : getTextContentFromNode(content);
-          return { ...node, meta: isRemoteUrl(link) ? meta : `/doc${link}` };
-        },
-      };
-      return makeInterator(rules)(node, {});
+    }
+
+    const rules = {
+      // we need add prefic to all /doc/ links
+      "L<>": (node) => {
+        const { meta, content } = node;
+        const link = meta ? meta : getTextContentFromNode(content);
+        return { ...node, meta: isRemoteUrl(link) ? meta : `/doc${link}` };
+      },
     };
-    const onProcess = (recs: publishRecord[]) => {
-      // convert all doc: links to file:: links
-      console.log(`examplesPlugin is running: ${rootdir}`);
-      const addedUrls = examples_state
-        .map((item) => {
-            const publishUrl = item.file.replace(/^work_examples\/categories/g, "/examples");
-            return { ...item, publishUrl, node: item.node };
-        })
-     // process body
-      const bodyProcessed = addedUrls.map((item) => {
-            // skip md files
-            if (item.file.endsWith('.md')) return item
-            return splitDocAndCode(item)
-      })
-      // get template
-      const [template] = [...recs, ...bodyProcessed].filter((i) =>
-        i.file.match(/src.template.podlite$/),
-      );
-      if (!template) throw new Error("template : src/template.podlite not found");
-      const all = [...recs, ...bodyProcessed].filter(
-        (i) => !i.file.match(/src.template.podlite$/),
-      );
-      // add template to each doc
-      all.forEach((i) => (i.template_file = template.file));
-  
-      // index all docs with kind, subkind, category
-  
-      const categoryIndex = bodyProcessed.reduce((acc, item) => {
-        const { file, node, template, publishUrl, subtitle, title, ...attrs } = item;
-        // get pod node
-        const category = publishUrl.split(/\//).splice(2,1).shift();
-        const filename = publishUrl.split(/\//).splice(3).shift();
-        acc[category] =  acc[category] || []
-        acc[category].push({ file, publishUrl, title, category, filename, subtitle });
-        return acc;
-      }, {});
-      
-      if (rootdir) {
-        fs.writeFileSync(
-          `${rootdir}/built/examples-index-category.json`,
-          JSON.stringify({ categoryIndex }, null, 2),
-        );
-      }
-  
-      // fills addonsData.seealso depends on kind, subkind, category
-      bodyProcessed.forEach((item) => {
-        const categoryRec:any[]= Object.values(categoryIndex).find(
-          (i) => (i as any[]).map(t=>t.file).includes(item.file),
-        ) as any[];
-        if (categoryRec) {
-          const seeAlso = categoryRec
-            .filter(
-              (i) =>
-                i.publishUrl !== item.publishUrl
-            )
-            .map((i) => {
-              return {
-                publishUrl: i.publishUrl,
-                title: i.filename,
-                subtitle: i.title,
-              };
-            });
-          if (seeAlso.length > 0) {
-            item.pluginsData = item.pluginsData || {};
-            item.pluginsData.seeAlso = seeAlso;
-          }
-        }
-      });
-      // fix title
-      bodyProcessed.forEach(
-        (i) =>
-          (i.title =
-            i.title ||
-            i.file
-              .split("/")
-              .pop()
-              .replace(/\.\S+$/, "")),
-      );
-      return [...recs, ...bodyProcessed]
-    };
-  
-    return [onProcess, onExit];
+    return makeInterator(rules)(node, {});
   };
+  const onProcess = (recs: publishRecord[]) => {
+    // convert all doc: links to file:: links
+    console.log(`examplesPlugin is running: ${rootdir}`);
+    const addedUrls = examples_state.map((item) => {
+      const publishUrl = item.file.replace(
+        /^work_examples\/categories/g,
+        "/examples",
+      );
+      return { ...item, publishUrl, node: item.node };
+    });
+    // process body
+    const bodyProcessed = addedUrls.map((item) => {
+      // skip md files
+      if (item.file.endsWith(".md")) return item;
+      return splitDocAndCode(item);
+    });
+
+    // index all docs with kind, subkind, category
+
+    const categoryIndex = bodyProcessed.reduce((acc, item) => {
+      const { file, node, template, publishUrl, subtitle, title, ...attrs } =
+        item;
+      // get pod node
+      const category = publishUrl.split(/\//).splice(2, 1).shift();
+      const filename = publishUrl.split(/\//).splice(3).shift();
+      acc[category] = acc[category] || [];
+      acc[category].push({
+        file,
+        publishUrl,
+        title,
+        category,
+        filename,
+        subtitle,
+      });
+      return acc;
+    }, {});
+
+    if (rootdir) {
+      fs.writeFileSync(
+        `${rootdir}/built/examples-index-category.json`,
+        JSON.stringify({ categoryIndex }, null, 2),
+      );
+    }
+
+    // fills addonsData.seealso depends on kind, subkind, category
+    bodyProcessed.forEach((item) => {
+      const categoryRec: any[] = Object.values(categoryIndex).find((i) =>
+        (i as any[]).map((t) => t.file).includes(item.file),
+      ) as any[];
+      if (categoryRec) {
+        const seeAlso = categoryRec
+          .filter((i) => i.publishUrl !== item.publishUrl)
+          .map((i) => {
+            return {
+              publishUrl: i.publishUrl,
+              title: i.filename,
+              subtitle: i.title,
+            };
+          });
+        if (seeAlso.length > 0) {
+          item.pluginsData = item.pluginsData || {};
+          item.pluginsData.seeAlso = seeAlso;
+        }
+      }
+    });
+    // fix title
+    bodyProcessed.forEach(
+      (i) =>
+        (i.title =
+          i.title ||
+          i.file
+            .split("/")
+            .pop()
+            .replace(/\.\S+$/, "")),
+    );
+    return [...recs, ...bodyProcessed];
+  };
+
+  return [onProcess, onExit];
+};
 
 export const plugin = (): PodliteWebPlugin => {
   const outCtx: PodliteWebPluginContext = {};
@@ -502,13 +503,13 @@ const makePlugins = ({ rootdir }) => {
     plugin: modPlugin({ rootdir }),
     includePatterns: ".*",
   };
-    const makeExamplesPlugin: PluginConfig = {
-        plugin: examplesPlugin({ rootdir }),
-        includePatterns: ".*",
-    };
+  const makeExamplesPlugin: PluginConfig = {
+    plugin: examplesPlugin({ rootdir }),
+    includePatterns: ".*",
+  };
 
   return composePlugins([makeDocPlugin, makeModsPlugin, makeExamplesPlugin], {});
-//   return composePlugins([makeDocPlugin, makeExamplesPlugin], {})
+//   return composePlugins([makeDocPlugin, makeExamplesPlugin], {});
 };
 
 export default makePlugins;
