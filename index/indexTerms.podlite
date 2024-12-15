@@ -1,5 +1,7 @@
 =begin pod :puburl</indexterms>
 =TITLE Index of Terms
 =useReact {IndexTerms} from '@Components/indexTerms'
-=for React :component<IndexTerms> :id<index>
+=begin React :component<IndexTerms> :id<index>
+=Include doc:blogContent#dataid
+=end React
 =end pod
