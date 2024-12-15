@@ -182,7 +182,7 @@ export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
         ? (addedUrls as publishRecord[]).find((i) => i.file === root_file)
         : null;
       const mod_item = processFile(
-        "src/module-template.podlite",
+        `virtual/src/${item.meta.name}.podlite`,
         makePage(item, index_item),
         "text/podlite",
       );
