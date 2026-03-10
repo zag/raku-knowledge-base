@@ -75,3 +75,6 @@ lib
 /built/mods-control.js
 /esm
 /built/zef-mods.json
+/index.zip
+/index.zip.tmp
+/rebuild.log

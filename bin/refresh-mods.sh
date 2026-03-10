@@ -18,10 +18,15 @@ def vkey(e):
     parts = re.findall(r'\d+', v)
     return [int(p) for p in parts[:6]]
 
+# renderer chokes on these (tracked upstream); excluded until fixed
+SKIP = {'App::Ebread', 'Spreadsheet::XLSX'}
+
 mods = {}
 for e in json.load(open('built/zef-mods.json')):
     name = e.get('name')
     if not name or not e.get('path'):
+        continue
+    if name in SKIP:
         continue
     cur = mods.get(name)
     if cur is None or vkey(e) >= vkey(cur):
@@ -67,6 +72,6 @@ PY
 echo "downloaded: $(ls work_mods/zef | wc -l | tr -d ' ') dirs"
 
 echo "[4/4] parse -> built/mods-tree.json"
-node ./bin/parsesrc.mjs 'work_mods/**/*.{pod6,md,rakudoc,rakumod,raku,pm6,pl,pm,p6}' > ./built/mods-tree.json
+node ./bin/parsesrc.mjs 'work_mods/**/*.{pod6,md,rakudoc}' > ./built/mods-tree.json
 
 echo "done: $(du -h built/mods-tree.json | cut -f1) mods-tree.json"

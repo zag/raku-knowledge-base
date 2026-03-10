@@ -32,6 +32,6 @@
       "@myproject/*": ["pub1/*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "decs.d.ts"],
   "exclude": ["node_modules", "t"]
 }
