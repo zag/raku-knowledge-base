@@ -12,58 +12,86 @@ Welcome to the examples collection of the Raku programming language!
 
 =head2 Best of Rosettacode
 =para The best of the rosettacode.org examples
-=for React :component<ShowExamplesCategory> :category<'best-of-rosettacode'>
+=begin React :component<ShowExamplesCategory> :category<'best-of-rosettacode'>
+=include doc:RAKU_EXAMPLES_PLUGIN_DATA#examples-index-category
+=end React
 
 =head2 99 Problems
 =para Based on lisp 99 problems
-=for React :component<ShowExamplesCategory> :category<'99-problems'>
+=begin React :component<ShowExamplesCategory> :category<'99-problems'>
+=include doc:RAKU_EXAMPLES_PLUGIN_DATA#examples-index-category
+=end React
 
 =head2 Cookbook
 =para Cookbook examples
-=for React :component<ShowExamplesCategory> :category<'cookbook'>
+=begin React :component<ShowExamplesCategory> :category<'cookbook'>
+=include doc:RAKU_EXAMPLES_PLUGIN_DATA#examples-index-category
+=end React
 
 =head2 Project Euler
 =para Answers for Project Euler
-=for React :component<ShowExamplesCategory> :category<'euler'>
+=begin React :component<ShowExamplesCategory> :category<'euler'>
+=include doc:RAKU_EXAMPLES_PLUGIN_DATA#examples-index-category
+=end React
 
 =head2 Games
 =para Games written in Perl 6
-=for React :component<ShowExamplesCategory> :category<'games'>
+=begin React :component<ShowExamplesCategory> :category<'games'>
+=include doc:RAKU_EXAMPLES_PLUGIN_DATA#examples-index-category
+=end React
 
 =head2 Interpreters
 =para Language or DSL interpreters
-=for React :component<ShowExamplesCategory> :category<'interpreters'>
+=begin React :component<ShowExamplesCategory> :category<'interpreters'>
+=include doc:RAKU_EXAMPLES_PLUGIN_DATA#examples-index-category
+=end React
 
 =head2 Module Management
 =para Examples of organising modules
-=for React :component<ShowExamplesCategory> :category<'module-management'>
+=begin React :component<ShowExamplesCategory> :category<'module-management'>
+=include doc:RAKU_EXAMPLES_PLUGIN_DATA#examples-index-category
+=end React
 
 =head2 Parsers
 =para Example grammars
-=for React :component<ShowExamplesCategory> :category<'parsers'>
+=begin React :component<ShowExamplesCategory> :category<'parsers'>
+=include doc:RAKU_EXAMPLES_PLUGIN_DATA#examples-index-category
+=end React
 
 =head2 Perlmonks
 =para Answers to perlmonks.org questions
-=for React :component<ShowExamplesCategory> :category<'perlmonks'>
+=begin React :component<ShowExamplesCategory> :category<'perlmonks'>
+=include doc:RAKU_EXAMPLES_PLUGIN_DATA#examples-index-category
+=end React
 
 =head2 Project Rosalind
 =para Bioinformatics-related programming problems
-=for React :component<ShowExamplesCategory> :category<'rosalind'>
+=begin React :component<ShowExamplesCategory> :category<'rosalind'>
+=include doc:RAKU_EXAMPLES_PLUGIN_DATA#examples-index-category
+=end React
 
 =head2 Shootout
 =para Implementations for the Computer Language Benchmark Game
-=for React :component<ShowExamplesCategory> :category<'shootout'>
+=begin React :component<ShowExamplesCategory> :category<'shootout'>
+=include doc:RAKU_EXAMPLES_PLUGIN_DATA#examples-index-category
+=end React
 
 =head2 Perl6 Tutorial Examples
 =para Initial work in collecting Perl 6 tutorial examples
-=for React :component<ShowExamplesCategory> :category<'tutorial'>
+=begin React :component<ShowExamplesCategory> :category<'tutorial'>
+=include doc:RAKU_EXAMPLES_PLUGIN_DATA#examples-index-category
+=end React
 
 =head2 Winter Scripting Games
 =para Answers for the Winter Scripting Games
-=for React :component<ShowExamplesCategory> :category<'wsg'>
+=begin React :component<ShowExamplesCategory> :category<'wsg'>
+=include doc:RAKU_EXAMPLES_PLUGIN_DATA#examples-index-category
+=end React
 
 =head2 Other examples
 =para Other examples which aren't yet categorized
-=for React :component<ShowExamplesCategory> :category<'other'>
+=begin React :component<ShowExamplesCategory> :category<'other'>
+=include doc:RAKU_EXAMPLES_PLUGIN_DATA#examples-index-category
+=end React
 
 =end pod

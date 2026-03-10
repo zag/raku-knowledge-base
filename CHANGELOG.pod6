@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item reduce pages size up to 2-3 times
+=item refactor components to use C<=include> feature
 
 =head1 v1.0
 =item1 official Raku project documentation

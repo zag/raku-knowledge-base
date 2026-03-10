@@ -1,66 +1,64 @@
-import { publishRecord } from "@podlite/publisher";
-import React from "react";
-import styles from "./footer.module.css";
-import listfilesstyles from "./listfiles.module.css";
-import listModsStyles from "./listmods.module.css";
-import Switcher from "./Switcher";
-import Breadcrumb from "./Breadcrumb";
-import { getTextContentFromNode } from "@podlite/schema";
-import Link from "next/link";
-export * from "./footer";
-import SearchComponentIn from "./SearchComponent";
+import { publishRecord } from '@podlite/publisher'
+import React from 'react'
+import styles from './footer.module.css'
+import listfilesstyles from './listfiles.module.css'
+import listModsStyles from './listmods.module.css'
+import Switcher from './Switcher'
+import Breadcrumb from './Breadcrumb'
+import { getFromTree, getTextContentFromNode } from '@podlite/schema'
+import Link from 'next/link'
+export * from './footer'
+import SearchComponentIn from './SearchComponent'
 
 interface TwoColumnLayoutProps {
-  LeftContent: React.ComponentType;
-  RightContent: React.ComponentType;
+  LeftContent: React.ComponentType
+  RightContent: React.ComponentType
 }
 
-export const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
-  LeftContent,
-  RightContent,
-}) => {
+export const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({ LeftContent, RightContent }) => {
   return (
-    <div style={styles.container}>
-      <div style={styles.leftColumn}>
+    <div style={layoutStyles.container}>
+      <div style={layoutStyles.leftColumn}>
         <LeftContent />
       </div>
-      <div style={styles.rightColumn}>
+      <div style={layoutStyles.rightColumn}>
         <RightContent />
       </div>
     </div>
-  );
-};
+  )
+}
 
-const styles: Record<string, React.CSSProperties> = {
+const layoutStyles: Record<string, React.CSSProperties> = {
   container: {
-    display: "flex",
-    minHeight: "100vh",
+    display: 'flex',
+    minHeight: '100vh',
   },
   leftColumn: {
     flexGrow: 1,
-    padding: "0 24px",
-    overflowY: "auto",
+    padding: '0 24px',
+    overflowY: 'auto',
   },
   rightColumn: {
     // width: "375px",
     // padding: "24px",
     // backgroundColor: "#f3f4f6",
-    position: "sticky",
+    position: 'sticky',
     top: 0,
     // height: "100vh",
     // overflowY: "auto",
   },
-};
+}
 
-export const ShowExamplesCategory = ({
-  id: er,
-  children,
-  item,
-  renderNode,
-  category,
-}) => {
-  const d: any = require("../built/examples-index-category.json");
-  const categorySelected = d.categoryIndex[category];
+export const ShowExamplesCategory = ({ id: er, children, item, renderNode, category, getThisNode }) => {
+  // get embeded json in =data blocks
+  const [d] = getFromTree(getThisNode(), 'data').map(n => JSON.parse(getTextContentFromNode(n)))
+  if (!d) {
+    console.warn(
+      `[React =ShowExamplesCategory component] not found JSON. usually it defined by use =include doc:RAKU_EXAMPLES_PLUGIN_DATA#examples-index-category `,
+    )
+    return null
+  }
+  const categorySelected = d.categoryIndex[category]
   if (!categorySelected) {
     return (
       <>
@@ -69,7 +67,7 @@ export const ShowExamplesCategory = ({
           <code>${JSON.stringify(Object.keys(d.categoryIndex), null, 2)}</code>
         </pre>
       </>
-    );
+    )
   }
 
   return (
@@ -78,7 +76,7 @@ export const ShowExamplesCategory = ({
         {categorySelected.map(({ publishUrl, title, filename }, index) => (
           <li key={index}>
             <span className={listfilesstyles.subtitle}>
-              <a href={publishUrl}>{title}</a>{" "}
+              <a href={publishUrl}>{title}</a>{' '}
             </span>
             <span className={listfilesstyles.title}>
               <a href={publishUrl}>{filename.trim()} </a>
@@ -87,20 +85,20 @@ export const ShowExamplesCategory = ({
         ))}
       </ul>
     </>
-  );
-};
+  )
+}
 
 export const Test = ({ id: er, children, item, renderNode }) => {
-  const { id, title, subtitle, footer, template, header } = item;
+  const { id, title, subtitle, footer, template, header } = item
   const Article: React.FC = () => (
     <article key={id}>
       <header>
-        {item.publishUrl !== "/" && <h1>{title}</h1>}
+        {item.publishUrl !== '/' && <h1>{title}</h1>}
         {subtitle && <div className="abstract">{subtitle}</div>}
       </header>
       {item && renderNode(item.node)}
     </article>
-  );
+  )
   if (item?.pluginsData?.moduleInfo) {
     return (
       <TwoColumnLayout
@@ -111,43 +109,32 @@ export const Test = ({ id: er, children, item, renderNode }) => {
           </>
         )}
       />
-    );
+    )
   }
-  return <Article />;
-};
+  return <Article />
+}
 
-export const ShowBreadcrumb = ({
-  id,
-  children,
-  item,
-  renderNode,
-  isShowRoot,
-}) => {
+export const ShowBreadcrumb = ({ id, children, item, renderNode, isShowRoot }) => {
   // no breadcrumb for root
-  if (item.publishUrl === "/") return null;
-  const breadcrumb = (item as publishRecord)?.pluginsData?.breadcrumb || {};
+  if (item.publishUrl === '/') return null
+  const breadcrumb = (item as publishRecord)?.pluginsData?.breadcrumb || {}
   return (
     <>
-      {" "}
+      {' '}
       <Breadcrumb
-        items={[
-          ...(isShowRoot
-            ? [{ publishUrl: "/", component: <Link href="/">🦋</Link> }]
-            : []),
-          ...breadcrumb,
-        ]}
-      />{" "}
+        items={[...(isShowRoot ? [{ publishUrl: '/', component: <Link href="/">🦋</Link> }] : []), ...breadcrumb]}
+      />{' '}
     </>
-  );
-};
+  )
+}
 
 export const SeeAlso = ({ id, children, item, renderNode, getThisNode }) => {
-  const seeAlso = (item as publishRecord)?.pluginsData?.seeAlso || {};
+  const seeAlso = (item as publishRecord)?.pluginsData?.seeAlso || {}
   if (seeAlso && seeAlso.length > 0) {
     return (
       <>
         <h2>See Also</h2>
-        {seeAlso.map((item) => (
+        {seeAlso.map(item => (
           <div key={item.publishUrl}>
             <p>
               <a href={item.publishUrl}>{item.title}</a>
@@ -156,69 +143,69 @@ export const SeeAlso = ({ id, children, item, renderNode, getThisNode }) => {
           </div>
         ))}
       </>
-    );
+    )
   }
-  return <></>;
-};
+  return <></>
+}
 export const RenderItem = ({ id, children, item, renderNode, getThisNode }) => {
-  const item_to_render = JSON.parse(getTextContentFromNode(getThisNode()));
+  const item_to_render = JSON.parse(getTextContentFromNode(getThisNode()))
   // console.log(JSON.stringify(item_to_render))
-  if (!item_to_render) return;
+  if (!item_to_render) return
   //   const {title, subtitle, footer} = item
-  return <>{renderNode(item_to_render.node)}</>;
+  return <>{renderNode(item_to_render.node)}</>
   // return <>{renderNode(item_to_render.node)}</>;
-};
+}
 const shortenFileName = (fileName: string, maxLength: number = 30): string => {
-  if (fileName.length <= maxLength) return fileName;
-  const parts = fileName.split("/");
-  const lastPart = parts.pop() || "";
-  let shortened = lastPart;
+  if (fileName.length <= maxLength) return fileName
+  const parts = fileName.split('/')
+  const lastPart = parts.pop() || ''
+  let shortened = lastPart
   for (let i = parts.length - 1; i >= 0; i--) {
-    const newShortened = `.../${parts[i]}/${shortened}`;
-    if (newShortened.length > maxLength) break;
-    shortened = newShortened;
+    const newShortened = `.../${parts[i]}/${shortened}`
+    if (newShortened.length > maxLength) break
+    shortened = newShortened
   }
-  return shortened;
-};
+  return shortened
+}
 
 interface ModuleInfo {
   meta: {
-    name: string;
-    version: string;
-    description: string;
-    authors: string[];
-    license: string;
-    depends: string[];
-    "test-depends": string[];
+    name: string
+    version: string
+    description: string
+    authors: string[]
+    license: string
+    depends: string[]
+    'test-depends': string[]
     provides: {
-      [key: string]: string;
-    };
-  };
+      [key: string]: string
+    }
+  }
+  src: string
+  files: Array<{ file: string; publishUrl?: string }>
 }
 const parseAuthor = (authorString: string): Author => {
-  const match = authorString.match(/^(.+?)\s*(?:<(.+)>)?$/);
+  const match = authorString.match(/^(.+?)\s*(?:<(.+)>)?$/)
   return {
     name: match ? match[1] : authorString,
-  };
-};
+  }
+}
 interface Author {
-  name: string;
+  name: string
 }
 
 const RakuModuleInfo: React.FC<{ data: ModuleInfo }> = ({ data }) => {
-  const { meta, src, files } = data;
-  if (src !== "zef") return <></>;
+  const { meta, src, files } = data
+  if (src !== 'zef') return <></>
   const documentationFiles = files.filter(
-    (file) =>
-      file.file.toLowerCase().includes("doc") ||
-      file.file.toLowerCase().includes("readme"),
-  );
+    file => file.file.toLowerCase().includes('doc') || file.file.toLowerCase().includes('readme'),
+  )
   const getModuleLink = (dependency: string): string => {
     // This is a placeholder function. You should replace this with the actual logic
     // to generate the correct link for each dependency.
-    const baseName = dependency.split(/\b:(?!:)/)[0];
-    return `/mods/${data.src}/${baseName}`;
-  };
+    const baseName = dependency.split(/\b:(?!:)/)[0]
+    return `/mods/${data.src}/${baseName}`
+  }
 
   return (
     <>
@@ -303,10 +290,8 @@ const RakuModuleInfo: React.FC<{ data: ModuleInfo }> = ({ data }) => {
           <div className="section">
             <h3 className="section-title">Authors</h3>
             <ul className="list">
-              {Array.isArray(meta["authors"]) &&
-                meta.authors.map((author, index) => (
-                  <li key={index}>{parseAuthor(author).name}</li>
-                ))}
+              {Array.isArray(meta['authors']) &&
+                meta.authors.map((author, index) => <li key={index}>{parseAuthor(author).name}</li>)}
             </ul>
           </div>
 
@@ -318,7 +303,7 @@ const RakuModuleInfo: React.FC<{ data: ModuleInfo }> = ({ data }) => {
           <div className="section">
             <h3 className="section-title">Dependencies</h3>
             <div>
-              {Array.isArray(meta["depends"]) &&
+              {Array.isArray(meta['depends']) &&
                 meta.depends.map((dep, index) => (
                   <span key={index} className="badge dependency-badge">
                     {dep}
@@ -330,8 +315,8 @@ const RakuModuleInfo: React.FC<{ data: ModuleInfo }> = ({ data }) => {
           <div className="section">
             <h3 className="section-title">Test Dependencies</h3>
             <div>
-              {Array.isArray(meta["test-depends"]) &&
-                meta["test-depends"].map((dep, index) => (
+              {Array.isArray(meta['test-depends']) &&
+                meta['test-depends'].map((dep, index) => (
                   <a
                     key={index}
                     href={getModuleLink(dep)}
@@ -362,11 +347,7 @@ const RakuModuleInfo: React.FC<{ data: ModuleInfo }> = ({ data }) => {
               <ul className="list">
                 {documentationFiles.map((file, index) => (
                   <li key={index}>
-                    <a
-                      href={file.publishUrl}
-                      className="doc-link"
-                      rel="noopener noreferrer"
-                    >
+                    <a href={file.publishUrl} className="doc-link" rel="noopener noreferrer">
                       {shortenFileName(file.file)}
                     </a>
                   </li>
@@ -377,10 +358,10 @@ const RakuModuleInfo: React.FC<{ data: ModuleInfo }> = ({ data }) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 export const ModulePage = ({ id, children, item, renderNode, getThisNode }) => {
-  const info = JSON.parse(getTextContentFromNode(getThisNode()));
+  const info = JSON.parse(getTextContentFromNode(getThisNode()))
   //   console.log(info);
 
   return (
@@ -389,12 +370,19 @@ export const ModulePage = ({ id, children, item, renderNode, getThisNode }) => {
       <RakuModuleInfo data={info} />
       {children}
     </>
-  );
-};
+  )
+}
 
-export const IndexAllDocs = ({ id, children, item, renderNode }) => {
-  const d: any = require("../built/control.json");
-  var style = { "--count-columns ": children.length };
+export const IndexAllDocs = ({ id, children, item, renderNode, getThisNode }) => {
+  // get embeded json in =data blocks
+  const [d] = getFromTree(getThisNode(), 'data').map(n => JSON.parse(getTextContentFromNode(n)))
+  if (!d) {
+    console.warn(
+      `[React =IndexAllDocs component] not found JSON. usually it defined by use =include doc:RAKU_DOCS_PLUGIN_DATA#control `,
+    )
+    return null
+  }
+  var style = { '--count-columns ': children.length }
   //   const {title, footer} = item as publishRecord
   return (
     <>
@@ -409,53 +397,50 @@ export const IndexAllDocs = ({ id, children, item, renderNode }) => {
         </ul>
       </div>
     </>
-  );
-};
+  )
+}
 
-export const SearchComponent = ({
-  id,
-  children,
-  item,
-  renderNode,
-  isHidden,
-}) => {
+export const SearchComponent = ({ id, children, item, renderNode, isHidden }) => {
   return (
     <>
       <SearchComponentIn isHidden={isHidden} />
     </>
-  );
-};
-export const ListMods = ({ id, children, item, renderNode }) => {
-  const d: any = require("../built/mods-info.json");
-  // const [ecosystem, setEcosystem] = ['zef', ()=>{}];//React.useState('zef');
-  const [ecosystem, setEcosystem] = React.useState("zef");
-  const groupAndSortProperties = (obj) => {
-    const sorted = Object.keys(obj).sort();
-    const grouped = sorted.reduce((acc, key) => {
-      const firstLetter = key[0].toUpperCase();
-      if (!acc[firstLetter]) {
-        acc[firstLetter] = [];
-      }
-      acc[firstLetter].push(key);
-      return acc;
-    }, {});
-    return grouped;
-  };
+  )
+}
+export const ListMods = ({ id, children, item, renderNode, getThisNode }) => {
+  // get embeded json in =data blocks
+  const [d] = getFromTree(getThisNode(), 'data').map(n => JSON.parse(getTextContentFromNode(n)))
+  if (!d) {
+    console.warn(
+      `[React =ListMods component] not found JSON. usually it defined by use =include doc:RAKU_MODS_PLUGIN_DATA#mods-info `,
+    )
+    return null
+  }
 
-  const { all, zef } = d.mods_info;
-  const activelist = ecosystem === "p6c" ? all : zef;
-  const groupedProperties = groupAndSortProperties(activelist);
+  const [ecosystem, setEcosystem] = React.useState('zef')
+  const groupAndSortProperties = obj => {
+    const sorted = Object.keys(obj).sort()
+    const grouped = sorted.reduce((acc, key) => {
+      const firstLetter = key[0].toUpperCase()
+      if (!acc[firstLetter]) {
+        acc[firstLetter] = []
+      }
+      acc[firstLetter].push(key)
+      return acc
+    }, {})
+    return grouped
+  }
+
+  const { all, zef } = d.mods_info
+  const activelist = ecosystem === 'p6c' ? all : zef
+  const groupedProperties = groupAndSortProperties(activelist)
   return (
     <div>
       <h2>Sorted and Grouped Modules ({Object.keys(activelist).length})</h2>
       <p className={listModsStyles.choose}>
         <div>Choose ecosystem:</div>
         <div>
-          <Switcher
-            leftLabel="p6c"
-            rightLabel="zef"
-            onChange={(isRight) => setEcosystem(isRight ? "zef" : "p6c")}
-          />
+          <Switcher leftLabel="p6c" rightLabel="zef" onChange={isRight => setEcosystem(isRight ? 'zef' : 'p6c')} />
         </div>
       </p>
       <>
@@ -465,17 +450,15 @@ export const ListMods = ({ id, children, item, renderNode }) => {
             <ul className={listModsStyles.group}>
               {(properties as string[])
                 .sort(function (a, b) {
-                  return a.toLowerCase().localeCompare(b.toLowerCase());
+                  return a.toLowerCase().localeCompare(b.toLowerCase())
                 })
-                .map((prop) => (
+                .map(prop => (
                   <li key={prop}>
                     <span className={listModsStyles.title}>
                       <a href={activelist[prop]?.url}>{prop} </a>
                     </span>
                     <span className={listModsStyles.subtitle}>
-                      <a href={"/mods/" + prop}>
-                        {activelist[prop]?.meta?.description}
-                      </a>{" "}
+                      <a href={'/mods/' + prop}>{activelist[prop]?.meta?.description}</a>{' '}
                     </span>
                   </li>
                 ))}
@@ -484,27 +467,34 @@ export const ListMods = ({ id, children, item, renderNode }) => {
         ))}
       </>
     </div>
-  );
-};
+  )
+}
 
-export const ListFiles = ({ id, children, item, renderNode, select }) => {
-  const d: any = require("../built/index-category.json");
+export const ListFiles = ({ id, children, item, renderNode, select, getThisNode }) => {
+  const [d] = getFromTree(getThisNode(), 'data').map(n => JSON.parse(getTextContentFromNode(n)))
+  if (!d) {
+    console.warn(
+      `[React =ListFiles component] not found JSON. usually it defined by use =include doc:RAKU_DOCS_PLUGIN_DATA#index-category `,
+    )
+    return null
+  }
+
   const filterByField = (field, value, item) => {
-    return item[field] === value;
-  };
-  const filtered = d.categoryIndex.filter((item) => {
+    return item[field] === value
+  }
+  const filtered = d.categoryIndex.filter(item => {
     if (select.kind) {
-      if (!filterByField("kind", select.kind, item)) return false;
+      if (!filterByField('kind', select.kind, item)) return false
     }
     if (select.subkind) {
-      if (!filterByField("subkind", select.subkind, item)) return false;
+      if (!filterByField('subkind', select.subkind, item)) return false
     }
     if (select.category) {
-      if (!filterByField("category", select.category, item)) return false;
+      if (!filterByField('category', select.category, item)) return false
     }
-    return true;
-  });
-  const { title, footer, file } = item as publishRecord;
+    return true
+  })
+  const { title, footer, file } = item as publishRecord
   // console.log(filtered)
   return (
     <>
@@ -512,16 +502,14 @@ export const ListFiles = ({ id, children, item, renderNode, select }) => {
         {Object.entries(filtered).map(([key, value]) => (
           <li key={key}>
             <span className={listfilesstyles.title}>
-              <a href={(value as any).publishUrl}>
-                {(value as any).title.trim()}.{" "}
-              </a>
+              <a href={(value as any).publishUrl}>{(value as any).title.trim()}. </a>
             </span>
             <span className={listfilesstyles.subtitle}>
-              <a href={(value as any).publishUrl}>{(value as any).subtitle}</a>{" "}
+              <a href={(value as any).publishUrl}>{(value as any).subtitle}</a>{' '}
             </span>
           </li>
         ))}
       </ul>
     </>
-  );
-};
+  )
+}

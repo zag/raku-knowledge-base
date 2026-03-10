@@ -8,9 +8,13 @@
 =toc
 
 =head2 Fundamental topics
-=for React :component<ListFiles> :id<menu> :select{ kind=>'Language', category => 'fundamental' }
+=begin React :component<ListFiles> :id<menu> :select{ kind=>'Language', category => 'fundamental' }
+=include doc:RAKU_DOCS_PLUGIN_DATA#index-category
+=end React
 
 =head2 General reference
-=for React :component<ListFiles> :id<menu> :select{ kind=>'Language', category => 'reference' }
+=begin React :component<ListFiles> :id<menu> :select{ kind=>'Language', category => 'reference' }
+=include doc:RAKU_DOCS_PLUGIN_DATA#index-category
+=end React
 
 =end pod

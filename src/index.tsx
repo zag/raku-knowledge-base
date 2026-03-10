@@ -6,129 +6,108 @@ import {
   PodliteWebPluginContext,
   processFile,
   publishRecord,
-} from "@podlite/publisher";
-import * as CRC32 from "crc-32";
-import React from "react";
-import * as fs from "fs";
-import {
-  getFromTree,
-  getTextContentFromNode,
-  makeAttrs,
-  makeInterator,
-  mkRootBlock,
-  PodNode,
-} from "@podlite/schema";
-import { url } from "inspector";
+} from '@podlite/publisher'
+import * as CRC32 from 'crc-32'
+import React from 'react'
+import * as fs from 'fs'
+import { getFromTree, getTextContentFromNode, makeAttrs, makeInterator, mkBlock, mkRootBlock, PodNode } from '@podlite/schema'
+import { url } from 'inspector'
 
 export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
-  const mods_state = require("../built/mods-tree.json")//.splice(0, 10);
-  const all_mods = require("../built/ecosystem.json");
-  const zef_mods = require("../built/mods.json");
+  const mods_state = require('../built/mods-tree.json') //.splice(0, 10);
+  const all_mods = require('../built/ecosystem.json')
+  const zef_mods = require('../built/mods.json')
 
-  const outCtx: PodliteWebPluginContext = {};
-  const onExit = (ctx) => ({ ...ctx, ...outCtx });
+  const outCtx: PodliteWebPluginContext = {}
+  const onExit = ctx => ({ ...ctx, ...outCtx })
   const processNode = (node: PodNode, file: string) => {
     function isRemoteUrl(url: string): boolean {
       try {
-        const parsedUrl = new URL(url);
-        return ["http:", "https:"].includes(parsedUrl.protocol);
+        const parsedUrl = new URL(url)
+        return ['http:', 'https:'].includes(parsedUrl.protocol)
       } catch (error) {
         // If URL parsing fails, assume it's a local path
-        return false;
+        return false
       }
     }
 
     const rules = {
       // we need add prefic to all /doc/ links
-      "L<>": (node) => {
-        const { meta, content } = node;
-        const link = meta ? meta : getTextContentFromNode(content);
-        return { ...node, meta: isRemoteUrl(link) ? meta : `/doc${link}` };
+      'L<>': node => {
+        const { meta, content } = node
+        const link = meta ? meta : getTextContentFromNode(content)
+        return { ...node, meta: isRemoteUrl(link) ? meta : `/doc${link}` }
       },
-    };
-    return makeInterator(rules)(node, {});
-  };
+    }
+    return makeInterator(rules)(node, {})
+  }
   const onProcess = (recs: publishRecord[]) => {
     // filter out files without docuemntation
-    const filesWithDocs = mods_state.filter((item) =>
-      isExistsDocBlocks(item.node),
-    );
+    const filesWithDocs = mods_state.filter(item => isExistsDocBlocks(item.node))
     //   convert all doc: links to file:: links
-    const addedUrls = filesWithDocs.map((item) => {
-      const publishUrl = item.file.replace(/^work_mods/g, "/mods");
+    const addedUrls = filesWithDocs.map(item => {
+      const publishUrl = item.file.replace(/^work_mods/g, '/mods')
       //   .replace(/^.*?(?=\/mods)/g, '')
       //   .replace(/\.\S+$/, '')
       // const node = processNode(item.node, item.file)
-      return { ...item, publishUrl, node: item.node };
-    });
+      return { ...item, publishUrl, node: item.node }
+    })
 
     // const addedUrls = mods_state
-    console.log(`modPlugin is running: ${rootdir}`);
+    console.log(`modPlugin is running: ${rootdir}`)
 
     //  group mods by type and add meta info
     const mods_info = addedUrls.reduce((acc, item) => {
       // console.log(item.file)
-      const [_, namespace, name] = item.file.split("/");
-      acc[namespace] = acc[namespace] || {};
-      acc[namespace][name] = acc[namespace][name] || {};
-      let meta;
+      const [_, namespace, name] = item.file.split('/')
+      acc[namespace] = acc[namespace] || {}
+      acc[namespace][name] = acc[namespace][name] || {}
+      let meta
       // get metat info
-      if (namespace === "zef") {
-        meta = zef_mods.find((i) => i.name === name);
+      if (namespace === 'zef') {
+        meta = zef_mods.find(i => i.name === name)
       } else {
-        meta = all_mods.find((i) => i.name === name);
+        meta = all_mods.find(i => i.name === name)
       }
       if (!meta) {
-        throw new Error(`meta not found for ${name}`);
+        throw new Error(`meta not found for ${name}`)
       }
       const moduleInfo = {
         ...acc[namespace][name],
         meta,
-        files: [
-          ...(acc[namespace][name]["files"] || []),
-          { file: item.file, publishUrl: item.publishUrl },
-        ],
+        files: [...(acc[namespace][name]['files'] || []), { file: item.file, publishUrl: item.publishUrl }],
         src: namespace,
-        url: "/mods/" + namespace + "/" + name,
-      };
+        url: '/mods/' + namespace + '/' + name,
+      }
 
-      acc[namespace][name] = moduleInfo;
-      return acc;
-    }, {});
-    if (rootdir) {
-      fs.writeFileSync(
-        `${rootdir}/built/mods-info.json`,
-        JSON.stringify({ mods_info }, null, 2),
-      );
-    }
+      acc[namespace][name] = moduleInfo
+      return acc
+    }, {})
 
     // generate pages for each module
     const all_mods_pages = Object.values({
       ...(mods_info.all || {}),
       ...(mods_info.zef || {}),
-    });
+    })
 
-    const mapFileNameToModuleInfo: any = all_mods_pages.reduce(
-      (acc: any, item) => {
-        const { files } = item as any;
-        if (files.length === 0) return acc;
-        files.forEach((file) => {
-          acc[file.file] = item;
-        });
-        return acc;
-      },
-      {},
-    );
+    const mapFileNameToModuleInfo: any = all_mods_pages.reduce((acc: any, item) => {
+      const { files } = item as any
+      if (files.length === 0) return acc
+      files.forEach(file => {
+        acc[file.file] = item
+      })
+      return acc
+    }, {})
 
     // fill module info for each doc
     // add moduleInfo to each mods document
 
-    addedUrls.forEach((item) => {
+    addedUrls.forEach(item => {
       if (mapFileNameToModuleInfo[item.file]) {
-        item.pluginsData = item.pluginsData || {};
-        item.pluginsData.moduleInfo = mapFileNameToModuleInfo[item.file];
+        item.pluginsData = item.pluginsData || {}
+        item.pluginsData.moduleInfo = mapFileNameToModuleInfo[item.file]
       }
-    });
+    })
 
     const makePage = (item, index_item) => {
       return `
@@ -144,290 +123,280 @@ export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
  
     
     =end pod
-    `;
-    };
+    `
+    }
     interface FileInfo {
-      file: string;
-      publishUrl: string;
+      file: string
+      publishUrl: string
     }
 
     const chooseRootFile = (files: FileInfo[]): string | null => {
-      if (files.length === 0) return null;
+      if (files.length === 0) return null
 
       return files.sort((a, b) => {
-        const pathA = a.file.split("/");
-        const pathB = b.file.split("/");
+        const pathA = a.file.split('/')
+        const pathB = b.file.split('/')
 
         // First, compare path lengths
         if (pathA.length !== pathB.length) {
-          return pathA.length - pathB.length;
+          return pathA.length - pathB.length
         }
 
         // If path lengths are equal, check for README.md
-        const isReadmeA = a.file.toLowerCase().endsWith("readme.md");
-        const isReadmeB = b.file.toLowerCase().endsWith("readme.md");
+        const isReadmeA = a.file.toLowerCase().endsWith('readme.md')
+        const isReadmeB = b.file.toLowerCase().endsWith('readme.md')
 
-        if (isReadmeA && !isReadmeB) return -1;
-        if (!isReadmeA && isReadmeB) return 1;
+        if (isReadmeA && !isReadmeB) return -1
+        if (!isReadmeA && isReadmeB) return 1
 
         // If both or neither are README.md, compare alphabetically
-        return a.file.localeCompare(b.file);
-      })[0].file;
-    };
+        return a.file.localeCompare(b.file)
+      })[0].file
+    }
     const modulePages = all_mods_pages.map((item: any) => {
       // get root document for first module page
-      const { files } = item as any;
-      const root_file = chooseRootFile(files);
-      const index_item = root_file
-        ? (addedUrls as publishRecord[]).find((i) => i.file === root_file)
-        : null;
-      const mod_item = processFile(
-        `virtual/src/${item.meta.name}.podlite`,
-        makePage(item, index_item),
-        "text/podlite",
-      );
+      const { files } = item as any
+      const root_file = chooseRootFile(files)
+      const index_item = root_file ? (addedUrls as publishRecord[]).find(i => i.file === root_file) : null
+      const mod_item = processFile(`virtual/src/${item.meta.name}.podlite`, makePage(item, index_item), 'text/podlite')
       // add module info to
-      mod_item.pluginsData = mod_item.pluginsData || {};
-      mod_item.pluginsData.moduleInfo = item;
-      return mod_item;
-    });
-    console.log("[modPlugin] collect all doc records");
+      mod_item.pluginsData = mod_item.pluginsData || {}
+      mod_item.pluginsData.moduleInfo = item
+      return mod_item
+    })
+    console.log('[modPlugin] collect all doc records')
     // collect all doc records
     const controlJson = addedUrls.reduce((acc, item) => {
-      acc[item.publishUrl] = item;
-      return acc;
-    }, {});
-    if (rootdir) {
-      fs.writeFileSync(
-        `${rootdir}/built/mods-control.json`,
-        JSON.stringify({ urls: controlJson }, null, 2),
-      );
-    }
-    console.log("[modPlugin] collect all doc records - ok");
-    const all = [...recs, ...addedUrls, ...modulePages];
-    console.log("[modPlugin] fix title");
+      acc[item.publishUrl] = item
+      return acc
+    }, {})
+
+    // const modsData = JSON.stringify({ urls: controlJson });
+    const modsInfoData = JSON.stringify({ mods_info })
+    const storeFile = `
+=begin pod
+=for NAME  :id<RAKU_MODS_PLUGIN_DATA>
+SITE DATA
+=begin data :id<mods-info>
+${modsInfoData}
+=end data
+=end pod    
+    `
+    const storeDoc = processFile('virtual/raku-mods-data-plugin.podlite', storeFile)
+
+    console.log('[modPlugin] collect all doc records - ok')
+    const all = [...recs, ...addedUrls, ...modulePages]
+    console.log('[modPlugin] fix title')
     // fix title
     all.forEach(
-      (i) =>
+      i =>
         (i.title =
           i.title ||
           i.file
-            .split("/")
+            .split('/')
             .pop()
-            .replace(/\.\S+$/, "")),
-    );
-    console.log("finishg modPlugin");
-    return [...recs, ...addedUrls, ...modulePages];
-  };
+            .replace(/\.\S+$/, '')),
+    )
+    console.log('finishg modPlugin')
+    return [...recs, ...addedUrls, ...modulePages, storeDoc]
+  }
 
-  return [onProcess, onExit];
-};
+  return [onProcess, onExit]
+}
 
 export const docPlugin = ({ rootdir }): PodliteWebPlugin => {
-  const docs_state = require("../built/docs-tree.json")//.splice(0, 100);
+  const docs_state = require('../built/docs-tree.json') //.splice(0, 100);
 
-  const outCtx: PodliteWebPluginContext = {};
-  const onExit = (ctx) => ({ ...ctx, ...outCtx });
+  const outCtx: PodliteWebPluginContext = {}
+  const onExit = ctx => ({ ...ctx, ...outCtx })
   const processNode = (node: PodNode, file: string) => {
     function isRemoteUrl(url: string): boolean {
       try {
-        const parsedUrl = new URL(url);
-        return ["http:", "https:"].includes(parsedUrl.protocol);
+        const parsedUrl = new URL(url)
+        return ['http:', 'https:'].includes(parsedUrl.protocol)
       } catch (error) {
         // If URL parsing fails, assume it's a local path
-        return false;
+        return false
       }
     }
 
     const rules = {
       // we need add prefic to all /doc/ links
-      "L<>": (node) => {
-        const { meta, content } = node;
-        const link = meta ? meta : getTextContentFromNode(content);
-        return { ...node, meta: isRemoteUrl(link) ? meta : `/doc${link}` };
+      'L<>': node => {
+        const { meta, content } = node
+        const link = meta ? meta : getTextContentFromNode(content)
+        return { ...node, meta: isRemoteUrl(link) ? meta : `/doc${link}` }
       },
-    };
-    return makeInterator(rules)(node, {});
-  };
+    }
+    return makeInterator(rules)(node, {})
+  }
   const onProcess = (recs: publishRecord[]) => {
     // convert all doc: links to file:: links
     const addedUrls = docs_state
-      .map((item) => {
+      .map(item => {
         const publishUrl = item.file
           .toLowerCase()
-          .replace(/^.*?(?=\/doc)/g, "")
-          .replace(/\.\S+$/, "");
-        const node = processNode(item.node, item.file);
-        return { ...item, publishUrl, node };
+          .replace(/^.*?(?=\/doc)/g, '')
+          .replace(/\.\S+$/, '')
+        const node = processNode(item.node, item.file)
+        return { ...item, publishUrl, node }
       })
       .filter(
-        (i) =>
+        i =>
           ![
             //list of files to exclude
-            "/doc/announcements",
+            '/doc/announcements',
           ].includes(i.publishUrl),
-      );
+      )
 
-    console.log(`docPlugin is running: ${rootdir}`);
+    console.log(`docPlugin is running: ${rootdir}`)
 
     // collect all doc records
     const controlJson = addedUrls.reduce((acc, item) => {
-      acc[item.publishUrl] = item;
-      return acc;
-    }, {});
-    if (rootdir) {
-      fs.writeFileSync(
-        `${rootdir}/built/control.json`,
-        JSON.stringify({ urls: controlJson }, null, 2),
-      );
-    }
+      acc[item.publishUrl] = item
+      return acc
+    }, {})
 
     // index all docs with kind, subkind, category
 
     const categoryIndex = addedUrls.reduce((acc, item) => {
-      const { node, template, ...attrs } = item;
+      const { node, template, ...attrs } = item
       // get pod node
-      const [podnode] = getFromTree(node, "pod");
+      const [podnode] = getFromTree(node, 'pod')
       if (podnode) {
-        const conf = makeAttrs(podnode, {});
-        const kind = conf.getFirstValue("kind");
-        const subkind = conf.getFirstValue("subkind");
-        const category = conf.getFirstValue("category");
-        acc.push({ ...attrs, kind, subkind, category });
+        const conf = makeAttrs(podnode, {})
+        const kind = conf.getFirstValue('kind')
+        const subkind = conf.getFirstValue('subkind')
+        const category = conf.getFirstValue('category')
+        acc.push({ ...attrs, kind, subkind, category })
       }
-      return acc;
-    }, []);
-    if (rootdir) {
-      fs.writeFileSync(
-        `${rootdir}/built/index-category.json`,
-        JSON.stringify({ categoryIndex }, null, 2),
-      );
-    }
+      return acc
+    }, [])
+    const storeFile = `
+    =begin pod
+    =for NAME  :id<RAKU_DOCS_PLUGIN_DATA>
+    SITE DATA
+    =begin data :id<control>
+    ${JSON.stringify({ urls: controlJson })}
+    =end data
+    =begin data :id<index-category>
+    ${JSON.stringify({ categoryIndex })}
+    =end data
 
+    =end pod    
+        `
+    const storeDoc = processFile('virtual/raku-docs-data-plugin.podlite', storeFile)
     // fills addonsData.seealso depends on kind, subkind, category
-    addedUrls.forEach((item) => {
-      const categoryRec = categoryIndex.find(
-        (i) => i.publishUrl === item.publishUrl,
-      );
+    addedUrls.forEach(item => {
+      const categoryRec = categoryIndex.find(i => i.publishUrl === item.publishUrl)
       if (categoryRec) {
-        const { kind, subkind, category } = categoryRec;
+        const { kind, subkind, category } = categoryRec
         const seeAlso = categoryIndex
           .filter(
-            (i) =>
-              i.publishUrl !== item.publishUrl &&
-              i.kind === kind &&
-              i.subkind === subkind &&
-              i.category === category,
+            i =>
+              i.publishUrl !== item.publishUrl && i.kind === kind && i.subkind === subkind && i.category === category,
           )
-          .map((i) => {
+          .map(i => {
             return {
               publishUrl: i.publishUrl,
               title: i.title,
               subtitle: i.subtitle,
-            };
-          });
+            }
+          })
         if (seeAlso.length > 0) {
-          item.pluginsData = item.pluginsData || {};
-          item.pluginsData.seeAlso = seeAlso;
+          item.pluginsData = item.pluginsData || {}
+          item.pluginsData.seeAlso = seeAlso
         }
       }
-    });
+    })
 
-    return [...recs, ...addedUrls];
-  };
+    return [...recs, ...addedUrls, storeDoc]
+  }
 
-  return [onProcess, onExit];
-};
+  return [onProcess, onExit]
+}
 
 export const splitDocAndCode = (doc: publishRecord) => {
-  const blocks: PodNode[] = [];
-  const code: PodNode[] = [];
+  const blocks: PodNode[] = []
+  const code: PodNode[] = []
   const processNode = (node: PodNode, srcfile: string) => {
     const rules = {
-      ":ambient": (node) => {
-        const { text, location, type } = node;
-        code.push(text);
+      ':ambient': node => {
+        const { text, location, type } = node
+        code.push(text)
       },
-      ":block": (node, ctx, interator) => {
-        if (node.name === "root") {
+      ':block': (node, ctx, interator) => {
+        if (node.name === 'root') {
           if (node.content) {
-            return interator(node.content, ctx);
+            return interator(node.content, ctx)
           }
-          return;
+          return
         }
-        blocks.push(node);
+        blocks.push(node)
       },
-    };
-    return makeInterator(rules)(node, {});
-  };
-  processNode(doc.node, doc.file);
-  const getCodePod = (text) => {
+    }
+    return makeInterator(rules)(node, {})
+  }
+  processNode(doc.node, doc.file)
+  const getCodePod = text => {
     return `=begin code :lang<raku>
 ${text}
 =end code
-`;
-  };
-  const { node } = processFile(
-    "src/file2",
-    getCodePod(code.join("\n")),
-    "text/podlite",
-  );
-  const root = mkRootBlock({}, [...blocks, node]);
-  return { ...doc, node: root };
-};
+`
+  }
+  const { node } = processFile('src/file2', getCodePod(code.join('\n')), 'text/podlite')
+  const root = mkRootBlock({}, [...blocks, node])
+  return { ...doc, node: root }
+}
 
 export const examplesPlugin = ({ rootdir }): PodliteWebPlugin => {
-  const examples_state = require("../built/examples-tree.json");
+  const examples_state = require('../built/examples-tree.json')
 
-  const outCtx: PodliteWebPluginContext = {};
-  const onExit = (ctx) => ({ ...ctx, ...outCtx });
+  const outCtx: PodliteWebPluginContext = {}
+  const onExit = ctx => ({ ...ctx, ...outCtx })
   const processNode = (node: PodNode, file: string) => {
     function isRemoteUrl(url: string): boolean {
       try {
-        const parsedUrl = new URL(url);
-        return ["http:", "https:"].includes(parsedUrl.protocol);
+        const parsedUrl = new URL(url)
+        return ['http:', 'https:'].includes(parsedUrl.protocol)
       } catch (error) {
         // If URL parsing fails, assume it's a local path
-        return false;
+        return false
       }
     }
 
     const rules = {
       // we need add prefic to all /doc/ links
-      "L<>": (node) => {
-        const { meta, content } = node;
-        const link = meta ? meta : getTextContentFromNode(content);
-        return { ...node, meta: isRemoteUrl(link) ? meta : `/doc${link}` };
+      'L<>': node => {
+        const { meta, content } = node
+        const link = meta ? meta : getTextContentFromNode(content)
+        return { ...node, meta: isRemoteUrl(link) ? meta : `/doc${link}` }
       },
-    };
-    return makeInterator(rules)(node, {});
-  };
+    }
+    return makeInterator(rules)(node, {})
+  }
   const onProcess = (recs: publishRecord[]) => {
     // convert all doc: links to file:: links
-    console.log(`examplesPlugin is running: ${rootdir}`);
-    const addedUrls = examples_state.map((item) => {
-      const publishUrl = item.file.replace(
-        /^work_examples\/categories/g,
-        "/examples",
-      );
-      return { ...item, publishUrl, node: item.node };
-    });
+    console.log(`examplesPlugin is running: ${rootdir}`)
+    const addedUrls = examples_state.map(item => {
+      const publishUrl = item.file.replace(/^work_examples\/categories/g, '/examples')
+      return { ...item, publishUrl, node: item.node }
+    })
     // process body
-    const bodyProcessed = addedUrls.map((item) => {
+    const bodyProcessed = addedUrls.map(item => {
       // skip md files
-      if (item.file.endsWith(".md")) return item;
-      return splitDocAndCode(item);
-    });
+      if (item.file.endsWith('.md')) return item
+      return splitDocAndCode(item)
+    })
 
     // index all docs with kind, subkind, category
 
     const categoryIndex = bodyProcessed.reduce((acc, item) => {
-      const { file, node, template, publishUrl, subtitle, title, ...attrs } =
-        item;
+      const { file, node, template, publishUrl, subtitle, title, ...attrs } = item
       // get pod node
-      const category = publishUrl.split(/\//).splice(2, 1).shift();
-      const filename = publishUrl.split(/\//).splice(3).shift();
-      acc[category] = acc[category] || [];
+      const category = publishUrl.split(/\//).splice(2, 1).shift()
+      const filename = publishUrl.split(/\//).splice(3).shift()
+      acc[category] = acc[category] || []
       acc[category].push({
         file,
         publishUrl,
@@ -435,81 +404,133 @@ export const examplesPlugin = ({ rootdir }): PodliteWebPlugin => {
         category,
         filename,
         subtitle,
-      });
-      return acc;
-    }, {});
+      })
+      return acc
+    }, {})
 
-    if (rootdir) {
-      fs.writeFileSync(
-        `${rootdir}/built/examples-index-category.json`,
-        JSON.stringify({ categoryIndex }, null, 2),
-      );
-    }
+    const storeFile = `
+    =begin pod
+    =for NAME  :id<RAKU_EXAMPLES_PLUGIN_DATA>
+    SITE DATA
+    =begin data :id<examples-index-category>
+    ${JSON.stringify({ categoryIndex })}
+    =end data
 
+    =end pod    
+        `
+    const storeDoc = processFile('virtual/raku-examples-data-plugin.podlite', storeFile)
     // fills addonsData.seealso depends on kind, subkind, category
-    bodyProcessed.forEach((item) => {
-      const categoryRec: any[] = Object.values(categoryIndex).find((i) =>
-        (i as any[]).map((t) => t.file).includes(item.file),
-      ) as any[];
+    bodyProcessed.forEach(item => {
+      const categoryRec: any[] = Object.values(categoryIndex).find(i =>
+        (i as any[]).map(t => t.file).includes(item.file),
+      ) as any[]
       if (categoryRec) {
         const seeAlso = categoryRec
-          .filter((i) => i.publishUrl !== item.publishUrl)
-          .map((i) => {
+          .filter(i => i.publishUrl !== item.publishUrl)
+          .map(i => {
             return {
               publishUrl: i.publishUrl,
               title: i.filename,
               subtitle: i.title,
-            };
-          });
+            }
+          })
         if (seeAlso.length > 0) {
-          item.pluginsData = item.pluginsData || {};
-          item.pluginsData.seeAlso = seeAlso;
+          item.pluginsData = item.pluginsData || {}
+          item.pluginsData.seeAlso = seeAlso
         }
       }
-    });
+    })
     // fix title
     bodyProcessed.forEach(
-      (i) =>
+      i =>
         (i.title =
           i.title ||
           i.file
-            .split("/")
+            .split('/')
             .pop()
-            .replace(/\.\S+$/, "")),
-    );
-    return [...recs, ...bodyProcessed];
-  };
+            .replace(/\.\S+$/, '')),
+    )
+    return [...recs, ...bodyProcessed, storeDoc]
+  }
 
-  return [onProcess, onExit];
-};
+  return [onProcess, onExit]
+}
 
 export const plugin = (): PodliteWebPlugin => {
-  const outCtx: PodliteWebPluginContext = {};
-  const onExit = (ctx) => ({ ...ctx, ...outCtx });
+  const outCtx: PodliteWebPluginContext = {}
+  const onExit = ctx => ({ ...ctx, ...outCtx })
   const onProcess = (recs: publishRecord[]) => {
-    console.log("plugin running1" + CRC32.str("sdsd"));
-    return recs;
-  };
+    console.log('plugin running1' + CRC32.str('sdsd'))
+    return recs
+  }
 
-  return [onProcess, onExit];
-};
+  return [onProcess, onExit]
+}
+
+export const fillDescriptionPlugin = ({ rootdir }): PodliteWebPlugin => {
+
+  const outCtx: PodliteWebPluginContext = {}
+  const onExit = ctx => ({ ...ctx, ...outCtx })
+  const onProcess = (recs: publishRecord[]) => {
+    const res = recs.map((item) => {
+    const { node,description, ...attrs } = item
+    if (description) {
+        return item
+    }
+    // get pod node
+      const blocks: PodNode[] = []
+      const para: PodNode[] = []
+      const processNode = (node: PodNode) => {
+        const rules = {
+          ':para': node => {
+            const { text, location, type } = node
+            para.push(text)
+          },
+   
+      ':block': (node, ctx, interator) => {
+        // ctx.parent = node
+        if (node.content) {
+          // provess root block content
+          return interator(node.content, { ...ctx, parent: node })
+        }
+          },
+        }
+        return makeInterator(rules)(node, {})
+      }
+
+    const r = processNode(node)
+
+    const new_description = getTextContentFromNode(mkBlock({name:'para'}, para))
+    
+    return {...item, description: mkBlock({name:'para'},[  new_description.length > 150 ? new_description.substring(0, 150) : new_description])}
+  })
+    
+    return [...res]
+  }
+
+  return [onProcess, onExit]
+}
 
 const makePlugins = ({ rootdir }) => {
   const makeDocPlugin: PluginConfig = {
     plugin: docPlugin({ rootdir }),
-    includePatterns: ".*",
-  };
+    includePatterns: '.*',
+  }
   const makeModsPlugin: PluginConfig = {
     plugin: modPlugin({ rootdir }),
-    includePatterns: ".*",
-  };
+    includePatterns: '.*',
+  }
   const makeExamplesPlugin: PluginConfig = {
     plugin: examplesPlugin({ rootdir }),
-    includePatterns: ".*",
-  };
+    includePatterns: '.*',
+  }
+    const makeFillDescriptionPlugin: PluginConfig = {
+        plugin: fillDescriptionPlugin({ rootdir }),
+        includePatterns: '.*',
+    }
 
-  return composePlugins([makeDocPlugin, makeModsPlugin, makeExamplesPlugin], {});
-//   return composePlugins([makeDocPlugin, makeExamplesPlugin], {});
-};
+  return composePlugins([makeDocPlugin, makeModsPlugin, makeExamplesPlugin,makeFillDescriptionPlugin ], {})
+  //   return composePlugins([makeDocPlugin, makeExamplesPlugin], {});
+}
 
-export default makePlugins;
+export default makePlugins

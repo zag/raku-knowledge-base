@@ -1,14 +1,14 @@
-import React, { ReactNode } from "react";
-import styles from "./Breadcrumb.module.css";
-import Link from "next/link";
+import React, { ReactNode } from 'react'
+import styles from './Breadcrumb.module.css'
+import Link from 'next/link'
 interface BreadcrumbItem {
-  title: string;
-  publishUrl: string;
-  component: ReactNode;
+  title: string
+  publishUrl: string
+  component: ReactNode
 }
 
 interface BreadcrumbProps {
-  items: BreadcrumbItem[];
+  items: BreadcrumbItem[]
 }
 
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
@@ -18,16 +18,12 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
         {items.map((item, index) => (
           <li key={index} className={styles.item}>
             {index > 0 && <span className={styles.separator}>/</span>}
-            {item.component ? (
-              item.component
-            ) : (
-              <Link href={item.publishUrl}>{item.title}</Link>
-            )}
+            {item.component ? item.component : <Link href={item.publishUrl}>{item.title}</Link>}
           </li>
         ))}
       </ol>
     </nav>
-  );
-};
+  )
+}
 
-export default Breadcrumb;
+export default Breadcrumb

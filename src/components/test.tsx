@@ -1,4 +1,4 @@
-export {};
+export {}
 // export const Search = ()=>{
 //     const [query, setQuery] = useState("")
 //     const content = contentData().map((item)=>{

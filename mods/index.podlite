@@ -7,7 +7,9 @@
 =TITLE Raku Modules Documentation
 
 
-=for React :component<ListMods> :id<menu>
+=begin React :component<ListMods> :id<menu>
+=Include doc:RAKU_MODS_PLUGIN_DATA#mods-info
+=end React
 
 
 =end pod

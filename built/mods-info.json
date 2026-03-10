@@ -48,6 +48,10 @@
         },
         "files": [
           {
+            "file": "work_mods/all/Acme::Flutterby/lib/Acme/Flutterby.pm",
+            "publishUrl": "/mods/all/Acme::Flutterby/lib/Acme/Flutterby.pm"
+          },
+          {
             "file": "work_mods/all/Acme::Flutterby/README.md",
             "publishUrl": "/mods/all/Acme::Flutterby/README.md"
           }
@@ -80,6 +84,42 @@
         ],
         "src": "all",
         "url": "/mods/all/Acme::Mangle"
+      },
+      "Acme::Meow": {
+        "meta": {
+          "perl": "6.*",
+          "name": "Acme::Meow",
+          "version": "0.1",
+          "description": "The kitty you always wanted, now in Perl 6",
+          "build-depends": [],
+          "test-depends": [
+            "Test"
+          ],
+          "depends": [],
+          "provides": {
+            "Acme::Meow": "lib/Acme/Meow.pm"
+          },
+          "authors": [
+            "Tadeusz “tadzik” Sośnierz",
+            "Paul Cochrane",
+            "GlithMr",
+            "Ethan House",
+            "Tobias Leich"
+          ],
+          "support": {
+            "bugtracker": "https://github.com/tadzik/perl6-Acme-Meow/issues",
+            "source": "git://github.com/tadzik/perl6-Acme-Meow.git"
+          },
+          "source-url": "git://github.com/tadzik/perl6-Acme-Meow.git"
+        },
+        "files": [
+          {
+            "file": "work_mods/all/Acme::Meow/lib/Acme/Meow.pm",
+            "publishUrl": "/mods/all/Acme::Meow/lib/Acme/Meow.pm"
+          }
+        ],
+        "src": "all",
+        "url": "/mods/all/Acme::Meow"
       },
       "Acme::OwO": {
         "meta": {
@@ -415,6 +455,10 @@
         },
         "files": [
           {
+            "file": "work_mods/all/Algorithm::Soundex/lib/Algorithm/Soundex.pm",
+            "publishUrl": "/mods/all/Algorithm::Soundex/lib/Algorithm/Soundex.pm"
+          },
+          {
             "file": "work_mods/all/Algorithm::Soundex/README.md",
             "publishUrl": "/mods/all/Algorithm::Soundex/README.md"
           }
@@ -554,6 +598,24 @@
         ],
         "src": "all",
         "url": "/mods/all/Algorithm::Trie::libdatrie"
+      },
+      "Algorithm::Viterbi": {
+        "meta": {
+          "name": "Algorithm::Viterbi",
+          "description": "HMM decoding with the Viterbi algorithm.",
+          "version": "*",
+          "depends": [],
+          "source-url": "git://github.com/arnsholt/Algorithm-Viterbi.git",
+          "source-type": "git"
+        },
+        "files": [
+          {
+            "file": "work_mods/all/Algorithm::Viterbi/lib/Algorithm/Viterbi.pm",
+            "publishUrl": "/mods/all/Algorithm::Viterbi/lib/Algorithm/Viterbi.pm"
+          }
+        ],
+        "src": "all",
+        "url": "/mods/all/Algorithm::Viterbi"
       },
       "Alma": {
         "meta": {
@@ -1281,6 +1343,14 @@
         },
         "files": [
           {
+            "file": "work_mods/all/Audio::MIDI::Note/examples/canon-c-easy.p6",
+            "publishUrl": "/mods/all/Audio::MIDI::Note/examples/canon-c-easy.p6"
+          },
+          {
+            "file": "work_mods/all/Audio::MIDI::Note/examples/heart-will-go-on.p6",
+            "publishUrl": "/mods/all/Audio::MIDI::Note/examples/heart-will-go-on.p6"
+          },
+          {
             "file": "work_mods/all/Audio::MIDI::Note/README.md",
             "publishUrl": "/mods/all/Audio::MIDI::Note/README.md"
           }
@@ -1495,6 +1565,10 @@
           "source-url": "git://github.com/sylvarant/Avro.git"
         },
         "files": [
+          {
+            "file": "work_mods/all/Avro/lib/Avro.pm",
+            "publishUrl": "/mods/all/Avro/lib/Avro.pm"
+          },
           {
             "file": "work_mods/all/Avro/README.md",
             "publishUrl": "/mods/all/Avro/README.md"
@@ -2180,6 +2254,10 @@
         },
         "files": [
           {
+            "file": "work_mods/all/Cache::Memcached/lib/Cache/Memcached.pm",
+            "publishUrl": "/mods/all/Cache::Memcached/lib/Cache/Memcached.pm"
+          },
+          {
             "file": "work_mods/all/Cache::Memcached/README.md",
             "publishUrl": "/mods/all/Cache::Memcached/README.md"
           }
@@ -2543,6 +2621,10 @@
           "source-url": "git://github.com/patch/cldr-list-pm6.git"
         },
         "files": [
+          {
+            "file": "work_mods/all/CLDR::List/lib/CLDR/List.pm",
+            "publishUrl": "/mods/all/CLDR::List/lib/CLDR/List.pm"
+          },
           {
             "file": "work_mods/all/CLDR::List/README.md",
             "publishUrl": "/mods/all/CLDR::List/README.md"
@@ -3277,6 +3359,36 @@
         ],
         "src": "all",
         "url": "/mods/all/Config::Clever"
+      },
+      "Config::INI": {
+        "meta": {
+          "perl": "6.*",
+          "name": "Config::INI",
+          "version": "*",
+          "description": ".ini file parser and writer module for Perl 6",
+          "provides": {
+            "Config::INI": "lib/Config/INI.pm",
+            "Config::INI::Writer": "lib/Config/INI/Writer.pm"
+          },
+          "depends": [],
+          "authors": [
+            "Tadeusz “tadzik” Sośnierz",
+            "Nobuo Danjou"
+          ],
+          "support": {
+            "bugtracker": "https://github.com/tadzik/perl6-Config-INI/issues",
+            "source": "git://github.com/tadzik/perl6-Config-INI.git"
+          },
+          "source-url": "git://github.com/tadzik/perl6-Config-INI.git"
+        },
+        "files": [
+          {
+            "file": "work_mods/all/Config::INI/lib/Config/INI.pm",
+            "publishUrl": "/mods/all/Config::INI/lib/Config/INI.pm"
+          }
+        ],
+        "src": "all",
+        "url": "/mods/all/Config::INI"
       },
       "Config::Simple": {
         "meta": {
@@ -4182,6 +4294,37 @@
         "src": "all",
         "url": "/mods/all/Data::Pretty"
       },
+      "Data::Selector": {
+        "meta": {
+          "perl": "v6",
+          "name": "Data::Selector",
+          "version": "v1.02",
+          "description": "data selection dsl parser and applicator",
+          "authors": [
+            "Justin DeVuyst"
+          ],
+          "provides": {
+            "Data::Selector::SelectorString::Actions": "lib/Data/Selector.pm",
+            "Data::Selector::SelectorString::Grammar": "lib/Data/Selector.pm",
+            "Data::Selector": "lib/Data/Selector.pm"
+          },
+          "support": {
+            "email": "justin@devuyst.com",
+            "bugtracker": "https://github.com/jdv/p6-data-selector/issues",
+            "source": "https://github.com/jdv/p6-data-selector.git",
+            "irc": "irc://irc.freenode.net/perl6"
+          },
+          "license": "artistic_2"
+        },
+        "files": [
+          {
+            "file": "work_mods/all/Data::Selector/lib/Data/Selector.pm",
+            "publishUrl": "/mods/all/Data::Selector/lib/Data/Selector.pm"
+          }
+        ],
+        "src": "all",
+        "url": "/mods/all/Data::Selector"
+      },
       "Data::StaticTable": {
         "meta": {
           "name": "Data::StaticTable",
@@ -4494,6 +4637,10 @@
         },
         "files": [
           {
+            "file": "work_mods/all/DBI::Async/lib/DBI/Async.pm",
+            "publishUrl": "/mods/all/DBI::Async/lib/DBI/Async.pm"
+          },
+          {
             "file": "work_mods/all/DBI::Async/README.md",
             "publishUrl": "/mods/all/DBI::Async/README.md"
           }
@@ -4624,6 +4771,10 @@
           "source-url": "git://github.com/prodotiscus/perl6-Dictionary-Create.git"
         },
         "files": [
+          {
+            "file": "work_mods/all/Dictionary::Create/lib/Dictionary/Create.pm",
+            "publishUrl": "/mods/all/Dictionary::Create/lib/Dictionary/Create.pm"
+          },
           {
             "file": "work_mods/all/Dictionary::Create/README.md",
             "publishUrl": "/mods/all/Dictionary::Create/README.md"
@@ -5283,6 +5434,10 @@
         },
         "files": [
           {
+            "file": "work_mods/all/Druid/lib/Druid/View/Text.pm",
+            "publishUrl": "/mods/all/Druid/lib/Druid/View/Text.pm"
+          },
+          {
             "file": "work_mods/all/Druid/README.md",
             "publishUrl": "/mods/all/Druid/README.md"
           }
@@ -5593,6 +5748,39 @@
         ],
         "src": "all",
         "url": "/mods/all/Encode"
+      },
+      "Facter": {
+        "meta": {
+          "perl": "6.*",
+          "name": "Facter",
+          "version": "0.04",
+          "description": "A port of puppetlabs facter to Perl 6",
+          "provides": {
+            "Facter": "lib/Facter.pm",
+            "Facter::Debug": "lib/Facter/Debug.pm",
+            "Facter::kernel": "lib/Facter/kernel.pm",
+            "Facter::perl6os": "lib/Facter/perl6os.pm",
+            "Facter::Util::Confine": "lib/Facter/Util/Confine.pm",
+            "Facter::Util::Fact": "lib/Facter/Util/Fact.pm",
+            "Facter::Util::Resolution": "lib/Facter/Util/Resolution.pm",
+            "Facter::Util::Values": "lib/Facter/Util/Values.pm",
+            "Facter::Util::Loader": "lib/Facter/Util/Loader.pm",
+            "Facter::Util::Collection": "lib/Facter/Util/Collection.pm",
+            "Facter::physicalprocessorcount": "lib/Facter/physicalprocessorcount.pm"
+          },
+          "depends": [],
+          "author": "Cosimo Streppone",
+          "authority": "cosimo",
+          "source-url": "git://github.com/cosimo/perl6-facter.git"
+        },
+        "files": [
+          {
+            "file": "work_mods/all/Facter/lib/Facter/Util/Values.pm",
+            "publishUrl": "/mods/all/Facter/lib/Facter/Util/Values.pm"
+          }
+        ],
+        "src": "all",
+        "url": "/mods/all/Facter"
       },
       "FanFou": {
         "meta": {
@@ -6390,6 +6578,42 @@
         "src": "all",
         "url": "/mods/all/Game::Crypt"
       },
+      "Geo::Coder::OpenCage": {
+        "meta": {
+          "perl": "6.*",
+          "name": "Geo::Coder::OpenCage",
+          "version": "1.0",
+          "description": "Client library for the OpenCage Geocoder",
+          "test-depends": [
+            "Test"
+          ],
+          "depends": [
+            "HTTP::UserAgent",
+            "JSON::Unmarshal",
+            "URI"
+          ],
+          "provides": {
+            "Geo::Coder::OpenCage": "lib/Geo/Coder/OpenCage.pm",
+            "Geo::Coder::OpenCage::Response": "lib/Geo/Coder/OpenCage/Response.pm"
+          },
+          "authors": [
+            "Tadeusz “tadzik” Sośnierz"
+          ],
+          "support": {
+            "bugtracker": "https://github.com/tadzik/Geo-Coder-OpenCage/issues",
+            "source": "git://github.com/tadzik/Geo-Coder-OpenCage.git"
+          },
+          "source-url": "git://github.com/tadzik/Geo-Coder-OpenCage.git"
+        },
+        "files": [
+          {
+            "file": "work_mods/all/Geo::Coder::OpenCage/lib/Geo/Coder/OpenCage.pm",
+            "publishUrl": "/mods/all/Geo::Coder::OpenCage/lib/Geo/Coder/OpenCage.pm"
+          }
+        ],
+        "src": "all",
+        "url": "/mods/all/Geo::Coder::OpenCage"
+      },
       "Geo::IP2Location::Lite": {
         "meta": {
           "perl": "6.c",
@@ -6434,6 +6658,14 @@
           "source-url": "git://github.com/patch/geo-region-pm6.git"
         },
         "files": [
+          {
+            "file": "work_mods/all/Geo::Region/lib/Geo/Region.pm",
+            "publishUrl": "/mods/all/Geo::Region/lib/Geo/Region.pm"
+          },
+          {
+            "file": "work_mods/all/Geo::Region/lib/Geo/Region/Enum.pm",
+            "publishUrl": "/mods/all/Geo::Region/lib/Geo/Region/Enum.pm"
+          },
           {
             "file": "work_mods/all/Geo::Region/README.md",
             "publishUrl": "/mods/all/Geo::Region/README.md"
@@ -6547,6 +6779,10 @@
           ]
         },
         "files": [
+          {
+            "file": "work_mods/all/Getopt::Tiny/eg/synopsis.p6",
+            "publishUrl": "/mods/all/Getopt::Tiny/eg/synopsis.p6"
+          },
           {
             "file": "work_mods/all/Getopt::Tiny/lib/Getopt/Tiny.pm6",
             "publishUrl": "/mods/all/Getopt::Tiny/lib/Getopt/Tiny.pm6"
@@ -6830,6 +7066,10 @@
         },
         "files": [
           {
+            "file": "work_mods/all/Grammar::BNF/lib/Grammar/ABNF.pm",
+            "publishUrl": "/mods/all/Grammar::BNF/lib/Grammar/ABNF.pm"
+          },
+          {
             "file": "work_mods/all/Grammar::BNF/README.md",
             "publishUrl": "/mods/all/Grammar::BNF/README.md"
           }
@@ -7089,6 +7329,10 @@
           {
             "file": "work_mods/all/GraphQL/eg/usersschema.md",
             "publishUrl": "/mods/all/GraphQL/eg/usersschema.md"
+          },
+          {
+            "file": "work_mods/all/GraphQL/lib/GraphQL.pm",
+            "publishUrl": "/mods/all/GraphQL/lib/GraphQL.pm"
           },
           {
             "file": "work_mods/all/GraphQL/README.md",
@@ -8810,6 +9054,10 @@
         },
         "files": [
           {
+            "file": "work_mods/all/IRC::Async/examples/simple-client.p6",
+            "publishUrl": "/mods/all/IRC::Async/examples/simple-client.p6"
+          },
+          {
             "file": "work_mods/all/IRC::Async/README.md",
             "publishUrl": "/mods/all/IRC::Async/README.md"
           }
@@ -8900,6 +9148,10 @@
           "source-url": "git://github.com/hankache/perl6-IUP.git"
         },
         "files": [
+          {
+            "file": "work_mods/all/IUP/examples/hbox.p6",
+            "publishUrl": "/mods/all/IUP/examples/hbox.p6"
+          },
           {
             "file": "work_mods/all/IUP/README.md",
             "publishUrl": "/mods/all/IUP/README.md"
@@ -9251,6 +9503,10 @@
           "source-url": "git://github.com/wollmers/P6-LCS-BV.git"
         },
         "files": [
+          {
+            "file": "work_mods/all/LCS::BV/lib/LCS/BV.pm",
+            "publishUrl": "/mods/all/LCS::BV/lib/LCS/BV.pm"
+          },
           {
             "file": "work_mods/all/LCS::BV/README.md",
             "publishUrl": "/mods/all/LCS::BV/README.md"
@@ -9996,6 +10252,29 @@
         "src": "all",
         "url": "/mods/all/Masquerade"
       },
+      "Math::Arrow": {
+        "meta": {
+          "name": "Math::Arrow",
+          "license": "Artistic-2.0",
+          "version": "0.1.0",
+          "description": "Knuth arrow notation in Perl 6",
+          "depends": [],
+          "perl": "6.c",
+          "provides": {
+            "Math::Arrow": "lib/Math/Arrow.pm"
+          },
+          "source-type": "git",
+          "source-url": "git://github.com/ajs/perl6-Math-Arrow"
+        },
+        "files": [
+          {
+            "file": "work_mods/all/Math::Arrow/lib/Math/Arrow.pm",
+            "publishUrl": "/mods/all/Math::Arrow/lib/Math/Arrow.pm"
+          }
+        ],
+        "src": "all",
+        "url": "/mods/all/Math::Arrow"
+      },
       "Math::ChebyshevPolynomial": {
         "meta": {
           "name": "Math::ChebyshevPolynomial",
@@ -10615,6 +10894,10 @@
         },
         "files": [
           {
+            "file": "work_mods/all/MQTT::Client/lib/MQTT/Client.pm",
+            "publishUrl": "/mods/all/MQTT::Client/lib/MQTT/Client.pm"
+          },
+          {
             "file": "work_mods/all/MQTT::Client/README.md",
             "publishUrl": "/mods/all/MQTT::Client/README.md"
           }
@@ -10660,6 +10943,10 @@
           ]
         },
         "files": [
+          {
+            "file": "work_mods/all/Music::Helpers/lib/Music/Helpers.pm",
+            "publishUrl": "/mods/all/Music::Helpers/lib/Music/Helpers.pm"
+          },
           {
             "file": "work_mods/all/Music::Helpers/README.md",
             "publishUrl": "/mods/all/Music::Helpers/README.md"
@@ -11083,6 +11370,10 @@
             "publishUrl": "/mods/all/Net::Jupyter/docker/README.md"
           },
           {
+            "file": "work_mods/all/Net::Jupyter/lib/Net/Jupyter/ContextREPL.pm",
+            "publishUrl": "/mods/all/Net::Jupyter/lib/Net/Jupyter/ContextREPL.pm"
+          },
+          {
             "file": "work_mods/all/Net::Jupyter/LICENSE.md",
             "publishUrl": "/mods/all/Net::Jupyter/LICENSE.md"
           },
@@ -11133,6 +11424,10 @@
           "version": "0.2.4"
         },
         "files": [
+          {
+            "file": "work_mods/all/Net::Osc/collate-readme.p6",
+            "publishUrl": "/mods/all/Net::Osc/collate-readme.p6"
+          },
           {
             "file": "work_mods/all/Net::Osc/lib/Net/OSC.pm6",
             "publishUrl": "/mods/all/Net::Osc/lib/Net/OSC.pm6"
@@ -11196,10 +11491,6 @@
           "source-url": "git://github.com/jpve/perl6-net-packet.git"
         },
         "files": [
-          {
-            "file": "work_mods/all/Net::Packet/docs/ALL.md",
-            "publishUrl": "/mods/all/Net::Packet/docs/ALL.md"
-          },
           {
             "file": "work_mods/all/Net::Packet/docs/Net-Packet-ARP.md",
             "publishUrl": "/mods/all/Net::Packet/docs/Net-Packet-ARP.md"
@@ -11308,10 +11599,6 @@
           "source-url": "git://github.com/jpve/perl6-net-pcap.git"
         },
         "files": [
-          {
-            "file": "work_mods/all/Net::Pcap/docs/ALL.md",
-            "publishUrl": "/mods/all/Net::Pcap/docs/ALL.md"
-          },
           {
             "file": "work_mods/all/Net::Pcap/docs/Net-Pcap-C_Buf.md",
             "publishUrl": "/mods/all/Net::Pcap/docs/Net-Pcap-C_Buf.md"
@@ -11501,6 +11788,10 @@
           {
             "file": "work_mods/all/November/docs/blog-posts.md",
             "publishUrl": "/mods/all/November/docs/blog-posts.md"
+          },
+          {
+            "file": "work_mods/all/November/lib/November/URI.pm",
+            "publishUrl": "/mods/all/November/lib/November/URI.pm"
           }
         ],
         "src": "all",
@@ -12144,6 +12435,10 @@
             "publishUrl": "/mods/all/panda/CONTRIBUTING.md"
           },
           {
+            "file": "work_mods/all/panda/ext/File__Find/lib/File/Find.pm",
+            "publishUrl": "/mods/all/panda/ext/File__Find/lib/File/Find.pm"
+          },
+          {
             "file": "work_mods/all/panda/ext/File__Find/README.md",
             "publishUrl": "/mods/all/panda/ext/File__Find/README.md"
           },
@@ -12695,6 +12990,10 @@
         },
         "files": [
           {
+            "file": "work_mods/all/Plosurin/lib/Plosurin.pm",
+            "publishUrl": "/mods/all/Plosurin/lib/Plosurin.pm"
+          },
+          {
             "file": "work_mods/all/Plosurin/t/samples/test.pod6",
             "publishUrl": "/mods/all/Plosurin/t/samples/test.pod6"
           }
@@ -12794,6 +13093,28 @@
         ],
         "src": "all",
         "url": "/mods/all/Pod::Literate"
+      },
+      "Pod::Parser": {
+        "meta": {
+          "perl": "6.*",
+          "name": "Pod::Parser",
+          "version": "0.1.0",
+          "description": "Naive parser for Perl 6 style POD documents",
+          "provides": {
+            "Pod::Parser": "lib/Pod/Parser.pm",
+            "Pod::Parser::Common": "lib/Pod/Parser/Common.pm6"
+          },
+          "depends": [],
+          "source-url": "git://github.com/szabgab/perl6-Pod-Parser.git"
+        },
+        "files": [
+          {
+            "file": "work_mods/all/Pod::Parser/lib/Pod/Parser.pm",
+            "publishUrl": "/mods/all/Pod::Parser/lib/Pod/Parser.pm"
+          }
+        ],
+        "src": "all",
+        "url": "/mods/all/Pod::Parser"
       },
       "Pod::Strip": {
         "meta": {
@@ -13285,6 +13606,10 @@
           ]
         },
         "files": [
+          {
+            "file": "work_mods/all/PriorityQueue/lib/PriorityQueue.pm",
+            "publishUrl": "/mods/all/PriorityQueue/lib/PriorityQueue.pm"
+          },
           {
             "file": "work_mods/all/PriorityQueue/README.md",
             "publishUrl": "/mods/all/PriorityQueue/README.md"
@@ -15703,6 +16028,32 @@
         "src": "all",
         "url": "/mods/all/SupplyTimeWindow"
       },
+      "SVG::Plot": {
+        "meta": {
+          "perl": "6.*",
+          "name": "SVG::Plot",
+          "version": "*",
+          "description": "A Perl 6 charting and plotting library that produces SVG output",
+          "depends": [
+            "SVG"
+          ],
+          "provides": {
+            "SVG::Plot": "lib/SVG/Plot.pm",
+            "SVG::Plot::AxisPosition": "lib/SVG/Plot.pm",
+            "SVG::Plot::Pie": "lib/SVG/Plot/Pie.pm",
+            "SVG::Box": "lib/SVG/Box.pm"
+          },
+          "source-url": "git://github.com/moritz/svg-plot.git"
+        },
+        "files": [
+          {
+            "file": "work_mods/all/SVG::Plot/lib/SVG/Plot.pm",
+            "publishUrl": "/mods/all/SVG::Plot/lib/SVG/Plot.pm"
+          }
+        ],
+        "src": "all",
+        "url": "/mods/all/SVG::Plot"
+      },
       "SVG": {
         "meta": {
           "perl": "6.*",
@@ -16274,6 +16625,29 @@
         ],
         "src": "all",
         "url": "/mods/all/TelegramBot"
+      },
+      "Term::ProgressBar": {
+        "meta": {
+          "perl": "6.*",
+          "name": "Term::ProgressBar",
+          "version": "*",
+          "description": "Perl 6 implementation of Progress Bar.",
+          "provides": {
+            "Term::ProgressBar": "lib/Term/ProgressBar.pm"
+          },
+          "depends": [
+            "IO::Capture::Simple"
+          ],
+          "source-url": "git://github.com/sergot/Term--ProgressBar.git"
+        },
+        "files": [
+          {
+            "file": "work_mods/all/Term::ProgressBar/lib/Term/ProgressBar.pm",
+            "publishUrl": "/mods/all/Term::ProgressBar/lib/Term/ProgressBar.pm"
+          }
+        ],
+        "src": "all",
+        "url": "/mods/all/Term::ProgressBar"
       },
       "Terminal::ANSIColor": {
         "meta": {
@@ -17077,6 +17451,28 @@
         "src": "all",
         "url": "/mods/all/Text::Spintax"
       },
+      "Text::T9": {
+        "meta": {
+          "perl": "6.*",
+          "name": "Text::T9",
+          "license": "MIT",
+          "version": "*",
+          "description": "Guess words basing on a T9 key sequence",
+          "provides": {
+            "Text::T9": "lib/Text/T9.pm"
+          },
+          "depends": [],
+          "source-url": "git://github.com/tadzik/Text-T9.git"
+        },
+        "files": [
+          {
+            "file": "work_mods/all/Text::T9/lib/Text/T9.pm",
+            "publishUrl": "/mods/all/Text::T9/lib/Text/T9.pm"
+          }
+        ],
+        "src": "all",
+        "url": "/mods/all/Text::T9"
+      },
       "Text::Table::List": {
         "meta": {
           "perl": "6.*",
@@ -17157,6 +17553,10 @@
           "source-url": "https://github.com/nkh/P6-Text-Template.git"
         },
         "files": [
+          {
+            "file": "work_mods/all/Text::Template/lib/Text/Template.pm",
+            "publishUrl": "/mods/all/Text::Template/lib/Text/Template.pm"
+          },
           {
             "file": "work_mods/all/Text::Template/README.md",
             "publishUrl": "/mods/all/Text::Template/README.md"
@@ -17506,6 +17906,27 @@
         ],
         "src": "all",
         "url": "/mods/all/TXN"
+      },
+      "Typed::Subroutines": {
+        "meta": {
+          "perl": "6.*",
+          "name": "Typed::Subroutines",
+          "version": "*",
+          "description": "Better type checking for first-class functions",
+          "provides": {
+            "Typed::Subroutines": "lib/Typed/Subroutines.pm"
+          },
+          "depends": [],
+          "source-url": "git://github.com/tadzik/Typed-Subroutines.git"
+        },
+        "files": [
+          {
+            "file": "work_mods/all/Typed::Subroutines/lib/Typed/Subroutines.pm",
+            "publishUrl": "/mods/all/Typed::Subroutines/lib/Typed/Subroutines.pm"
+          }
+        ],
+        "src": "all",
+        "url": "/mods/all/Typed::Subroutines"
       },
       "Typesafe::HTML": {
         "meta": {
@@ -17868,6 +18289,10 @@
         },
         "files": [
           {
+            "file": "work_mods/all/WebService::Google::PageRank/lib/WebService/Google/PageRank.pm",
+            "publishUrl": "/mods/all/WebService::Google::PageRank/lib/WebService/Google/PageRank.pm"
+          },
+          {
             "file": "work_mods/all/WebService::Google::PageRank/README.md",
             "publishUrl": "/mods/all/WebService::Google::PageRank/README.md"
           }
@@ -18091,6 +18516,10 @@
         },
         "files": [
           {
+            "file": "work_mods/all/WebSocket/lib/WebSocket.pm",
+            "publishUrl": "/mods/all/WebSocket/lib/WebSocket.pm"
+          },
+          {
             "file": "work_mods/all/WebSocket/lib/WebSocket/Cookie.pm6",
             "publishUrl": "/mods/all/WebSocket/lib/WebSocket/Cookie.pm6"
           },
@@ -18195,6 +18624,18 @@
           {
             "file": "work_mods/all/Whateverable/README.md",
             "publishUrl": "/mods/all/Whateverable/README.md"
+          },
+          {
+            "file": "work_mods/all/Whateverable/xbin/Bisectable.p6",
+            "publishUrl": "/mods/all/Whateverable/xbin/Bisectable.p6"
+          },
+          {
+            "file": "work_mods/all/Whateverable/xbin/Coverable.p6",
+            "publishUrl": "/mods/all/Whateverable/xbin/Coverable.p6"
+          },
+          {
+            "file": "work_mods/all/Whateverable/xbin/Releasable.p6",
+            "publishUrl": "/mods/all/Whateverable/xbin/Releasable.p6"
           }
         ],
         "src": "all",
@@ -18503,6 +18944,28 @@
         ],
         "src": "all",
         "url": "/mods/all/XML::Signature"
+      },
+      "XML::Writer": {
+        "meta": {
+          "perl": "6.*",
+          "name": "XML::Writer",
+          "license": "Artistic-2.0",
+          "version": "*",
+          "description": "A Perl 6 module to generate XML",
+          "depends": [],
+          "provides": {
+            "XML::Writer": "lib/XML/Writer.pm"
+          },
+          "source-url": "git://github.com/masak/xml-writer.git"
+        },
+        "files": [
+          {
+            "file": "work_mods/all/XML::Writer/lib/XML/Writer.pm",
+            "publishUrl": "/mods/all/XML::Writer/lib/XML/Writer.pm"
+          }
+        ],
+        "src": "all",
+        "url": "/mods/all/XML::Writer"
       },
       "XML::XPath": {
         "meta": {
@@ -19015,6 +19478,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/AccessorFacade/AccessorFacade-0.1.1/lib/AccessorFacade.pm",
+            "publishUrl": "/mods/zef/AccessorFacade/AccessorFacade-0.1.1/lib/AccessorFacade.pm"
+          },
+          {
             "file": "work_mods/zef/AccessorFacade/AccessorFacade-0.1.1/README.md",
             "publishUrl": "/mods/zef/AccessorFacade/AccessorFacade-0.1.1/README.md"
           }
@@ -19278,6 +19745,10 @@
           "version": "0.0.6"
         },
         "files": [
+          {
+            "file": "work_mods/zef/Acme::Insult::Lala/Acme-Insult-Lala-0.0.6/lib/Acme/Insult/Lala.pm",
+            "publishUrl": "/mods/zef/Acme::Insult::Lala/Acme-Insult-Lala-0.0.6/lib/Acme/Insult/Lala.pm"
+          },
           {
             "file": "work_mods/zef/Acme::Insult::Lala/Acme-Insult-Lala-0.0.6/README.md",
             "publishUrl": "/mods/zef/Acme::Insult::Lala/Acme-Insult-Lala-0.0.6/README.md"
@@ -19749,6 +20220,10 @@
           {
             "file": "work_mods/zef/Algorithm::Evolutionary::Simple/dist/README.md",
             "publishUrl": "/mods/zef/Algorithm::Evolutionary::Simple/dist/README.md"
+          },
+          {
+            "file": "work_mods/zef/Algorithm::Evolutionary::Simple/dist/resources/examples/concurrent-selecto-recombinative-EA.p6",
+            "publishUrl": "/mods/zef/Algorithm::Evolutionary::Simple/dist/resources/examples/concurrent-selecto-recombinative-EA.p6"
           },
           {
             "file": "work_mods/zef/Algorithm::Evolutionary::Simple/dist/resources/examples/README.md",
@@ -21265,6 +21740,10 @@
           "version": "0.0.13"
         },
         "files": [
+          {
+            "file": "work_mods/zef/App::ModuleSnap/App-ModuleSnap-0.0.13/lib/App/ModuleSnap.pm",
+            "publishUrl": "/mods/zef/App::ModuleSnap/App-ModuleSnap-0.0.13/lib/App/ModuleSnap.pm"
+          },
           {
             "file": "work_mods/zef/App::ModuleSnap/App-ModuleSnap-0.0.13/README.md",
             "publishUrl": "/mods/zef/App::ModuleSnap/App-ModuleSnap-0.0.13/README.md"
@@ -23353,6 +23832,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/Attribute::Lazy/Attribute-Lazy-0.0.6/lib/Attribute/Lazy.pm",
+            "publishUrl": "/mods/zef/Attribute::Lazy/Attribute-Lazy-0.0.6/lib/Attribute/Lazy.pm"
+          },
+          {
             "file": "work_mods/zef/Attribute::Lazy/Attribute-Lazy-0.0.6/README.md",
             "publishUrl": "/mods/zef/Attribute::Lazy/Attribute-Lazy-0.0.6/README.md"
           }
@@ -23510,6 +23993,10 @@
             "publishUrl": "/mods/zef/Audio::Convert::Samplerate/Audio-Convert-Samplerate-0.0.10/Documentation.md"
           },
           {
+            "file": "work_mods/zef/Audio::Convert::Samplerate/Audio-Convert-Samplerate-0.0.10/lib/Audio/Convert/Samplerate.pm",
+            "publishUrl": "/mods/zef/Audio::Convert::Samplerate/Audio-Convert-Samplerate-0.0.10/lib/Audio/Convert/Samplerate.pm"
+          },
+          {
             "file": "work_mods/zef/Audio::Convert::Samplerate/Audio-Convert-Samplerate-0.0.10/README.md",
             "publishUrl": "/mods/zef/Audio::Convert::Samplerate/Audio-Convert-Samplerate-0.0.10/README.md"
           }
@@ -23573,6 +24060,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/Audio::Encode::LameMP3/Audio-Encode-LameMP3-0.0.14/lib/Audio/Encode/LameMP3.pm",
+            "publishUrl": "/mods/zef/Audio::Encode::LameMP3/Audio-Encode-LameMP3-0.0.14/lib/Audio/Encode/LameMP3.pm"
+          },
+          {
             "file": "work_mods/zef/Audio::Encode::LameMP3/Audio-Encode-LameMP3-0.0.14/README.md",
             "publishUrl": "/mods/zef/Audio::Encode::LameMP3/Audio-Encode-LameMP3-0.0.14/README.md"
           }
@@ -23619,6 +24110,10 @@
           "version": "0.0.4"
         },
         "files": [
+          {
+            "file": "work_mods/zef/Audio::Fingerprint::Chromaprint/Audio-Fingerprint-Chromaprint-0.0.4/lib/Audio/Fingerprint/Chromaprint.pm",
+            "publishUrl": "/mods/zef/Audio::Fingerprint::Chromaprint/Audio-Fingerprint-Chromaprint-0.0.4/lib/Audio/Fingerprint/Chromaprint.pm"
+          },
           {
             "file": "work_mods/zef/Audio::Fingerprint::Chromaprint/Audio-Fingerprint-Chromaprint-0.0.4/README.md",
             "publishUrl": "/mods/zef/Audio::Fingerprint::Chromaprint/Audio-Fingerprint-Chromaprint-0.0.4/README.md"
@@ -23668,6 +24163,26 @@
           "version": "0.0.6"
         },
         "files": [
+          {
+            "file": "work_mods/zef/Audio::Hydrogen/Audio-Hydrogen-0.0.6/lib/Audio/Hydrogen.pm",
+            "publishUrl": "/mods/zef/Audio::Hydrogen/Audio-Hydrogen-0.0.6/lib/Audio/Hydrogen.pm"
+          },
+          {
+            "file": "work_mods/zef/Audio::Hydrogen/Audio-Hydrogen-0.0.6/lib/Audio/Hydrogen/Drumkit.pm",
+            "publishUrl": "/mods/zef/Audio::Hydrogen/Audio-Hydrogen-0.0.6/lib/Audio/Hydrogen/Drumkit.pm"
+          },
+          {
+            "file": "work_mods/zef/Audio::Hydrogen/Audio-Hydrogen-0.0.6/lib/Audio/Hydrogen/Instrument.pm",
+            "publishUrl": "/mods/zef/Audio::Hydrogen/Audio-Hydrogen-0.0.6/lib/Audio/Hydrogen/Instrument.pm"
+          },
+          {
+            "file": "work_mods/zef/Audio::Hydrogen/Audio-Hydrogen-0.0.6/lib/Audio/Hydrogen/Pattern.pm",
+            "publishUrl": "/mods/zef/Audio::Hydrogen/Audio-Hydrogen-0.0.6/lib/Audio/Hydrogen/Pattern.pm"
+          },
+          {
+            "file": "work_mods/zef/Audio::Hydrogen/Audio-Hydrogen-0.0.6/lib/Audio/Hydrogen/Song.pm",
+            "publishUrl": "/mods/zef/Audio::Hydrogen/Audio-Hydrogen-0.0.6/lib/Audio/Hydrogen/Song.pm"
+          },
           {
             "file": "work_mods/zef/Audio::Hydrogen/Audio-Hydrogen-0.0.6/README.md",
             "publishUrl": "/mods/zef/Audio::Hydrogen/Audio-Hydrogen-0.0.6/README.md"
@@ -23720,6 +24235,10 @@
           {
             "file": "work_mods/zef/Audio::Icecast/Audio-Icecast-0.0.5/Documentation.md",
             "publishUrl": "/mods/zef/Audio::Icecast/Audio-Icecast-0.0.5/Documentation.md"
+          },
+          {
+            "file": "work_mods/zef/Audio::Icecast/Audio-Icecast-0.0.5/lib/Audio/Icecast.pm",
+            "publishUrl": "/mods/zef/Audio::Icecast/Audio-Icecast-0.0.5/lib/Audio/Icecast.pm"
           },
           {
             "file": "work_mods/zef/Audio::Icecast/Audio-Icecast-0.0.5/README.md",
@@ -23787,6 +24306,10 @@
             "publishUrl": "/mods/zef/Audio::Libshout/Audio-Libshout-0.0.14/examples/README.md"
           },
           {
+            "file": "work_mods/zef/Audio::Libshout/Audio-Libshout-0.0.14/lib/Audio/Libshout.pm",
+            "publishUrl": "/mods/zef/Audio::Libshout/Audio-Libshout-0.0.14/lib/Audio/Libshout.pm"
+          },
+          {
             "file": "work_mods/zef/Audio::Libshout/Audio-Libshout-0.0.14/README.md",
             "publishUrl": "/mods/zef/Audio::Libshout/Audio-Libshout-0.0.14/README.md"
           }
@@ -23844,6 +24367,10 @@
             "publishUrl": "/mods/zef/Audio::Liquidsoap/Audio-Liquidsoap-0.1.2/examples/simple/README.md"
           },
           {
+            "file": "work_mods/zef/Audio::Liquidsoap/Audio-Liquidsoap-0.1.2/lib/Audio/Liquidsoap.pm",
+            "publishUrl": "/mods/zef/Audio::Liquidsoap/Audio-Liquidsoap-0.1.2/lib/Audio/Liquidsoap.pm"
+          },
+          {
             "file": "work_mods/zef/Audio::Liquidsoap/Audio-Liquidsoap-0.1.2/README.md",
             "publishUrl": "/mods/zef/Audio::Liquidsoap/Audio-Liquidsoap-0.1.2/README.md"
           }
@@ -23892,6 +24419,10 @@
           "version": "0.0.5"
         },
         "files": [
+          {
+            "file": "work_mods/zef/Audio::Playlist::JSPF/Audio-Playlist-JSPF-0.0.5/lib/Audio/Playlist/JSPF.pm",
+            "publishUrl": "/mods/zef/Audio::Playlist::JSPF/Audio-Playlist-JSPF-0.0.5/lib/Audio/Playlist/JSPF.pm"
+          },
           {
             "file": "work_mods/zef/Audio::Playlist::JSPF/Audio-Playlist-JSPF-0.0.5/README.md",
             "publishUrl": "/mods/zef/Audio::Playlist::JSPF/Audio-Playlist-JSPF-0.0.5/README.md"
@@ -24054,6 +24585,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/Audio::Silan/Audio-Silan-0.0.9/lib/Audio/Silan.pm",
+            "publishUrl": "/mods/zef/Audio::Silan/Audio-Silan-0.0.9/lib/Audio/Silan.pm"
+          },
+          {
             "file": "work_mods/zef/Audio::Silan/Audio-Silan-0.0.9/README.md",
             "publishUrl": "/mods/zef/Audio::Silan/Audio-Silan-0.0.9/README.md"
           }
@@ -24104,6 +24639,14 @@
           {
             "file": "work_mods/zef/Audio::Sndfile/Audio-Sndfile-0.0.15/Documentation.md",
             "publishUrl": "/mods/zef/Audio::Sndfile/Audio-Sndfile-0.0.15/Documentation.md"
+          },
+          {
+            "file": "work_mods/zef/Audio::Sndfile/Audio-Sndfile-0.0.15/lib/Audio/Sndfile.pm",
+            "publishUrl": "/mods/zef/Audio::Sndfile/Audio-Sndfile-0.0.15/lib/Audio/Sndfile.pm"
+          },
+          {
+            "file": "work_mods/zef/Audio::Sndfile/Audio-Sndfile-0.0.15/lib/Audio/Sndfile/Info.pm",
+            "publishUrl": "/mods/zef/Audio::Sndfile/Audio-Sndfile-0.0.15/lib/Audio/Sndfile/Info.pm"
           },
           {
             "file": "work_mods/zef/Audio::Sndfile/Audio-Sndfile-0.0.15/README.md",
@@ -24999,6 +25542,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/CheckSocket/CheckSocket-0.0.9/lib/CheckSocket.pm",
+            "publishUrl": "/mods/zef/CheckSocket/CheckSocket-0.0.9/lib/CheckSocket.pm"
+          },
+          {
             "file": "work_mods/zef/CheckSocket/CheckSocket-0.0.9/README.md",
             "publishUrl": "/mods/zef/CheckSocket/CheckSocket-0.0.9/README.md"
           }
@@ -25169,6 +25716,10 @@
           "version": "0.0.11"
         },
         "files": [
+          {
+            "file": "work_mods/zef/Chronic/Chronic-0.0.11/lib/Chronic.pm",
+            "publishUrl": "/mods/zef/Chronic/Chronic-0.0.11/lib/Chronic.pm"
+          },
           {
             "file": "work_mods/zef/Chronic/Chronic-0.0.11/README.md",
             "publishUrl": "/mods/zef/Chronic/Chronic-0.0.11/README.md"
@@ -28064,6 +28615,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/Crypt::AnyPasswordHash/Crypt-AnyPasswordHash-0.1.3/lib/Crypt/AnyPasswordHash.pm",
+            "publishUrl": "/mods/zef/Crypt::AnyPasswordHash/Crypt-AnyPasswordHash-0.1.3/lib/Crypt/AnyPasswordHash.pm"
+          },
+          {
             "file": "work_mods/zef/Crypt::AnyPasswordHash/Crypt-AnyPasswordHash-0.1.3/README.md",
             "publishUrl": "/mods/zef/Crypt::AnyPasswordHash/Crypt-AnyPasswordHash-0.1.3/README.md"
           }
@@ -30820,6 +31375,10 @@
             "publishUrl": "/mods/zef/DateTime::Julian/DateTime-Julian-1.1.0/dev/mydt.raku"
           },
           {
+            "file": "work_mods/zef/DateTime::Julian/DateTime-Julian-1.1.0/dev/sto/MathUtils.pm",
+            "publishUrl": "/mods/zef/DateTime::Julian/DateTime-Julian-1.1.0/dev/sto/MathUtils.pm"
+          },
+          {
             "file": "work_mods/zef/DateTime::Julian/DateTime-Julian-1.1.0/dev/sto/matlab-cal2jd.raku",
             "publishUrl": "/mods/zef/DateTime::Julian/DateTime-Julian-1.1.0/dev/sto/matlab-cal2jd.raku"
           },
@@ -30830,6 +31389,10 @@
           {
             "file": "work_mods/zef/DateTime::Julian/DateTime-Julian-1.1.0/dev/sto/Other.rakudoc",
             "publishUrl": "/mods/zef/DateTime::Julian/DateTime-Julian-1.1.0/dev/sto/Other.rakudoc"
+          },
+          {
+            "file": "work_mods/zef/DateTime::Julian/DateTime-Julian-1.1.0/dev/sto/Time.pm",
+            "publishUrl": "/mods/zef/DateTime::Julian/DateTime-Julian-1.1.0/dev/sto/Time.pm"
           },
           {
             "file": "work_mods/zef/DateTime::Julian/DateTime-Julian-1.1.0/dev/TimeUtils.md",
@@ -32697,6 +33260,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/Device::Velleman::K8055/Device-Velleman-K8055-0.0.5/lib/Device/Velleman/K8055.pm",
+            "publishUrl": "/mods/zef/Device::Velleman::K8055/Device-Velleman-K8055-0.0.5/lib/Device/Velleman/K8055.pm"
+          },
+          {
             "file": "work_mods/zef/Device::Velleman::K8055/Device-Velleman-K8055-0.0.5/README.md",
             "publishUrl": "/mods/zef/Device::Velleman::K8055/Device-Velleman-K8055-0.0.5/README.md"
           }
@@ -33392,6 +33959,10 @@
           "version": "0.1.2"
         },
         "files": [
+          {
+            "file": "work_mods/zef/Doublephone/Doublephone-0.1.2/lib/Doublephone.pm",
+            "publishUrl": "/mods/zef/Doublephone/Doublephone-0.1.2/lib/Doublephone.pm"
+          },
           {
             "file": "work_mods/zef/Doublephone/Doublephone-0.1.2/README.md",
             "publishUrl": "/mods/zef/Doublephone/Doublephone-0.1.2/README.md"
@@ -35553,6 +36124,10 @@
           "version": "0.0.5"
         },
         "files": [
+          {
+            "file": "work_mods/zef/EuclideanRhythm/EuclideanRhythm-0.0.5/lib/EuclideanRhythm.pm",
+            "publishUrl": "/mods/zef/EuclideanRhythm/EuclideanRhythm-0.0.5/lib/EuclideanRhythm.pm"
+          },
           {
             "file": "work_mods/zef/EuclideanRhythm/EuclideanRhythm-0.0.5/README.md",
             "publishUrl": "/mods/zef/EuclideanRhythm/EuclideanRhythm-0.0.5/README.md"
@@ -38066,6 +38641,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/GDBM/GDBM-0.1.1/lib/GDBM.pm",
+            "publishUrl": "/mods/zef/GDBM/GDBM-0.1.1/lib/GDBM.pm"
+          },
+          {
             "file": "work_mods/zef/GDBM/GDBM-0.1.1/README.md",
             "publishUrl": "/mods/zef/GDBM/GDBM-0.1.1/README.md"
           }
@@ -38101,6 +38680,10 @@
           "version": "0.3.0"
         },
         "files": [
+          {
+            "file": "work_mods/zef/Geo::Coordinates::UTM/Geo-Coordinates-UTM-0.3.0/lib/Geo/Coordinates/UTM.pm",
+            "publishUrl": "/mods/zef/Geo::Coordinates::UTM/Geo-Coordinates-UTM-0.3.0/lib/Geo/Coordinates/UTM.pm"
+          },
           {
             "file": "work_mods/zef/Geo::Coordinates::UTM/Geo-Coordinates-UTM-0.3.0/README.md",
             "publishUrl": "/mods/zef/Geo::Coordinates::UTM/Geo-Coordinates-UTM-0.3.0/README.md"
@@ -38153,6 +38736,10 @@
           {
             "file": "work_mods/zef/Geo::Ellipsoid/Geo-Ellipsoid-1.0.1/docs/README.md",
             "publishUrl": "/mods/zef/Geo::Ellipsoid/Geo-Ellipsoid-1.0.1/docs/README.md"
+          },
+          {
+            "file": "work_mods/zef/Geo::Ellipsoid/Geo-Ellipsoid-1.0.1/gentest/p5-get-orig-geo-data.pl",
+            "publishUrl": "/mods/zef/Geo::Ellipsoid/Geo-Ellipsoid-1.0.1/gentest/p5-get-orig-geo-data.pl"
           },
           {
             "file": "work_mods/zef/Geo::Ellipsoid/Geo-Ellipsoid-1.0.1/lib/Geo/Ellipsoid.rakumod",
@@ -43916,6 +44503,10 @@
           {
             "file": "work_mods/zef/Intl::CLDR/dist/tools/parse-cldr.raku",
             "publishUrl": "/mods/zef/Intl::CLDR/dist/tools/parse-cldr.raku"
+          },
+          {
+            "file": "work_mods/zef/Intl::CLDR/dist/tools/parse-timezones.p6",
+            "publishUrl": "/mods/zef/Intl::CLDR/dist/tools/parse-timezones.p6"
           }
         ],
         "src": "zef",
@@ -44801,6 +45392,10 @@
           "version": "0.0.9"
         },
         "files": [
+          {
+            "file": "work_mods/zef/IO::Path::Mode/IO-Path-Mode-0.0.9/lib/IO/Path/Mode.pm",
+            "publishUrl": "/mods/zef/IO::Path::Mode/IO-Path-Mode-0.0.9/lib/IO/Path/Mode.pm"
+          },
           {
             "file": "work_mods/zef/IO::Path::Mode/IO-Path-Mode-0.0.9/README.md",
             "publishUrl": "/mods/zef/IO::Path::Mode/IO-Path-Mode-0.0.9/README.md"
@@ -45810,6 +46405,10 @@
           "version": "0.1.1"
         },
         "files": [
+          {
+            "file": "work_mods/zef/JSON::Infer/JSON-Infer-0.1.1/lib/JSON/Infer.pm",
+            "publishUrl": "/mods/zef/JSON::Infer/JSON-Infer-0.1.1/lib/JSON/Infer.pm"
+          },
           {
             "file": "work_mods/zef/JSON::Infer/JSON-Infer-0.1.1/README.md",
             "publishUrl": "/mods/zef/JSON::Infer/JSON-Infer-0.1.1/README.md"
@@ -47251,6 +47850,10 @@
           "version": "0.0.11"
         },
         "files": [
+          {
+            "file": "work_mods/zef/LibraryCheck/LibraryCheck-0.0.11/lib/LibraryCheck.pm",
+            "publishUrl": "/mods/zef/LibraryCheck/LibraryCheck-0.0.11/lib/LibraryCheck.pm"
+          },
           {
             "file": "work_mods/zef/LibraryCheck/LibraryCheck-0.0.11/README.md",
             "publishUrl": "/mods/zef/LibraryCheck/LibraryCheck-0.0.11/README.md"
@@ -48844,6 +49447,14 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/Linux::Cpuinfo/Linux-Cpuinfo-0.1.1/lib/Linux/Cpuinfo.pm",
+            "publishUrl": "/mods/zef/Linux::Cpuinfo/Linux-Cpuinfo-0.1.1/lib/Linux/Cpuinfo.pm"
+          },
+          {
+            "file": "work_mods/zef/Linux::Cpuinfo/Linux-Cpuinfo-0.1.1/lib/Linux/Cpuinfo/Cpu.pm",
+            "publishUrl": "/mods/zef/Linux::Cpuinfo/Linux-Cpuinfo-0.1.1/lib/Linux/Cpuinfo/Cpu.pm"
+          },
+          {
             "file": "work_mods/zef/Linux::Cpuinfo/Linux-Cpuinfo-0.1.1/README.md",
             "publishUrl": "/mods/zef/Linux::Cpuinfo/Linux-Cpuinfo-0.1.1/README.md"
           }
@@ -48891,6 +49502,18 @@
           "version": "0.0.15"
         },
         "files": [
+          {
+            "file": "work_mods/zef/Linux::Fuser/Linux-Fuser-0.0.15/lib/Linux/Fuser.pm",
+            "publishUrl": "/mods/zef/Linux::Fuser/Linux-Fuser-0.0.15/lib/Linux/Fuser.pm"
+          },
+          {
+            "file": "work_mods/zef/Linux::Fuser/Linux-Fuser-0.0.15/lib/Linux/Fuser/FileDescriptor.pm",
+            "publishUrl": "/mods/zef/Linux::Fuser/Linux-Fuser-0.0.15/lib/Linux/Fuser/FileDescriptor.pm"
+          },
+          {
+            "file": "work_mods/zef/Linux::Fuser/Linux-Fuser-0.0.15/lib/Linux/Fuser/Procinfo.pm",
+            "publishUrl": "/mods/zef/Linux::Fuser/Linux-Fuser-0.0.15/lib/Linux/Fuser/Procinfo.pm"
+          },
           {
             "file": "work_mods/zef/Linux::Fuser/Linux-Fuser-0.0.15/README.md",
             "publishUrl": "/mods/zef/Linux::Fuser/Linux-Fuser-0.0.15/README.md"
@@ -49989,6 +50612,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/Log::Syslog::Native/Log-Syslog-Native-0.1.1/lib/Log/Syslog/Native.pm",
+            "publishUrl": "/mods/zef/Log::Syslog::Native/Log-Syslog-Native-0.1.1/lib/Log/Syslog/Native.pm"
+          },
+          {
             "file": "work_mods/zef/Log::Syslog::Native/Log-Syslog-Native-0.1.1/README.md",
             "publishUrl": "/mods/zef/Log::Syslog::Native/Log-Syslog-Native-0.1.1/README.md"
           }
@@ -50178,6 +50805,34 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/Lumberjack::Application/Lumberjack-Application-0.0.10/lib/Lumberjack/Application.pm",
+            "publishUrl": "/mods/zef/Lumberjack::Application/Lumberjack-Application-0.0.10/lib/Lumberjack/Application.pm"
+          },
+          {
+            "file": "work_mods/zef/Lumberjack::Application/Lumberjack-Application-0.0.10/lib/Lumberjack/Application/Index.pm",
+            "publishUrl": "/mods/zef/Lumberjack::Application/Lumberjack-Application-0.0.10/lib/Lumberjack/Application/Index.pm"
+          },
+          {
+            "file": "work_mods/zef/Lumberjack::Application/Lumberjack-Application-0.0.10/lib/Lumberjack/Application/PSGI.pm",
+            "publishUrl": "/mods/zef/Lumberjack::Application/Lumberjack-Application-0.0.10/lib/Lumberjack/Application/PSGI.pm"
+          },
+          {
+            "file": "work_mods/zef/Lumberjack::Application/Lumberjack-Application-0.0.10/lib/Lumberjack/Application/WebSocket.pm",
+            "publishUrl": "/mods/zef/Lumberjack::Application/Lumberjack-Application-0.0.10/lib/Lumberjack/Application/WebSocket.pm"
+          },
+          {
+            "file": "work_mods/zef/Lumberjack::Application/Lumberjack-Application-0.0.10/lib/Lumberjack/Dispatcher/Proxy.pm",
+            "publishUrl": "/mods/zef/Lumberjack::Application/Lumberjack-Application-0.0.10/lib/Lumberjack/Dispatcher/Proxy.pm"
+          },
+          {
+            "file": "work_mods/zef/Lumberjack::Application/Lumberjack-Application-0.0.10/lib/Lumberjack/Dispatcher/Supply.pm",
+            "publishUrl": "/mods/zef/Lumberjack::Application/Lumberjack-Application-0.0.10/lib/Lumberjack/Dispatcher/Supply.pm"
+          },
+          {
+            "file": "work_mods/zef/Lumberjack::Application/Lumberjack-Application-0.0.10/lib/Lumberjack/Template/Provider.pm",
+            "publishUrl": "/mods/zef/Lumberjack::Application/Lumberjack-Application-0.0.10/lib/Lumberjack/Template/Provider.pm"
+          },
+          {
             "file": "work_mods/zef/Lumberjack::Application/Lumberjack-Application-0.0.10/README.md",
             "publishUrl": "/mods/zef/Lumberjack::Application/Lumberjack-Application-0.0.10/README.md"
           }
@@ -50344,6 +50999,10 @@
             "publishUrl": "/mods/zef/Lumberjack::Dispatcher::Syslog/Lumberjack-Dispatcher-Syslog-0.0.5/Documentation.md"
           },
           {
+            "file": "work_mods/zef/Lumberjack::Dispatcher::Syslog/Lumberjack-Dispatcher-Syslog-0.0.5/lib/Lumberjack/Dispatcher/Syslog.pm",
+            "publishUrl": "/mods/zef/Lumberjack::Dispatcher::Syslog/Lumberjack-Dispatcher-Syslog-0.0.5/lib/Lumberjack/Dispatcher/Syslog.pm"
+          },
+          {
             "file": "work_mods/zef/Lumberjack::Dispatcher::Syslog/Lumberjack-Dispatcher-Syslog-0.0.5/README.md",
             "publishUrl": "/mods/zef/Lumberjack::Dispatcher::Syslog/Lumberjack-Dispatcher-Syslog-0.0.5/README.md"
           }
@@ -50447,6 +51106,10 @@
           {
             "file": "work_mods/zef/Lumberjack/Lumberjack-0.1.4/Documentation.md",
             "publishUrl": "/mods/zef/Lumberjack/Lumberjack-0.1.4/Documentation.md"
+          },
+          {
+            "file": "work_mods/zef/Lumberjack/Lumberjack-0.1.4/lib/Lumberjack.pm",
+            "publishUrl": "/mods/zef/Lumberjack/Lumberjack-0.1.4/lib/Lumberjack.pm"
           },
           {
             "file": "work_mods/zef/Lumberjack/Lumberjack-0.1.4/README.md",
@@ -50646,6 +51309,10 @@
           "version": "0.0.6"
         },
         "files": [
+          {
+            "file": "work_mods/zef/Manifesto/Manifesto-0.0.6/lib/Manifesto.pm",
+            "publishUrl": "/mods/zef/Manifesto/Manifesto-0.0.6/lib/Manifesto.pm"
+          },
           {
             "file": "work_mods/zef/Manifesto/Manifesto-0.0.6/README.md",
             "publishUrl": "/mods/zef/Manifesto/Manifesto-0.0.6/README.md"
@@ -53491,6 +54158,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/MessagePack::Class/MessagePack-Class-0.0.4/lib/MessagePack/Class.pm",
+            "publishUrl": "/mods/zef/MessagePack::Class/MessagePack-Class-0.0.4/lib/MessagePack/Class.pm"
+          },
+          {
             "file": "work_mods/zef/MessagePack::Class/MessagePack-Class-0.0.4/README.md",
             "publishUrl": "/mods/zef/MessagePack::Class/MessagePack-Class-0.0.4/README.md"
           }
@@ -54670,6 +55341,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/Monitor::Monit/Monitor-Monit-0.0.5/lib/Monitor/Monit.pm",
+            "publishUrl": "/mods/zef/Monitor::Monit/Monitor-Monit-0.0.5/lib/Monitor/Monit.pm"
+          },
+          {
             "file": "work_mods/zef/Monitor::Monit/Monitor-Monit-0.0.5/README.md",
             "publishUrl": "/mods/zef/Monitor::Monit/Monitor-Monit-0.0.5/README.md"
           }
@@ -54718,6 +55393,10 @@
           {
             "file": "work_mods/zef/MQ::Posix/MQ-Posix-0.0.4/Documentation.md",
             "publishUrl": "/mods/zef/MQ::Posix/MQ-Posix-0.0.4/Documentation.md"
+          },
+          {
+            "file": "work_mods/zef/MQ::Posix/MQ-Posix-0.0.4/lib/MQ/Posix.pm",
+            "publishUrl": "/mods/zef/MQ::Posix/MQ-Posix-0.0.4/lib/MQ/Posix.pm"
           },
           {
             "file": "work_mods/zef/MQ::Posix/MQ-Posix-0.0.4/README.md",
@@ -55381,6 +56060,10 @@
           "version": "0.0.5"
         },
         "files": [
+          {
+            "file": "work_mods/zef/NativeHelpers::Array/NativeHelpers-Array-0.0.5/lib/NativeHelpers/Array.pm",
+            "publishUrl": "/mods/zef/NativeHelpers::Array/NativeHelpers-Array-0.0.5/lib/NativeHelpers/Array.pm"
+          },
           {
             "file": "work_mods/zef/NativeHelpers::Array/NativeHelpers-Array-0.0.5/README.md",
             "publishUrl": "/mods/zef/NativeHelpers::Array/NativeHelpers-Array-0.0.5/README.md"
@@ -56901,6 +57584,10 @@
             "publishUrl": "/mods/zef/Number::More/Number-More-0.2.1/dev/README.md"
           },
           {
+            "file": "work_mods/zef/Number::More/Number-More-0.2.1/dev/sto/base2dec-simple.p6",
+            "publishUrl": "/mods/zef/Number::More/Number-More-0.2.1/dev/sto/base2dec-simple.p6"
+          },
+          {
             "file": "work_mods/zef/Number::More/Number-More-0.2.1/docs/ALL-SUBS.md",
             "publishUrl": "/mods/zef/Number::More/Number-More-0.2.1/docs/ALL-SUBS.md"
           },
@@ -57039,6 +57726,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/Object::Permission::Group/Object-Permission-Group-0.0.6/lib/Object/Permission/Group.pm",
+            "publishUrl": "/mods/zef/Object::Permission::Group/Object-Permission-Group-0.0.6/lib/Object/Permission/Group.pm"
+          },
+          {
             "file": "work_mods/zef/Object::Permission::Group/Object-Permission-Group-0.0.6/README.md",
             "publishUrl": "/mods/zef/Object::Permission::Group/Object-Permission-Group-0.0.6/README.md"
           }
@@ -57084,6 +57775,10 @@
           "version": "0.0.6"
         },
         "files": [
+          {
+            "file": "work_mods/zef/Object::Permission/Object-Permission-0.0.6/lib/Object/Permission.pm",
+            "publishUrl": "/mods/zef/Object::Permission/Object-Permission-0.0.6/lib/Object/Permission.pm"
+          },
           {
             "file": "work_mods/zef/Object::Permission/Object-Permission-0.0.6/README.md",
             "publishUrl": "/mods/zef/Object::Permission/Object-Permission-0.0.6/README.md"
@@ -57409,6 +58104,10 @@
           "version": "0.0.8"
         },
         "files": [
+          {
+            "file": "work_mods/zef/Oyatul/Oyatul-0.0.8/lib/Oyatul.pm",
+            "publishUrl": "/mods/zef/Oyatul/Oyatul-0.0.8/lib/Oyatul.pm"
+          },
           {
             "file": "work_mods/zef/Oyatul/Oyatul-0.0.8/README.md",
             "publishUrl": "/mods/zef/Oyatul/Oyatul-0.0.8/README.md"
@@ -64591,6 +65290,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/Pg::Notify/Pg-Notify-0.0.7/lib/Pg/Notify.pm",
+            "publishUrl": "/mods/zef/Pg::Notify/Pg-Notify-0.0.7/lib/Pg/Notify.pm"
+          },
+          {
             "file": "work_mods/zef/Pg::Notify/Pg-Notify-0.0.7/README.md",
             "publishUrl": "/mods/zef/Pg::Notify/Pg-Notify-0.0.7/README.md"
           }
@@ -65192,8 +65895,16 @@
             "publishUrl": "/mods/zef/Pod::Load/dist/resources/examples/pod-load-clean.pod6"
           },
           {
+            "file": "work_mods/zef/Pod::Load/dist/resources/examples/pod-load-old.p6",
+            "publishUrl": "/mods/zef/Pod::Load/dist/resources/examples/pod-load-old.p6"
+          },
+          {
             "file": "work_mods/zef/Pod::Load/dist/resources/examples/README.md",
             "publishUrl": "/mods/zef/Pod::Load/dist/resources/examples/README.md"
+          },
+          {
+            "file": "work_mods/zef/Pod::Load/dist/t/can.p6",
+            "publishUrl": "/mods/zef/Pod::Load/dist/t/can.p6"
           },
           {
             "file": "work_mods/zef/Pod::Load/dist/t/multi.pod6",
@@ -67655,6 +68366,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/Readline/dist/lib/Readline.pm",
+            "publishUrl": "/mods/zef/Readline/dist/lib/Readline.pm"
+          },
+          {
             "file": "work_mods/zef/Readline/dist/README.md",
             "publishUrl": "/mods/zef/Readline/dist/README.md"
           }
@@ -68398,6 +69113,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/RedX::HashedPassword/RedX-HashedPassword-0.0.7/lib/RedX/HashedPassword.pm",
+            "publishUrl": "/mods/zef/RedX::HashedPassword/RedX-HashedPassword-0.0.7/lib/RedX/HashedPassword.pm"
+          },
+          {
             "file": "work_mods/zef/RedX::HashedPassword/RedX-HashedPassword-0.0.7/README.md",
             "publishUrl": "/mods/zef/RedX::HashedPassword/RedX-HashedPassword-0.0.7/README.md"
           }
@@ -68848,6 +69567,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/RPi::Device::PiGlow/RPi-Device-PiGlow-0.0.5/lib/RPi/Device/PiGlow.pm",
+            "publishUrl": "/mods/zef/RPi::Device::PiGlow/RPi-Device-PiGlow-0.0.5/lib/RPi/Device/PiGlow.pm"
+          },
+          {
             "file": "work_mods/zef/RPi::Device::PiGlow/RPi-Device-PiGlow-0.0.5/README.md",
             "publishUrl": "/mods/zef/RPi::Device::PiGlow/RPi-Device-PiGlow-0.0.5/README.md"
           }
@@ -68912,6 +69635,10 @@
           "version": "0.0.7"
         },
         "files": [
+          {
+            "file": "work_mods/zef/RPi::Device::SMBus/RPi-Device-SMBus-0.0.7/lib/RPi/Device/SMBus.pm",
+            "publishUrl": "/mods/zef/RPi::Device::SMBus/RPi-Device-SMBus-0.0.7/lib/RPi/Device/SMBus.pm"
+          },
           {
             "file": "work_mods/zef/RPi::Device::SMBus/RPi-Device-SMBus-0.0.7/README.md",
             "publishUrl": "/mods/zef/RPi::Device::SMBus/RPi-Device-SMBus-0.0.7/README.md"
@@ -71325,6 +72052,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/Staticish/Staticish-0.0.9/lib/Staticish.pm",
+            "publishUrl": "/mods/zef/Staticish/Staticish-0.0.9/lib/Staticish.pm"
+          },
+          {
             "file": "work_mods/zef/Staticish/Staticish-0.0.9/README.md",
             "publishUrl": "/mods/zef/Staticish/Staticish-0.0.9/README.md"
           }
@@ -72417,6 +73148,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/Sys::Lastlog/Sys-Lastlog-0.1.3/lib/Sys/Lastlog.pm",
+            "publishUrl": "/mods/zef/Sys::Lastlog/Sys-Lastlog-0.1.3/lib/Sys/Lastlog.pm"
+          },
+          {
             "file": "work_mods/zef/Sys::Lastlog/Sys-Lastlog-0.1.3/README.md",
             "publishUrl": "/mods/zef/Sys::Lastlog/Sys-Lastlog-0.1.3/README.md"
           }
@@ -72471,6 +73206,10 @@
           "version": "0.1.1"
         },
         "files": [
+          {
+            "file": "work_mods/zef/Sys::Utmp/Sys-Utmp-0.1.1/lib/Sys/Utmp.pm",
+            "publishUrl": "/mods/zef/Sys::Utmp/Sys-Utmp-0.1.1/lib/Sys/Utmp.pm"
+          },
           {
             "file": "work_mods/zef/Sys::Utmp/Sys-Utmp-0.1.1/README.md",
             "publishUrl": "/mods/zef/Sys::Utmp/Sys-Utmp-0.1.1/README.md"
@@ -74299,6 +75038,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/Test::META/Test-META-0.0.19/lib/Test/META.pm",
+            "publishUrl": "/mods/zef/Test::META/Test-META-0.0.19/lib/Test/META.pm"
+          },
+          {
             "file": "work_mods/zef/Test::META/Test-META-0.0.19/README.md",
             "publishUrl": "/mods/zef/Test::META/Test-META-0.0.19/README.md"
           }
@@ -74494,6 +75237,38 @@
           {
             "file": "work_mods/zef/Test::Script::Output/dist/README.md",
             "publishUrl": "/mods/zef/Test::Script::Output/dist/README.md"
+          },
+          {
+            "file": "work_mods/zef/Test::Script::Output/dist/t/changes.p6",
+            "publishUrl": "/mods/zef/Test::Script::Output/dist/t/changes.p6"
+          },
+          {
+            "file": "work_mods/zef/Test::Script::Output/dist/t/dir/other.p6",
+            "publishUrl": "/mods/zef/Test::Script::Output/dist/t/dir/other.p6"
+          },
+          {
+            "file": "work_mods/zef/Test::Script::Output/dist/t/dir/runnable.p6",
+            "publishUrl": "/mods/zef/Test::Script::Output/dist/t/dir/runnable.p6"
+          },
+          {
+            "file": "work_mods/zef/Test::Script::Output/dist/t/gather.p6",
+            "publishUrl": "/mods/zef/Test::Script::Output/dist/t/gather.p6"
+          },
+          {
+            "file": "work_mods/zef/Test::Script::Output/dist/t/other.p6",
+            "publishUrl": "/mods/zef/Test::Script::Output/dist/t/other.p6"
+          },
+          {
+            "file": "work_mods/zef/Test::Script::Output/dist/t/package.p6",
+            "publishUrl": "/mods/zef/Test::Script::Output/dist/t/package.p6"
+          },
+          {
+            "file": "work_mods/zef/Test::Script::Output/dist/t/role-cards.p6",
+            "publishUrl": "/mods/zef/Test::Script::Output/dist/t/role-cards.p6"
+          },
+          {
+            "file": "work_mods/zef/Test::Script::Output/dist/t/runnable.p6",
+            "publishUrl": "/mods/zef/Test::Script::Output/dist/t/runnable.p6"
           }
         ],
         "src": "zef",
@@ -74659,6 +75434,10 @@
           "version": "0.0.4"
         },
         "files": [
+          {
+            "file": "work_mods/zef/Test::Util::ServerPort/Test-Util-ServerPort-0.0.4/lib/Test/Util/ServerPort.pm",
+            "publishUrl": "/mods/zef/Test::Util::ServerPort/Test-Util-ServerPort-0.0.4/lib/Test/Util/ServerPort.pm"
+          },
           {
             "file": "work_mods/zef/Test::Util::ServerPort/Test-Util-ServerPort-0.0.4/README.md",
             "publishUrl": "/mods/zef/Test::Util::ServerPort/Test-Util-ServerPort-0.0.4/README.md"
@@ -76794,6 +77573,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/Tinky::JSON/Tinky-JSON-0.0.7/lib/Tinky/JSON.pm",
+            "publishUrl": "/mods/zef/Tinky::JSON/Tinky-JSON-0.0.7/lib/Tinky/JSON.pm"
+          },
+          {
             "file": "work_mods/zef/Tinky::JSON/Tinky-JSON-0.0.7/README.md",
             "publishUrl": "/mods/zef/Tinky::JSON/Tinky-JSON-0.0.7/README.md"
           }
@@ -76841,6 +77624,10 @@
           {
             "file": "work_mods/zef/Tinky/Tinky-0.1.4/Documentation.md",
             "publishUrl": "/mods/zef/Tinky/Tinky-0.1.4/Documentation.md"
+          },
+          {
+            "file": "work_mods/zef/Tinky/Tinky-0.1.4/lib/Tinky.pm",
+            "publishUrl": "/mods/zef/Tinky/Tinky-0.1.4/lib/Tinky.pm"
           },
           {
             "file": "work_mods/zef/Tinky/Tinky-0.1.4/README.md",
@@ -77728,6 +78515,10 @@
             "publishUrl": "/mods/zef/Ujumla/Ujumla-0.0.4/Documentation.md"
           },
           {
+            "file": "work_mods/zef/Ujumla/Ujumla-0.0.4/lib/Ujumla.pm",
+            "publishUrl": "/mods/zef/Ujumla/Ujumla-0.0.4/lib/Ujumla.pm"
+          },
+          {
             "file": "work_mods/zef/Ujumla/Ujumla-0.0.4/README.md",
             "publishUrl": "/mods/zef/Ujumla/Ujumla-0.0.4/README.md"
           }
@@ -78197,6 +78988,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/Unix::Groups/Unix-Groups-0.0.6/lib/Unix/Groups.pm",
+            "publishUrl": "/mods/zef/Unix::Groups/Unix-Groups-0.0.6/lib/Unix/Groups.pm"
+          },
+          {
             "file": "work_mods/zef/Unix::Groups/Unix-Groups-0.0.6/README.md",
             "publishUrl": "/mods/zef/Unix::Groups/Unix-Groups-0.0.6/README.md"
           }
@@ -78515,6 +79310,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/URI::FetchFile/URI-FetchFile-0.0.5/lib/URI/FetchFile.pm",
+            "publishUrl": "/mods/zef/URI::FetchFile/URI-FetchFile-0.0.5/lib/URI/FetchFile.pm"
+          },
+          {
             "file": "work_mods/zef/URI::FetchFile/URI-FetchFile-0.0.5/README.md",
             "publishUrl": "/mods/zef/URI::FetchFile/URI-FetchFile-0.0.5/README.md"
           }
@@ -78609,6 +79408,10 @@
           "version": "0.0.10"
         },
         "files": [
+          {
+            "file": "work_mods/zef/URI::Template/URI-Template-0.0.10/lib/URI/Template.pm",
+            "publishUrl": "/mods/zef/URI::Template/URI-Template-0.0.10/lib/URI/Template.pm"
+          },
           {
             "file": "work_mods/zef/URI::Template/URI-Template-0.0.10/README.md",
             "publishUrl": "/mods/zef/URI::Template/URI-Template-0.0.10/README.md"
@@ -78996,6 +79799,10 @@
           "version": "0.0.6"
         },
         "files": [
+          {
+            "file": "work_mods/zef/Util::Bitfield/Util-Bitfield-0.0.6/lib/Util/Bitfield.pm",
+            "publishUrl": "/mods/zef/Util::Bitfield/Util-Bitfield-0.0.6/lib/Util/Bitfield.pm"
+          },
           {
             "file": "work_mods/zef/Util::Bitfield/Util-Bitfield-0.0.6/README.md",
             "publishUrl": "/mods/zef/Util::Bitfield/Util-Bitfield-0.0.6/README.md"
@@ -80604,6 +81411,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/WebService::Soundcloud/WebService-Soundcloud-0.0.10/lib/WebService/Soundcloud.pm",
+            "publishUrl": "/mods/zef/WebService::Soundcloud/WebService-Soundcloud-0.0.10/lib/WebService/Soundcloud.pm"
+          },
+          {
             "file": "work_mods/zef/WebService::Soundcloud/WebService-Soundcloud-0.0.10/README.md",
             "publishUrl": "/mods/zef/WebService::Soundcloud/WebService-Soundcloud-0.0.10/README.md"
           }
@@ -81881,6 +82692,10 @@
         },
         "files": [
           {
+            "file": "work_mods/zef/XDG::BaseDirectory/XDG-BaseDirectory-0.0.13/lib/XDG/BaseDirectory.pm",
+            "publishUrl": "/mods/zef/XDG::BaseDirectory/XDG-BaseDirectory-0.0.13/lib/XDG/BaseDirectory.pm"
+          },
+          {
             "file": "work_mods/zef/XDG::BaseDirectory/XDG-BaseDirectory-0.0.13/README.md",
             "publishUrl": "/mods/zef/XDG::BaseDirectory/XDG-BaseDirectory-0.0.13/README.md"
           }
@@ -82014,6 +82829,10 @@
           {
             "file": "work_mods/zef/XML::Class/XML-Class-0.0.10/Documentation.md",
             "publishUrl": "/mods/zef/XML::Class/XML-Class-0.0.10/Documentation.md"
+          },
+          {
+            "file": "work_mods/zef/XML::Class/XML-Class-0.0.10/lib/XML/Class.pm",
+            "publishUrl": "/mods/zef/XML::Class/XML-Class-0.0.10/lib/XML/Class.pm"
           },
           {
             "file": "work_mods/zef/XML::Class/XML-Class-0.0.10/README.md",

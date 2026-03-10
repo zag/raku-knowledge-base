@@ -63,7 +63,7 @@ Object {
       "footer": "",
       "kind": "Language",
       "pubdate": undefined,
-      "publishUrl": undefined,
+      "publishUrl": null,
       "sources": Array [],
       "subkind": "Language",
       "subtitle": "subtitle
@@ -80,7 +80,7 @@ Object {
       "footer": "",
       "kind": "Language",
       "pubdate": undefined,
-      "publishUrl": undefined,
+      "publishUrl": null,
       "sources": Array [],
       "subkind": "Language",
       "subtitle": "subtitle2

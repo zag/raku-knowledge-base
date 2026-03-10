@@ -9,7 +9,6 @@
       "file": "work_doc/doc/Language/101-basics.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/101-basics",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "beginning"
@@ -23,7 +22,6 @@
       "file": "work_doc/doc/Language/5to6-nutshell.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/5to6-nutshell",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "migration"
@@ -37,7 +35,6 @@
       "file": "work_doc/doc/Language/5to6-overview.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/5to6-overview",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "migration"
@@ -51,7 +48,6 @@
       "file": "work_doc/doc/Language/5to6-perlfunc.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/5to6-perlfunc",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "migration"
@@ -65,7 +61,6 @@
       "file": "work_doc/doc/Language/5to6-perlop.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/5to6-perlop",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "migration"
@@ -79,7 +74,6 @@
       "file": "work_doc/doc/Language/5to6-perlsyn.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/5to6-perlsyn",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "migration"
@@ -93,7 +87,6 @@
       "file": "work_doc/doc/Language/5to6-perlvar.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/5to6-perlvar",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "migration"
@@ -107,7 +100,6 @@
       "file": "work_doc/doc/Language/about.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/about",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "beginning"
@@ -121,7 +113,6 @@
       "file": "work_doc/doc/Language/brackets.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/brackets",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "reference"
@@ -135,7 +126,6 @@
       "file": "work_doc/doc/Language/classtut.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/classtut",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "tutorial"
@@ -149,7 +139,6 @@
       "file": "work_doc/doc/Language/community.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/community",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "reference"
@@ -163,7 +152,6 @@
       "file": "work_doc/doc/Language/compilation.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/compilation",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "tutorial"
@@ -177,7 +165,6 @@
       "file": "work_doc/doc/Language/concurrency.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/concurrency",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "tutorial"
@@ -191,7 +178,6 @@
       "file": "work_doc/doc/Language/containers.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/containers",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -205,7 +191,6 @@
       "file": "work_doc/doc/Language/contexts.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/contexts",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -219,7 +204,6 @@
       "file": "work_doc/doc/Language/control.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/control",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -233,7 +217,6 @@
       "file": "work_doc/doc/Language/create-cli.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/create-cli",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "tutorial"
@@ -247,7 +230,6 @@
       "file": "work_doc/doc/Language/enumeration.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/enumeration",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -261,7 +243,6 @@
       "file": "work_doc/doc/Language/exceptions.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/exceptions",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -275,7 +256,6 @@
       "file": "work_doc/doc/Language/experimental.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/experimental",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "advanced"
@@ -289,7 +269,6 @@
       "file": "work_doc/doc/Language/faq.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/faq",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "reference"
@@ -303,7 +282,6 @@
       "file": "work_doc/doc/Language/filename-extensions.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/filename-extensions",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "beginning"
@@ -317,7 +295,6 @@
       "file": "work_doc/doc/Language/functions.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/functions",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -331,7 +308,6 @@
       "file": "work_doc/doc/Language/glossary.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/glossary",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "reference"
@@ -345,7 +321,6 @@
       "file": "work_doc/doc/Language/grammar_tutorial.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/grammar_tutorial",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "tutorial"
@@ -359,7 +334,6 @@
       "file": "work_doc/doc/Language/grammars.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/grammars",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -373,7 +347,6 @@
       "file": "work_doc/doc/Language/hashmap.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/hashmap",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -387,7 +360,6 @@
       "file": "work_doc/doc/Language/haskell-to-p6.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/haskell-to-p6",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "migration"
@@ -401,7 +373,6 @@
       "file": "work_doc/doc/Language/intro.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/intro",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "beginning"
@@ -415,7 +386,6 @@
       "file": "work_doc/doc/Language/io-guide.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/io-guide",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -429,7 +399,6 @@
       "file": "work_doc/doc/Language/io.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/io",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "tutorial"
@@ -443,7 +412,6 @@
       "file": "work_doc/doc/Language/ipc.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/ipc",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "tutorial"
@@ -457,7 +425,6 @@
       "file": "work_doc/doc/Language/iterating.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/iterating",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "tutorial"
@@ -471,7 +438,6 @@
       "file": "work_doc/doc/Language/js-nutshell.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/js-nutshell",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "migration"
@@ -485,7 +451,6 @@
       "file": "work_doc/doc/Language/list.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/list",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -499,7 +464,6 @@
       "file": "work_doc/doc/Language/math.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/math",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "tutorial"
@@ -513,7 +477,6 @@
       "file": "work_doc/doc/Language/module-packages.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/module-packages",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "tutorial"
@@ -527,7 +490,6 @@
       "file": "work_doc/doc/Language/modules-core.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/modules-core",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "tutorial"
@@ -541,7 +503,6 @@
       "file": "work_doc/doc/Language/modules-extra.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/modules-extra",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "tutorial"
@@ -555,7 +516,6 @@
       "file": "work_doc/doc/Language/modules.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/modules",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "tutorial"
@@ -569,7 +529,6 @@
       "file": "work_doc/doc/Language/mop.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/mop",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -583,7 +542,6 @@
       "file": "work_doc/doc/Language/nativecall.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/nativecall",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -597,7 +555,6 @@
       "file": "work_doc/doc/Language/nativetypes.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/nativetypes",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -611,7 +568,6 @@
       "file": "work_doc/doc/Language/newline.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/newline",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -625,7 +581,6 @@
       "file": "work_doc/doc/Language/numerics.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/numerics",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -639,7 +594,6 @@
       "file": "work_doc/doc/Language/objects.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/objects",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -653,7 +607,6 @@
       "file": "work_doc/doc/Language/operators.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/operators",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -667,7 +620,6 @@
       "file": "work_doc/doc/Language/optut.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/optut",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "tutorial"
@@ -681,7 +633,6 @@
       "file": "work_doc/doc/Language/packages.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/packages",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -695,7 +646,6 @@
       "file": "work_doc/doc/Language/performance.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/performance",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -709,7 +659,6 @@
       "file": "work_doc/doc/Language/phasers.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/phasers",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -723,7 +672,6 @@
       "file": "work_doc/doc/Language/pod.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/pod",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "reference"
@@ -737,7 +685,6 @@
       "file": "work_doc/doc/Language/pragmas.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/pragmas",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -751,7 +698,6 @@
       "file": "work_doc/doc/Language/py-nutshell.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/py-nutshell",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "migration"
@@ -765,7 +711,6 @@
       "file": "work_doc/doc/Language/quoting.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/quoting",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -779,7 +724,6 @@
       "file": "work_doc/doc/Language/rb-nutshell.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/rb-nutshell",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "migration"
@@ -793,7 +737,6 @@
       "file": "work_doc/doc/Language/regexes-best-practices.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/regexes-best-practices",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "tutorial"
@@ -807,7 +750,6 @@
       "file": "work_doc/doc/Language/regexes.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/regexes",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -821,7 +763,6 @@
       "file": "work_doc/doc/Language/REPL.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/repl",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "tutorial"
@@ -835,7 +776,6 @@
       "file": "work_doc/doc/Language/setbagmix.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/setbagmix",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -849,7 +789,6 @@
       "file": "work_doc/doc/Language/signatures.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/signatures",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -863,7 +802,6 @@
       "file": "work_doc/doc/Language/statement-prefixes.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/statement-prefixes",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -877,7 +815,6 @@
       "file": "work_doc/doc/Language/structures.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/structures",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -891,7 +828,6 @@
       "file": "work_doc/doc/Language/subscripts.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/subscripts",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -905,7 +841,6 @@
       "file": "work_doc/doc/Language/syntax.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/syntax",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -919,7 +854,6 @@
       "file": "work_doc/doc/Language/system.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/system",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -933,7 +867,6 @@
       "file": "work_doc/doc/Language/tables.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/tables",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "reference"
@@ -947,7 +880,6 @@
       "file": "work_doc/doc/Language/temporal.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/temporal",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -961,7 +893,6 @@
       "file": "work_doc/doc/Language/terms.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/terms",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "reference"
@@ -975,7 +906,6 @@
       "file": "work_doc/doc/Language/testing.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/testing",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "reference"
@@ -989,7 +919,6 @@
       "file": "work_doc/doc/Language/traits.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/traits",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -1003,7 +932,6 @@
       "file": "work_doc/doc/Language/traps.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/traps",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "reference"
@@ -1017,7 +945,6 @@
       "file": "work_doc/doc/Language/unicode_ascii.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/unicode_ascii",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -1031,7 +958,6 @@
       "file": "work_doc/doc/Language/unicode_entry.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/unicode_entry",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "tutorial"
@@ -1045,7 +971,6 @@
       "file": "work_doc/doc/Language/unicode.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/unicode",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -1059,7 +984,6 @@
       "file": "work_doc/doc/Language/variables.rakudoc",
       "sources": [],
       "publishUrl": "/doc/language/variables",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -1073,7 +997,6 @@
       "file": "work_doc/doc/Native/int.rakudoc",
       "sources": [],
       "publishUrl": "/doc/native/int",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1087,7 +1010,6 @@
       "file": "work_doc/doc/Programs/01-debugging.rakudoc",
       "sources": [],
       "publishUrl": "/doc/programs/01-debugging",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Programs",
       "subkind": "programs",
       "category": "programs"
@@ -1101,7 +1023,6 @@
       "file": "work_doc/doc/Programs/02-reading-docs.rakudoc",
       "sources": [],
       "publishUrl": "/doc/programs/02-reading-docs",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Programs",
       "subkind": "programs",
       "category": "programs"
@@ -1115,7 +1036,6 @@
       "file": "work_doc/doc/Programs/03-environment-variables.rakudoc",
       "sources": [],
       "publishUrl": "/doc/programs/03-environment-variables",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Programs",
       "subkind": "programs",
       "category": "programs"
@@ -1129,7 +1049,6 @@
       "file": "work_doc/doc/Programs/04-running-raku.rakudoc",
       "sources": [],
       "publishUrl": "/doc/programs/04-running-raku",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Programs",
       "subkind": "programs",
       "category": "programs"
@@ -1143,7 +1062,6 @@
       "file": "work_doc/doc/Type/Allomorph.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/allomorph",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1157,7 +1075,6 @@
       "file": "work_doc/doc/Type/Any.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/any",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1171,7 +1088,6 @@
       "file": "work_doc/doc/Type/Array.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/array",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -1185,7 +1101,6 @@
       "file": "work_doc/doc/Type/Associative.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/associative",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "composite"
@@ -1199,7 +1114,6 @@
       "file": "work_doc/doc/Type/AST.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/ast",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1213,7 +1127,6 @@
       "file": "work_doc/doc/Type/atomicint.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/atomicint",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1227,7 +1140,6 @@
       "file": "work_doc/doc/Type/Attribute.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/attribute",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -1241,7 +1153,6 @@
       "file": "work_doc/doc/Type/Backtrace.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/backtrace",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -1255,7 +1166,6 @@
       "file": "work_doc/doc/Type/Backtrace/Frame.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/backtrace/frame",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -1269,7 +1179,6 @@
       "file": "work_doc/doc/Type/Bag.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/bag",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -1283,7 +1192,6 @@
       "file": "work_doc/doc/Type/Baggy.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/baggy",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "composite"
@@ -1297,7 +1205,6 @@
       "file": "work_doc/doc/Type/BagHash.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/baghash",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -1311,7 +1218,6 @@
       "file": "work_doc/doc/Type/Blob.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/blob",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "composite"
@@ -1325,7 +1231,6 @@
       "file": "work_doc/doc/Type/Block.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/block",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1339,7 +1244,6 @@
       "file": "work_doc/doc/Type/Bool.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/bool",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "enum",
       "category": "basic"
@@ -1353,7 +1257,6 @@
       "file": "work_doc/doc/Type/Buf.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/buf",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "composite"
@@ -1367,7 +1270,6 @@
       "file": "work_doc/doc/Type/Callable.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/callable",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "basic"
@@ -1381,7 +1283,6 @@
       "file": "work_doc/doc/Type/CallFrame.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/callframe",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1395,7 +1296,6 @@
       "file": "work_doc/doc/Type/Cancellation.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/cancellation",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -1409,7 +1309,6 @@
       "file": "work_doc/doc/Type/Capture.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/capture",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -1423,7 +1322,6 @@
       "file": "work_doc/doc/Type/Channel.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/channel",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -1437,7 +1335,6 @@
       "file": "work_doc/doc/Type/Code.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/code",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1451,7 +1348,6 @@
       "file": "work_doc/doc/Type/Collation.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/collation",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1465,7 +1361,6 @@
       "file": "work_doc/doc/Type/Compiler.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/compiler",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1479,7 +1374,6 @@
       "file": "work_doc/doc/Type/Complex.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/complex",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1493,7 +1387,6 @@
       "file": "work_doc/doc/Type/ComplexStr.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/complexstr",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1507,7 +1400,6 @@
       "file": "work_doc/doc/Type/CompUnit.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/compunit",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -1521,7 +1413,6 @@
       "file": "work_doc/doc/Type/CompUnit/PrecompilationRepository.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/compunit/precompilationrepository",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "domain-specific"
@@ -1535,7 +1426,6 @@
       "file": "work_doc/doc/Type/CompUnit/Repository.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/compunit/repository",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "domain-specific"
@@ -1549,7 +1439,6 @@
       "file": "work_doc/doc/Type/CompUnit/Repository/FileSystem.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/compunit/repository/filesystem",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -1563,7 +1452,6 @@
       "file": "work_doc/doc/Type/CompUnit/Repository/Installation.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/compunit/repository/installation",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -1577,7 +1465,6 @@
       "file": "work_doc/doc/Type/Cool.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/cool",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1591,7 +1478,6 @@
       "file": "work_doc/doc/Type/CurrentThreadScheduler.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/currentthreadscheduler",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1605,7 +1491,6 @@
       "file": "work_doc/doc/Type/CX/Done.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/cx/done",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -1619,7 +1504,6 @@
       "file": "work_doc/doc/Type/CX/Emit.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/cx/emit",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -1633,7 +1517,6 @@
       "file": "work_doc/doc/Type/CX/Last.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/cx/last",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -1647,7 +1530,6 @@
       "file": "work_doc/doc/Type/CX/Next.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/cx/next",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -1661,7 +1543,6 @@
       "file": "work_doc/doc/Type/CX/Proceed.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/cx/proceed",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -1675,7 +1556,6 @@
       "file": "work_doc/doc/Type/CX/Redo.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/cx/redo",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -1689,7 +1569,6 @@
       "file": "work_doc/doc/Type/CX/Return.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/cx/return",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -1703,7 +1582,6 @@
       "file": "work_doc/doc/Type/CX/Succeed.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/cx/succeed",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -1717,7 +1595,6 @@
       "file": "work_doc/doc/Type/CX/Take.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/cx/take",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -1731,7 +1608,6 @@
       "file": "work_doc/doc/Type/CX/Warn.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/cx/warn",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -1745,7 +1621,6 @@
       "file": "work_doc/doc/Type/Date.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/date",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1759,7 +1634,6 @@
       "file": "work_doc/doc/Type/Dateish.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/dateish",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "basic"
@@ -1773,7 +1647,6 @@
       "file": "work_doc/doc/Type/DateTime.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/datetime",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1787,7 +1660,6 @@
       "file": "work_doc/doc/Type/Distribution.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/distribution",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "basic"
@@ -1801,7 +1673,6 @@
       "file": "work_doc/doc/Type/Distribution/Hash.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/distribution/hash",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1815,7 +1686,6 @@
       "file": "work_doc/doc/Type/Distribution/Locally.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/distribution/locally",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1829,7 +1699,6 @@
       "file": "work_doc/doc/Type/Distribution/Path.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/distribution/path",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1843,7 +1712,6 @@
       "file": "work_doc/doc/Type/Distribution/Resource.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/distribution/resource",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1857,7 +1725,6 @@
       "file": "work_doc/doc/Type/Distro.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/distro",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -1871,7 +1738,6 @@
       "file": "work_doc/doc/Type/Duration.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/duration",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1885,7 +1751,6 @@
       "file": "work_doc/doc/Type/Encoding.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/encoding",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "basic"
@@ -1899,7 +1764,6 @@
       "file": "work_doc/doc/Type/Encoding/Registry.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/encoding/registry",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1913,7 +1777,6 @@
       "file": "work_doc/doc/Type/Endian.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/endian",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "enum",
       "category": "basic"
@@ -1927,7 +1790,6 @@
       "file": "work_doc/doc/Type/Exception.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/exception",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -1941,7 +1803,6 @@
       "file": "work_doc/doc/Type/Failure.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/failure",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -1955,7 +1816,6 @@
       "file": "work_doc/doc/Type/FatRat.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/fatrat",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1969,7 +1829,6 @@
       "file": "work_doc/doc/Type/ForeignCode.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/foreigncode",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1983,7 +1842,6 @@
       "file": "work_doc/doc/Type/Format.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/format",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -1997,7 +1855,6 @@
       "file": "work_doc/doc/Type/Formatter.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/formatter",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -2011,7 +1868,6 @@
       "file": "work_doc/doc/Type/Grammar.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/grammar",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2025,7 +1881,6 @@
       "file": "work_doc/doc/Type/Hash.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/hash",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -2039,7 +1894,6 @@
       "file": "work_doc/doc/Type/HyperSeq.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/hyperseq",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -2053,7 +1907,6 @@
       "file": "work_doc/doc/Type/HyperWhatever.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/hyperwhatever",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -2067,7 +1920,6 @@
       "file": "work_doc/doc/Type/independent-routines.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/independent-routines",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Language",
       "subkind": "Language",
       "category": "fundamental"
@@ -2081,7 +1933,6 @@
       "file": "work_doc/doc/Type/Instant.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/instant",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -2095,7 +1946,6 @@
       "file": "work_doc/doc/Type/Int.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/int",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -2109,7 +1959,6 @@
       "file": "work_doc/doc/Type/IntStr.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/intstr",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -2123,7 +1972,6 @@
       "file": "work_doc/doc/Type/IO.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "domain-specific"
@@ -2137,7 +1985,6 @@
       "file": "work_doc/doc/Type/IO/ArgFiles.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/argfiles",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2151,7 +1998,6 @@
       "file": "work_doc/doc/Type/IO/CatHandle.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/cathandle",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2165,7 +2011,6 @@
       "file": "work_doc/doc/Type/IO/Handle.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/handle",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2179,7 +2024,6 @@
       "file": "work_doc/doc/Type/IO/Notification.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/notification",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2193,7 +2037,6 @@
       "file": "work_doc/doc/Type/IO/Notification/Change.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/notification/change",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2207,7 +2050,6 @@
       "file": "work_doc/doc/Type/IO/Path.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/path",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2221,7 +2063,6 @@
       "file": "work_doc/doc/Type/IO/Path/Cygwin.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/path/cygwin",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2235,7 +2076,6 @@
       "file": "work_doc/doc/Type/IO/Path/Parts.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/path/parts",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2249,7 +2089,6 @@
       "file": "work_doc/doc/Type/IO/Path/QNX.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/path/qnx",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2263,7 +2102,6 @@
       "file": "work_doc/doc/Type/IO/Path/Unix.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/path/unix",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2277,7 +2115,6 @@
       "file": "work_doc/doc/Type/IO/Path/Win32.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/path/win32",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2291,7 +2128,6 @@
       "file": "work_doc/doc/Type/IO/Pipe.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/pipe",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2305,7 +2141,6 @@
       "file": "work_doc/doc/Type/IO/Socket.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/socket",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "domain-specific"
@@ -2319,7 +2154,6 @@
       "file": "work_doc/doc/Type/IO/Socket/Async.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/socket/async",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2333,7 +2167,6 @@
       "file": "work_doc/doc/Type/IO/Socket/Async/ListenSocket.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/socket/async/listensocket",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2347,7 +2180,6 @@
       "file": "work_doc/doc/Type/IO/Socket/INET.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/socket/inet",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2361,7 +2193,6 @@
       "file": "work_doc/doc/Type/IO/Spec.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/spec",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2375,7 +2206,6 @@
       "file": "work_doc/doc/Type/IO/Spec/Cygwin.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/spec/cygwin",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2389,7 +2219,6 @@
       "file": "work_doc/doc/Type/IO/Spec/QNX.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/spec/qnx",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2403,7 +2232,6 @@
       "file": "work_doc/doc/Type/IO/Spec/Unix.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/spec/unix",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2417,7 +2245,6 @@
       "file": "work_doc/doc/Type/IO/Spec/Win32.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/spec/win32",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2431,7 +2258,6 @@
       "file": "work_doc/doc/Type/IO/Special.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/io/special",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2445,7 +2271,6 @@
       "file": "work_doc/doc/Type/Iterable.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/iterable",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "composite"
@@ -2459,7 +2284,6 @@
       "file": "work_doc/doc/Type/IterationBuffer.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/iterationbuffer",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -2473,7 +2297,6 @@
       "file": "work_doc/doc/Type/Iterator.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/iterator",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "composite"
@@ -2487,7 +2310,6 @@
       "file": "work_doc/doc/Type/Junction.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/junction",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -2501,7 +2323,6 @@
       "file": "work_doc/doc/Type/Kernel.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/kernel",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2515,7 +2336,6 @@
       "file": "work_doc/doc/Type/Label.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/label",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -2529,7 +2349,6 @@
       "file": "work_doc/doc/Type/List.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/list",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -2543,7 +2362,6 @@
       "file": "work_doc/doc/Type/Lock.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/lock",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2557,7 +2375,6 @@
       "file": "work_doc/doc/Type/Lock/Async.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/lock/async",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -2571,7 +2388,6 @@
       "file": "work_doc/doc/Type/Lock/ConditionVariable.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/lock/conditionvariable",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2585,7 +2401,6 @@
       "file": "work_doc/doc/Type/Macro.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/macro",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -2599,7 +2414,6 @@
       "file": "work_doc/doc/Type/Map.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/map",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -2613,7 +2427,6 @@
       "file": "work_doc/doc/Type/Match.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/match",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -2627,7 +2440,6 @@
       "file": "work_doc/doc/Type/Metamodel/AttributeContainer.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/attributecontainer",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "metamodel"
@@ -2641,7 +2453,6 @@
       "file": "work_doc/doc/Type/Metamodel/C3MRO.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/c3mro",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "metamodel"
@@ -2655,7 +2466,6 @@
       "file": "work_doc/doc/Type/Metamodel/ClassHOW.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/classhow",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "metamodel"
@@ -2669,7 +2479,6 @@
       "file": "work_doc/doc/Type/Metamodel/ConcreteRoleHOW.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/concreterolehow",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "metamodel"
@@ -2683,7 +2492,6 @@
       "file": "work_doc/doc/Type/Metamodel/CurriedRoleHOW.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/curriedrolehow",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "metamodel"
@@ -2697,7 +2505,6 @@
       "file": "work_doc/doc/Type/Metamodel/DefiniteHOW.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/definitehow",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "metamodel"
@@ -2711,7 +2518,6 @@
       "file": "work_doc/doc/Type/Metamodel/Documenting.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/documenting",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "metamodel"
@@ -2725,7 +2531,6 @@
       "file": "work_doc/doc/Type/Metamodel/EnumHOW.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/enumhow",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "metamodel"
@@ -2739,7 +2544,6 @@
       "file": "work_doc/doc/Type/Metamodel/Finalization.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/finalization",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "metamodel"
@@ -2753,7 +2557,6 @@
       "file": "work_doc/doc/Type/Metamodel/MethodContainer.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/methodcontainer",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "metamodel"
@@ -2767,7 +2570,6 @@
       "file": "work_doc/doc/Type/Metamodel/Mixins.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/mixins",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "metamodel"
@@ -2781,7 +2583,6 @@
       "file": "work_doc/doc/Type/Metamodel/MROBasedMethodDispatch.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/mrobasedmethoddispatch",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "metamodel"
@@ -2795,7 +2596,6 @@
       "file": "work_doc/doc/Type/Metamodel/MultipleInheritance.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/multipleinheritance",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "metamodel"
@@ -2809,7 +2609,6 @@
       "file": "work_doc/doc/Type/Metamodel/Naming.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/naming",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "metamodel"
@@ -2823,7 +2622,6 @@
       "file": "work_doc/doc/Type/Metamodel/PackageHOW.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/packagehow",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "metamodel"
@@ -2837,7 +2635,6 @@
       "file": "work_doc/doc/Type/Metamodel/ParametricRoleGroupHOW.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/parametricrolegrouphow",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "metamodel"
@@ -2851,7 +2648,6 @@
       "file": "work_doc/doc/Type/Metamodel/ParametricRoleHOW.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/parametricrolehow",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "metamodel"
@@ -2865,7 +2661,6 @@
       "file": "work_doc/doc/Type/Metamodel/Primitives.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/primitives",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "metamodel"
@@ -2879,7 +2674,6 @@
       "file": "work_doc/doc/Type/Metamodel/PrivateMethodContainer.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/privatemethodcontainer",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "metamodel"
@@ -2893,7 +2687,6 @@
       "file": "work_doc/doc/Type/Metamodel/RoleContainer.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/rolecontainer",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "metamodel"
@@ -2907,7 +2700,6 @@
       "file": "work_doc/doc/Type/Metamodel/RolePunning.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/rolepunning",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "metamodel"
@@ -2921,7 +2713,6 @@
       "file": "work_doc/doc/Type/Metamodel/Stashing.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/stashing",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "metamodel"
@@ -2935,7 +2726,6 @@
       "file": "work_doc/doc/Type/Metamodel/Trusting.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/trusting",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "metamodel"
@@ -2949,7 +2739,6 @@
       "file": "work_doc/doc/Type/Metamodel/Versioning.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/metamodel/versioning",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "metamodel"
@@ -2963,7 +2752,6 @@
       "file": "work_doc/doc/Type/Method.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/method",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -2977,7 +2765,6 @@
       "file": "work_doc/doc/Type/Mix.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/mix",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -2991,7 +2778,6 @@
       "file": "work_doc/doc/Type/MixHash.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/mixhash",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -3005,7 +2791,6 @@
       "file": "work_doc/doc/Type/Mixy.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/mixy",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "composite"
@@ -3019,7 +2804,6 @@
       "file": "work_doc/doc/Type/Mu.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/mu",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3033,7 +2817,6 @@
       "file": "work_doc/doc/Type/NFC.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/nfc",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -3047,7 +2830,6 @@
       "file": "work_doc/doc/Type/NFD.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/nfd",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -3061,7 +2843,6 @@
       "file": "work_doc/doc/Type/NFKC.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/nfkc",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -3075,7 +2856,6 @@
       "file": "work_doc/doc/Type/NFKD.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/nfkd",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -3089,7 +2869,6 @@
       "file": "work_doc/doc/Type/Nil.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/nil",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3103,7 +2882,6 @@
       "file": "work_doc/doc/Type/Num.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/num",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3117,7 +2895,6 @@
       "file": "work_doc/doc/Type/Numeric.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/numeric",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3131,7 +2908,6 @@
       "file": "work_doc/doc/Type/NumStr.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/numstr",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3145,7 +2921,6 @@
       "file": "work_doc/doc/Type/ObjAt.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/objat",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3159,7 +2934,6 @@
       "file": "work_doc/doc/Type/Order.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/order",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "enum",
       "category": "domain-specific"
@@ -3173,7 +2947,6 @@
       "file": "work_doc/doc/Type/Pair.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/pair",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -3187,7 +2960,6 @@
       "file": "work_doc/doc/Type/Parameter.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/parameter",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3201,7 +2973,6 @@
       "file": "work_doc/doc/Type/Perl.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/perl",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3215,7 +2986,6 @@
       "file": "work_doc/doc/Type/Pod/Block.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/pod/block",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3229,7 +2999,6 @@
       "file": "work_doc/doc/Type/Pod/Block/Code.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/pod/block/code",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3243,7 +3012,6 @@
       "file": "work_doc/doc/Type/Pod/Block/Comment.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/pod/block/comment",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3257,7 +3025,6 @@
       "file": "work_doc/doc/Type/Pod/Block/Declarator.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/pod/block/declarator",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3271,7 +3038,6 @@
       "file": "work_doc/doc/Type/Pod/Block/Named.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/pod/block/named",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3285,7 +3051,6 @@
       "file": "work_doc/doc/Type/Pod/Block/Para.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/pod/block/para",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3299,7 +3064,6 @@
       "file": "work_doc/doc/Type/Pod/Block/Table.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/pod/block/table",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3313,7 +3077,6 @@
       "file": "work_doc/doc/Type/Pod/Defn.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/pod/defn",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3327,7 +3090,6 @@
       "file": "work_doc/doc/Type/Pod/FormattingCode.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/pod/formattingcode",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3341,7 +3103,6 @@
       "file": "work_doc/doc/Type/Pod/Heading.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/pod/heading",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3355,7 +3116,6 @@
       "file": "work_doc/doc/Type/Pod/Item.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/pod/item",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3369,7 +3129,6 @@
       "file": "work_doc/doc/Type/Positional.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/positional",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "composite"
@@ -3383,7 +3142,6 @@
       "file": "work_doc/doc/Type/PositionalBindFailover.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/positionalbindfailover",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "composite"
@@ -3397,7 +3155,6 @@
       "file": "work_doc/doc/Type/PredictiveIterator.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/predictiveiterator",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "basic"
@@ -3411,7 +3168,6 @@
       "file": "work_doc/doc/Type/Proc.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/proc",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3425,7 +3181,6 @@
       "file": "work_doc/doc/Type/Proc/Async.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/proc/async",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3439,7 +3194,6 @@
       "file": "work_doc/doc/Type/Promise.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/promise",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3453,7 +3207,6 @@
       "file": "work_doc/doc/Type/Proxy.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/proxy",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3467,7 +3220,6 @@
       "file": "work_doc/doc/Type/PseudoStash.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/pseudostash",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -3481,7 +3233,6 @@
       "file": "work_doc/doc/Type/QuantHash.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/quanthash",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "composite"
@@ -3495,7 +3246,6 @@
       "file": "work_doc/doc/Type/RaceSeq.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/raceseq",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3509,7 +3259,6 @@
       "file": "work_doc/doc/Type/Raku.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/raku",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3523,7 +3272,6 @@
       "file": "work_doc/doc/Type/RakuAST.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/rakuast",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3537,7 +3285,6 @@
       "file": "work_doc/doc/Type/RakuAST/Doc.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/rakuast/doc",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "package",
       "category": "basic"
@@ -3551,7 +3298,6 @@
       "file": "work_doc/doc/Type/RakuAST/Doc/Block.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/rakuast/doc/block",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3565,7 +3311,6 @@
       "file": "work_doc/doc/Type/RakuAST/Doc/Declarator.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/rakuast/doc/declarator",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3579,7 +3324,6 @@
       "file": "work_doc/doc/Type/RakuAST/Doc/DeclaratorTarget.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/rakuast/doc/declaratortarget",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "basic"
@@ -3593,7 +3337,6 @@
       "file": "work_doc/doc/Type/RakuAST/Doc/Markup.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/rakuast/doc/markup",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3607,7 +3350,6 @@
       "file": "work_doc/doc/Type/RakuAST/Doc/Paragraph.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/rakuast/doc/paragraph",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3621,7 +3363,6 @@
       "file": "work_doc/doc/Type/Range.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/range",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -3635,7 +3376,6 @@
       "file": "work_doc/doc/Type/Rat.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/rat",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3649,7 +3389,6 @@
       "file": "work_doc/doc/Type/Rational.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/rational",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "basic"
@@ -3663,7 +3402,6 @@
       "file": "work_doc/doc/Type/RatStr.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/ratstr",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3677,7 +3415,6 @@
       "file": "work_doc/doc/Type/Real.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/real",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "basic"
@@ -3691,7 +3428,6 @@
       "file": "work_doc/doc/Type/Regex.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/regex",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3705,7 +3441,6 @@
       "file": "work_doc/doc/Type/Routine.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/routine",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3719,7 +3454,6 @@
       "file": "work_doc/doc/Type/Routine/WrapHandle.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/routine/wraphandle",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3733,7 +3467,6 @@
       "file": "work_doc/doc/Type/Scalar.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/scalar",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3747,7 +3480,6 @@
       "file": "work_doc/doc/Type/Scheduler.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/scheduler",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "domain-specific"
@@ -3761,7 +3493,6 @@
       "file": "work_doc/doc/Type/Semaphore.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/semaphore",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3775,7 +3506,6 @@
       "file": "work_doc/doc/Type/Seq.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/seq",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -3789,7 +3519,6 @@
       "file": "work_doc/doc/Type/Sequence.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/sequence",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "composite"
@@ -3803,7 +3532,6 @@
       "file": "work_doc/doc/Type/Set.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/set",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -3817,7 +3545,6 @@
       "file": "work_doc/doc/Type/SetHash.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/sethash",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -3831,7 +3558,6 @@
       "file": "work_doc/doc/Type/Setty.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/setty",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "composite"
@@ -3845,7 +3571,6 @@
       "file": "work_doc/doc/Type/Signature.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/signature",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3859,7 +3584,6 @@
       "file": "work_doc/doc/Type/Slip.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/slip",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -3873,7 +3597,6 @@
       "file": "work_doc/doc/Type/Stash.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/stash",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -3887,7 +3610,6 @@
       "file": "work_doc/doc/Type/Str.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/str",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3901,7 +3623,6 @@
       "file": "work_doc/doc/Type/StrDistance.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/strdistance",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3915,7 +3636,6 @@
       "file": "work_doc/doc/Type/Stringy.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/stringy",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "basic"
@@ -3929,7 +3649,6 @@
       "file": "work_doc/doc/Type/Sub.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/sub",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3943,7 +3662,6 @@
       "file": "work_doc/doc/Type/Submethod.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/submethod",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -3957,7 +3675,6 @@
       "file": "work_doc/doc/Type/Supplier.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/supplier",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3971,7 +3688,6 @@
       "file": "work_doc/doc/Type/Supplier/Preserving.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/supplier/preserving",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3985,7 +3701,6 @@
       "file": "work_doc/doc/Type/Supply.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/supply",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -3999,7 +3714,6 @@
       "file": "work_doc/doc/Type/Systemic.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/systemic",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "domain-specific"
@@ -4013,7 +3727,6 @@
       "file": "work_doc/doc/Type/Tap.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/tap",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -4027,7 +3740,6 @@
       "file": "work_doc/doc/Type/Telemetry.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/telemetry",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -4041,7 +3753,6 @@
       "file": "work_doc/doc/Type/Telemetry/Instrument/Thread.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/telemetry/instrument/thread",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -4055,7 +3766,6 @@
       "file": "work_doc/doc/Type/Telemetry/Instrument/ThreadPool.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/telemetry/instrument/threadpool",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -4069,7 +3779,6 @@
       "file": "work_doc/doc/Type/Telemetry/Instrument/Usage.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/telemetry/instrument/usage",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -4083,7 +3792,6 @@
       "file": "work_doc/doc/Type/Telemetry/Period.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/telemetry/period",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -4097,7 +3805,6 @@
       "file": "work_doc/doc/Type/Telemetry/Sampler.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/telemetry/sampler",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -4111,7 +3818,6 @@
       "file": "work_doc/doc/Type/Test.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/test",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "module",
       "category": "module"
@@ -4125,7 +3831,6 @@
       "file": "work_doc/doc/Type/Thread.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/thread",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -4139,7 +3844,6 @@
       "file": "work_doc/doc/Type/ThreadPoolScheduler.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/threadpoolscheduler",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -4153,7 +3857,6 @@
       "file": "work_doc/doc/Type/UInt.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/uint",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -4167,7 +3870,6 @@
       "file": "work_doc/doc/Type/Uni.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/uni",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -4181,7 +3883,6 @@
       "file": "work_doc/doc/Type/Unicode.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/unicode",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -4195,7 +3896,6 @@
       "file": "work_doc/doc/Type/utf8.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/utf8",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "composite"
@@ -4209,7 +3909,6 @@
       "file": "work_doc/doc/Type/ValueObjAt.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/valueobjat",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -4223,7 +3922,6 @@
       "file": "work_doc/doc/Type/Variable.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/variable",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -4237,7 +3935,6 @@
       "file": "work_doc/doc/Type/Version.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/version",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -4251,7 +3948,6 @@
       "file": "work_doc/doc/Type/VM.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/vm",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "domain-specific"
@@ -4265,7 +3961,6 @@
       "file": "work_doc/doc/Type/Whatever.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/whatever",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -4279,7 +3974,6 @@
       "file": "work_doc/doc/Type/WhateverCode.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/whatevercode",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "basic"
@@ -4293,7 +3987,6 @@
       "file": "work_doc/doc/Type/X/AdHoc.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/adhoc",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4307,7 +4000,6 @@
       "file": "work_doc/doc/Type/X/Anon/Augment.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/anon/augment",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4321,7 +4013,6 @@
       "file": "work_doc/doc/Type/X/Anon/Multi.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/anon/multi",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4335,7 +4026,6 @@
       "file": "work_doc/doc/Type/X/Assignment/RO.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/assignment/ro",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4349,7 +4039,6 @@
       "file": "work_doc/doc/Type/X/Attribute/NoPackage.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/attribute/nopackage",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4363,7 +4052,6 @@
       "file": "work_doc/doc/Type/X/Attribute/Package.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/attribute/package",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4377,7 +4065,6 @@
       "file": "work_doc/doc/Type/X/Attribute/Required.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/attribute/required",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4391,7 +4078,6 @@
       "file": "work_doc/doc/Type/X/Attribute/Undeclared.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/attribute/undeclared",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4405,7 +4091,6 @@
       "file": "work_doc/doc/Type/X/Augment/NoSuchType.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/augment/nosuchtype",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4419,7 +4104,6 @@
       "file": "work_doc/doc/Type/X/Bind.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/bind",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4433,7 +4117,6 @@
       "file": "work_doc/doc/Type/X/Bind/NativeType.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/bind/nativetype",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4447,7 +4130,6 @@
       "file": "work_doc/doc/Type/X/Bind/Slice.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/bind/slice",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4461,7 +4143,6 @@
       "file": "work_doc/doc/Type/X/Caller/NotDynamic.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/caller/notdynamic",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4475,7 +4156,6 @@
       "file": "work_doc/doc/Type/X/Cannot/Empty.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/cannot/empty",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4489,7 +4169,6 @@
       "file": "work_doc/doc/Type/X/Cannot/Lazy.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/cannot/lazy",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4503,7 +4182,6 @@
       "file": "work_doc/doc/Type/X/Channel/ReceiveOnClosed.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/channel/receiveonclosed",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4517,7 +4195,6 @@
       "file": "work_doc/doc/Type/X/Channel/SendOnClosed.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/channel/sendonclosed",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4531,7 +4208,6 @@
       "file": "work_doc/doc/Type/X/Comp.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/comp",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "exception"
@@ -4545,7 +4221,6 @@
       "file": "work_doc/doc/Type/X/Composition/NotComposable.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/composition/notcomposable",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4559,7 +4234,6 @@
       "file": "work_doc/doc/Type/X/Constructor/Positional.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/constructor/positional",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4573,7 +4247,6 @@
       "file": "work_doc/doc/Type/X/Control.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/control",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4587,7 +4260,6 @@
       "file": "work_doc/doc/Type/X/ControlFlow.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/controlflow",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4601,7 +4273,6 @@
       "file": "work_doc/doc/Type/X/ControlFlow/Return.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/controlflow/return",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4615,7 +4286,6 @@
       "file": "work_doc/doc/Type/X/DateTime/TimezoneClash.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/datetime/timezoneclash",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4629,7 +4299,6 @@
       "file": "work_doc/doc/Type/X/Declaration/Scope.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/declaration/scope",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4643,7 +4312,6 @@
       "file": "work_doc/doc/Type/X/Declaration/Scope/Multi.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/declaration/scope/multi",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4657,7 +4325,6 @@
       "file": "work_doc/doc/Type/X/Does/TypeObject.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/does/typeobject",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4671,7 +4338,6 @@
       "file": "work_doc/doc/Type/X/Dynamic/NotFound.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/dynamic/notfound",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4685,7 +4351,6 @@
       "file": "work_doc/doc/Type/X/Eval/NoSuchLang.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/eval/nosuchlang",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4699,7 +4364,6 @@
       "file": "work_doc/doc/Type/X/Export/NameClash.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/export/nameclash",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4713,7 +4377,6 @@
       "file": "work_doc/doc/Type/X/Inheritance/NotComposed.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/inheritance/notcomposed",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4727,7 +4390,6 @@
       "file": "work_doc/doc/Type/X/Inheritance/Unsupported.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/inheritance/unsupported",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4741,7 +4403,6 @@
       "file": "work_doc/doc/Type/X/IO.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/io",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "exception"
@@ -4755,7 +4416,6 @@
       "file": "work_doc/doc/Type/X/IO/BinaryMode.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/io/binarymode",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4769,7 +4429,6 @@
       "file": "work_doc/doc/Type/X/IO/Chdir.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/io/chdir",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4783,7 +4442,6 @@
       "file": "work_doc/doc/Type/X/IO/Chmod.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/io/chmod",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4797,7 +4455,6 @@
       "file": "work_doc/doc/Type/X/IO/Chown.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/io/chown",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4811,7 +4468,6 @@
       "file": "work_doc/doc/Type/X/IO/Copy.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/io/copy",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4825,7 +4481,6 @@
       "file": "work_doc/doc/Type/X/IO/Cwd.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/io/cwd",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4839,7 +4494,6 @@
       "file": "work_doc/doc/Type/X/IO/Dir.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/io/dir",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4853,7 +4507,6 @@
       "file": "work_doc/doc/Type/X/IO/DoesNotExist.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/io/doesnotexist",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4867,7 +4520,6 @@
       "file": "work_doc/doc/Type/X/IO/Link.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/io/link",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4881,7 +4533,6 @@
       "file": "work_doc/doc/Type/X/IO/Mkdir.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/io/mkdir",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4895,7 +4546,6 @@
       "file": "work_doc/doc/Type/X/IO/Move.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/io/move",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4909,7 +4559,6 @@
       "file": "work_doc/doc/Type/X/IO/Rename.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/io/rename",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4923,7 +4572,6 @@
       "file": "work_doc/doc/Type/X/IO/Rmdir.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/io/rmdir",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4937,7 +4585,6 @@
       "file": "work_doc/doc/Type/X/IO/Symlink.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/io/symlink",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4951,7 +4598,6 @@
       "file": "work_doc/doc/Type/X/IO/Unlink.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/io/unlink",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4965,7 +4611,6 @@
       "file": "work_doc/doc/Type/X/Method/InvalidQualifier.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/method/invalidqualifier",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4979,7 +4624,6 @@
       "file": "work_doc/doc/Type/X/Method/NotFound.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/method/notfound",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -4993,7 +4637,6 @@
       "file": "work_doc/doc/Type/X/Method/Private/Permission.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/method/private/permission",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5007,7 +4650,6 @@
       "file": "work_doc/doc/Type/X/Method/Private/Unqualified.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/method/private/unqualified",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5021,7 +4663,6 @@
       "file": "work_doc/doc/Type/X/Mixin/NotComposable.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/mixin/notcomposable",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5035,7 +4676,6 @@
       "file": "work_doc/doc/Type/X/NoDispatcher.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/nodispatcher",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5049,7 +4689,6 @@
       "file": "work_doc/doc/Type/X/Numeric/CannotConvert.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/numeric/cannotconvert",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5063,7 +4702,6 @@
       "file": "work_doc/doc/Type/X/Numeric/DivideByZero.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/numeric/dividebyzero",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5077,7 +4715,6 @@
       "file": "work_doc/doc/Type/X/Numeric/Real.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/numeric/real",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5091,7 +4728,6 @@
       "file": "work_doc/doc/Type/X/NYI.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/nyi",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5105,7 +4741,6 @@
       "file": "work_doc/doc/Type/X/Obsolete.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/obsolete",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5119,7 +4754,6 @@
       "file": "work_doc/doc/Type/X/OS.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/os",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "exception"
@@ -5133,7 +4767,6 @@
       "file": "work_doc/doc/Type/X/OutOfRange.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/outofrange",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5147,7 +4780,6 @@
       "file": "work_doc/doc/Type/X/Package/Stubbed.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/package/stubbed",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5161,7 +4793,6 @@
       "file": "work_doc/doc/Type/X/Parameter/Default.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/parameter/default",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5175,7 +4806,6 @@
       "file": "work_doc/doc/Type/X/Parameter/MultipleTypeConstraints.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/parameter/multipletypeconstraints",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5189,7 +4819,6 @@
       "file": "work_doc/doc/Type/X/Parameter/Placeholder.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/parameter/placeholder",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5203,7 +4832,6 @@
       "file": "work_doc/doc/Type/X/Parameter/Twigil.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/parameter/twigil",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5217,7 +4845,6 @@
       "file": "work_doc/doc/Type/X/Parameter/WrongOrder.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/parameter/wrongorder",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5231,7 +4858,6 @@
       "file": "work_doc/doc/Type/X/Phaser/Multiple.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/phaser/multiple",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5245,7 +4871,6 @@
       "file": "work_doc/doc/Type/X/Phaser/PrePost.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/phaser/prepost",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5259,7 +4884,6 @@
       "file": "work_doc/doc/Type/X/Placeholder/Block.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/placeholder/block",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5273,7 +4897,6 @@
       "file": "work_doc/doc/Type/X/Placeholder/Mainline.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/placeholder/mainline",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5287,7 +4910,6 @@
       "file": "work_doc/doc/Type/X/Pod.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/pod",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "exception"
@@ -5301,7 +4923,6 @@
       "file": "work_doc/doc/Type/X/Proc/Async.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/proc/async",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "exception"
@@ -5315,7 +4936,6 @@
       "file": "work_doc/doc/Type/X/Proc/Async/AlreadyStarted.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/proc/async/alreadystarted",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5329,7 +4949,6 @@
       "file": "work_doc/doc/Type/X/Proc/Async/BindOrUse.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/proc/async/bindoruse",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5343,7 +4962,6 @@
       "file": "work_doc/doc/Type/X/Proc/Async/CharsOrBytes.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/proc/async/charsorbytes",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5357,7 +4975,6 @@
       "file": "work_doc/doc/Type/X/Proc/Async/MustBeStarted.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/proc/async/mustbestarted",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5371,7 +4988,6 @@
       "file": "work_doc/doc/Type/X/Proc/Async/OpenForWriting.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/proc/async/openforwriting",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5385,7 +5001,6 @@
       "file": "work_doc/doc/Type/X/Proc/Async/TapBeforeSpawn.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/proc/async/tapbeforespawn",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5399,7 +5014,6 @@
       "file": "work_doc/doc/Type/X/Proc/Unsuccessful.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/proc/unsuccessful",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5413,7 +5027,6 @@
       "file": "work_doc/doc/Type/X/Promise/CauseOnlyValidOnBroken.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/promise/causeonlyvalidonbroken",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5427,7 +5040,6 @@
       "file": "work_doc/doc/Type/X/Promise/Vowed.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/promise/vowed",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5441,7 +5053,6 @@
       "file": "work_doc/doc/Type/X/Redeclaration.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/redeclaration",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5455,7 +5066,6 @@
       "file": "work_doc/doc/Type/X/Role/Initialization.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/role/initialization",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5469,7 +5079,6 @@
       "file": "work_doc/doc/Type/X/Scheduler/CueInNaNSeconds.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/scheduler/cueinnanseconds",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5483,7 +5092,6 @@
       "file": "work_doc/doc/Type/X/Seq/Consumed.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/seq/consumed",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5497,7 +5105,6 @@
       "file": "work_doc/doc/Type/X/Sequence/Deduction.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/sequence/deduction",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5511,7 +5118,6 @@
       "file": "work_doc/doc/Type/X/Signature/NameClash.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/signature/nameclash",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5525,7 +5131,6 @@
       "file": "work_doc/doc/Type/X/Signature/Placeholder.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/signature/placeholder",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5539,7 +5144,6 @@
       "file": "work_doc/doc/Type/X/Str/Match/x.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/str/match/x",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5553,7 +5157,6 @@
       "file": "work_doc/doc/Type/X/Str/Numeric.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/str/numeric",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5567,7 +5170,6 @@
       "file": "work_doc/doc/Type/X/StubCode.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/stubcode",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5581,7 +5183,6 @@
       "file": "work_doc/doc/Type/X/Syntax.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "exception"
@@ -5595,7 +5196,6 @@
       "file": "work_doc/doc/Type/X/Syntax/Augment/WithoutMonkeyTyping.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/augment/withoutmonkeytyping",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5609,7 +5209,6 @@
       "file": "work_doc/doc/Type/X/Syntax/Comment/Embedded.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/comment/embedded",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5623,7 +5222,6 @@
       "file": "work_doc/doc/Type/X/Syntax/Confused.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/confused",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5637,7 +5235,6 @@
       "file": "work_doc/doc/Type/X/Syntax/InfixInTermPosition.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/infixintermposition",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5651,7 +5248,6 @@
       "file": "work_doc/doc/Type/X/Syntax/Malformed.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/malformed",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5665,7 +5261,6 @@
       "file": "work_doc/doc/Type/X/Syntax/Missing.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/missing",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5679,7 +5274,6 @@
       "file": "work_doc/doc/Type/X/Syntax/NegatedPair.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/negatedpair",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5693,7 +5287,6 @@
       "file": "work_doc/doc/Type/X/Syntax/NoSelf.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/noself",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5707,7 +5300,6 @@
       "file": "work_doc/doc/Type/X/Syntax/Number/RadixOutOfRange.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/number/radixoutofrange",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5721,7 +5313,6 @@
       "file": "work_doc/doc/Type/X/Syntax/P5.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/p5",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5735,7 +5326,6 @@
       "file": "work_doc/doc/Type/X/Syntax/Perl5Var.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/perl5var",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5749,7 +5339,6 @@
       "file": "work_doc/doc/Type/X/Syntax/Regex/Adverb.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/regex/adverb",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5763,7 +5352,6 @@
       "file": "work_doc/doc/Type/X/Syntax/Regex/SolitaryQuantifier.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/regex/solitaryquantifier",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5777,7 +5365,6 @@
       "file": "work_doc/doc/Type/X/Syntax/Reserved.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/reserved",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5791,7 +5378,6 @@
       "file": "work_doc/doc/Type/X/Syntax/Self/WithoutObject.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/self/withoutobject",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5805,7 +5391,6 @@
       "file": "work_doc/doc/Type/X/Syntax/Signature/InvocantMarker.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/signature/invocantmarker",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5819,7 +5404,6 @@
       "file": "work_doc/doc/Type/X/Syntax/Term/MissingInitializer.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/term/missinginitializer",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5833,7 +5417,6 @@
       "file": "work_doc/doc/Type/X/Syntax/UnlessElse.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/unlesselse",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5847,7 +5430,6 @@
       "file": "work_doc/doc/Type/X/Syntax/Variable/Match.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/variable/match",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5861,7 +5443,6 @@
       "file": "work_doc/doc/Type/X/Syntax/Variable/Numeric.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/variable/numeric",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5875,7 +5456,6 @@
       "file": "work_doc/doc/Type/X/Syntax/Variable/Twigil.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/syntax/variable/twigil",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5889,7 +5469,6 @@
       "file": "work_doc/doc/Type/X/Temporal.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/temporal",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "role",
       "category": "exception"
@@ -5903,7 +5482,6 @@
       "file": "work_doc/doc/Type/X/Temporal/InvalidFormat.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/temporal/invalidformat",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5917,7 +5495,6 @@
       "file": "work_doc/doc/Type/X/TypeCheck.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/typecheck",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5931,7 +5508,6 @@
       "file": "work_doc/doc/Type/X/TypeCheck/Assignment.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/typecheck/assignment",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5945,7 +5521,6 @@
       "file": "work_doc/doc/Type/X/TypeCheck/Binding.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/typecheck/binding",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5959,7 +5534,6 @@
       "file": "work_doc/doc/Type/X/TypeCheck/Return.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/typecheck/return",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5973,7 +5547,6 @@
       "file": "work_doc/doc/Type/X/TypeCheck/Splice.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/typecheck/splice",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"
@@ -5987,7 +5560,6 @@
       "file": "work_doc/doc/Type/X/Undeclared.rakudoc",
       "sources": [],
       "publishUrl": "/doc/type/x/undeclared",
-      "template_file": "./pub-raku-knowledge/src/template.podlite",
       "kind": "Type",
       "subkind": "class",
       "category": "exception"

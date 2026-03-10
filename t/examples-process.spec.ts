@@ -1,9 +1,22 @@
-import { PodliteWebPlugin, PodliteWebPluginContext, processFile, processPlugin, publishRecord } from '@podlite/publisher'
+import {
+  PodliteWebPlugin,
+  PodliteWebPluginContext,
+  processFile,
+  processPlugin,
+  publishRecord,
+} from '@podlite/publisher'
 
 // import { examplesPlugin } from '../src'
-import { getFromTree, getTextContentFromNode, makeAttrs, makeInterator, mkBlock, mkRootBlock, PodNode } from '@podlite/schema'
+import {
+  getFromTree,
+  getTextContentFromNode,
+  makeAttrs,
+  makeInterator,
+  mkBlock,
+  mkRootBlock,
+  PodNode,
+} from '@podlite/schema'
 import { examplesPlugin, splitDocAndCode } from '../src'
-
 
 const file1 = `
 use v6;
@@ -58,40 +71,25 @@ say <X Y Z>.Array.pop;
 
 # vim: expandtab shiftwidth=4 ft=perl6
 `
-const it=(_,g)=>g()
-const it_skip=(_,g)=>true
-
-
-
-
 const file2 = `
 =begin code :lang<raku>
 text
 =end code
 `
 const tctx = { testing: true }
-it_skip('wxamples comp: parse', () => {
-  const state = [
-    processFile('src/file2.pl', file1),
-  ]
+it.skip('wxamples comp: parse', () => {
+  const state = [processFile('src/file2.pl', file1)]
   const doc = splitDocAndCode(state[0])
-    // console.log(JSON.stringify(doc,null,2))
-//   const pod = processFile('src/file2.pl', file2, 'text/podlite');
-//   pod
-//   expect(res).toMatchInlineSnapshot(``)
+  // console.log(JSON.stringify(doc,null,2))
+  //   const pod = processFile('src/file2.pl', file2, 'text/podlite');
+  //   pod
+  //   expect(res).toMatchInlineSnapshot(``)
 })
 
-
-
-
-
-
-
-it('porocess plugin', ()=>{
-    const [stat, ctx] = processPlugin(
-        { plugin: examplesPlugin({ rootdir: './' }), includePatterns: '.*' },
-        [processFile('src/template.podlite', undefined, 'text/podlite')],
-        tctx,
-      )
-
+it('porocess plugin', () => {
+  const [stat, ctx] = processPlugin(
+    { plugin: examplesPlugin({ rootdir: './' }), includePatterns: '.*' },
+    [processFile('src/template.podlite', undefined, 'text/podlite')],
+    tctx,
+  )
 })

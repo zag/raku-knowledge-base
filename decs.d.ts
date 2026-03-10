@@ -16,3 +16,9 @@ declare module '*.css'
 declare module '*.gif'
 declare module '*.pdf'
 declare module '*.svg'
+declare module '@pagefind/default-ui'
+
+interface Window {
+  pagefind?: unknown
+  PagefindUI?: new (options: Record<string, unknown>) => { destroy(): void }
+}

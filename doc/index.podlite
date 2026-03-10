@@ -2,6 +2,8 @@
 = :puburl</doc>
 =useReact {IndexAllDocs} from 'raku-knowledge/components'
 =TITLE Documentation
-=for React :component<IndexAllDocs> :id<index>
+=begin React :component<IndexAllDocs> :id<index>
+=include doc:RAKU_DOCS_PLUGIN_DATA#control
+=end React
 
 =end pod
