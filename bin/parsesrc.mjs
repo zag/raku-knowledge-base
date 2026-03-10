@@ -1,7 +1,10 @@
 import path from 'path'
+import { createRequire } from 'module'
 import { Command } from 'commander'
 import glob from 'glob'
-import { processFile } from '@podlite/publisher'
+
+const require = createRequire(import.meta.url)
+const { processFile } = require('@podlite/publisher')
 const packagePath = process.cwd()
 
 async function run() {
