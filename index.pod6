@@ -1,6 +1,6 @@
 =begin pod  
 = :favicon<./logo.png>
-= :puburl<http://example.com>
+= :puburl<https://raku-knowledge-base.podlite.org>
 = :globalStyles("./page.styles.css")
 = :templateFile<src/template.podlite>
 = :gtmId("GTM-K6GTN98T")
@@ -8,16 +8,15 @@
 =useReact {HeaderCol,LastArticles,CookieConsent} from '@Components/service'
 =useReact {Test,IndexAllDocs} from 'raku-knowledge/components'
 
-=TITLE The Raku programming language knowledge base  - 
+=TITLE The Raku programming language knowledge base 
 
 =begin nested :notify<warning>
-This website is not affiliated with the official Raku project: L<https://raku.org/>. 
-It serves as a demonstration of L<Podlite's web publishing|https://github.com/podlite/podlite-web> capabilities, 
-which is part of the larger L<Podlite|https://podlite.org> project. For more information, read the announcement on the Podlite website: L<podlite.org/a5ZK1|https://podlite.org/a5ZK1>.
+This website is not affiliated with the official Raku project: L<https://raku.org/>.
+It is an independent knowledge base built and published with L<Podlite|https://podlite.org>.
 =end nested
 
 =for head1 :id<page-title>
-The Raku Knowledge Base
+Raku Knowledge Base
 
 This site is a collection of documentation, articles, links, examples about the Raku® programming language.
 All it being putted together in one information space to help you learn Raku faster and more efficiently.

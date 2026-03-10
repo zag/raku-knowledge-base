@@ -30,8 +30,9 @@ More ideas are L<always welcome|https://github.com/zag/raku-knowledge-base/discu
 
 =head2 More...
 
-It is an experiment in designing information systems and knowledge bases using L<Podlite|https://podlite.org>,
-a markup language designed for flexibility and ease of use.
+This site is built with L<Podlite|https://podlite.org>, a markup language designed
+for flexibility and ease of use — the knowledge base doubles as a real-world showcase
+of designing information systems with it.
 
 =begin nested :notify<note> :caption<Heads up! >
 👋 It's possible to develop and provide support for information systems like this for commercial use. 
