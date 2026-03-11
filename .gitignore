@@ -78,3 +78,9 @@ lib
 /index.zip
 /index.zip.tmp
 /rebuild.log
+/built/data.json
+/built/imagesMap.json
+/built/indexTerms.json
+/built/pages.json
+/built/siteInfo.json
+/built/styles.css
