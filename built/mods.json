@@ -1840,55 +1840,6 @@
   "version": "0.1.14"
  },
  {
-  "api": "0",
-  "auth": "zef:samy",
-  "authors": [
-   "Samuel Young <samyoung12788@gmail.com>"
-  ],
-  "build-depends": [],
-  "depends": [
-   "File::Temp",
-   "File::Which",
-   "Pod::To::Text",
-   "XML",
-   "unzip:from<bin>",
-   {
-    "any": [
-     "elinks:from<bin>",
-     "links:from<bin>",
-     "links2:from<bin>",
-     "lynx:from<bin>",
-     "w3m:from<bin>"
-    ]
-   }
-  ],
-  "description": "EPUB dumper",
-  "dist": "App::Ebread:ver<0.2.3>:auth<zef:samy>",
-  "license": "Artistic-2.0",
-  "name": "App::Ebread",
-  "path": "A/PP/APP_EBREAD/dc62d4d04c6ef80e9687caaaf8d51a7e800beadc.tar.gz",
-  "perl": "6.d",
-  "provides": {
-   "App::Ebread": "lib/App/Ebread.rakumod",
-   "App::Ebread::Epub": "lib/App/Ebread/Epub.rakumod",
-   "App::Ebread::Epub::Unzip": "lib/App/Ebread/Epub/Unzip.rakumod",
-   "App::Ebread::TextBrowserDump": "lib/App/Ebread/TextBrowserDump.rakumod"
-  },
-  "resources": [],
-  "support": {
-   "bugtracker": "https://codeberg.org/1-1sam/raku-ebread/issues"
-  },
-  "tags": [
-   "epub",
-   "ebook"
-  ],
-  "test-depends": [
-   "Test",
-   "File::Temp"
-  ],
-  "version": "0.2.3"
- },
- {
   "auth": "zef:lizmat",
   "authors": [
    "Elizabeth Mattijsen"
@@ -5044,6 +4995,74 @@
   ],
   "test-depends": [],
   "version": "0.0.7"
+ },
+ {
+  "api": "1",
+  "auth": "zef:gdonald",
+  "authors": [
+   "Greg Donald"
+  ],
+  "build-depends": [],
+  "depends": [
+   "Template::HAML:auth<zef:gdonald>",
+   "JSON::Fast",
+   "YAMLish",
+   "Cro::HTTP"
+  ],
+  "description": "A static blog generator written in Raku",
+  "dist": "Blogin:ver<0.9.0>:auth<zef:gdonald>",
+  "license": "Artistic-2.0",
+  "name": "Blogin",
+  "path": "B/LO/BLOGIN/c26609c0a551503222af3a3d476fbe15f98ef791.tar.gz",
+  "perl": "6.d",
+  "provides": {
+   "Blogin": "lib/Blogin.rakumod",
+   "Blogin::Assets": "lib/Blogin/Assets.rakumod",
+   "Blogin::Config": "lib/Blogin/Config.rakumod",
+   "Blogin::Data": "lib/Blogin/Data.rakumod",
+   "Blogin::Feed": "lib/Blogin/Feed.rakumod",
+   "Blogin::Filters": "lib/Blogin/Filters.rakumod",
+   "Blogin::Framework": "lib/Blogin/Framework.rakumod",
+   "Blogin::Highlight": "lib/Blogin/Highlight.rakumod",
+   "Blogin::Layout": "lib/Blogin/Layout.rakumod",
+   "Blogin::Log": "lib/Blogin/Log.rakumod",
+   "Blogin::Markdown": "lib/Blogin/Markdown.rakumod",
+   "Blogin::Markdown::Actions": "lib/Blogin/Markdown/Actions.rakumod",
+   "Blogin::Markdown::Grammar": "lib/Blogin/Markdown/Grammar.rakumod",
+   "Blogin::Markdown::Html": "lib/Blogin/Markdown/Html.rakumod",
+   "Blogin::Markdown::Node": "lib/Blogin/Markdown/Node.rakumod",
+   "Blogin::Metrics": "lib/Blogin/Metrics.rakumod",
+   "Blogin::Nav": "lib/Blogin/Nav.rakumod",
+   "Blogin::Post": "lib/Blogin/Post.rakumod",
+   "Blogin::Scaffold": "lib/Blogin/Scaffold.rakumod",
+   "Blogin::Search": "lib/Blogin/Search.rakumod",
+   "Blogin::Server": "lib/Blogin/Server.rakumod",
+   "Blogin::Shortcode": "lib/Blogin/Shortcode.rakumod",
+   "Blogin::Site": "lib/Blogin/Site.rakumod",
+   "Blogin::Slug": "lib/Blogin/Slug.rakumod",
+   "Blogin::Style": "lib/Blogin/Style.rakumod",
+   "Blogin::Summary": "lib/Blogin/Summary.rakumod",
+   "Blogin::Toc": "lib/Blogin/Toc.rakumod"
+  },
+  "resources": [],
+  "support": {
+   "bugtracker": "https://github.com/gdonald/Blogin/issues",
+   "source": "https://github.com/gdonald/Blogin.git"
+  },
+  "tags": [
+   "blog",
+   "static-site",
+   "generator",
+   "markdown",
+   "haml"
+  ],
+  "test-depends": [
+   "BDD::Behave:auth<zef:gdonald>",
+   "META6",
+   "URI",
+   "XML"
+  ],
+  "version": "0.9.0"
  },
  {
   "auth": "zef:raku-community-modules",
@@ -41525,7 +41544,8 @@
  {
   "auth": "zef:finanalyst",
   "authors": [
-   "Richard Hainsworth"
+   "Richard Hainsworth",
+   "Tim Nelson"
   ],
   "depends": [
    "Test::Deeply::Relaxed",
@@ -41545,10 +41565,10 @@
    "XML"
   ],
   "description": "Renders RakuDoc v2 to text, HTML, HTML-Extra, Markdown",
-  "dist": "Rakuast::RakuDoc::Render:ver<1.0.14>:auth<zef:finanalyst>",
+  "dist": "Rakuast::RakuDoc::Render:ver<1.0.15>:auth<zef:finanalyst>",
   "license": "Artistic-2.0",
   "name": "Rakuast::RakuDoc::Render",
-  "path": "R/AK/RAKUAST_RAKUDOC_RENDER/8d65432a03364c6a26fc3e8f9819f292058954df.tar.gz",
+  "path": "R/AK/RAKUAST_RAKUDOC_RENDER/5838b00c753391e24317853b1a80aabe8e4fa38f.tar.gz",
   "provides": {
    "RakuDoc::Citations": "lib/RakuDoc/Citations.rakumod",
    "RakuDoc::MarkupMeta": "lib/RakuDoc/MarkupMeta.rakumod",
@@ -41605,7 +41625,7 @@
    "Test",
    "Test::META"
   ],
-  "version": "1.0.14"
+  "version": "1.0.15"
  },
  {
   "auth": "zef:lizmat",
@@ -44763,58 +44783,6 @@
   "tags": [],
   "test-depends": [],
   "version": "0.1"
- },
- {
-  "auth": "zef:raku-community-modules",
-  "authors": [
-   [
-    "Jonathan Worthington",
-    "Raku Community"
-   ]
-  ],
-  "build-depends": [],
-  "depends": {
-   "runtime": {
-    "requires": [
-     "Libarchive",
-     "LibXML:ver<0.10.19+>"
-    ]
-   }
-  },
-  "description": "Work with Excel (XLSX) spreadsheets",
-  "dist": "Spreadsheet::XLSX:ver<0.3.5>:auth<zef:raku-community-modules>",
-  "license": "Artistic-2.0",
-  "name": "Spreadsheet::XLSX",
-  "path": "S/PR/SPREADSHEET_XLSX/14cc20bff383d50306982809cb967b3a76b4aa1e.tar.gz",
-  "provides": {
-   "Spreadsheet::XLSX": "lib/Spreadsheet/XLSX.rakumod",
-   "Spreadsheet::XLSX::Cell": "lib/Spreadsheet/XLSX/Cell.rakumod",
-   "Spreadsheet::XLSX::CellStyle": "lib/Spreadsheet/XLSX/CellStyle.rakumod",
-   "Spreadsheet::XLSX::ContentTypes": "lib/Spreadsheet/XLSX/ContentTypes.rakumod",
-   "Spreadsheet::XLSX::DocProps::Core": "lib/Spreadsheet/XLSX/DocProps/Core.rakumod",
-   "Spreadsheet::XLSX::Exceptions": "lib/Spreadsheet/XLSX/Exceptions.rakumod",
-   "Spreadsheet::XLSX::Relationships": "lib/Spreadsheet/XLSX/Relationships.rakumod",
-   "Spreadsheet::XLSX::Root": "lib/Spreadsheet/XLSX/Root.rakumod",
-   "Spreadsheet::XLSX::SharedStrings": "lib/Spreadsheet/XLSX/SharedStrings.rakumod",
-   "Spreadsheet::XLSX::Styles": "lib/Spreadsheet/XLSX/Styles.rakumod",
-   "Spreadsheet::XLSX::Types": "lib/Spreadsheet/XLSX/Types.rakumod",
-   "Spreadsheet::XLSX::Workbook": "lib/Spreadsheet/XLSX/Workbook.rakumod",
-   "Spreadsheet::XLSX::Worksheet": "lib/Spreadsheet/XLSX/Worksheet.rakumod",
-   "Spreadsheet::XLSX::XMLHelpers": "lib/Spreadsheet/XLSX/XMLHelpers.rakumod"
-  },
-  "raku": "6.*",
-  "resources": [],
-  "support": {
-   "bugtracker": "https://github.com/raku-community-modules/Spreadsheet-XLSX/issues",
-   "email": "community@raku.org",
-   "source": "https://github.com/raku-community-modules/Spreadsheet-XLSX.git"
-  },
-  "tags": [
-   "SPREADSHEET",
-   "XLSX"
-  ],
-  "test-depends": [],
-  "version": "0.3.5"
  },
  {
   "api": "1.0",

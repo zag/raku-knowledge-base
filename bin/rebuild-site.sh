@@ -21,12 +21,12 @@ START=$(date +%s)
 
 if [ "$FAST" = 0 ]; then
   echo "[1/5] docs"
-  if [ -d work_doc/.git ]; then git -C work_doc pull -q; else rm -rf work_doc; git clone -q --depth 1 https://github.com/Raku/doc work_doc; fi
-  yarn -s docs:parse >/dev/null
+  if [ -d work_doc/.git ]; then git -C work_doc reset --hard -q && git -C work_doc pull -q; else rm -rf work_doc; git clone -q --depth 1 https://github.com/Raku/doc work_doc; fi
+  node ./bin/parsesrc.mjs 'work_doc/**/*.rakudoc' > ./built/docs-tree.json 2>/dev/null
 
   echo "[2/5] examples"
-  if [ -d work_examples/.git ]; then git -C work_examples pull -q; else rm -rf work_examples; git clone -q --depth 1 https://github.com/Raku/examples.git work_examples; fi
-  yarn -s examples:parse >/dev/null
+  if [ -d work_examples/.git ]; then git -C work_examples reset --hard -q && git -C work_examples pull -q; else rm -rf work_examples; git clone -q --depth 1 https://github.com/Raku/examples.git work_examples; fi
+  node ./bin/parsesrc.mjs 'work_examples/categories/**/*.{pod6,md,rakudoc,rakumod,raku,pm6,pl,pm,p6,pod}' > ./built/examples-tree.json 2>/dev/null
 
   echo "[3/5] modules"
   ./bin/refresh-mods.sh
