@@ -4,6 +4,12 @@
 
 This resource is all about the Raku programming language. 
 
+=begin nested :notify<note>
+This website is not affiliated with the official Raku project: L<https://raku.org/>.
+It is an independent knowledge base built and published with L<Podlite|https://podlite.org>.
+=end nested
+
+
 It's packed with info from:
 
 =item The official Raku docs [L<https://github.com/Raku/doc>]

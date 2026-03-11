@@ -10,11 +10,6 @@
 
 =TITLE The Raku programming language knowledge base 
 
-=begin nested :notify<warning>
-This website is not affiliated with the official Raku project: L<https://raku.org/>.
-It is an independent knowledge base built and published with L<Podlite|https://podlite.org>.
-=end nested
-
 =for head1 :id<page-title>
 Raku Knowledge Base
 
