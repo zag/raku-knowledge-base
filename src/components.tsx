@@ -184,17 +184,31 @@ interface ModuleInfo {
   src: string
   files: Array<{ file: string; publishUrl?: string }>
 }
-const parseAuthor = (authorString: string): Author => {
+export const parseAuthor = (author: unknown): Author => {
+  // META6 in the wild carries nested arrays and other non-string shapes
+  const authorString = Array.isArray(author) ? author.filter(a => typeof a === 'string').join(', ') : String(author ?? '')
   const match = authorString.match(/^(.+?)\s*(?:<(.+)>)?$/)
   return {
     name: match ? match[1] : authorString,
   }
 }
+
+// depends entries may be alternative-dependency hashes like {any: [...]}
+export const depLabel = (dep: unknown): string => {
+  if (typeof dep === 'string') return dep
+  if (Array.isArray(dep)) return dep.map(depLabel).join(', ')
+  if (dep && typeof dep === 'object') {
+    return Object.entries(dep as Record<string, unknown>)
+      .map(([key, value]) => `${key}: ${depLabel(value)}`)
+      .join('; ')
+  }
+  return String(dep ?? '')
+}
 interface Author {
   name: string
 }
 
-const RakuModuleInfo: React.FC<{ data: ModuleInfo }> = ({ data }) => {
+export const RakuModuleInfo: React.FC<{ data: ModuleInfo }> = ({ data }) => {
   const { meta, src, files } = data
   if (src !== 'zef') return <></>
   const documentationFiles = files.filter(
@@ -306,7 +320,7 @@ const RakuModuleInfo: React.FC<{ data: ModuleInfo }> = ({ data }) => {
               {Array.isArray(meta['depends']) &&
                 meta.depends.map((dep, index) => (
                   <span key={index} className="badge dependency-badge">
-                    {dep}
+                    {depLabel(dep)}
                   </span>
                 ))}
             </div>
@@ -319,12 +333,12 @@ const RakuModuleInfo: React.FC<{ data: ModuleInfo }> = ({ data }) => {
                 meta['test-depends'].map((dep, index) => (
                   <a
                     key={index}
-                    href={getModuleLink(dep)}
+                    href={getModuleLink(depLabel(dep))}
                     className="badge test-dependency-badge"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {dep}
+                    {depLabel(dep)}
                   </a>
                 ))}
             </div>
