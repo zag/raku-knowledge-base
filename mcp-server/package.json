@@ -1,0 +1,22 @@
+{
+  "name": "raku-kb-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MCP server exposing the Raku Knowledge Base to AI agents: search, page, sections",
+  "type": "module",
+  "bin": {
+    "raku-kb-mcp": "./bin/raku-kb-mcp.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "Artistic-2.0",
+  "scripts": {
+    "start": "node bin/raku-kb-mcp.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.25.0"
+  }
+}

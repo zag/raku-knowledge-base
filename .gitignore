@@ -85,3 +85,4 @@ lib
 /built/siteInfo.json
 /built/styles.css
 /mcp-server/kb-index.json
+/mcp-server/node_modules
