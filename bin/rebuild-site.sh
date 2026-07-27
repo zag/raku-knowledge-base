@@ -59,6 +59,8 @@ rm -f index.zip.tmp
   yarn next export -o out
   yarn makeindex
 )
+node ./bin/build-kb-index.mjs "$PW/out" mcp-server/kb-index.json
+
 (cd "$PW/out" && zip -qr "$REPO/index.zip.tmp" .)
 SIZE=$(wc -c < index.zip.tmp | tr -d ' ')
 if [ "$SIZE" -lt 1000000 ]; then
