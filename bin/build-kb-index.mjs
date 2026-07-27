@@ -8,7 +8,7 @@ if (!OUT || !DEST) {
   process.exit(1)
 }
 
-const EXCERPT = 4000
+const EXCERPT = 16000
 
 const walk = dir => {
   const acc = []
@@ -57,7 +57,9 @@ for (const f of files) {
   if (!text) continue
   const url = toUrl(f)
   const section = url === '/' ? 'home' : url.split('/')[1]
-  entries.push({ url, title, section, text: text.slice(0, EXCERPT) })
+  const entry = { url, title, section, text: text.slice(0, EXCERPT) }
+  if (text.length > EXCERPT) entry.truncated = true
+  entries.push(entry)
 }
 
 entries.sort((a, b) => a.url.localeCompare(b.url))

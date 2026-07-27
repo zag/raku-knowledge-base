@@ -29,6 +29,31 @@ const snippet = (text, terms) => {
   return (start > 0 ? '…' : '') + s + (start + 200 < text.length ? '…' : '')
 }
 
+const normalizeUrl = u => {
+  let p = u.replace(/^https?:\/\/[^/]+/, '')
+  if (!p.startsWith('/')) p = '/' + p
+  if (p.length > 1) p = p.replace(/\/$/, '')
+  return p || '/'
+}
+
+export const getPage = (corpus, url) => {
+  const want = normalizeUrl(url)
+  const p = corpus.pages.find(x => x.url === want)
+  if (!p) return null
+  return { url: p.url, title: p.title, section: p.section, text: p.text, truncated: Boolean(p.truncated) }
+}
+
+export const listSections = corpus => {
+  const map = new Map()
+  for (const p of corpus.pages) {
+    const s = map.get(p.section) || { section: p.section, pages: 0, url: p.url }
+    s.pages += 1
+    if (p.url.length < s.url.length) s.url = p.url
+    map.set(p.section, s)
+  }
+  return [...map.values()].sort((a, b) => b.pages - a.pages)
+}
+
 export const search = (corpus, query, limit = 10) => {
   const terms = tokenize(query)
   if (terms.length === 0) return []
