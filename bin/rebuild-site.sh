@@ -56,7 +56,6 @@ rm -f index.zip.tmp
   mkdir -p built public/assets
   yarn publisher --preset everything -s 'https://raku-knowledge-base.podlite.org' -d ./pub
   yarn build
-  yarn next export -o out
   yarn makeindex
 )
 node ./bin/build-kb-index.mjs "$PW/out" mcp-server/kb-index.json

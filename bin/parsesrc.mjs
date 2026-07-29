@@ -1,20 +1,12 @@
 import path from 'path'
 import { createRequire } from 'module'
-import { Command } from 'commander'
 import glob from 'glob'
 
 const require = createRequire(import.meta.url)
 const { processFile } = require('@podlite/publisher')
-const packagePath = process.cwd()
 
 async function run() {
-  const program = new Command()
-  program.name('attachExternal').description('service tool')
-
-  program.argument('[glob]', 'i.e dir/**/*.{podlite,pod6}')
-
-  program.parse(process.argv)
-  const [atpath] = program.args
+  const atpath = process.argv[2]
   console.warn('atpath', atpath)
 
   let count = 0

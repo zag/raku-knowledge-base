@@ -18,15 +18,10 @@ def vkey(e):
     parts = re.findall(r'\d+', v)
     return [int(p) for p in parts[:6]]
 
-# renderer chokes on these (tracked upstream); excluded until fixed
-SKIP = {'App::Ebread', 'Spreadsheet::XLSX'}
-
 mods = {}
 for e in json.load(open('built/zef-mods.json')):
     name = e.get('name')
     if not name or not e.get('path'):
-        continue
-    if name in SKIP:
         continue
     cur = mods.get(name)
     if cur is None or vkey(e) >= vkey(cur):
