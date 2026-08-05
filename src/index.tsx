@@ -41,9 +41,15 @@ export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
     }
     return makeInterator(rules)(node, {})
   }
+  // a name with control characters cannot be carried through a publish url
+  const isPublishableName = (name: string) => Boolean(name) && !/[\u0000-\u001f"]/.test(name)
+  const oneLine = (value: unknown) => String(value ?? '').replace(/\s+/g, ' ').trim()
+
   const onProcess = (recs: publishRecord[]) => {
     // filter out files without docuemntation
-    const filesWithDocs = mods_state.filter(item => isExistsDocBlocks(item.node))
+    const filesWithDocs = mods_state
+      .filter(item => isExistsDocBlocks(item.node))
+      .filter(item => isPublishableName(item.file.split('/')[2]))
     //   convert all doc: links to file:: links
     const addedUrls = filesWithDocs.map(item => {
       const publishUrl = item.file.replace(/^work_mods/g, '/mods')
@@ -111,9 +117,9 @@ export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
 
     const makePage = (item, index_item) => {
       return `
-    =begin pod :puburl<${item.url}>
-    =TITLE ${item.meta.name}
-    =SUBTITLE ${item.meta.description}
+    =begin pod :puburl("${item.url}")
+    =TITLE ${oneLine(item.meta.name)}
+    =SUBTITLE ${oneLine(item.meta.description)}
     =useReact {RenderItem} from 'raku-knowledge/components'
     =begin React :component<RenderItem>
     =begin data

@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item quote the module page url so names with spaces keep their full path
+=item skip modules whose name carries control characters
 =item reduce pages size up to 2-3 times
 =item refactor components to use C<=include> feature
 
