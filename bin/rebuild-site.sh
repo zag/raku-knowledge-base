@@ -40,6 +40,9 @@ echo "[4/5] site export (local podlite-web)"
 PW="${PODLITE_WEB_DIR:-$HOME/Work/projects/podlite-web}"
 if [ ! -d "$PW" ]; then git clone -q https://github.com/podlite/podlite-web "$PW"; fi
 REPO="$(pwd -P)"
+# the site build rewrites podlite-web's workspace list and config alias; put them
+# back even when the build dies, or the next run starts from a broken state
+trap '(cd "$PW" && node ./bin/attachExternal.mjs --detach) >/dev/null 2>&1 || true' EXIT
 rm -f index.zip.tmp
 # The site must live inside podlite-web as pub/ (the docker flow mounts it there):
 # css-modules and loaders only apply within the project root. A symlink keeps the
