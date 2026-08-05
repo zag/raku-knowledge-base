@@ -47,7 +47,13 @@ rm -f index.zip.tmp
 # workspace list, so the lockfile must be refreshed before any further yarn command.
 (
   cd "$PW"
-  if [ -d pub ] && [ ! -L pub ]; then mv pub pub.demo; fi
+  # pub is the mount point for the site being built; the demo dir lives in git
+  if [ -L pub ]; then
+    rm -f pub
+  elif [ -d pub ]; then
+    [ -d pub.demo ] || cp -R pub pub.demo
+    rm -rf pub
+  fi
   ln -sfn "$REPO" pub
   yarn install
   yarn attach_path pub
