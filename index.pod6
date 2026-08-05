@@ -123,7 +123,7 @@ L<Get started| file:./getting-started/getting-started.podlite>
 =head3 L< How-to | /doc/language/modules>
 =para       How to write your own module
 
-=head3 L<App::Mi6 | /mods/zef/App::Mi6> L<App::Mi6 on gihub|https://github.com/skaji/mi6 >
+=head3 L<App::Mi6 | /mods/zef/App::Mi6> L<App::Mi6 on github|https://github.com/skaji/mi6>
 =para       Helper for writing modules.
 
 =head3 L<Index all modules|/mods>
