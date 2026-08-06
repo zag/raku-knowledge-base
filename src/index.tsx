@@ -231,7 +231,8 @@ export const docPlugin = ({ rootdir }): PodliteWebPlugin => {
     function isRemoteUrl(url: string): boolean {
       try {
         const parsedUrl = new URL(url)
-        return ['http:', 'https:'].includes(parsedUrl.protocol)
+        // any scheme reaches outside; doc: and file: are resolved by the publisher
+        return !['doc:', 'file:'].includes(parsedUrl.protocol)
       } catch (error) {
         // If URL parsing fails, assume it's a local path
         return false
