@@ -13,6 +13,18 @@ import * as fs from 'fs'
 import { getFromTree, getTextContentFromNode, makeAttrs, makeInterator, mkBlock, mkRootBlock, PodNode } from '@podlite/schema'
 import { url } from 'inspector'
 
+// a link whose text carries formatting keeps the "|target" separator inside the text,
+// and README markdown leaks brackets and emphasis into the target
+const linkFromText = (text: string): string => {
+  const separator = text.lastIndexOf('|')
+  const target = separator === -1 ? text : text.slice(separator + 1)
+  return target
+    .trim()
+    .replace(/^[[(<]+|[\])>]+$/g, '')
+    .replace(/^\*+|\*+$/g, '')
+    .trim()
+}
+
 export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
   const mods_state = require('../built/mods-tree.json') //.splice(0, 10);
   const all_mods = require('../built/ecosystem.json')
@@ -230,8 +242,8 @@ export const docPlugin = ({ rootdir }): PodliteWebPlugin => {
       // we need add prefic to all /doc/ links
       'L<>': node => {
         const { meta, content } = node
-        const link = meta ? meta : getTextContentFromNode(content)
-        return { ...node, meta: isRemoteUrl(link) ? meta : `/doc${link}` }
+        const link = meta ? meta : linkFromText(getTextContentFromNode(content))
+        return { ...node, meta: isRemoteUrl(link) ? link : `/doc${link}` }
       },
     }
     return makeInterator(rules)(node, {})

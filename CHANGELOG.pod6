@@ -2,6 +2,7 @@
 
 =head1 Upcoming
 
+=item take the link target from the text when a formatted link text hides it, and strip markdown left inside the target
 =item quote the module page url so names with spaces keep their full path
 =item skip modules whose name carries control characters
 =item reduce pages size up to 2-3 times
