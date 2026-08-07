@@ -1,0 +1,73 @@
+name: Build probe
+
+# Measures what a full corpus build costs on a hosted runner: wall time per stage,
+# disk headroom, and whether the site export survives without tuning.
+# Publishes nothing.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Report starting room
+        run: |
+          echo "disk:"; df -h / | tail -1
+          echo "memory:"; free -m | head -2
+          echo "cores: $(nproc)"
+
+      - name: Install plugin deps
+        run: |
+          corepack enable
+          yarn install --immutable || yarn install
+          yarn build
+
+      - name: Stage 1 — documentation
+        run: |
+          S=$(date +%s)
+          git clone -q --depth 1 https://github.com/Raku/doc work_doc
+          mkdir -p built
+          node ./bin/parsesrc.mjs 'work_doc/**/*.rakudoc' > ./built/docs-tree.json 2>/dev/null
+          echo "docs: $(( $(date +%s) - S ))s, $(du -sh built/docs-tree.json | cut -f1)"
+
+      - name: Stage 2 — examples
+        run: |
+          S=$(date +%s)
+          git clone -q --depth 1 https://github.com/Raku/examples.git work_examples
+          node ./bin/parsesrc.mjs 'work_examples/categories/**/*.{pod6,md,rakudoc,rakumod,raku,pm6,pl,pm,p6,pod}' > ./built/examples-tree.json 2>/dev/null
+          echo "examples: $(( $(date +%s) - S ))s"
+
+      - name: Stage 3 — modules (the long one)
+        run: |
+          S=$(date +%s)
+          ./bin/refresh-mods.sh
+          echo "modules: $(( $(date +%s) - S ))s, $(du -sh work_mods | cut -f1)"
+          echo "disk after modules:"; df -h / | tail -1
+
+      - name: Stage 4 — version snapshot
+        run: node ./bin/snapshot-registry.mjs
+
+      - name: Stage 5 — site export
+        run: |
+          S=$(date +%s)
+          mkdir -p /tmp/site-built
+          docker run --rm -v "$PWD":/app/pub -v /tmp/site-built:/app/built \
+            podlite/podlite-web:0.10.4 \
+            export pub -s https://raku-knowledge-base.podlite.org --preset everything \
+            > /tmp/export.log 2>&1 || { echo "EXPORT FAILED"; tail -40 /tmp/export.log; exit 1; }
+          echo "export: $(( $(date +%s) - S ))s"
+          grep -E "Generating static pages|Indexed .* pages" /tmp/export.log | tail -2
+
+      - name: Report the bill
+        if: always()
+        run: |
+          echo "disk at the end:"; df -h / | tail -1
+          echo "largest directories:"; du -sh work_mods built /tmp/site-built 2>/dev/null | sort -rh
