@@ -4,7 +4,7 @@
 
 =item bump the C<@podlite> toolchain to the v0.0.77 release
 =item treat any url scheme as external, so links like irc: no longer get a section prefix
-=item take the link target from the text when a formatted link text hides it, and strip markdown left inside the target
+=item strip markdown left inside a link target; the parser now hands over the target itself
 =item quote the module page url so names with spaces keep their full path
 =item skip modules whose name carries control characters
 =item reduce pages size up to 2-3 times

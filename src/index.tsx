@@ -13,17 +13,13 @@ import * as fs from 'fs'
 import { getFromTree, getTextContentFromNode, makeAttrs, makeInterator, mkBlock, mkRootBlock, PodNode } from '@podlite/schema'
 import { url } from 'inspector'
 
-// a link whose text carries formatting keeps the "|target" separator inside the text,
-// and README markdown leaks brackets and emphasis into the target
-const linkFromText = (text: string): string => {
-  const separator = text.lastIndexOf('|')
-  const target = separator === -1 ? text : text.slice(separator + 1)
-  return target
+// README markdown leaks brackets and emphasis into the target
+const linkFromText = (text: string): string =>
+  text
     .trim()
     .replace(/^[[(<]+|[\])>]+$/g, '')
     .replace(/^\*+|\*+$/g, '')
     .trim()
-}
 
 export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
   const mods_state = require('../built/mods-tree.json') //.splice(0, 10);
