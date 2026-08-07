@@ -5,7 +5,8 @@ import path from 'path'
 const DIR = 'snapshots'
 
 const load = arg => {
-  const file = arg.endsWith('.json') ? arg : path.join(DIR, `${arg}.json`)
+  // an argument may be a date, a bare file name from the directory listing, or a path
+  const file = arg.includes('/') ? arg : path.join(DIR, arg.endsWith('.json') ? arg : `${arg}.json`)
   if (!fs.existsSync(file)) {
     console.error(`ERROR: ${file} not found`)
     process.exit(1)

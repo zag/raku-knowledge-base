@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item resolve a snapshot name against the snapshots directory whichever way it is given
+
 =item fetch module sources over https — the git protocol they list has been switched off since 2022
 =item stop the refresh when more than a twentieth of the module sources have no checkout at all; a checkout that merely failed to update is reported, not fatal
 
