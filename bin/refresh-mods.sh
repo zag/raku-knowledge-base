@@ -129,11 +129,15 @@ from collections import Counter
 counts = Counter(results)
 print('repos:', dict(counts))
 
-# a third of the sources once vanished while the run still reported success
-failed = counts['clonefail'] + counts['timeout'] + counts['pullfail']
+# a third of the sources once vanished while the run still reported success.
+# a failed pull is not that case: the checkout stays, it is merely stale.
+missing = counts['clonefail'] + counts['timeout']
+stale = counts['pullfail']
 total = len(results)
-if total and failed / total > 0.05:
-    raise SystemExit(f'ERROR: {failed} of {total} module sources failed ({failed*100//total}%) — refusing to build a corpus this incomplete')
+if stale:
+    print(f'note: {stale} checkouts could not be updated and stay at their previous state')
+if total and missing / total > 0.05:
+    raise SystemExit(f'ERROR: {missing} of {total} module sources have no checkout at all ({missing*100//total}%) — refusing to build a corpus this incomplete')
 
 import shutil
 known = {m['name'].replace('/', '_') for m in metas}
