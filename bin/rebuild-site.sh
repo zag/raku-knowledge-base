@@ -30,6 +30,7 @@ if [ "$FAST" = 0 ]; then
 
   echo "[3/5] modules"
   ./bin/refresh-mods.sh
+  node ./bin/snapshot-registry.mjs
 else
   echo "[1-3/5] data refresh skipped (--fast)"
   for f in built/docs-tree.json built/examples-tree.json built/mods-tree.json; do

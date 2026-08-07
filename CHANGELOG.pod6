@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item record a dated snapshot of module versions on every data refresh, and compare two snapshots into release notes
+
 =item stop storing generated corpus trees in the repository; a fast rebuild now says so when they are missing
 
 =item document the offline bundle in the mcp server readme
