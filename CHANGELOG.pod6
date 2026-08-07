@@ -2,6 +2,9 @@
 
 =head1 Upcoming
 
+=item fetch module sources over https — the git protocol they list has been switched off since 2022
+=item stop the refresh when more than a twentieth of the module sources fail, instead of building an incomplete corpus
+
 =item add a footer crediting the tools the site is built with
 
 =item record a dated snapshot of module versions on every data refresh, and compare two snapshots into release notes

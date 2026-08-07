@@ -97,10 +97,20 @@ print('ecosystem.json:', len(metas), 'of', len(urls), 'metas')
 base = 'work_mods/all'
 os.makedirs(base, exist_ok=True)
 
+# github turned off the git:// protocol in 2022, and ssh needs a key no build machine has
+def to_https(src):
+    if src.startswith('git://'):
+        return 'https://' + src[len('git://'):]
+    if src.startswith('git@') and ':' in src:
+        host, path = src[len('git@'):].split(':', 1)
+        return f'https://{host}/{path}'
+    return src
+
 def sync_repo(m):
     src = m.get('source-url') or (m.get('support') or {}).get('source')
     if not src:
         return 'nosrc'
+    src = to_https(src)
     dest = os.path.join(base, m['name'].replace('/', '_'))
     try:
         if os.path.isdir(os.path.join(dest, '.git')):
@@ -116,7 +126,14 @@ def sync_repo(m):
 with ThreadPoolExecutor(max_workers=8) as ex:
     results = list(ex.map(sync_repo, metas))
 from collections import Counter
-print('repos:', dict(Counter(results)))
+counts = Counter(results)
+print('repos:', dict(counts))
+
+# a third of the sources once vanished while the run still reported success
+failed = counts['clonefail'] + counts['timeout'] + counts['pullfail']
+total = len(results)
+if total and failed / total > 0.05:
+    raise SystemExit(f'ERROR: {failed} of {total} module sources failed ({failed*100//total}%) — refusing to build a corpus this incomplete')
 
 import shutil
 known = {m['name'].replace('/', '_') for m in metas}
