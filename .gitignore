@@ -84,5 +84,10 @@ lib
 /built/pages.json
 /built/siteInfo.json
 /built/styles.css
+/built/docs-tree.json
+/built/examples-tree.json
+/built/mods-info.json
+/built/index-category.json
+/built/examples-index-category.json
 /mcp-server/kb-index.json
 /mcp-server/node_modules

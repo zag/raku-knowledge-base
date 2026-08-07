@@ -32,6 +32,12 @@ if [ "$FAST" = 0 ]; then
   ./bin/refresh-mods.sh
 else
   echo "[1-3/5] data refresh skipped (--fast)"
+  for f in built/docs-tree.json built/examples-tree.json built/mods-tree.json; do
+    if [ ! -s "$f" ]; then
+      echo "ERROR: $f is missing. It is generated, not stored — run without --fast once." >&2
+      exit 1
+    fi
+  done
 fi
 
 echo "[4/5] site export (local podlite-web)"

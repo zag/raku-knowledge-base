@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item stop storing generated corpus trees in the repository; a fast rebuild now says so when they are missing
+
 =item document the offline bundle in the mcp server readme
 
 =item bump the C<@podlite> toolchain to the v0.0.77 release
