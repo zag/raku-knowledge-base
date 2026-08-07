@@ -101,6 +101,8 @@
 The Camelia image is copyright 2009 by Larry Wall. "Raku" is trademark of the Yet Another Society.
 All rights reserved.
 
+Built with L<Podlite|https://podlite.org> — the markup and publishing tools behind this site.
+
 =useReact {CookieConsent} from '@Components/service'
 =begin React :component<CookieConsent> :id<CookieConsent> :buttonCaption("Got it!")
 =para

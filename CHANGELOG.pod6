@@ -7,7 +7,7 @@
 =item fetch module sources over https — the git protocol they list has been switched off since 2022
 =item stop the refresh when more than a twentieth of the module sources have no checkout at all; a checkout that merely failed to update is reported, not fatal
 
-=item add a footer crediting the tools the site is built with
+=item credit the tools in the site template footer, where the rest of the footer lives
 
 =item record a dated snapshot of module versions on every data refresh, and compare two snapshots into release notes
 
