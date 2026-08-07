@@ -176,4 +176,8 @@ L<Get started| file:./getting-started/getting-started.podlite>
 
 =head3 L<The index of all terms|/indexterms>
 
+=begin FOOTER
+Built with L<Podlite|https://podlite.org> — the markup and publishing tools behind this site.
+=end FOOTER
+
 =end pod
