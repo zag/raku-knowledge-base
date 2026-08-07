@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item document the offline bundle in the mcp server readme
+
 =item bump the C<@podlite> toolchain to the v0.0.77 release
 =item treat any url scheme as external, so links like irc: no longer get a section prefix
 =item strip markdown left inside a link target; the parser now hands over the target itself

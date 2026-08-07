@@ -25,6 +25,19 @@ Or in an MCP client config:
 }
 ```
 
+## Offline bundle
+
+Each release ships `raku-kb-mcp-offline.tar.gz` — the server plus a prebuilt index, no site build required:
+
+```sh
+tar xzf raku-kb-mcp-offline.tar.gz
+cd raku-kb-mcp
+npm install
+claude mcp add raku-kb -- node "$PWD/bin/raku-kb-mcp.mjs"
+```
+
+The bundled index is a snapshot taken when the release was cut. To refresh it against a newer corpus, rebuild the site and regenerate the index as described below.
+
 ## Tools
 
 | Tool | Input | Output |
