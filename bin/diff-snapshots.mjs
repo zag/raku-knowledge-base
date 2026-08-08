@@ -3,6 +3,29 @@ import fs from 'fs'
 import path from 'path'
 
 const DIR = 'snapshots'
+const SITE = 'https://raku-knowledge-base.podlite.org'
+
+// A module page exists only when the module ships documentation, so links come
+// from the built index rather than being guessed from the name.
+const loadPages = () => {
+  const file = process.env.RAKU_KB_INDEX || 'mcp-server/kb-index.json'
+  if (!fs.existsSync(file)) return null
+  try {
+    const data = JSON.parse(fs.readFileSync(file, 'utf8'))
+    const pages = Array.isArray(data) ? data : data.pages || []
+    return new Set(pages.map(p => p && p.url).filter(Boolean))
+  } catch {
+    return null
+  }
+}
+
+const pageUrl = (key, known) => {
+  const source = key.slice(0, key.indexOf(':'))
+  const name = key.slice(key.indexOf(':') + 1)
+  const path = `/mods/${source === 'p6c' ? 'all' : source}/${name}`
+  if (known && !known.has(path) && !known.has(SITE + path)) return null
+  return SITE + encodeURI(path)
+}
 
 const load = arg => {
   // an argument may be a date, a bare file name from the directory listing, or a path
@@ -48,7 +71,12 @@ for (const key of Object.keys(older.modules)) {
   if (newer.modules[key] === undefined) removed.push([key, older.modules[key]])
 }
 
+const known = loadPages()
 const name = key => key.slice(key.indexOf(':') + 1)
+const link = key => {
+  const url = pageUrl(key, known)
+  return url ? `[${name(key)}](${url})` : name(key)
+}
 const lines = []
 lines.push(`Modules: ${newer.count} (was ${older.count}) — ${older.date} → ${newer.date}`)
 lines.push('')
@@ -58,12 +86,12 @@ if (!added.length && !changed.length && !removed.length) {
 } else {
   if (added.length) {
     lines.push(`### Added (${added.length})`, '')
-    for (const [key, version] of added) lines.push(`- ${name(key)} ${version}`)
+    for (const [key, version] of added) lines.push(`- ${link(key)} ${version}`)
     lines.push('')
   }
   if (changed.length) {
     lines.push(`### Updated (${changed.length})`, '')
-    for (const [key, was, now] of changed) lines.push(`- ${name(key)} ${was} → ${now}`)
+    for (const [key, was, now] of changed) lines.push(`- ${link(key)} ${was} → ${now}`)
     lines.push('')
   }
   if (removed.length) {

@@ -50,6 +50,29 @@ jobs:
           node ./bin/snapshot-registry.mjs
           echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
 
+      - name: Build the site
+        run: |
+          mkdir -p /tmp/site-built
+          # the build wipes its own output directory first, so it cannot be a mounted one:
+          # run a named container and copy the result out afterwards
+          docker run --name site-build -v "$PWD":/app/pub -v /tmp/site-built:/app/built \
+            podlite/podlite-web:0.10.4 \
+            export pub -s https://raku-knowledge-base.podlite.org --preset everything \
+            > /tmp/export.log 2>&1 || { echo "EXPORT FAILED"; tail -40 /tmp/export.log; exit 1; }
+          grep -E "Generating static pages|Indexed .* pages" /tmp/export.log | tail -2
+          mkdir -p out && docker cp site-build:/app/out/. out/
+          docker rm -f site-build >/dev/null
+          echo "pages: $(find out -name '*.html' | wc -l)"
+
+      - name: Pack the artefacts
+        run: |
+          node ./bin/build-kb-index.mjs out mcp-server/kb-index.json
+          (cd out && zip -r -q -X "$GITHUB_WORKSPACE/index.zip" .)
+          mkdir -p /tmp/stage/raku-kb-mcp
+          rsync -a --exclude node_modules --exclude package-lock.json mcp-server/ /tmp/stage/raku-kb-mcp/
+          tar czf raku-kb-mcp-offline.tar.gz -C /tmp/stage raku-kb-mcp
+          ls -lh index.zip raku-kb-mcp-offline.tar.gz
+
       - name: Write release notes from the version diff
         run: |
           COUNT=$(ls snapshots/*.json | wc -l)
@@ -75,29 +98,6 @@ jobs:
             echo '```'
           } >> /tmp/notes.md
           cat /tmp/notes.md
-
-      - name: Build the site
-        run: |
-          mkdir -p /tmp/site-built
-          # the build wipes its own output directory first, so it cannot be a mounted one:
-          # run a named container and copy the result out afterwards
-          docker run --name site-build -v "$PWD":/app/pub -v /tmp/site-built:/app/built \
-            podlite/podlite-web:0.10.4 \
-            export pub -s https://raku-knowledge-base.podlite.org --preset everything \
-            > /tmp/export.log 2>&1 || { echo "EXPORT FAILED"; tail -40 /tmp/export.log; exit 1; }
-          grep -E "Generating static pages|Indexed .* pages" /tmp/export.log | tail -2
-          mkdir -p out && docker cp site-build:/app/out/. out/
-          docker rm -f site-build >/dev/null
-          echo "pages: $(find out -name '*.html' | wc -l)"
-
-      - name: Pack the artefacts
-        run: |
-          node ./bin/build-kb-index.mjs out mcp-server/kb-index.json
-          (cd out && zip -r -q -X "$GITHUB_WORKSPACE/index.zip" .)
-          mkdir -p /tmp/stage/raku-kb-mcp
-          rsync -a --exclude node_modules --exclude package-lock.json mcp-server/ /tmp/stage/raku-kb-mcp/
-          tar czf raku-kb-mcp-offline.tar.gz -C /tmp/stage raku-kb-mcp
-          ls -lh index.zip raku-kb-mcp-offline.tar.gz
 
       - name: Publish the server image
         if: inputs.publish
