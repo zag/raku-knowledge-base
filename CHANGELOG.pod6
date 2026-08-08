@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item let a second data release on the same day get its own tag instead of failing
+
 =item build a page for every module in the registry, including the 139 that ship no documentation
 =item clean stray markdown and windows backslashes out of link targets on module pages
 =item publish a data release weekly, not only on demand

@@ -126,7 +126,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create "data-${{ steps.snapshot.outputs.date }}" \
+          # a second run on the same day must not collide with the morning tag
+          TAG="data-${{ steps.snapshot.outputs.date }}"
+          N=2
+          while gh release view "$TAG" >/dev/null 2>&1; do
+            TAG="data-${{ steps.snapshot.outputs.date }}.$N"
+            N=$((N + 1))
+          done
+          gh release create "$TAG" \
             index.zip raku-kb-mcp-offline.tar.gz \
             --title "Raku KB — ${{ steps.snapshot.outputs.date }}" \
             --notes-file /tmp/notes.md
