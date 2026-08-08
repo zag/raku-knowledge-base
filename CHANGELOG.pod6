@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item build and publish a dated data release from CI — site archive, offline bundle and server image, with the version diff as release notes
+
 =item resolve a snapshot name against the snapshots directory whichever way it is given
 
 =item fetch module sources over https — the git protocol they list has been switched off since 2022

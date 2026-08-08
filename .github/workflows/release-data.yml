@@ -1,0 +1,124 @@
+name: Release data
+
+# Rebuilds the corpus and publishes a dated data release: the site archive,
+# the offline MCP bundle, and the server image. Release notes are the version
+# diff against the previous snapshot.
+#
+# Tags: data-YYYY-MM-DD for the corpus, v* for code — this one only makes data.
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: create the release (off = build and check only)
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build the site plugin
+        run: |
+          corepack enable
+          yarn install --immutable || yarn install
+          yarn build
+
+      - name: Collect sources
+        run: |
+          mkdir -p built
+          git clone -q --depth 1 https://github.com/Raku/doc work_doc
+          node ./bin/parsesrc.mjs 'work_doc/**/*.rakudoc' > ./built/docs-tree.json 2>/dev/null
+          git clone -q --depth 1 https://github.com/Raku/examples.git work_examples
+          node ./bin/parsesrc.mjs 'work_examples/categories/**/*.{pod6,md,rakudoc,rakumod,raku,pm6,pl,pm,p6,pod}' > ./built/examples-tree.json 2>/dev/null
+          ./bin/refresh-mods.sh
+
+      - name: Snapshot module versions
+        id: snapshot
+        run: |
+          node ./bin/snapshot-registry.mjs
+          echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+
+      - name: Write release notes from the version diff
+        run: |
+          COUNT=$(ls snapshots/*.json | wc -l)
+          if [ "$COUNT" -ge 2 ]; then
+            node ./bin/diff-snapshots.mjs > /tmp/notes.md
+          else
+            echo "First data release — nothing to compare against yet." > /tmp/notes.md
+          fi
+          {
+            echo
+            echo '**Install the offline bundle**'
+            echo
+            echo '```sh'
+            echo 'tar xzf raku-kb-mcp-offline.tar.gz && cd raku-kb-mcp'
+            echo 'npm install'
+            echo 'claude mcp add raku-kb -- node "$PWD/bin/raku-kb-mcp.mjs"'
+            echo '```'
+            echo
+            echo 'Or run the server image directly:'
+            echo
+            echo '```sh'
+            echo "docker run -i --rm ghcr.io/${GITHUB_REPOSITORY_OWNER}/raku-kb-mcp:latest"
+            echo '```'
+          } >> /tmp/notes.md
+          cat /tmp/notes.md
+
+      - name: Build the site
+        run: |
+          mkdir -p /tmp/site-built out
+          docker run --rm -v "$PWD":/app/pub -v /tmp/site-built:/app/built -v "$PWD/out":/app/out \
+            podlite/podlite-web:0.10.4 \
+            export pub -s https://raku-knowledge-base.podlite.org --preset everything \
+            > /tmp/export.log 2>&1 || { echo "EXPORT FAILED"; tail -40 /tmp/export.log; exit 1; }
+          grep -E "Generating static pages|Indexed .* pages" /tmp/export.log | tail -2
+
+      - name: Pack the artefacts
+        run: |
+          node ./bin/build-kb-index.mjs out mcp-server/kb-index.json
+          (cd out && zip -r -q -X "$GITHUB_WORKSPACE/index.zip" .)
+          mkdir -p /tmp/stage/raku-kb-mcp
+          rsync -a --exclude node_modules --exclude package-lock.json mcp-server/ /tmp/stage/raku-kb-mcp/
+          tar czf raku-kb-mcp-offline.tar.gz -C /tmp/stage raku-kb-mcp
+          ls -lh index.zip raku-kb-mcp-offline.tar.gz
+
+      - name: Publish the server image
+        if: inputs.publish
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${GITHUB_ACTOR}" --password-stdin
+          OWNER=$(echo "${GITHUB_REPOSITORY_OWNER}" | tr 'A-Z' 'a-z')
+          IMAGE="ghcr.io/${OWNER}/raku-kb-mcp"
+          docker build -t "$IMAGE:${{ steps.snapshot.outputs.date }}" -t "$IMAGE:latest" mcp-server
+          docker push "$IMAGE:${{ steps.snapshot.outputs.date }}"
+          docker push "$IMAGE:latest"
+
+      - name: Keep the snapshot in the repository
+        if: inputs.publish
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add snapshots/
+          git diff --cached --quiet || git commit -m "data: module versions as of ${{ steps.snapshot.outputs.date }}"
+          git push
+
+      - name: Create the release
+        if: inputs.publish
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "data-${{ steps.snapshot.outputs.date }}" \
+            index.zip raku-kb-mcp-offline.tar.gz \
+            --title "Raku KB — ${{ steps.snapshot.outputs.date }}" \
+            --notes-file /tmp/notes.md
