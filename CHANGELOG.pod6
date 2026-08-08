@@ -2,6 +2,10 @@
 
 =head1 Upcoming
 
+=item build a page for every module in the registry, including the 139 that ship no documentation
+=item clean stray markdown and windows backslashes out of link targets on module pages
+=item publish a data release weekly, not only on demand
+
 =item link module names in the change report to their pages, for modules that have one
 
 =item build and publish a dated data release from CI — site archive, offline bundle and server image, with the version diff as release notes

@@ -7,6 +7,9 @@ name: Release data
 # Tags: data-YYYY-MM-DD for the corpus, v* for code — this one only makes data.
 
 on:
+  # weekly, plus a button. The corpus changes slowly: two modules moved in a day.
+  schedule:
+    - cron: '0 5 * * 1'
   workflow_dispatch:
     inputs:
       publish:
@@ -100,7 +103,7 @@ jobs:
           cat /tmp/notes.md
 
       - name: Publish the server image
-        if: inputs.publish
+        if: github.event_name == 'schedule' || inputs.publish
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${GITHUB_ACTOR}" --password-stdin
           OWNER=$(echo "${GITHUB_REPOSITORY_OWNER}" | tr 'A-Z' 'a-z')
@@ -110,7 +113,7 @@ jobs:
           docker push "$IMAGE:latest"
 
       - name: Keep the snapshot in the repository
-        if: inputs.publish
+        if: github.event_name == 'schedule' || inputs.publish
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
@@ -119,7 +122,7 @@ jobs:
           git push
 
       - name: Create the release
-        if: inputs.publish
+        if: github.event_name == 'schedule' || inputs.publish
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

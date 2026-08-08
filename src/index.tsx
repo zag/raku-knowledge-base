@@ -19,6 +19,8 @@ const linkFromText = (text: string): string =>
     .trim()
     .replace(/^[[(<]+|[\])>]+$/g, '')
     .replace(/^\*+|\*+$/g, '')
+    // some readme files were written on windows and carry backslash paths
+    .replace(/\\/g, '/')
     .trim()
 
 export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
@@ -59,12 +61,22 @@ export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
       .filter(item => isExistsDocBlocks(item.node))
       .filter(item => isPublishableName(item.file.split('/')[2]))
     //   convert all doc: links to file:: links
+    // README authors leave stray brackets and emphasis inside link targets
+    // ([text]([https://…) and **http://…**); the site should not carry them through.
+    const cleanModuleLinks = (node: PodNode) =>
+      makeInterator({
+        'L<>': (n: any) => {
+          // only clean an existing target: a link without one must stay without one,
+          // otherwise 708 plain-text links turn into broken addresses
+          if (typeof n.meta !== 'string' || !n.meta) return n
+          const cleaned = linkFromText(n.meta)
+          return cleaned === n.meta ? n : { ...n, meta: cleaned }
+        },
+      })(node, {})
+
     const addedUrls = filesWithDocs.map(item => {
       const publishUrl = item.file.replace(/^work_mods/g, '/mods')
-      //   .replace(/^.*?(?=\/mods)/g, '')
-      //   .replace(/\.\S+$/, '')
-      // const node = processNode(item.node, item.file)
-      return { ...item, publishUrl, node: item.node }
+      return { ...item, publishUrl, node: cleanModuleLinks(item.node) }
     })
 
     // const addedUrls = mods_state
@@ -167,6 +179,51 @@ export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
         return a.file.localeCompare(b.file)
       })[0].file
     }
+    // A module without documentation gets no page at all, so it stays invisible to
+    // search, to the change report and to the mcp server. The registry still knows
+    // its name, version, description and where the source lives — enough for a stub.
+    const namedPage = /^[A-Za-z][A-Za-z0-9:_.-]*$/
+    const documented = new Set(all_mods_pages.map((i: any) => `${i.src}:${i.meta.name}`))
+
+    const makeStubPage = (meta: any, source: string) => {
+      const dir = source === 'zef' ? 'zef' : 'all'
+      const url = `/mods/${dir}/${meta.name}`
+      // 435 registry entries still point at git:// or ssh; those cannot be links.
+      // Rewrite what is rewritable, drop the rest — a link must be clickable.
+      const rawSrc = String(meta['source-url'] || (meta.support || {}).source || '')
+      const httpSrc = rawSrc.startsWith('git://')
+        ? 'https://' + rawSrc.slice('git://'.length)
+        : rawSrc.startsWith('git@') && rawSrc.includes(':')
+          ? 'https://' + rawSrc.slice(4).replace(':', '/')
+          : rawSrc
+      const src = /^https?:\/\/[^\s"<>]+$/.test(httpSrc) ? httpSrc : ''
+      const author = meta.auth || (Array.isArray(meta.authors) ? meta.authors.join(', ') : meta.authors) || ''
+      const depends = Array.isArray(meta.depends) ? meta.depends.filter(Boolean) : []
+      return `
+    =begin pod :puburl("${url}")
+    =TITLE ${oneLine(meta.name)}
+    =SUBTITLE ${oneLine(meta.description)}
+
+    This module ships no documentation. What the ecosystem registry knows about it:
+
+    =item Version: ${oneLine(meta.version) || 'unknown'}
+    =item Source: ${source === 'zef' ? 'zef ecosystem' : 'p6c ecosystem'}${author ? `\n    =item Author: ${oneLine(author)}` : ''}${src ? `\n    =item Repository: L<${oneLine(src)}|${oneLine(src)}>` : ''}${depends.length ? `\n    =item Depends on: ${oneLine(depends.join(', '))}` : ''}
+
+    =end pod
+    `
+    }
+
+    const stubPages = [
+      ...zef_mods.map((m: any) => ({ meta: m, source: 'zef' })),
+      ...all_mods.map((m: any) => ({ meta: m, source: 'p6c' })),
+    ]
+      .filter(({ meta, source }) => meta && meta.name && !documented.has(`${source === 'zef' ? 'zef' : 'all'}:${meta.name}`))
+      .filter(({ meta }) => namedPage.test(meta.name))
+      .map(({ meta, source }) =>
+        processFile(`virtual/stub/${meta.name}.podlite`, makeStubPage(meta, source), 'text/podlite'),
+      )
+    console.log(`[modPlugin] stub pages for modules without docs: ${stubPages.length}`)
+
     const modulePages = all_mods_pages.map((item: any) => {
       // get root document for first module page
       const { files } = item as any
@@ -212,7 +269,7 @@ ${modsInfoData}
             .replace(/\.\S+$/, '')),
     )
     console.log('finishg modPlugin')
-    return [...recs, ...addedUrls, ...modulePages, storeDoc]
+    return [...recs, ...addedUrls, ...modulePages, ...stubPages, storeDoc]
   }
 
   return [onProcess, onExit]
