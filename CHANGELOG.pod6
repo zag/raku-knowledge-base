@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item create the release before recording the snapshot, and let a failed snapshot push not fail the run
+
 =item let a second data release on the same day get its own tag instead of failing
 
 =item build a page for every module in the registry, including the 139 that ship no documentation
