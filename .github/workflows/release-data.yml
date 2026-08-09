@@ -21,6 +21,9 @@ permissions:
   contents: write
   packages: write
 
+env:
+  DATA_BRANCH: data
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -37,6 +40,16 @@ jobs:
           corepack enable
           yarn install --immutable || yarn install
           yarn build
+
+      - name: Take the accumulated data
+        run: |
+          if git ls-remote --exit-code --heads origin "$DATA_BRANCH" >/dev/null 2>&1; then
+            git fetch --depth=1 origin "$DATA_BRANCH"
+            git checkout FETCH_HEAD -- snapshots blog
+            echo "snapshots: $(ls snapshots/*.json 2>/dev/null | wc -l), entries: $(ls blog/*.podlite 2>/dev/null | wc -l)"
+          else
+            echo "no data branch yet — starting from what the repository carries"
+          fi
 
       - name: Collect sources
         run: |
@@ -146,15 +159,28 @@ jobs:
             --notes-file /tmp/notes.md
 
 
-      - name: Keep the snapshot in the repository
+      - name: Keep the data on its own branch
         if: github.event_name == 'schedule' || inputs.publish
         run: |
+          # main is locked, so version snapshots and blog entries accumulate on a
+          # branch of their own; every run reads it back before building the site
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add snapshots/ blog/
-          git diff --cached --quiet && exit 0
+          # commit on top of the branch itself, in a worktree of its own, so its
+          # history survives and the build checkout stays untouched
+          WT=/tmp/data-branch
+          rm -rf "$WT"
+          if git ls-remote --exit-code --heads origin "$DATA_BRANCH" >/dev/null 2>&1; then
+            git fetch --depth=1 origin "$DATA_BRANCH"
+            git worktree add --detach "$WT" FETCH_HEAD
+          else
+            git worktree add --detach "$WT" HEAD
+          fi
+          mkdir -p "$WT/snapshots" "$WT/blog"
+          cp -f snapshots/*.json "$WT/snapshots/" 2>/dev/null || true
+          cp -f blog/*.podlite "$WT/blog/" 2>/dev/null || true
+          cd "$WT"
+          git add snapshots blog
+          git diff --cached --quiet && { echo "nothing new"; exit 0; }
           git commit -m "data: module versions and ecosystem digest as of ${{ steps.snapshot.outputs.date }}"
-          # the branch may have moved while the corpus was building; the release is
-          # already out, so a failed push must not fail the run
-          git pull --rebase --quiet || true
-          git push || echo "snapshot not pushed — branch moved; it will be taken next run"
+          git push origin "HEAD:refs/heads/$DATA_BRANCH"
