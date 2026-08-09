@@ -7,9 +7,9 @@ name: Release data
 # Tags: data-YYYY-MM-DD for the corpus, v* for code — this one only makes data.
 
 on:
-  # weekly, plus a button. The corpus changes slowly: two modules moved in a day.
+  # monthly, plus a button. The corpus changes slowly: two modules moved in a day.
   schedule:
-    - cron: '0 5 * * 1'
+    - cron: '0 5 1 * *'
   workflow_dispatch:
     inputs:
       publish:
