@@ -171,6 +171,12 @@ L<Get started| file:./getting-started/getting-started.podlite>
 =end React
 
 
+=head2 Ecosystem digest
+
+=begin React :component<LastArticles> :count(3)
+=include doc:PLUGIN_DATA#articles
+=end React
+
 =head2 L<Index|/indexterms>
 
 

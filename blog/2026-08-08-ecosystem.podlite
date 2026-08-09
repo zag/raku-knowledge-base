@@ -1,0 +1,23 @@
+=begin pod
+=TITLE Raku ecosystem, 2026-08-08
+
+=begin DESCRIPTION
+What appeared, what moved and what went away between 2026-08-07 and 2026-08-08.
+=end DESCRIPTION
+
+=for para :pubdate('2026-08-08T05:00:00Z')
+Modules: 2115, was 2113.
+
+=head1 Added (2)
+
+=item L<Image::Draft::Review|https://raku-knowledge-base.podlite.org/mods/zef/Image::Draft::Review> 0.1.0
+=item L<SION|https://raku-knowledge-base.podlite.org/mods/zef/SION> 0.1.0
+
+=head1 Updated (4)
+
+=item L<App::samaki|https://raku-knowledge-base.podlite.org/mods/zef/App::samaki> 0.0.33 → 0.0.34
+=item L<MCP::Server|https://raku-knowledge-base.podlite.org/mods/zef/MCP::Server> 0.2.0 → 0.3.0
+=item L<NotoFonts-OT|https://raku-knowledge-base.podlite.org/mods/zef/NotoFonts-OT> 0.0.3 → 0.1.0
+=item L<Qwiratry|https://raku-knowledge-base.podlite.org/mods/zef/Qwiratry> 0.0.9 → 0.10.0
+
+=end pod

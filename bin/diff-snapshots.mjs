@@ -45,7 +45,12 @@ const listSnapshots = () =>
         .sort()
     : []
 
-let [before, after] = process.argv.slice(2)
+// --blog writes a site entry in podlite instead of release notes in markdown
+const args = process.argv.slice(2)
+const blogAt = args.indexOf('--blog')
+const blogFile = blogAt >= 0 ? args[blogAt + 1] : null
+if (blogAt >= 0) args.splice(blogAt, 2)
+let [before, after] = args
 if (!before) {
   const all = listSnapshots()
   if (all.length < 2) {
@@ -77,6 +82,38 @@ const link = key => {
   const url = pageUrl(key, known)
   return url ? `[${name(key)}](${url})` : name(key)
 }
+if (blogFile) {
+  // the index does not exist yet at this point, so links are built from the name
+  // and checked against the built site afterwards
+  const podLink = key => `L<${name(key)}|${pageUrl(key)}>`
+  const out = []
+  out.push('=begin pod')
+  out.push(`=TITLE Raku ecosystem, ${newer.date}`)
+  out.push('')
+  out.push('=begin DESCRIPTION')
+  out.push(`What appeared, what moved and what went away between ${older.date} and ${newer.date}.`)
+  out.push('=end DESCRIPTION')
+  out.push('')
+  out.push(`=for para :pubdate('${newer.date}T05:00:00Z')`)
+  out.push(`Modules: ${newer.count}, was ${older.count}.`)
+  out.push('')
+  const section = (title, items) => {
+    if (!items.length) return
+    out.push(`=head1 ${title} (${items.length})`, '')
+    for (const line of items) out.push(`=item ${line}`)
+    out.push('')
+  }
+  section('Added', added.map(([key, v]) => `${podLink(key)} ${v}`))
+  section('Updated', changed.map(([key, was, now]) => `${podLink(key)} ${was} → ${now}`))
+  section('Removed', removed.map(([key, v]) => `C<${name(key)}> ${v}`))
+  if (!added.length && !changed.length && !removed.length) out.push('Nothing changed this time.', '')
+  out.push('=end pod')
+  fs.mkdirSync(path.dirname(blogFile), { recursive: true })
+  fs.writeFileSync(blogFile, out.join('\n') + '\n')
+  console.log(`blog entry: ${blogFile} (${added.length} added, ${changed.length} updated, ${removed.length} removed)`)
+  process.exit(0)
+}
+
 const lines = []
 lines.push(`Modules: ${newer.count} (was ${older.count}) — ${older.date} → ${newer.date}`)
 lines.push('')
