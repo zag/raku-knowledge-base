@@ -1,11 +1,10 @@
-=begin pod
+=begin pod :pubdate('2026-08-08 05:00:00') :puburl</blog/2026-08-08-ecosystem>
 =TITLE Raku ecosystem, 2026-08-08
 
 =begin DESCRIPTION
 What appeared, what moved and what went away between 2026-08-07 and 2026-08-08.
 =end DESCRIPTION
 
-=for para :pubdate('2026-08-08T05:00:00Z')
 Modules: 2115, was 2113.
 
 =head1 Added (2)
