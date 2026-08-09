@@ -58,9 +58,8 @@ jobs:
       - name: Stage 5 — site export
         run: |
           S=$(date +%s)
-          mkdir -p /tmp/site-built
-          docker run --rm -v "$PWD":/app/pub -v /tmp/site-built:/app/built \
-            podlite/podlite-web:0.10.4 \
+          docker run --rm -v "$PWD":/app/pub \
+            podlite/podlite-web:0.10.5 \
             export pub -s https://raku-knowledge-base.podlite.org --preset everything \
             > /tmp/export.log 2>&1 || { echo "EXPORT FAILED"; tail -40 /tmp/export.log; exit 1; }
           echo "export: $(( $(date +%s) - S ))s"
@@ -70,4 +69,4 @@ jobs:
         if: always()
         run: |
           echo "disk at the end:"; df -h / | tail -1
-          echo "largest directories:"; du -sh work_mods built /tmp/site-built 2>/dev/null | sort -rh
+          echo "largest directories:"; du -sh work_mods built 2>/dev/null | sort -rh
