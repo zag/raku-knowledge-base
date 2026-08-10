@@ -23,7 +23,12 @@ if (!fs.existsSync(page)) {
   console.error(`  built site has no page at ${puburl[1]}`)
   process.exit(1)
 }
-console.log(`page: ${puburl[1]} ok`)
+const feed = path.join(outDir, 'rss.xml')
+if (!fs.existsSync(feed) || !fs.readFileSync(feed, 'utf8').includes(puburl[1])) {
+  console.error(`  the feed does not carry ${puburl[1]}`)
+  process.exit(1)
+}
+console.log(`page: ${puburl[1]} ok, in the feed`)
 const urls = [...text.matchAll(/L<[^|>]*\|([^>]+)>/g)].map(m => m[1]).filter(u => u.startsWith(SITE))
 
 const dead = urls.filter(url => {
