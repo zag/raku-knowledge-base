@@ -87,14 +87,14 @@ if (blogFile) {
   // and checked against the built site afterwards
   const podLink = key => `L<${name(key)}|${pageUrl(key)}>`
   const out = []
-  out.push('=begin pod')
+  // the publisher takes a page for an article by :pubdate on the pod block itself
+  out.push(`=begin pod :pubdate('${newer.date} 05:00:00') :puburl</blog/${newer.date}-ecosystem>`)
   out.push(`=TITLE Raku ecosystem, ${newer.date}`)
   out.push('')
   out.push('=begin DESCRIPTION')
   out.push(`What appeared, what moved and what went away between ${older.date} and ${newer.date}.`)
   out.push('=end DESCRIPTION')
   out.push('')
-  out.push(`=for para :pubdate('${newer.date}T05:00:00Z')`)
   out.push(`Modules: ${newer.count}, was ${older.count}.`)
   out.push('')
   const section = (title, items) => {
