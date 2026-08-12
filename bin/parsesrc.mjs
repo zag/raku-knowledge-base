@@ -40,7 +40,8 @@ async function run() {
     })
     .flat()
     .filter(Boolean)
-  console.log(JSON.stringify(allFiles, null, 2))
+  // no indentation: it more than doubled the file, and nothing reads this by eye
+  console.log(JSON.stringify(allFiles))
 }
 
 run()
