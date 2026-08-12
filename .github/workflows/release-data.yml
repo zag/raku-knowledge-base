@@ -80,7 +80,7 @@ jobs:
           # the build wipes its own output directory first, so it cannot be a mounted one:
           # run a named container and copy the result out afterwards
           docker run --name site-build -v "$PWD":/app/pub \
-            podlite/podlite-web:0.10.5 \
+            podlite/podlite-web:0.10.7 \
             export pub -s https://raku-knowledge-base.podlite.org --preset everything \
             > /tmp/export.log 2>&1 || { echo "EXPORT FAILED"; tail -40 /tmp/export.log; exit 1; }
           grep -E "Generating static pages|Indexed .* pages" /tmp/export.log | tail -2
