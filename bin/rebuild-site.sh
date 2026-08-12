@@ -71,6 +71,9 @@ rm -f index.zip.tmp
   yarn install
   yarn attach_path pub
   yarn install
+  # attaching lifts this repo's dependencies into podlite-web; the export runs from
+  # the repo itself, so its own tree has to be whole again before it starts
+  (cd "$REPO" && yarn install)
   yarn clean
   mkdir -p built public/assets
   yarn publisher --preset everything -s 'https://raku-knowledge-base.podlite.org' -d ./pub
