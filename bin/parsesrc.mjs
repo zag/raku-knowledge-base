@@ -1,5 +1,6 @@
 import path from 'path'
 import { createRequire } from 'module'
+import fs from 'fs'
 import glob from 'glob'
 
 const require = createRequire(import.meta.url)
@@ -10,8 +11,17 @@ async function run() {
   console.warn('atpath', atpath)
 
   let count = 0
-  const allFiles = glob
-    .sync(atpath)
+  // an argument starting with @ names a file that lists the paths, one per line:
+  // the module selection is a rule, not a pattern, so it cannot be a glob
+  const list = atpath.startsWith('@')
+    ? fs
+        .readFileSync(atpath.slice(1), 'utf8')
+        .split('\n')
+        .map(l => l.trim())
+        .filter(Boolean)
+    : glob.sync(atpath)
+
+  const allFiles = list
     .map(f => {
       count++
       console.warn('Processing', count, f)

@@ -150,6 +150,7 @@ print('removed stale p6c dirs:', removed)
 PY
 
 echo "[5/5] parse -> built/mods-tree.json"
-node ./bin/parsesrc.mjs 'work_mods/**/*.{pod6,md,rakudoc}' > ./built/mods-tree.json
+node ./bin/pick-module-docs.mjs work_mods > ./built/mods-files.txt
+node ./bin/parsesrc.mjs @./built/mods-files.txt > ./built/mods-tree.json
 
 echo "done: $(du -h built/mods-tree.json | cut -f1) mods-tree.json"

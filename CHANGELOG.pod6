@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item take documentation out of module sources: a source file gets a page when its pod says something the README does not
+
 =item declare the packages the repository's own scripts import, and restore the dependency tree after a site build detaches it
 
 =item create the release before recording the snapshot, and let a failed snapshot push not fail the run
