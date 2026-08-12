@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item declare the packages the repository's own scripts import, and restore the dependency tree after a site build detaches it
+
 =item create the release before recording the snapshot, and let a failed snapshot push not fail the run
 
 =item let a second data release on the same day get its own tag instead of failing

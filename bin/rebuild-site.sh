@@ -49,7 +49,10 @@ if [ ! -d "$PW" ]; then git clone -q https://github.com/podlite/podlite-web "$PW
 REPO="$(pwd -P)"
 # the site build rewrites podlite-web's workspace list and config alias; put them
 # back even when the build dies, or the next run starts from a broken state
-trap '(cd "$PW" && node ./bin/attachExternal.mjs --detach) >/dev/null 2>&1 || true' EXIT
+# attaching makes this repo a workspace of podlite-web, and yarn lifts its
+# dependencies up there; installing again after detaching puts them back, or the
+# next local command fails on a package that is gone
+trap '(cd "$PW" && node ./bin/attachExternal.mjs --detach) >/dev/null 2>&1 || true; (cd "$REPO" && yarn install >/dev/null 2>&1) || true' EXIT
 rm -f index.zip.tmp
 # The site must live inside podlite-web as pub/ (the docker flow mounts it there):
 # css-modules and loaders only apply within the project root. A symlink keeps the
