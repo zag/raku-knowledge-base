@@ -4,6 +4,8 @@
 
 =item carry what a module declares next to the measured pages: the units it ships and what it leans on, so a rating computed later from a stored record can be reproduced
 
+=item refuse to write a corpus record when a registry it reads is missing or does not parse, instead of storing one that says nobody declared anything
+
 =item note whether a page shows the output of its example, the second of the two signs that tell a worked example from a bare snippet
 
 =item list the selected files separated by NUL and skip the ones whose name holds a control character: one registry entry carries a newline inside its own name, which tore a path in two and lost the file without a word

@@ -59,18 +59,40 @@ const flatten = depends => {
 
 const readDeclarations = () => {
   const decl = {}
+  const absent = []
   for (const [file, registry] of [
     ['built/mods.json', 'zef'],
     ['built/ecosystem.json', 'all'],
   ]) {
-    if (!fs.existsSync(file)) continue
-    for (const entry of JSON.parse(fs.readFileSync(file, 'utf8'))) {
+    if (!fs.existsSync(file)) {
+      absent.push(file)
+      continue
+    }
+    let entries
+    try {
+      entries = JSON.parse(fs.readFileSync(file, 'utf8'))
+    } catch (err) {
+      console.error(`ERROR: ${file} does not parse: ${err.message}`)
+      process.exit(1)
+    }
+    if (!Array.isArray(entries)) {
+      console.error(`ERROR: ${file} holds ${typeof entries}, expected a list of modules`)
+      process.exit(1)
+    }
+    for (const entry of entries) {
       if (!entry || !entry.name) continue
       decl[`${registry}:${entry.name}`] = {
         provides: Object.keys(entry.provides || {}),
         depends: flatten(entry.depends),
       }
     }
+  }
+  // a record missing its declarations reads as "nobody declared anything",
+  // which is the same shape a real measurement takes and cannot be told from one
+  if (absent.length) {
+    console.error(`ERROR: ${absent.length} of 2 registries are missing: ${absent.join(', ')}`)
+    console.error('refusing to write a record without declarations')
+    process.exit(1)
   }
   return decl
 }
