@@ -151,6 +151,6 @@ PY
 
 echo "[5/5] parse -> built/mods-tree.json"
 node ./bin/pick-module-docs.mjs work_mods > ./built/mods-files.txt
-node ./bin/parsesrc.mjs @./built/mods-files.txt > ./built/mods-tree.json
+node ./bin/parsesrc.mjs @./built/mods-files.txt --stats ./built/stats-mods.json > ./built/mods-tree.json
 
 echo "done: $(du -h built/mods-tree.json | cut -f1) mods-tree.json"

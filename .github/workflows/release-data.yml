@@ -53,12 +53,21 @@ jobs:
 
       - name: Collect sources
         run: |
+          # refresh-mods.sh aborts when too many module sources are missing;
+          # without this its failure would be masked by the pipe into tee
+          set -o pipefail
           mkdir -p built
           git clone -q --depth 1 https://github.com/Raku/doc work_doc
-          node ./bin/parsesrc.mjs 'work_doc/**/*.rakudoc' > ./built/docs-tree.json 2>/dev/null
+          node ./bin/parsesrc.mjs 'work_doc/**/*.rakudoc' --stats ./built/stats-docs.json \
+            > ./built/docs-tree.json 2> /tmp/parse-docs.log
           git clone -q --depth 1 https://github.com/Raku/examples.git work_examples
-          node ./bin/parsesrc.mjs 'work_examples/categories/**/*.{pod6,md,rakudoc,rakumod,raku,pm6,pl,pm,p6,pod}' > ./built/examples-tree.json 2>/dev/null
-          ./bin/refresh-mods.sh
+          node ./bin/parsesrc.mjs 'work_examples/categories/**/*.{pod6,md,rakudoc,rakumod,raku,pm6,pl,pm,p6,pod}' \
+            --stats ./built/stats-examples.json > ./built/examples-tree.json 2> /tmp/parse-examples.log
+          ./bin/refresh-mods.sh 2>&1 | tee /tmp/parse-mods.log
+          # the per-file chatter is noise; what a run must not hide is a file it failed to read
+          grep -h '^Error processing' /tmp/parse-*.log || echo "every selected file parsed"
+          node ./bin/merge-stats.mjs --date "$(date -u +%Y-%m-%d)" \
+            ./built/stats-docs.json ./built/stats-examples.json ./built/stats-mods.json
 
       - name: Snapshot module versions
         id: snapshot
@@ -177,7 +186,9 @@ jobs:
             git worktree add --detach "$WT" HEAD
           fi
           mkdir -p "$WT/snapshots" "$WT/blog"
+          mkdir -p "$WT/snapshots/corpus"
           cp -f snapshots/*.json "$WT/snapshots/" 2>/dev/null || true
+          cp -f snapshots/corpus/*.json "$WT/snapshots/corpus/" 2>/dev/null || true
           cp -f blog/*.podlite "$WT/blog/" 2>/dev/null || true
           cd "$WT"
           git add snapshots blog
