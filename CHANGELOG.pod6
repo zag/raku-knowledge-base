@@ -2,13 +2,13 @@
 
 =head1 Upcoming
 
-=item leave test-directory samples out of the site: they are fixtures for other people's documentation generators, not documentation of the module. A README among them is still taken, since it describes the data around it
+=item keep test-directory samples off the site. They are fixtures for other people's documentation generators, not documentation of the module. A README among them is still taken.
 
-=item carry what a module declares next to the measured pages: the units it ships and what it leans on, so a rating computed later from a stored record can be reproduced
+=item carry what a module declares next to the measured pages: the units it ships and what it depends on. A rating computed later from a stored record can then be reproduced.
 
-=item refuse to write a corpus record when a registry it reads is missing or does not parse, instead of storing one that says nobody declared anything
+=item refuse to write a corpus record when a registry it reads is missing or does not parse. A stored record would otherwise read as though no module declared anything.
 
-=item note whether a page shows the output of its example, the second of the two signs that tell a worked example from a bare snippet
+=item note whether a page shows the output of its example: a worked example carries both the code and what it prints, a bare snippet only the code
 
 =item list the selected files separated by NUL and skip the ones whose name holds a control character: one registry entry carries a newline inside its own name, which tore a path in two and lost the file without a word
 
