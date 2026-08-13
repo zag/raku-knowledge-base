@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item leave test-directory samples out of the site: they are fixtures for other people's documentation generators, not documentation of the module. A README among them is still taken, since it describes the data around it
+
 =item carry what a module declares next to the measured pages: the units it ships and what it leans on, so a rating computed later from a stored record can be reproduced
 
 =item refuse to write a corpus record when a registry it reads is missing or does not parse, instead of storing one that says nobody declared anything

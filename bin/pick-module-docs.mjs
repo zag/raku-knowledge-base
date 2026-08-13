@@ -1,8 +1,11 @@
 // Chooses which module files carry documentation worth a page.
 //
-// Documentation files (.md, .pod6, .rakudoc) are always taken. Source files are
-// taken only when their pod says something the README does not: almost every
-// module ships both, and in most of them the two texts are the same.
+// Documentation files (.md, .pod6, .rakudoc) are taken unless they sit in a test
+// directory, where they are samples for other people's documentation generators
+// rather than documentation of this module; a README there is kept, since it
+// describes whatever the fixtures around it are. Source files are taken only when
+// their pod says something the README does not: almost every module ships both,
+// and in most of them the two texts are the same.
 //
 // Prints one path per line.
 import fs from 'fs'
@@ -86,17 +89,24 @@ const chosen = []
 let sourcePages = 0
 let skippedSame = 0
 let skippedThin = 0
+let skippedTestSamples = 0
 for (const mp of modules) {
   const files = walk(mp)
-  const docs = files.filter(f => DOC_EXT.has(path.extname(f).toLowerCase()))
+  const inTestDir = f => TEST_DIR.test(path.relative(mp, f).split(path.sep).join('/'))
+  const isReadme = f => path.basename(f).toLowerCase().startsWith('readme')
+  const allDocs = files.filter(f => DOC_EXT.has(path.extname(f).toLowerCase()))
+  const docs = allDocs.filter(f => !inTestDir(f) || isReadme(f))
+  skippedTestSamples += allDocs.length - docs.length
   chosen.push(...docs)
 
-  const readme = docs.find(f => path.basename(f).toLowerCase().startsWith('readme'))
+  // the text a source page is compared against has to be the module's own README,
+  // not one that happens to sit among the fixtures
+  const readme = docs.find(f => isReadme(f) && !inTestDir(f))
   const readmeLines = readme ? meaningful(read(readme) || '') : null
 
   for (const f of files) {
     if (!SRC_EXT.has(path.extname(f).toLowerCase())) continue
-    if (TEST_DIR.test(path.relative(mp, f).split(path.sep).join('/'))) continue
+    if (inTestDir(f)) continue
     const text = read(f)
     if (!text || !POD_START.test(text) || PERL5.test(text)) continue
     const pod = podOf(text)
@@ -120,7 +130,7 @@ const publishable = chosen.filter(f => !CONTROL.test(f))
 const unnameable = chosen.length - publishable.length
 
 console.warn(
-  `modules ${modules.length}, files ${publishable.length}, from sources ${sourcePages}, skipped as same as README ${skippedSame}, skipped as too thin ${skippedThin}, skipped as unnameable ${unnameable}`,
+  `modules ${modules.length}, files ${publishable.length}, from sources ${sourcePages}, skipped as same as README ${skippedSame}, skipped as too thin ${skippedThin}, skipped as test samples ${skippedTestSamples}, skipped as unnameable ${unnameable}`,
 )
 // separated by NUL: a file name may hold any byte except this one
 process.stdout.write(publishable.join('\0') + '\0')
