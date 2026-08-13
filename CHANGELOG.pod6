@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item measure the corpus while parsing it: markup census with the module reach of every construct, per-page facts, unparsed files and the settings the numbers were taken under
+
 =item take documentation out of module sources: a source file gets a page when its pod says something the README does not
 
 =item declare the packages the repository's own scripts import, and restore the dependency tree after a site build detaches it

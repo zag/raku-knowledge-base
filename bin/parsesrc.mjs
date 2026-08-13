@@ -2,12 +2,16 @@ import path from 'path'
 import { createRequire } from 'module'
 import fs from 'fs'
 import glob from 'glob'
+import { makeCollector, writeReport } from './stats.mjs'
 
 const require = createRequire(import.meta.url)
 const { processFile } = require('@podlite/publisher')
 
 async function run() {
   const atpath = process.argv[2]
+  const statsAt = process.argv.indexOf('--stats')
+  const statsPath = statsAt > 0 ? process.argv[statsAt + 1] : null
+  const collector = statsPath ? makeCollector({ selectionRulePath: './bin/pick-module-docs.mjs' }) : null
   console.warn('atpath', atpath)
 
   let count = 0
@@ -34,12 +38,19 @@ async function run() {
       } catch (err) {
         // console.error(err)
         console.error('Error processing', f)
+        collector?.fail(f)
         return null
         // process.exit(1)
       }
     })
     .flat()
     .filter(Boolean)
+
+  if (collector) {
+    for (const record of allFiles) collector.add(record)
+    writeReport(statsPath, collector.report({ source: atpath, files: count }))
+    console.warn('stats', statsPath)
+  }
   // no indentation: it more than doubled the file, and nothing reads this by eye
   console.log(JSON.stringify(allFiles))
 }
