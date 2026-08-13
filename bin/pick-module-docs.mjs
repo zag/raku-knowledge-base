@@ -113,7 +113,14 @@ for (const mp of modules) {
   }
 }
 
+// one registry entry carries a newline inside its own name, and such a path can
+// neither survive a line-delimited list nor become a page address
+const CONTROL = /[\u0000-\u001f]/
+const publishable = chosen.filter(f => !CONTROL.test(f))
+const unnameable = chosen.length - publishable.length
+
 console.warn(
-  `modules ${modules.length}, files ${chosen.length}, from sources ${sourcePages}, skipped as same as README ${skippedSame}, skipped as too thin ${skippedThin}`,
+  `modules ${modules.length}, files ${publishable.length}, from sources ${sourcePages}, skipped as same as README ${skippedSame}, skipped as too thin ${skippedThin}, skipped as unnameable ${unnameable}`,
 )
-process.stdout.write(chosen.join('\n') + '\n')
+// separated by NUL: a file name may hold any byte except this one
+process.stdout.write(publishable.join('\0') + '\0')

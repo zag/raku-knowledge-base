@@ -15,14 +15,11 @@ async function run() {
   console.warn('atpath', atpath)
 
   let count = 0
-  // an argument starting with @ names a file that lists the paths, one per line:
-  // the module selection is a rule, not a pattern, so it cannot be a glob
+  // an argument starting with @ names a file that lists the paths, NUL separated:
+  // the module selection is a rule, not a pattern, so it cannot be a glob, and a
+  // module name may hold a newline, which would tear one path into two
   const list = atpath.startsWith('@')
-    ? fs
-        .readFileSync(atpath.slice(1), 'utf8')
-        .split('\n')
-        .map(l => l.trim())
-        .filter(Boolean)
+    ? fs.readFileSync(atpath.slice(1), 'utf8').split('\0').filter(Boolean)
     : glob.sync(atpath)
 
   const allFiles = list
@@ -38,7 +35,7 @@ async function run() {
       } catch (err) {
         // console.error(err)
         console.error('Error processing', f)
-        collector?.fail(f)
+        collector?.fail(f, err)
         return null
         // process.exit(1)
       }

@@ -103,8 +103,8 @@ export function makeCollector({ selectionRulePath } = {}) {
       walk(record.description, file, module, page)
       pages.push(page)
     },
-    fail(file) {
-      errors.push(file)
+    fail(file, reason) {
+      errors.push({ file, reason: String(reason && reason.message ? reason.message : reason || 'unknown') })
     },
     report(extra = {}) {
       return {

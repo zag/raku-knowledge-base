@@ -2,6 +2,10 @@
 
 =head1 Upcoming
 
+=item list the selected files separated by NUL and skip the ones whose name holds a control character: one registry entry carries a newline inside its own name, which tore a path in two and lost the file without a word
+
+=item name every file the parser could not read, instead of sending the whole complaint to nowhere
+
 =item measure the corpus while parsing it: markup census with the module reach of every construct, per-page facts, unparsed files and the settings the numbers were taken under
 
 =item take documentation out of module sources: a source file gets a page when its pod says something the README does not
