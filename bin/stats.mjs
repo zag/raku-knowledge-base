@@ -80,6 +80,8 @@ export function makeCollector({ selectionRulePath } = {}) {
         page.codeBlocks++
         if (/^\s*use\s+\S/m.test(textOf(node.content))) page.usesModule = true
       }
+      // an example that shows what it prints reads differently from one that does not
+      if (name === 'output') page.hasOutputBlock = true
     }
     for (const [key, value] of attrEntries(node.config)) {
       const cell = bump(attrs, key, file, module)
@@ -98,7 +100,7 @@ export function makeCollector({ selectionRulePath } = {}) {
       const file = record?.file
       if (!file || !record.node) return
       const module = moduleOf(file)
-      const page = { file, module, headings: [], codeBlocks: 0, firstCodeLine: null, usesModule: false, links: [] }
+      const page = { file, module, headings: [], codeBlocks: 0, firstCodeLine: null, usesModule: false, hasOutputBlock: false, links: [] }
       walk(record.node, file, module, page)
       walk(record.description, file, module, page)
       pages.push(page)

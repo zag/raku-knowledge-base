@@ -41,6 +41,40 @@ const mergeSection = (into, from) => {
   }
 }
 
+// What a module declares it ships and what it leans on. Kept next to the pages
+// because built/mods.json is rewritten by every run and never archived: without
+// this, a rating computed later from a stored record could not be reproduced.
+const flatten = depends => {
+  if (Array.isArray(depends)) return depends.map(String)
+  if (depends && typeof depends === 'object') {
+    const out = []
+    for (const branch of Object.values(depends)) {
+      const list = Array.isArray(branch) ? branch : branch && branch.requires
+      if (Array.isArray(list)) out.push(...list.map(String))
+    }
+    return out
+  }
+  return []
+}
+
+const readDeclarations = () => {
+  const decl = {}
+  for (const [file, registry] of [
+    ['built/mods.json', 'zef'],
+    ['built/ecosystem.json', 'all'],
+  ]) {
+    if (!fs.existsSync(file)) continue
+    for (const entry of JSON.parse(fs.readFileSync(file, 'utf8'))) {
+      if (!entry || !entry.name) continue
+      decl[`${registry}:${entry.name}`] = {
+        provides: Object.keys(entry.provides || {}),
+        depends: flatten(entry.depends),
+      }
+    }
+  }
+  return decl
+}
+
 const census = { blocks: {}, codes: {}, attrs: {} }
 const sources = {}
 const pages = []
@@ -65,12 +99,15 @@ for (const file of fragments) {
 const order = section =>
   Object.fromEntries(Object.entries(section).sort((a, b) => b[1].n - a[1].n))
 
+const declarations = readDeclarations()
+
 const record = {
   date,
   conditions: { ...conditions, source: undefined, files: undefined },
   totals: { pages: pages.length, errors: errors.length, modules: new Set(pages.map(p => p.module).filter(Boolean)).size },
   sources,
   census: { blocks: order(census.blocks), codes: order(census.codes), attrs: order(census.attrs) },
+  declarations,
   pages,
   errors,
 }
@@ -79,5 +116,5 @@ fs.mkdirSync(DIR, { recursive: true })
 const dest = path.join(DIR, `${date}.json`)
 fs.writeFileSync(dest, JSON.stringify(record))
 console.warn(
-  `corpus: ${record.totals.pages} pages from ${record.totals.modules} modules, ${record.totals.errors} unparsed → ${dest}`,
+  `corpus: ${record.totals.pages} pages from ${record.totals.modules} modules, ${Object.keys(declarations).length} declared, ${record.totals.errors} unparsed → ${dest}`,
 )
