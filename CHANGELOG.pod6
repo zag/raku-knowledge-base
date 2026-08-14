@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item build the site with a newer toolchain, so a dated document that declares its own address counts as an entry again. The monthly ecosystem digest reaches the front page instead of an empty block
+
 =item keep test-directory samples off the site. They are fixtures for other people's documentation generators, not documentation of the module. A README among them is still taken.
 
 =item carry what a module declares next to the measured pages: the units it ships and what it depends on. A rating computed later from a stored record can then be reproduced.
