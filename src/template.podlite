@@ -33,15 +33,10 @@
     =item2 L<Get started|file:../getting-started/getting-started.podlite>
     =item2 L<Why Raku?|/doc/language/faq#Why-should-I-learn-Raku-What's-so-great-about-it>
     =item2 L<Try Raku|https://glot.io/new/raku>
+    =item2 L<Download | file:../download/index.podlite>
     =item2 L<Raku cheat sheet|https://github.com/Raku/mu/blob/master/docs/Perl6/Cheatsheet/cheatsheet.txt>
-    =item2 L<empty|#>
-    =item2 L<empty|#>
-    =item2 L<empty|#>
     =item2 L<Raku on Exercism|https://exercism.org/tracks/raku>
     =item2 L<Wikipedia|https://en.wikipedia.org/wiki/Raku_(programming_language)>
-    =item2 L<empty|#>
-    =item2 L<empty|#>
-    =item2 L<empty|#>
 
 =end nested
 =begin nested :!nested
@@ -55,24 +50,8 @@
     =item2 L<Community|/doc/language/community>
     =item2 L<The list of all documents|file:../doc/index.podlite>
 
-=item1 B<Resources>
-    =item2 L<The Raku Guide|https://raku.guide/>
-    =item2 L<Books |https://perl6book.com/>
-    =item2 L<Rosetta Code | https://www.raku.org/community/rosettacode>
-
 =end nested
 =begin nested :!nested
-
-=item1 B<Resoures>
-    =item2 L<Download | file:../download/index.podlite>
-    =item2 L<empty|#>
-    =item2 L<empty|#>
-    =item2 L<empty|#>
-    =item2 L<empty|#>
-    =item2 L<empty|#>
-    =item2 L<empty|#>
-    =item2 L<empty|#>
-
 =item1 B<Learning>
     =item2 L<The Raku Guide|https://raku.guide/>
     =item2 L<Wikibook |https://en.wikibooks.org/wiki/Raku_Programming>
@@ -88,11 +67,6 @@
     =item2 L<Rakudo Weekly|https://rakudoweekly.blog/>
     =item2 L<The Weekly Challenge |https://perlweeklychallenge.org/>
     =item2 L<Raku Advent Calendar|https://raku-advent.blog/>
-    =item2 L<empty|#>
-    =item2 L<empty|#>
-    =item2 L<empty|#>
-    =item2 L<empty|#>
-    =item2 L<empty|#>
 
 =end nested
 =end React

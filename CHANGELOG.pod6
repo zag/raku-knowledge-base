@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item clear the footer of eighteen links labelled empty that led back to the front page, and of a resource group whose three links already stood under Learning
+
 =item build the site with a newer toolchain, so a dated document that declares its own address counts as an entry again. The monthly ecosystem digest reaches the front page instead of an empty block
 
 =item keep test-directory samples off the site. They are fixtures for other people's documentation generators, not documentation of the module. A README among them is still taken.
