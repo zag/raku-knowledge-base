@@ -107,7 +107,7 @@ A workflow runs on the first day of each month. It refreshes the module set, bui
 
 ## License
 
-"Raku" is trademark of the Yet Another Society. 
+"Raku" is a trademark of the Yet Another Society. 
 
 This project is licensed under the [Artistic License 2.0](https://opensource.org/licenses/Artistic-2.0).
 
