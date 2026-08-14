@@ -69,7 +69,7 @@ The module set comes from two registries, the zef index and the wider ecosystem 
 
 A workflow runs on the first day of each month. It refreshes the module set, builds the site, packs `index.zip` and the offline bundle `raku-kb-mcp-offline.tar.gz`, writes the release notes by comparing the new module versions against the previous snapshot, and publishes the server image.
 
-The built site is delivered to the hosting host by file sync, where it is served through Caddy behind a Cloudflare tunnel at raku-knowledge-base.podlite.org.
+The packed site is a set of static files. Any web server can serve it, and so can a local one for reading the base offline.
 
 ## License
 
