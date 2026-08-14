@@ -15,7 +15,7 @@
 =useReact {HeaderCol} from '@Components/service'
 =useReact {Test,ShowBreadcrumb,SearchComponent,SeeAlso} from 'raku-knowledge/components'
 
-=begin React :component<Test> :id<menu>
+=begin React :component<Test>
 =end React
 
 =begin React :component<SeeAlso> :id<seealso>
