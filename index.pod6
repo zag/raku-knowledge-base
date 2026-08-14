@@ -13,7 +13,7 @@
 =for head1 :id<page-title>
 Raku Knowledge Base
 
-This site is a collection of documentation, articles, links, examples about the Raku® programming language.
+This site is a collection of documentation, articles, links, examples about the Raku programming language.
 All it being putted together in one information space to help you learn Raku faster and more efficiently.
 
 =head2 L<Get started| file:./getting-started/getting-started.podlite>
@@ -32,7 +32,7 @@ L<object-oriented|/doc/language/objects> and L<functional programming|/doc/langu
 =end nested
 
 =Image getting-started/camelia-logo.png
-Hi, my name is Camelia. I'm the spokesbug for the Raku® Programming Language.
+Hi, my name is Camelia. I'm the spokesbug for the Raku Programming Language.
 
 =end React 
 

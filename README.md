@@ -1,7 +1,7 @@
 # [The Raku Knowledge Base](https://raku-knowledge-base.podlite.org/)
 ![raku-knowledge-base-social](https://github.com/user-attachments/assets/adf187c7-0fbb-45e3-a5e3-d253ed7e4d8d)
 
-This repository holds the source of the Raku® Knowledge Base: the documentation, module pages and examples the site is built from.
+This repository holds the source of the Raku Knowledge Base, a site about the Raku programming language. It carries the documentation, module pages and examples the site is built from.
 
 ## About
 
@@ -32,6 +32,42 @@ The content is written in the Podlite markup language. Its specification is at [
 - **MCP server**: search the corpus, fetch a page, list its sections, from an editor or an AI agent. See [mcp-server/README.md](mcp-server/README.md).
 - **Offline bundle**: the search index and the server packed together, for use without a network.
 - **Dated data releases**: each release keeps a snapshot of module versions, so any two releases can be compared.
+
+## Running it locally
+
+Both the website and the MCP server run on your own machine. Take `index.zip` and `raku-kb-mcp-offline.tar.gz` from the [latest release](https://github.com/zag/raku-knowledge/releases/latest).
+
+### The website
+
+The exported pages are flat `.html` files, while their addresses carry no extension, so the server has to try `.html` for a path that has none. `python3 -m http.server` does not, and answers 404 for every page but the front one.
+
+```sh
+unzip index.zip -d site
+npx serve site          # http://localhost:3000
+```
+
+The same through Docker, with nothing installed on the host:
+
+```sh
+docker run --rm -p 3000:3000 -v "$PWD/site:/site:ro" \
+  node:22-alpine npx -y serve -l 3000 /site
+```
+
+### The MCP server
+
+From the offline bundle, which carries the search index with it:
+
+```sh
+tar xzf raku-kb-mcp-offline.tar.gz && cd raku-kb-mcp
+npm install
+claude mcp add raku-kb -- node "$PWD/bin/raku-kb-mcp.mjs"
+```
+
+Or from the published image:
+
+```sh
+docker run -i --rm ghcr.io/zag/raku-kb-mcp
+```
 
 ## Contributing
 
@@ -68,8 +104,6 @@ The module set comes from two registries, the zef index and the wider ecosystem 
 ### Publishing
 
 A workflow runs on the first day of each month. It refreshes the module set, builds the site, packs `index.zip` and the offline bundle `raku-kb-mcp-offline.tar.gz`, writes the release notes by comparing the new module versions against the previous snapshot, and publishes the server image.
-
-The packed site is a set of static files. Any web server can serve it, and so can a local one for reading the base offline.
 
 ## License
 
