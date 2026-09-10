@@ -57,14 +57,16 @@ if [[ -n "$DRY_RUN" ]]; then
   exit 0
 fi
 
+# tests run before anything is written: a failure here used to leave the version
+# bumped and the changelog moved, and that had to be undone by hand
+echo "→ Running tests..."
+yarn test
+
 echo "→ Bumping version ($LEVEL)..."
 npm version "$LEVEL" --no-git-tag-version
 
 echo "→ Updating changelog..."
 node scripts/extract-changelog.mjs --update
-
-echo "→ Running tests..."
-yarn test
 
 TAG="v$(node -e "console.log(require('./package.json').version)")"
 
