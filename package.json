@@ -1,6 +1,6 @@
 {
   "name": "raku-knowledge",
-  "version": "1.0.0",
+  "version": "1.1.0-alpha.1",
   "description": "",
   "modules": "esm/index.js",
   "main": "lib/index.js",
