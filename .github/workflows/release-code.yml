@@ -1,0 +1,78 @@
+name: Release code
+
+# The counterpart of release-data.yml. Tags: data-YYYY-MM-DD for the corpus,
+# v* for code. This one only makes a code release: a version, a changelog
+# section and release notes. It ships no artefact — the site archive lives in
+# the dated data release, and the delivery on the host takes it from there.
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: tag to release from
+        type: string
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag || github.ref }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      - name: Read the tag
+        id: tag
+        run: |
+          TAG="${{ inputs.tag || github.ref_name }}"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=${TAG#v}" >> "$GITHUB_OUTPUT"
+
+      - name: The manifest version must equal the tag
+        run: |
+          MANIFEST=$(node -p "require('./package.json').version")
+          if [ "$MANIFEST" != "${{ steps.tag.outputs.version }}" ]; then
+            echo "package.json says $MANIFEST, the tag says ${{ steps.tag.outputs.version }}"
+            exit 1
+          fi
+          echo "version and tag agree: $MANIFEST"
+
+      - name: Write the release notes from the changelog
+        run: |
+          {
+            echo "## What's Changed"
+            echo
+            node scripts/extract-changelog.mjs --summary
+            echo
+            PREV=$(git tag --list 'v*' --sort=-creatordate | grep -Fxv "${{ steps.tag.outputs.tag }}" | head -1)
+            if [ -n "$PREV" ]; then
+              echo "**Full Changelog**: https://github.com/${{ github.repository }}/compare/${PREV}...${{ steps.tag.outputs.tag }}"
+            fi
+          } > /tmp/notes.md
+          cat /tmp/notes.md
+
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PRERELEASE=""
+          case "${{ steps.tag.outputs.tag }}" in
+            *-alpha*|*-beta*|*-rc*) PRERELEASE="--prerelease" ;;
+          esac
+          gh release create "${{ steps.tag.outputs.tag }}" \
+            --title "${{ steps.tag.outputs.tag }}" \
+            --notes-file /tmp/notes.md \
+            --target "${{ github.sha }}" \
+            $PRERELEASE

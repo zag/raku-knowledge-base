@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item release the code on its own tag: a version, a changelog section and release notes, separate from the dated data release that carries the site
+
 =item clear the footer of eighteen links labelled empty that led back to the front page, and of a resource group whose three links already stood under Learning
 
 =item build the site with a newer toolchain, so a dated document that declares its own address counts as an entry again. The monthly ecosystem digest reaches the front page instead of an empty block
