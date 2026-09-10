@@ -74,30 +74,33 @@ export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
         },
       })(node, {})
 
-    const addedUrls = filesWithDocs.map(item => {
+    const withUrls = filesWithDocs.map(item => {
       const publishUrl = item.file.replace(/^work_mods/g, '/mods')
       return { ...item, publishUrl, node: cleanModuleLinks(item.node) }
     })
+
+    // A checkout the registry does not know about gets no pages at all: one such
+    // directory used to stop the whole build. The lookup runs once here, so nothing
+    // downstream searches the registry again and nothing publishes what was skipped.
+    const metaOf = new Map()
+    const withoutMeta = new Set<string>()
+    for (const item of withUrls) {
+      const [_, namespace, name] = item.file.split('/')
+      const meta = namespace === 'zef' ? zef_mods.find(i => i.name === name) : all_mods.find(i => i.name === name)
+      if (meta) metaOf.set(item.file, meta)
+      else withoutMeta.add(name)
+    }
+    const addedUrls = withUrls.filter(item => metaOf.has(item.file))
 
     // const addedUrls = mods_state
     console.log(`modPlugin is running: ${rootdir}`)
 
     //  group mods by type and add meta info
     const mods_info = addedUrls.reduce((acc, item) => {
-      // console.log(item.file)
       const [_, namespace, name] = item.file.split('/')
+      const meta = metaOf.get(item.file)
       acc[namespace] = acc[namespace] || {}
       acc[namespace][name] = acc[namespace][name] || {}
-      let meta
-      // get metat info
-      if (namespace === 'zef') {
-        meta = zef_mods.find(i => i.name === name)
-      } else {
-        meta = all_mods.find(i => i.name === name)
-      }
-      if (!meta) {
-        throw new Error(`meta not found for ${name}`)
-      }
       const moduleInfo = {
         ...acc[namespace][name],
         meta,
@@ -109,6 +112,14 @@ export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
       acc[namespace][name] = moduleInfo
       return acc
     }, {})
+
+    if (withoutMeta.size) {
+      const names = [...withoutMeta].sort()
+      const shown = names.slice(0, 10).join(', ')
+      console.log(
+        `[modPlugin] modules skipped, not in the registry: ${withoutMeta.size} (${shown}${names.length > 10 ? ', …' : ''})`,
+      )
+    }
 
     // generate pages for each module
     const all_mods_pages = Object.values({
