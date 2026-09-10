@@ -25,6 +25,10 @@ const transformIgnores = [
 ].join('|')
 
 module.exports = {
+  // the corpus under work_mods carries other projects' .snap files; without a root
+  // jest walks into them, calls 66 of them obsolete and exits non-zero on a green run
+  roots: ['<rootDir>/t'],
+
   moduleDirectories: ['node_modules'],
   modulePaths: ['<rootDir>'],
   snapshotSerializers: ['jest-serializer-html'],

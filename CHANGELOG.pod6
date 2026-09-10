@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item keep the test run inside the project's own directory: it used to walk the module corpus, call other projects' snapshots obsolete and finish non-zero on a green run
+
 =item skip a checkout the registry does not know about instead of stopping the whole build on it, and say in the log how many were skipped
 
 =item release the code on its own tag: a version, a changelog section and release notes, separate from the dated data release that carries the site
