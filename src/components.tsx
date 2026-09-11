@@ -137,8 +137,9 @@ export const LastEntries = ({ count = 3, id, children, item, renderNode, getThis
         const day = (entry.pubdate || '').slice(0, 10)
         // A monthly series names itself by date — "Raku ecosystem, 2026-09-01" — and
         // needs that in the title to stay recognisable in search, in a feed or in a
-        // browser tab. So the date goes beside the name only when the name lacks it.
-        const dayIsNew = day && !name.includes(day)
+        // browser tab. So the date goes beside the name only when the name lacks it,
+        // and a digit on either side means a longer number, not this date.
+        const dayIsNew = day && !new RegExp(`(?<!\\d)${day}(?!\\d)`).test(name)
         const summary = entry.description ? getTextContentFromNode(entry.description).trim() : ''
         return (
           <li key={entry.publishUrl} className={lastEntriesStyles.entry}>
