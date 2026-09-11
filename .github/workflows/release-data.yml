@@ -16,6 +16,10 @@ on:
         description: create the release (off = build and check only)
         type: boolean
         default: true
+      rebuild:
+        description: rebuild the site only — no version snapshot, no new digest
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -72,10 +76,16 @@ jobs:
       - name: Snapshot module versions
         id: snapshot
         run: |
-          node ./bin/snapshot-registry.mjs
+          # the date is the tag's, not the snapshot's: a rebuild still needs one
           echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+          if [ "${{ inputs.rebuild }}" = "true" ]; then
+            echo "rebuild: keeping the last snapshot as the comparison base"
+            exit 0
+          fi
+          node ./bin/snapshot-registry.mjs
 
       - name: Write the ecosystem digest for the blog
+        if: inputs.rebuild != true
         run: |
           COUNT=$(ls snapshots/*.json | wc -l)
           if [ "$COUNT" -ge 2 ]; then
@@ -116,11 +126,17 @@ jobs:
 
       - name: Write release notes from the version diff
         run: |
-          COUNT=$(ls snapshots/*.json | wc -l)
-          if [ "$COUNT" -ge 2 ]; then
-            node ./bin/diff-snapshots.mjs > /tmp/notes.md
+          if [ "${{ inputs.rebuild }}" = "true" ]; then
+            # a rebuild carries no new ecosystem reading: saying otherwise would
+            # repeat the previous release's diff as if it were this one's
+            echo "Site rebuilt from the current sources. No new ecosystem reading in this release." > /tmp/notes.md
           else
-            echo "First data release — nothing to compare against yet." > /tmp/notes.md
+            COUNT=$(ls snapshots/*.json | wc -l)
+            if [ "$COUNT" -ge 2 ]; then
+              node ./bin/diff-snapshots.mjs > /tmp/notes.md
+            else
+              echo "First data release — nothing to compare against yet." > /tmp/notes.md
+            fi
           fi
           {
             echo

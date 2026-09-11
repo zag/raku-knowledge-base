@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item rebuild the site without taking a version snapshot or writing a new ecosystem digest, so a fix in the code reaches readers without a month's reading arriving with it
+
 =head1 1.1.0
 
 =item run the tests before the release touches anything, so a failure leaves the version and the changelog as they were
