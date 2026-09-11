@@ -1,0 +1,12 @@
+.entry {
+    margin-bottom: 0.9em;
+}
+/* not listmods .subtitle: there the colour is carried by a link inside it,
+   and plain text in that class comes out the red of an error */
+.day {
+    color: var(--color-dim);
+    margin-left: 0.75em;
+}
+.summary {
+    color: var(--color-dim);
+}

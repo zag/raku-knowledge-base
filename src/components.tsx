@@ -3,6 +3,7 @@ import React from 'react'
 import styles from './footer.module.css'
 import listfilesstyles from './listfiles.module.css'
 import listModsStyles from './listmods.module.css'
+import lastEntriesStyles from './lastentries.module.css'
 import Switcher from './Switcher'
 import Breadcrumb from './Breadcrumb'
 import { getFromTree, getTextContentFromNode } from '@podlite/schema'
@@ -140,12 +141,10 @@ export const LastEntries = ({ count = 3, id, children, item, renderNode, getThis
         const dayIsNew = day && !name.includes(day)
         const summary = entry.description ? getTextContentFromNode(entry.description).trim() : ''
         return (
-          // not listModsStyles.subtitle: there the colour is carried by a link inside
-          // it, and plain text in that class comes out the red of an error
-          <li key={entry.publishUrl} style={{ marginBottom: '0.9em' }}>
+          <li key={entry.publishUrl} className={lastEntriesStyles.entry}>
             <Link href={entry.publishUrl}>{name}</Link>
-            {dayIsNew && <span style={{ color: 'var(--color-dim)', marginLeft: '0.75em' }}>{day}</span>}
-            {summary && <div style={{ color: 'var(--color-dim)' }}>{summary}</div>}
+            {dayIsNew && <span className={lastEntriesStyles.day}>{day}</span>}
+            {summary && <div className={lastEntriesStyles.summary}>{summary}</div>}
           </li>
         )
       })}
