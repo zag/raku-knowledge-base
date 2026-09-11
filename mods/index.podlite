@@ -7,7 +7,7 @@
 =TITLE Raku Modules Documentation
 
 
-=begin React :component<ListMods> :id<menu>
+=begin React :component<ListMods>
 =Include doc:RAKU_MODS_PLUGIN_DATA#mods-info
 =end React
 

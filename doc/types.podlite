@@ -11,67 +11,67 @@ This is a list of the built-in types that are documented, sorted by class/enum/m
 and by categories.
 
 =head2 Basic classes
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'class', category => 'basic' }
+=begin React :component<ListFiles> :select{ kind=>'Type', subkind=>'class', category => 'basic' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 Composite classes
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'class', category => 'composite' }
+=begin React :component<ListFiles> :select{ kind=>'Type', subkind=>'class', category => 'composite' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 Domain-specific classes
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'class', category => 'domain-specific' }
+=begin React :component<ListFiles> :select{ kind=>'Type', subkind=>'class', category => 'domain-specific' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 Exception classes
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'class', category => 'exception' }
+=begin React :component<ListFiles> :select{ kind=>'Type', subkind=>'class', category => 'exception' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 Metamodel classes
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'class', category => 'metamodel' }
+=begin React :component<ListFiles> :select{ kind=>'Type', subkind=>'class', category => 'metamodel' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 Basic enums
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'enum', category => 'basic' }
+=begin React :component<ListFiles> :select{ kind=>'Type', subkind=>'enum', category => 'basic' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 Domain-specific enums
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'enum', category => 'domain-specific' }
+=begin React :component<ListFiles> :select{ kind=>'Type', subkind=>'enum', category => 'domain-specific' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 Module modules
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'module', category => 'module' }
+=begin React :component<ListFiles> :select{ kind=>'Type', subkind=>'module', category => 'module' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 Basic roles
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'role', category => 'basic' }
+=begin React :component<ListFiles> :select{ kind=>'Type', subkind=>'role', category => 'basic' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 Composite roles
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'role', category => 'composite' }
+=begin React :component<ListFiles> :select{ kind=>'Type', subkind=>'role', category => 'composite' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 Domain-specific roles
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'role', category => 'domain-specific' }
+=begin React :component<ListFiles> :select{ kind=>'Type', subkind=>'role', category => 'domain-specific' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 Exception roles
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'role', category => 'exception' }
+=begin React :component<ListFiles> :select{ kind=>'Type', subkind=>'role', category => 'exception' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 Metamodel roles
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Type', subkind=>'role', category => 'metamodel' }
+=begin React :component<ListFiles> :select{ kind=>'Type', subkind=>'role', category => 'metamodel' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 

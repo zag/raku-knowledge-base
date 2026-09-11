@@ -8,32 +8,32 @@
 =toc
 
 =head2 At the beginning
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Language', category => 'beginning' }
+=begin React :component<ListFiles> :select{ kind=>'Language', category => 'beginning' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 Migration guides
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Language', category => 'migration' }
+=begin React :component<ListFiles> :select{ kind=>'Language', category => 'migration' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 Tutorials
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Language', category => 'tutorial' }
+=begin React :component<ListFiles> :select{ kind=>'Language', category => 'tutorial' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 Fundamental topics
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Language', category => 'fundamental' }
+=begin React :component<ListFiles> :select{ kind=>'Language', category => 'fundamental' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 General reference
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Language', category => 'reference' }
+=begin React :component<ListFiles> :select{ kind=>'Language', category => 'reference' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 Advanced topics
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Language', category => 'advanced' }
+=begin React :component<ListFiles> :select{ kind=>'Language', category => 'advanced' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 

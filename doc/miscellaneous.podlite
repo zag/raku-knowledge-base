@@ -10,12 +10,12 @@
 Documents explaining experimental topics and Raku programs rather than the language itself.
 
 =head2 Advanced topics
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Language', category => 'advanced' }
+=begin React :component<ListFiles> :select{ kind=>'Language', category => 'advanced' }
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
 =head2 Programs
-=begin React :component<ListFiles> :id<menu> :select{ kind=>'Programs'}
+=begin React :component<ListFiles> :select{ kind=>'Programs'}
 =include doc:RAKU_DOCS_PLUGIN_DATA#index-category
 =end React
 
