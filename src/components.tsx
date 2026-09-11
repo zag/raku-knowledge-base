@@ -134,7 +134,8 @@ export const LastEntries = ({ count = 3, id, children, item, renderNode, getThis
         // a title arrives with a trailing newline, and an entry made from a dated
         // paragraph has none at all; the address is the only name it is sure to have
         const name = (entry.title || '').trim() || entry.publishUrl
-        const day = (entry.pubdate || '').slice(0, 10)
+        // pubdate is typed by hand and travels as typed: only a real date is worth printing
+        const day = /^\d{4}-\d{2}-\d{2}/.test(entry.pubdate || '') ? entry.pubdate.slice(0, 10) : ''
         // A monthly series names itself by date — "Raku ecosystem, 2026-09-01" — and
         // needs that in the title to stay recognisable in search, in a feed or in a
         // browser tab. So the date goes beside the name only when the name lacks it,
