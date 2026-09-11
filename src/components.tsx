@@ -114,6 +114,45 @@ export const Test = ({ id: er, children, item, renderNode }) => {
   return <Article />
 }
 
+// A list, not the entries themselves. The shared block laid out whole articles:
+// three ecosystem digests filled 63 per cent of the front page, and the renderer
+// drops an entry's own TITLE, so none of them carried a name, a date, or a way
+// through to its page.
+export const LastEntries = ({ count = 3, id, children, item, renderNode, getThisNode }) => {
+  const [content] = getFromTree(getThisNode(), 'data').map(n => JSON.parse(getTextContentFromNode(n)))
+  if (!content) {
+    console.warn(`[LastEntries] no JSON found; it comes from =include doc:PLUGIN_DATA#articles`)
+    return null
+  }
+  const entries = [...content].reverse().slice(0, count)
+  if (entries.length === 0) return null
+
+  return (
+    <ul>
+      {entries.map(entry => {
+        // a title arrives with a trailing newline, and an entry made from a dated
+        // paragraph has none at all; the address is the only name it is sure to have
+        const name = (entry.title || '').trim() || entry.publishUrl
+        const day = (entry.pubdate || '').slice(0, 10)
+        // A monthly series names itself by date — "Raku ecosystem, 2026-09-01" — and
+        // needs that in the title to stay recognisable in search, in a feed or in a
+        // browser tab. So the date goes beside the name only when the name lacks it.
+        const dayIsNew = day && !name.includes(day)
+        const summary = entry.description ? getTextContentFromNode(entry.description).trim() : ''
+        return (
+          // not listModsStyles.subtitle: there the colour is carried by a link inside
+          // it, and plain text in that class comes out the red of an error
+          <li key={entry.publishUrl} style={{ marginBottom: '0.9em' }}>
+            <Link href={entry.publishUrl}>{name}</Link>
+            {dayIsNew && <span style={{ color: 'var(--color-dim)', marginLeft: '0.75em' }}>{day}</span>}
+            {summary && <div style={{ color: 'var(--color-dim)' }}>{summary}</div>}
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
+
 export const ShowBreadcrumb = ({ id, children, item, renderNode, isShowRoot }) => {
   // no breadcrumb for root
   if (item.publishUrl === '/') return null

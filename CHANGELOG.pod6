@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item show the ecosystem digest as a short list of entries instead of the full text of the newest one, so the front page no longer opens with a month's reading and every entry is reachable by its own link
+
 =item rebuild the site without taking a version snapshot or writing a new ecosystem digest, so a fix in the code reaches readers without a month's reading arriving with it
 
 =head1 1.1.0

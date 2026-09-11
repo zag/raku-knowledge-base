@@ -5,8 +5,8 @@
 = :templateFile<src/template.podlite>
 = :gtmId("GTM-K6GTN98T")
 
-=useReact {HeaderCol,LastArticles,CookieConsent} from '@Components/service'
-=useReact {Test,IndexAllDocs} from 'raku-knowledge/components'
+=useReact {HeaderCol,CookieConsent} from '@Components/service'
+=useReact {Test,IndexAllDocs,LastEntries} from 'raku-knowledge/components'
 
 =TITLE The Raku programming language knowledge base 
 
@@ -173,7 +173,7 @@ L<Get started| file:./getting-started/getting-started.podlite>
 
 =head2 Ecosystem digest
 
-=begin React :component<LastArticles> :count(3)
+=begin React :component<LastEntries> :count(3)
 =include doc:PLUGIN_DATA#articles
 =end React
 
