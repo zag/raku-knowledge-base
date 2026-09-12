@@ -15,6 +15,10 @@ on:
         description: what to build the site from
         type: string
         default: main
+      publish:
+        description: create the release
+        type: boolean
+        default: true
   push:
     branches: [data]
     paths: ['blog/**']
@@ -60,8 +64,15 @@ jobs:
           if git ls-remote --exit-code --heads origin "$DATA_BRANCH" >/dev/null 2>&1; then
             git fetch --depth=1 origin "$DATA_BRANCH"
             # only blog: the site reads no snapshots, and asking for a path the
-            # branch does not carry fails the whole step
-            git checkout FETCH_HEAD -- blog || echo "no entries on the branch yet"
+            # branch does not carry would fail the whole step. The branch is the
+            # source once it exists, so what the checkout carried goes first —
+            # otherwise a stale copy from the code would pass for an entry.
+            rm -rf blog
+            if git cat-file -e FETCH_HEAD:blog 2>/dev/null; then
+              git checkout FETCH_HEAD -- blog
+            else
+              echo "the data branch carries no entries yet"
+            fi
           else
             echo "no data branch yet — starting from what the repository carries"
           fi
@@ -105,9 +116,9 @@ jobs:
       - uses: ./.github/actions/build-site
 
       - name: Create the release
-        # inputs.publish exists only for the button: on a push and on a call from
-        # another workflow it is empty, and an empty value equals false here
-        if: github.event_name != 'workflow_dispatch' || inputs.publish
+        # a push carries no inputs at all; a call does, and a called workflow sees
+        # the caller's event, so the event alone cannot answer this
+        if: github.event_name == 'push' || inputs.publish
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
