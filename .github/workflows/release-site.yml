@@ -16,18 +16,18 @@ on:
         type: string
         default: main
       publish:
-        description: create the release
-        type: boolean
-        default: true
+        description: create the release, 'false' to build and check only
+        type: string
+        default: 'true'
   push:
     branches: [data]
     paths: ['blog/**']
   workflow_dispatch:
     inputs:
       publish:
-        description: create the release (off = build and check only)
-        type: boolean
-        default: true
+        description: create the release, 'false' to build and check only
+        type: string
+        default: 'true'
 
 permissions:
   contents: write
@@ -68,7 +68,7 @@ jobs:
             # source once it exists, so what the checkout carried goes first —
             # otherwise a stale copy from the code would pass for an entry.
             rm -rf blog
-            if git cat-file -e FETCH_HEAD:blog 2>/dev/null; then
+            if [ "$(git cat-file -t FETCH_HEAD:blog 2>/dev/null)" = tree ]; then
               git checkout FETCH_HEAD -- blog
             else
               echo "the data branch carries no entries yet"
@@ -116,9 +116,9 @@ jobs:
       - uses: ./.github/actions/build-site
 
       - name: Create the release
-        # a push carries no inputs at all; a call does, and a called workflow sees
-        # the caller's event, so the event alone cannot answer this
-        if: github.event_name == 'push' || inputs.publish
+        # a push carries no inputs at all, and an empty value equals false here, so
+        # the input is a string: only the word says no, absence never does
+        if: inputs.publish != 'false'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
