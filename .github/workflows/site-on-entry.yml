@@ -1,0 +1,16 @@
+name: Site on entry
+
+# A push event reads the workflow from the branch it lands on, and this branch
+# holds data, not code. So the trigger lives here and the work does not: this
+# calls the real workflow from main, which is the only copy of it.
+
+on:
+  push:
+    branches: [data]
+    paths: ['blog/**']
+
+jobs:
+  site:
+    uses: zag/raku-knowledge-base/.github/workflows/release-site.yml@main
+    permissions:
+      contents: write
