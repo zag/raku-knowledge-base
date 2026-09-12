@@ -76,9 +76,10 @@ const getReleaseContent = (changelog, version) => {
     // the long form goes first: C<...> would otherwise stop at the first > and
     // eat the angle brackets a C<< ... >> was written to carry. It stays within
     // one line: reaching across them joined two entries into one code span when
-    // an opening and a closing marker sat in different ones.
+    // an opening and a closing marker sat in different ones. The short form is
+    // bound the same way, for the same reason.
     .replace(/C<<\s*([^\n]+?)\s*>>/g, '`$1`')
-    .replace(/C<([^>]+)>/g, '`$1`')
+    .replace(/C<([^>\n]+)>/g, '`$1`')
     .trim()
 }
 
