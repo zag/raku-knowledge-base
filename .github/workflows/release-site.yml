@@ -9,6 +9,7 @@ run-name: Release site
 # other change to the site itself.
 
 on:
+  workflow_call:
   push:
     branches: [data]
     paths: ['blog/**']

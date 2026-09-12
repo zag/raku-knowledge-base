@@ -1,9 +1,10 @@
 name: Release code
+run-name: Release code
 
 # The counterpart of release-data.yml. Tags: data-YYYY-MM-DD for the corpus,
-# v* for code. This one only makes a code release: a version, a changelog
-# section and release notes. It ships no artefact — the site archive lives in
-# the dated data release, and the delivery on the host takes it from there.
+# site-YYYY-MM-DD for the site alone, v* for code. This one makes the code
+# release, writes the same changes as an entry on the site, and then has the
+# site rebuilt so a reader sees them.
 
 on:
   push:
@@ -76,3 +77,35 @@ jobs:
             --notes-file /tmp/notes.md \
             --target "${{ github.sha }}" \
             $PRERELEASE
+
+      - name: Put the same changes on the site as an entry
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          mkdir -p blog
+          node scripts/extract-changelog.mjs --entry "blog/$DATE-release-${{ steps.tag.outputs.version }}.podlite"
+
+      - name: Keep the entry on the data branch
+        run: |
+          # main is locked, so entries live on a branch of their own; the site
+          # release below reads them back from there
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          WT=/tmp/data-branch
+          rm -rf "$WT"
+          git fetch --depth=1 origin data
+          git worktree add --detach "$WT" FETCH_HEAD
+          mkdir -p "$WT/blog"
+          cp -f blog/*.podlite "$WT/blog/"
+          cd "$WT"
+          git add blog
+          git diff --cached --quiet && { echo "nothing new"; exit 0; }
+          git commit -m "data: the changes of ${{ steps.tag.outputs.tag }} as an entry"
+          git push origin "HEAD:refs/heads/data"
+
+  # a push by github-actions[bot] starts no workflow, so the site release is
+  # called here rather than left to the trigger on the data branch
+  site:
+    needs: release
+    uses: ./.github/workflows/release-site.yml
+    permissions:
+      contents: write

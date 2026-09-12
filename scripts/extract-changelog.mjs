@@ -12,6 +12,7 @@ Forked from podlite monorepo — simplified (no aggregate, no workspaces).
 =OPTIONS
   --update     Rename 'Upcoming' → current version, insert new 'Upcoming'
   --summary    Extract changes for current version (Markdown output)
+  --entry FILE Write the same changes as a blog entry in podlite
   --dry-run    Show what would change without writing (use with --update)
 
 =NOTE
@@ -47,7 +48,7 @@ const isReleaseEmptyContent = (changelog, release) => {
   return !/\S/.test(content)
 }
 
-const getReleaseContent = (changelog, version) => {
+const getReleaseSection = (changelog, version) => {
   const headerRegex = /^=head1\s+(.*)$/gm
   let match
   const headers = []
@@ -62,18 +63,44 @@ const getReleaseContent = (changelog, version) => {
   for (let i = 0; i < headers.length; i++) {
     const h = headers[i]
     const end = headers[i + 1] ? headers[i + 1].index : changelog.length
-    const sectionContent = changelog.substring(h.start, end)
-
-    if (h.version === version) {
-      const mdContent = sectionContent
-        .replace(/^=item\s+/gm, '- ')
-        .replace(/C<([^>]+)>/g, '`$1`')
-        .replace(/C<< ([^>]+) >>/g, '`$1`')
-        .trim()
-      return mdContent
-    }
+    if (h.version === version) return changelog.substring(h.start, end).trim()
   }
   return undefined
+}
+
+const getReleaseContent = (changelog, version) => {
+  const section = getReleaseSection(changelog, version)
+  if (section === undefined) return undefined
+  return section
+    .replace(/^=item\s+/gm, '- ')
+    .replace(/C<([^>]+)>/g, '`$1`')
+    .replace(/C<< ([^>]+) >>/g, '`$1`')
+    .trim()
+}
+
+// The same section, kept as podlite, becomes an entry on the site. One reader of
+// the changelog, so the release notes and the entry cannot drift apart.
+const writeBlogEntry = (changelog, version, date, file) => {
+  const section = getReleaseSection(changelog, version)
+  if (!section) {
+    console.error(`ERROR: the changelog has no section for ${version}`)
+    process.exit(1)
+  }
+  const slug = `${date}-release-${version}`
+  const entry = [
+    `=begin pod :pubdate('${date} 05:00:00') :puburl</blog/${slug}>`,
+    `=TITLE Release ${version}`,
+    '=begin DESCRIPTION',
+    'What changed in this release of the knowledge base.',
+    '=end DESCRIPTION',
+    '',
+    section,
+    '',
+    '=end pod',
+    '',
+  ].join('\n')
+  fs.writeFileSync(file, entry)
+  console.log(`wrote ${file}: Release ${version}, ${(section.match(/^=item/gm) || []).length} changes`)
 }
 
 function run() {
@@ -122,6 +149,17 @@ function run() {
     if (content) {
       console.log(content)
     }
+    return
+  }
+
+  const entryAt = args.indexOf('--entry')
+  if (entryAt > -1) {
+    const file = args[entryAt + 1]
+    if (!file) {
+      console.error('ERROR: --entry needs a file to write')
+      process.exit(1)
+    }
+    writeBlogEntry(changelog, version, new Date().toISOString().slice(0, 10), file)
   }
 }
 
