@@ -1,0 +1,70 @@
+=begin pod :pubdate('2026-09-11 05:00:00') :puburl</blog/2026-09-11-release-1.1.0>
+=TITLE Release 1.1.0
+=begin DESCRIPTION
+What changed in this release of the knowledge base.
+=end DESCRIPTION
+
+=item run the tests before the release touches anything, so a failure leaves the version and the changelog as they were
+
+=item keep the test run inside the project's own directory: it used to walk the module corpus, call other projects' snapshots obsolete and finish non-zero on a green run
+
+=item skip a checkout the registry does not know about instead of stopping the whole build on it, and say in the log how many were skipped
+
+=item release the code on its own tag: a version, a changelog section and release notes, separate from the dated data release that carries the site
+
+=item clear the footer of eighteen links labelled empty that led back to the front page, and of a resource group whose three links already stood under Learning
+
+=item build the site with a newer toolchain, so a dated document that declares its own address counts as an entry again. The monthly ecosystem digest reaches the front page instead of an empty block
+
+=item keep test-directory samples off the site. They are fixtures for other people's documentation generators, not documentation of the module. A README among them is still taken.
+
+=item carry what a module declares next to the measured pages: the units it ships and what it depends on. A rating computed later from a stored record can then be reproduced.
+
+=item refuse to write a corpus record when a registry it reads is missing or does not parse. A stored record would otherwise read as though no module declared anything.
+
+=item note whether a page shows the output of its example: a worked example carries both the code and what it prints, a bare snippet only the code
+
+=item list the selected files separated by NUL and skip the ones whose name holds a control character: one registry entry carries a newline inside its own name, which tore a path in two and lost the file without a word
+
+=item name every file the parser could not read, instead of sending the whole complaint to nowhere
+
+=item measure the corpus while parsing it: markup census with the module reach of every construct, per-page facts, unparsed files and the settings the numbers were taken under
+
+=item take documentation out of module sources: a source file gets a page when its pod says something the README does not
+
+=item declare the packages the repository's own scripts import, and restore the dependency tree after a site build detaches it
+
+=item create the release before recording the snapshot, and let a failed snapshot push not fail the run
+
+=item let a second data release on the same day get its own tag instead of failing
+
+=item build a page for every module in the registry, including the 139 that ship no documentation
+=item clean stray markdown and windows backslashes out of link targets on module pages
+=item publish a data release weekly, not only on demand
+
+=item link module names in the change report to their pages, for modules that have one
+
+=item build and publish a dated data release from CI — site archive, offline bundle and server image, with the version diff as release notes
+
+=item resolve a snapshot name against the snapshots directory whichever way it is given
+
+=item fetch module sources over https — the git protocol they list has been switched off since 2022
+=item stop the refresh when more than a twentieth of the module sources have no checkout at all; a checkout that merely failed to update is reported, not fatal
+
+=item credit the tools in the site template footer, where the rest of the footer lives
+
+=item record a dated snapshot of module versions on every data refresh, and compare two snapshots into release notes
+
+=item stop storing generated corpus trees in the repository; a fast rebuild now says so when they are missing
+
+=item document the offline bundle in the mcp server readme
+
+=item bump the C<@podlite> toolchain to the v0.0.77 release
+=item treat any url scheme as external, so links like irc: no longer get a section prefix
+=item strip markdown left inside a link target; the parser now hands over the target itself
+=item quote the module page url so names with spaces keep their full path
+=item skip modules whose name carries control characters
+=item reduce pages size up to 2-3 times
+=item refactor components to use C<=include> feature
+
+=end pod
