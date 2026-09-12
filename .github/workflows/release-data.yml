@@ -1,10 +1,12 @@
 name: Release data
+run-name: Release data
 
-# Rebuilds the corpus and publishes a dated data release: the site archive,
-# the offline MCP bundle, and the server image. Release notes are the version
-# diff against the previous snapshot.
+# Rebuilds the corpus and publishes a dated data release: the site archive, the
+# parsed corpus, the offline MCP bundle, and the server image. Release notes are
+# the version diff against the previous snapshot.
 #
-# Tags: data-YYYY-MM-DD for the corpus, v* for code — this one only makes data.
+# Tags: data-YYYY-MM-DD here, site-YYYY-MM-DD for a rebuild of the site alone,
+# v* for code. The corpus published here is what a site release builds from.
 
 on:
   # monthly, plus a button. The corpus changes slowly: two modules moved in a day.
@@ -16,10 +18,6 @@ on:
         description: create the release (off = build and check only)
         type: boolean
         default: true
-      rebuild:
-        description: rebuild the site only — no version snapshot, no new digest
-        type: boolean
-        default: false
 
 permissions:
   contents: write
@@ -76,16 +74,10 @@ jobs:
       - name: Snapshot module versions
         id: snapshot
         run: |
-          # the date is the tag's, not the snapshot's: a rebuild still needs one
           echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
-          if [ "${{ inputs.rebuild }}" = "true" ]; then
-            echo "rebuild: keeping the last snapshot as the comparison base"
-            exit 0
-          fi
           node ./bin/snapshot-registry.mjs
 
       - name: Write the ecosystem digest for the blog
-        if: inputs.rebuild != true
         run: |
           COUNT=$(ls snapshots/*.json | wc -l)
           if [ "$COUNT" -ge 2 ]; then
@@ -94,49 +86,39 @@ jobs:
             echo "one snapshot only — nothing to compare yet"
           fi
 
-      - name: Build the site
-        run: |
-          # the build wipes its own output directory first, so it cannot be a mounted one:
-          # run a named container and copy the result out afterwards
-          docker run --name site-build -v "$PWD":/app/pub \
-            podlite/podlite-web:0.10.17 \
-            export pub -s https://raku-knowledge-base.podlite.org --preset everything \
-            > /tmp/export.log 2>&1 || { echo "EXPORT FAILED"; tail -40 /tmp/export.log; exit 1; }
-          grep -E "Generating static pages|Indexed .* pages" /tmp/export.log | tail -2
-          mkdir -p out && docker cp site-build:/app/out/. out/
-          docker rm -f site-build >/dev/null
-          echo "pages: $(find out -name '*.html' | wc -l)"
-
-      - name: Check the digest links against the built site
-        run: |
-          for ENTRY in blog/*.podlite; do
-            [ -e "$ENTRY" ] || { echo "no entries yet"; break; }
-            echo "$ENTRY"
-            node ./bin/check-blog-links.mjs "$ENTRY" out
-          done
+      - uses: ./.github/actions/build-site
 
       - name: Pack the artefacts
         run: |
           node ./bin/build-kb-index.mjs out mcp-server/kb-index.json
-          (cd out && zip -r -q -X "$GITHUB_WORKSPACE/index.zip" .)
           mkdir -p /tmp/stage/raku-kb-mcp
           rsync -a --exclude node_modules --exclude package-lock.json mcp-server/ /tmp/stage/raku-kb-mcp/
           tar czf raku-kb-mcp-offline.tar.gz -C /tmp/stage raku-kb-mcp
           ls -lh index.zip raku-kb-mcp-offline.tar.gz
 
+      - name: Pack the corpus a site release builds from
+        run: |
+          node ./bin/corpus-manifest.mjs --image podlite/podlite-web:0.10.17
+          # the pods go with the trees: without them the index of terms loses
+          # entries, and they weigh a fraction of what the trees do
+          # one NUL-separated list and nothing else on the command line: a name may
+          # hold a newline, and BSD tar reads --null -T only when no operand precedes it
+          {
+            printf '%s\0' corpus-manifest.json \
+              built/mods-tree.json built/ecosystem.json built/mods.json \
+              built/docs-tree.json built/examples-tree.json
+            find work_mods \( -name '*.pod6' -o -name '*.podlite' \) -print0
+          } > /tmp/corpus-files
+          tar czf corpus.tar.gz --null -T /tmp/corpus-files
+          ls -lh corpus.tar.gz
+
       - name: Write release notes from the version diff
         run: |
-          if [ "${{ inputs.rebuild }}" = "true" ]; then
-            # a rebuild carries no new ecosystem reading: saying otherwise would
-            # repeat the previous release's diff as if it were this one's
-            echo "Site rebuilt from the current sources. No new ecosystem reading in this release." > /tmp/notes.md
+          COUNT=$(ls snapshots/*.json | wc -l)
+          if [ "$COUNT" -ge 2 ]; then
+            node ./bin/diff-snapshots.mjs > /tmp/notes.md
           else
-            COUNT=$(ls snapshots/*.json | wc -l)
-            if [ "$COUNT" -ge 2 ]; then
-              node ./bin/diff-snapshots.mjs > /tmp/notes.md
-            else
-              echo "First data release — nothing to compare against yet." > /tmp/notes.md
-            fi
+            echo "First data release — nothing to compare against yet." > /tmp/notes.md
           fi
           {
             echo
@@ -147,6 +129,9 @@ jobs:
             echo 'npm install'
             echo 'claude mcp add raku-kb -- node "$PWD/bin/raku-kb-mcp.mjs"'
             echo '```'
+            echo
+            echo 'The bundle and the image hold the site as it stood on this date.'
+            echo 'A later site release may have moved the pages on without them.'
             echo
             echo 'Or run the server image directly:'
             echo
@@ -179,7 +164,7 @@ jobs:
             N=$((N + 1))
           done
           gh release create "$TAG" \
-            index.zip raku-kb-mcp-offline.tar.gz \
+            index.zip raku-kb-mcp-offline.tar.gz corpus.tar.gz \
             --title "Raku KB — ${{ steps.snapshot.outputs.date }}" \
             --notes-file /tmp/notes.md
 

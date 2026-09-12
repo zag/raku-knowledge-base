@@ -96,3 +96,4 @@ lib
 /built/mods-files.txt
 /built/stats-*.json
 /corpus-manifest.json
+/corpus.tar.gz

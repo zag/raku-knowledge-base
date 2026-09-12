@@ -1,0 +1,94 @@
+name: Release site
+run-name: Release site
+
+# The site without the data. It takes the parsed corpus from the newest data
+# release instead of collecting it again, so what comes out carries the change
+# that was made and nothing else. Tags: site-YYYY-MM-DD.
+#
+# Runs on a push of a blog entry to the data branch, and on the button for any
+# other change to the site itself.
+
+on:
+  push:
+    branches: [data]
+    paths: ['blog/**']
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: create the release (off = build and check only)
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+env:
+  DATA_BRANCH: data
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build the site plugin
+        run: |
+          corepack enable
+          yarn install --immutable || yarn install
+          yarn build
+
+      - name: Take the accumulated data
+        run: |
+          git fetch --depth=1 origin "$DATA_BRANCH"
+          git checkout FETCH_HEAD -- snapshots blog
+          echo "entries: $(ls blog/*.podlite 2>/dev/null | wc -l)"
+
+      - name: Take the corpus from the newest data release
+        id: corpus
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG=$(gh release list --limit 100 --json tagName \
+                  -q '[.[] | select(.tagName | startswith("data-"))][0].tagName')
+          [ -n "$TAG" ] || { echo "ERROR: no data release to take a corpus from"; exit 1; }
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          gh release download "$TAG" -p corpus.tar.gz
+          tar xzf corpus.tar.gz
+          rm -f corpus.tar.gz
+          echo "corpus from $TAG"
+
+      - name: Check the corpus against its manifest
+        run: node ./bin/corpus-manifest.mjs --check
+
+      - uses: ./.github/actions/build-site
+
+      - name: Create the release
+        if: inputs.publish != false
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # a second run on the same day must not collide with the morning tag
+          DATE=$(date -u +%Y-%m-%d)
+          TAG="site-$DATE"
+          N=2
+          while gh release view "$TAG" >/dev/null 2>&1; do
+            TAG="site-$DATE.$N"
+            N=$((N + 1))
+          done
+          {
+            echo "The site, rebuilt from the sources as they are now."
+            echo
+            echo "No new ecosystem reading: the corpus is the one published with"
+            echo "\`${{ steps.corpus.outputs.tag }}\`. The offline bundle and the server"
+            echo "image live in the data release and are not republished here."
+          } > /tmp/notes.md
+          gh release create "$TAG" index.zip \
+            --title "Raku KB site — $DATE" \
+            --notes-file /tmp/notes.md
