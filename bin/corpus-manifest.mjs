@@ -75,7 +75,17 @@ const check = () => {
     console.error(`ERROR: ${MANIFEST} is missing — this corpus cannot be trusted`)
     process.exit(1)
   }
-  const manifest = JSON.parse(fs.readFileSync(MANIFEST, 'utf8'))
+  let manifest
+  try {
+    manifest = JSON.parse(fs.readFileSync(MANIFEST, 'utf8'))
+  } catch (err) {
+    console.error(`ERROR: ${MANIFEST} does not parse: ${err.message}`)
+    process.exit(1)
+  }
+  if (!Array.isArray(manifest.trees) || !Array.isArray(manifest.pods)) {
+    console.error(`ERROR: ${MANIFEST} lists no trees or no pods — it was not written by this tool`)
+    process.exit(1)
+  }
   if (manifest.schema !== SCHEMA) {
     console.error(`ERROR: corpus schema ${manifest.schema} against ${SCHEMA} here — parse the corpus again`)
     process.exit(1)

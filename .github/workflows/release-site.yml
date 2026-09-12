@@ -55,8 +55,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          TAG=$(gh release list --limit 100 --json tagName \
-                  -q '[.[] | select(.tagName | startswith("data-"))][0].tagName')
+          # a draft has no assets to download and a prerelease is not the corpus
+          # anyone should be building against
+          TAG=$(gh release list --limit 100 --json tagName,isDraft,isPrerelease \
+                  -q '[.[] | select(.tagName | startswith("data-"))
+                          | select(.isDraft == false and .isPrerelease == false)][0].tagName')
           [ -n "$TAG" ] || { echo "ERROR: no data release to take a corpus from"; exit 1; }
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           gh release download "$TAG" -p corpus.tar.gz
