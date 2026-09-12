@@ -97,14 +97,15 @@ jobs:
           # release below reads them back from there
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          if ! git ls-remote --exit-code --heads origin data >/dev/null 2>&1; then
-            echo "no data branch yet — nothing to add the entry to"
-            exit 0
-          fi
           WT=/tmp/data-branch
           rm -rf "$WT"
-          git fetch --depth=1 origin data
-          git worktree add --detach "$WT" FETCH_HEAD
+          # no branch yet means this entry starts it, the same way the data release does
+          if git ls-remote --exit-code --heads origin data >/dev/null 2>&1; then
+            git fetch --depth=1 origin data
+            git worktree add --detach "$WT" FETCH_HEAD
+          else
+            git worktree add --detach "$WT" HEAD
+          fi
           mkdir -p "$WT/blog"
           cp -f blog/*.podlite "$WT/blog/"
           cd "$WT"

@@ -75,7 +75,7 @@ const getReleaseContent = (changelog, version) => {
     .replace(/^=item\s+/gm, '- ')
     // the long form goes first: C<...> would otherwise stop at the first > and
     // eat the angle brackets a C<< ... >> was written to carry
-    .replace(/C<<\s(.+?)\s>>/g, '`$1`')
+    .replace(/C<<\s*([\s\S]+?)\s*>>/g, '`$1`')
     .replace(/C<([^>]+)>/g, '`$1`')
     .trim()
 }
