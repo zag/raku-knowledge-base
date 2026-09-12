@@ -10,6 +10,11 @@ run-name: Release site
 
 on:
   workflow_call:
+    inputs:
+      ref:
+        description: what to build the site from
+        type: string
+        default: main
   push:
     branches: [data]
     paths: ['blog/**']
@@ -23,6 +28,11 @@ on:
 permissions:
   contents: write
 
+# two runs must not pick the same tag between viewing it and creating it
+concurrency:
+  group: release-site
+  cancel-in-progress: false
+
 env:
   DATA_BRANCH: data
 
@@ -33,7 +43,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ inputs.ref || 'main' }}
 
       - uses: actions/setup-node@v4
         with:
@@ -45,40 +55,59 @@ jobs:
           yarn install --immutable || yarn install
           yarn build
 
-      - name: Take the accumulated data
+      - name: Take the entries from the data branch
         run: |
           if git ls-remote --exit-code --heads origin "$DATA_BRANCH" >/dev/null 2>&1; then
             git fetch --depth=1 origin "$DATA_BRANCH"
-            git checkout FETCH_HEAD -- snapshots blog
+            # only blog: the site reads no snapshots, and asking for a path the
+            # branch does not carry fails the whole step
+            git checkout FETCH_HEAD -- blog || echo "no entries on the branch yet"
           else
             echo "no data branch yet — starting from what the repository carries"
           fi
           echo "entries: $(ls blog/*.podlite 2>/dev/null | wc -l)"
 
-      - name: Take the corpus from the newest data release
+      - name: Take the corpus from the newest data release that carries one
         id: corpus
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # a draft has no assets to download and a prerelease is not the corpus
-          # anyone should be building against
-          TAG=$(gh release list --limit 100 --json tagName,isDraft,isPrerelease \
-                  -q '[.[] | select(.tagName | startswith("data-"))
-                          | select(.isDraft == false and .isPrerelease == false)][0].tagName // empty')
-          [ -n "$TAG" ] || { echo "ERROR: no data release to take a corpus from"; exit 1; }
-          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          # the list of releases carries the assets, so this is one call and not
+          # one per release. A draft has nothing to download and a prerelease is
+          # not the corpus anyone should be building against.
+          TAG=$(gh api "repos/$GITHUB_REPOSITORY/releases?per_page=100" \
+            --jq '[.[] | select(.tag_name|startswith("data-"))
+                    | select(.draft|not) | select(.prerelease|not)
+                    | select(any(.assets[]?; .name=="corpus.tar.gz"))][0].tag_name // empty')
+          if [ -z "$TAG" ]; then
+            echo "no data release carries a corpus"
+            echo "have=no" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           gh release download "$TAG" -p corpus.tar.gz
           tar xzf corpus.tar.gz
           rm -f corpus.tar.gz
+          echo "have=yes" >> "$GITHUB_OUTPUT"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           echo "corpus from $TAG"
 
       - name: Check the corpus against its manifest
+        if: steps.corpus.outputs.have == 'yes'
         run: node ./bin/corpus-manifest.mjs --check
+
+      # No release carries a corpus yet, so this run parses one for itself. It
+      # holds the ecosystem as it stands now, not only the change that started
+      # the run, and it goes nowhere: no release of it, no branch, no asset.
+      - name: Parse a corpus for this build alone
+        if: steps.corpus.outputs.have != 'yes'
+        uses: ./.github/actions/collect-corpus
 
       - uses: ./.github/actions/build-site
 
       - name: Create the release
-        if: inputs.publish != false
+        # inputs.publish exists only for the button: on a push and on a call from
+        # another workflow it is empty, and an empty value equals false here
+        if: github.event_name != 'workflow_dispatch' || inputs.publish
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -93,9 +122,16 @@ jobs:
           {
             echo "The site, rebuilt from the sources as they are now."
             echo
-            echo "No new ecosystem reading: the corpus is the one published with"
-            echo "\`${{ steps.corpus.outputs.tag }}\`. The offline bundle and the server"
-            echo "image live in the data release and are not republished here."
+            if [ "${{ steps.corpus.outputs.have }}" = "yes" ]; then
+              echo "No new ecosystem reading: the corpus is the one published with"
+              echo "\`${{ steps.corpus.outputs.tag }}\`."
+            else
+              echo "No data release carries a corpus yet, so this build parsed one of"
+              echo "its own. It holds the ecosystem as of today and is published nowhere."
+            fi
+            echo
+            echo "The offline bundle and the server image live in the data release"
+            echo "and are not republished here."
           } > /tmp/notes.md
           gh release create "$TAG" index.zip \
             --title "Raku KB site — $DATE" \

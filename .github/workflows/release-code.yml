@@ -26,6 +26,7 @@ jobs:
     timeout-minutes: 15
     outputs:
       prerelease: ${{ steps.tag.outputs.prerelease }}
+      tag: ${{ steps.tag.outputs.tag }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -127,5 +128,8 @@ jobs:
     needs: release
     if: needs.release.outputs.prerelease != 'true'
     uses: ./.github/workflows/release-site.yml
+    # the site must carry the code that was released, not whatever main holds now
+    with:
+      ref: ${{ needs.release.outputs.tag }}
     permissions:
       contents: write
