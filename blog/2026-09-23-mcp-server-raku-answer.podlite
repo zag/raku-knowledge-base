@@ -1,0 +1,95 @@
+=begin pod :pubdate('2026-09-23 05:00:00') :puburl</blog/2026-09-23-mcp-server-raku-answer>
+=TITLE Connect your AI agent to the Raku knowledge base over MCP
+=begin DESCRIPTION
+Following my own install page, and the one correction it produced
+=end DESCRIPTION
+
+=head1 From a file to a source
+
+An AI agent will answer a Raku question with the same confidence whether it read
+the docs or remembered them wrong. Naming a source is not enough either — a real
+page can be cited for something it does not say. So I asked one for the page,
+the section, and the passage it was leaning on: how does an action class share
+state between grammar rules?
+
+I searched the collection and opened the L<grammars page|https://raku-knowledge-base.podlite.org/doc/language/grammars>,
+then the section I expected. Wrong one, and I knew it within seconds. The answer was under B<"Always succeed" assertion>N<That section sits under
+B<Special tokens> on the same page, between B<sym> and B<Methods in grammars>.>, in the C<Digifier> and
+C<Devanagari> example: the action class declares C<has @!numbers>. C<succ> pushes a new
+empty element and C<digit> appends to the last one, so both methods write to the
+same array. That is how the state gets from one rule to the next.
+
+Next to it, B<Attributes in grammars> adds a limit worth knowing. Grammar
+attributes can only be reached from methods, and changing one inside a method
+called from a token changes it for that token's own match object alone.
+
+The answer is small. I can still trace every step that produced it: question,
+page, section, the example itself. I guessed the wrong section first, and the
+collection made that easy to see.
+
+=head1 Where the collection ends
+
+What it reads is the document collection made available through
+L<the knowledge base|https://raku-knowledge-base.podlite.org/>: the Raku
+documentation, module documentation from both ecosystems — C<p6c> and C<zef> —
+and the examples repository. It does not necessarily include every page on the
+site.
+
+Ask it about Raku and it answers. Ask it about the tooling around Raku and you
+find the edge quickly. I searched it for the offline bundle that ships with this
+very server. Back came the Raku MCP modules — L<MCP|https://raku-knowledge-base.podlite.org/mods/zef/MCP>,
+L<MCP::Server|https://raku-knowledge-base.podlite.org/mods/zef/MCP::Server>, L<MCP::Client|https://raku-knowledge-base.podlite.org/mods/zef/MCP::Client> — none of
+which package anything. After them came modules that had simply matched my
+words: L<Sparrowdo::Ruby::Bundler|https://raku-knowledge-base.podlite.org/mods/all/Sparrowdo::Ruby::Bundler> drives
+Ruby's Bundler from Raku, and L<App::InstallerMaker::WiX|https://raku-knowledge-base.podlite.org/mods/zef/App::InstallerMaker::WiX>
+builds MSI installers for Raku applications.
+
+Every hit was Raku. None of them was about packaging this server, because the
+collection does not hold that.
+
+=begin nested :notify<caution> :caption('A miss is not an absence')
+When this service finds nothing, that is a fact about the collection, not about
+Raku. Check the site before you conclude the documentation does not cover it.
+=end nested
+
+=head1 Installing it
+
+Before writing this I ran the install myself, and not on the setup I had been
+using all along. Fresh bundle from
+L<release data-2026-09-11|https://github.com/zag/raku-knowledge-base/releases/tag/data-2026-09-11>, wired into Codex
+— not Claude Code, which the page was written for. It found the grammars page. It
+named B<"Always succeed" assertion> and quoted the passage back.
+
+It travels as C<raku-kb-mcp-offline.tar.gz>, attached to every data
+release, with the search index already built. These three lines are the ones I
+ran for that release; L<the MCP page|https://raku-knowledge-base.podlite.org/mcp>
+keeps the current ones:
+
+=begin code :lang<shell>
+tar xzf raku-kb-mcp-offline.tar.gz
+cd raku-kb-mcp && npm install
+claude mcp add raku-kb -- node "$PWD/bin/raku-kb-mcp.mjs"
+=end code
+
+The third line is for Claude Code; other clients point at the same file with
+their own command or config. The page has both, and a prompt you can paste to
+check the connection.
+
+=begin nested :notify<tip> :caption('If you script the check')
+A client running with no one to approve tool calls may never reach the server
+and will report that it cannot answer. That is the approval policy, not the
+collection. In Codex, C<--approve-for-me> let the call through.
+=end nested
+
+That run exposed one correction. The page used to ask the agent for the
+lines it relied on, and the server returns page text without line numbers. It
+asks for a quote now.
+
+=head1 What actually changes
+
+The amount of text the agent can see stays the same. In the grammar run it went from
+question to page to section to the lines of an example, and every step was
+visible — including the one where I had guessed wrong. When the source is there,
+I can check it. When it isn't, the agent has a plain reason to say it
+doesn't know.
+=end pod
