@@ -82,7 +82,7 @@ const check = () => {
     console.error(`ERROR: ${MANIFEST} does not parse: ${err.message}`)
     process.exit(1)
   }
-  if (!Array.isArray(manifest.trees) || !Array.isArray(manifest.pods)) {
+  if (!manifest || typeof manifest !== 'object' || !Array.isArray(manifest.trees) || !Array.isArray(manifest.pods)) {
     console.error(`ERROR: ${MANIFEST} lists no trees or no pods — it was not written by this tool`)
     process.exit(1)
   }
