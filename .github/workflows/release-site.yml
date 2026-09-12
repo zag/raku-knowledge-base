@@ -47,8 +47,12 @@ jobs:
 
       - name: Take the accumulated data
         run: |
-          git fetch --depth=1 origin "$DATA_BRANCH"
-          git checkout FETCH_HEAD -- snapshots blog
+          if git ls-remote --exit-code --heads origin "$DATA_BRANCH" >/dev/null 2>&1; then
+            git fetch --depth=1 origin "$DATA_BRANCH"
+            git checkout FETCH_HEAD -- snapshots blog
+          else
+            echo "no data branch yet — starting from what the repository carries"
+          fi
           echo "entries: $(ls blog/*.podlite 2>/dev/null | wc -l)"
 
       - name: Take the corpus from the newest data release

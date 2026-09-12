@@ -24,6 +24,8 @@ jobs:
   release:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    outputs:
+      prerelease: ${{ steps.tag.outputs.prerelease }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -40,6 +42,10 @@ jobs:
           TAG="${{ inputs.tag || github.ref_name }}"
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           echo "version=${TAG#v}" >> "$GITHUB_OUTPUT"
+          case "$TAG" in
+            *-alpha*|*-beta*|*-rc*) echo "prerelease=true" >> "$GITHUB_OUTPUT" ;;
+            *) echo "prerelease=false" >> "$GITHUB_OUTPUT" ;;
+          esac
 
       - name: The manifest version must equal the tag
         run: |
@@ -69,27 +75,32 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PRERELEASE=""
-          case "${{ steps.tag.outputs.tag }}" in
-            *-alpha*|*-beta*|*-rc*) PRERELEASE="--prerelease" ;;
-          esac
+          [ "${{ steps.tag.outputs.prerelease }}" = "true" ] && PRERELEASE="--prerelease"
           gh release create "${{ steps.tag.outputs.tag }}" \
             --title "${{ steps.tag.outputs.tag }}" \
             --notes-file /tmp/notes.md \
             --target "${{ github.sha }}" \
             $PRERELEASE
 
+      # a prerelease is not news: it goes on GitHub marked as one and stops there
       - name: Put the same changes on the site as an entry
+        if: steps.tag.outputs.prerelease != 'true'
         run: |
           DATE=$(date -u +%Y-%m-%d)
           mkdir -p blog
           node scripts/extract-changelog.mjs --entry "blog/$DATE-release-${{ steps.tag.outputs.version }}.podlite"
 
       - name: Keep the entry on the data branch
+        if: steps.tag.outputs.prerelease != 'true'
         run: |
           # main is locked, so entries live on a branch of their own; the site
           # release below reads them back from there
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
+          if ! git ls-remote --exit-code --heads origin data >/dev/null 2>&1; then
+            echo "no data branch yet — nothing to add the entry to"
+            exit 0
+          fi
           WT=/tmp/data-branch
           rm -rf "$WT"
           git fetch --depth=1 origin data
@@ -100,12 +111,20 @@ jobs:
           git add blog
           git diff --cached --quiet && { echo "nothing new"; exit 0; }
           git commit -m "data: the changes of ${{ steps.tag.outputs.tag }} as an entry"
-          git push origin "HEAD:refs/heads/data"
+          # another run may have pushed between the fetch and here
+          for TRY in 1 2 3; do
+            git push origin "HEAD:refs/heads/data" && exit 0
+            echo "push rejected, taking the branch again (try $TRY)"
+            git fetch origin data
+            git rebase FETCH_HEAD || { git rebase --abort; exit 1; }
+          done
+          exit 1
 
   # a push by github-actions[bot] starts no workflow, so the site release is
   # called here rather than left to the trigger on the data branch
   site:
     needs: release
+    if: needs.release.outputs.prerelease != 'true'
     uses: ./.github/workflows/release-site.yml
     permissions:
       contents: write
