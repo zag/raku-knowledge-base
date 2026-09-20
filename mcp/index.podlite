@@ -93,7 +93,9 @@ keeps its structure through the build: sections stay sections, and a search hit
 can be traced back to the document it came from. The same markup that publishes
 the site feeds the index the server reads.
 
-If you want your assistant to handle Podlite documents of your own, there is a
-separate kit for that at L<podlite.org|https://podlite.org>.
+If you want your assistant to handle Podlite documents of your own — parse them,
+check them, query them — there is a separate kit for that:
+L<Podlite for your assistant|https://podlite.org/for-agents>. This page hands
+over a corpus; that one hands over a parser.
 
 =end pod
