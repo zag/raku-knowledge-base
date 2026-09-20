@@ -71,6 +71,19 @@ If your assistant names the page and the section, the server is connected. If it
 answers without naming a source, it is answering from memory — which is the
 thing this server exists to replace.
 
+Or hand it the whole check at once — paste this:
+
+=begin code
+Use the raku-kb MCP server to answer this, and answer only from it: how does an
+action class share state between rules in a Raku grammar? Give me the page url
+you used, the section the answer came from, and the lines you are relying on.
+If the corpus does not hold the answer, say so instead of filling it in.
+=end code
+
+The last two sentences carry the weight. Asking for the url and the section is
+how you tell a corpus answer from a remembered one; asking it to say when the
+corpus comes up empty is how you find the edges of what it holds.
+
 =head2 What is in the corpus, and how fresh
 
 The corpus is Raku: the official documentation, module documentation from both
