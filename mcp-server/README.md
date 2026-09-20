@@ -27,24 +27,23 @@ Or in an MCP client config:
 
 ## Offline bundle
 
-Each release ships `raku-kb-mcp-offline.tar.gz` — the server plus a prebuilt index, no site build required:
+Each release ships `raku-kb-mcp-offline.tar.gz` — the server plus a prebuilt index, no
+site build required. The commands for it, together with what to check afterwards, live
+on the knowledge base itself:
 
-```sh
-tar xzf raku-kb-mcp-offline.tar.gz
-cd raku-kb-mcp
-npm install
-claude mcp add raku-kb -- node "$PWD/bin/raku-kb-mcp.mjs"
-```
+**[Connect this knowledge base to your AI assistant](https://raku-knowledge-base.podlite.org/mcp)**
+
+That page is the single source for the bundle route; this file keeps the checkout route
+above and the internals below, so the two do not drift apart.
 
 The bundled index is a snapshot taken when the release was cut. To refresh it against a newer corpus, rebuild the site and regenerate the index as described below.
 
 ## Tools
 
-| Tool | Input | Output |
-|------|-------|--------|
-| `raku_kb_search` | `query`, `limit?` | matching pages: `url`, `title`, `section`, `snippet` |
-| `raku_kb_page` | `url` (path or full url) | page `text` (+ `truncated` for long pages) |
-| `raku_kb_sections` | — | top-level sections with page counts and a landing url |
+Three: `raku_kb_search`, `raku_kb_page`, `raku_kb_sections`. What each takes and
+returns is listed on
+[Connect this knowledge base to your AI assistant](https://raku-knowledge-base.podlite.org/mcp),
+which is the single source for both the bundle route and the tool signatures.
 
 ## Index
 

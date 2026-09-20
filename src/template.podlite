@@ -4,6 +4,7 @@
 =para L<Documentation|/doc/introduction>
 =para L<Modules| /mods>
 =para L<Examples| file:../examples/index.podlite>
+=para L<AI|file:../mcp/index.podlite>
 =para L<Download |file:../download/index.podlite>
 =para L<About|file:../about/index.podlite>
 =para 🔍 K<⌘K>/K<ctrl-K>
@@ -49,6 +50,7 @@
     =item2 L<FAQs (Frequently Asked Questions)|/doc/language/faq>
     =item2 L<Community|/doc/language/community>
     =item2 L<The list of all documents|file:../doc/index.podlite>
+    =item2 L<Hand these documents to an AI assistant|file:../mcp/index.podlite>
 
 =end nested
 =begin nested :!nested

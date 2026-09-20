@@ -27,10 +27,15 @@ A L<term index|/indexterms> and search feature are included to help find things 
 
 =item 🙌 Spotted a mistake? Report it at L<https://github.com/zag/raku-knowledge-base/issues>
 
+=head2 For AI assistants
+
+This knowledge base can be handed to an AI assistant, so it answers from these
+pages and can name the document it used. Three commands, and what the server
+will not answer: L<Connect an AI assistant|file:../mcp/index.podlite>.
+
 =head2 TODO
 
 =item Routines in Raku L</doc/types>
-=item  L<Download page|file:../download/index.podlite>
 
 More ideas are L<always welcome|https://github.com/zag/raku-knowledge-base/discussions>!
 

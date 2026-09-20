@@ -2,9 +2,17 @@
 = :puburl</download>
 =TITLE Download
 
-=begin nested :notify<warning> :caption<🚧 Page Under Development 🚧>
-It’s on our L<to-do list|/about#TODO>, so stay tuned—great things are coming soon!
-Thank you for your support!
+=head2 The knowledge base, offline
+
+Every data release carries C<raku-kb-mcp-offline.tar.gz> — this knowledge base
+with a small server that hands it to an AI assistant, no site build and no
+network required.
+
+=item L<Releases|https://github.com/zag/raku-knowledge-base/releases> — take the newest tag starting with C<data->.
+=item L<How to connect it|file:../mcp/index.podlite> — three commands, what the server can do, and what it will not answer.
+
+=begin nested :notify<note>
+Downloads of the site itself are still to come.
 =end nested
 
 

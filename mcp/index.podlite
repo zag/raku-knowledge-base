@@ -1,0 +1,99 @@
+=begin pod  
+= :puburl</mcp>
+=TITLE Connect this knowledge base to your AI assistant
+
+Your assistant knows Raku the way it knows everything else: from whatever it
+absorbed once. It cannot open a page, and it cannot tell you which document an
+answer came from. This knowledge base ships an MCP server that changes both.
+
+=head2 What you need first
+
+=item B<Node.js> — the server is a small Node program.
+=item An B<MCP-capable client>: Claude Code, Cursor, or anything else that reads an C<mcpServers> config.
+
+=head2 Get the bundle
+
+Every data release carries C<raku-kb-mcp-offline.tar.gz> — the server together
+with a prebuilt search index, so nothing has to be rebuilt locally:
+
+=item L<Releases|https://github.com/zag/raku-knowledge-base/releases> — take the newest tag starting with C<data->.
+
+=head2 Three commands
+
+=begin code :lang<shell>
+tar xzf raku-kb-mcp-offline.tar.gz
+cd raku-kb-mcp && npm install
+claude mcp add raku-kb -- node "$PWD/bin/raku-kb-mcp.mjs"
+=end code
+
+For a client other than Claude Code, point it at the same file:
+
+=begin code :lang<json>
+{
+  "mcpServers": {
+    "raku-kb": {
+      "command": "node",
+      "args": ["/path/to/raku-kb-mcp/bin/raku-kb-mcp.mjs"]
+    }
+  }
+}
+=end code
+
+=head2 What the server gives
+
+=begin table :caption('Three tools')
+  Tool                  You give it        You get back
+  ====================|==================|================================================
+  C<raku_kb_search>     query, limit       matching pages: url, title, section, snippet
+  C<raku_kb_page>       a url or path      the text of that page
+  C<raku_kb_sections>   nothing            top-level sections with page counts
+=end table
+
+Search finds the page. C<raku_kb_page> opens it. Together they let the assistant
+answer from a document you can then open yourself.
+
+=head2 Check it worked
+
+Ask your assistant something that needs more than one file:
+
+=begin code
+How does an action class share state between rules in a Raku grammar?
+=end code
+
+A working answer looks like this:
+
+=item Search returns a handful of hits, with C</doc/language/grammars> among the first.
+=item The page carries the answer in two named sections: "Dynamic variables in grammars" and "Attributes in grammars".
+=item The example to look at is C<Digifier> with its C<Devanagari> action class: it declares C<< has @!numbers >>, and both the C<digit> and C<succ> methods write to it. That is the shared state.
+=item The page also states the limit: grammar attributes are reachable only from methods, and mutating one inside a token changes it for that token's match object alone.
+
+If your assistant names the page and the section, the server is connected. If it
+answers without naming a source, it is answering from memory — which is the
+thing this server exists to replace.
+
+=head2 What is in the corpus, and how fresh
+
+The corpus is Raku: the official documentation, module documentation from both
+ecosystems, and the examples repository. Ask the server for its sections and it
+will tell you how many pages each holds — that count is the honest one, because
+it comes from the index the server actually reads.
+
+The bundled index is a snapshot taken when the data release was cut. It can
+therefore trail the live site by up to a month, and that is deliberate: the
+offline bundle follows the data channel, the website follows its own.
+
+To find out what you have, ask for the sections — the counts move with each
+rebuild. To move forward, download a newer C<data-> release and unpack it over
+the old directory.
+
+=head2 Why this is possible here
+
+The knowledge base is written in L<Podlite|https://podlite.org>, so every page
+keeps its structure through the build: sections stay sections, and a search hit
+can be traced back to the document it came from. The same markup that publishes
+the site feeds the index the server reads.
+
+If you want your assistant to handle Podlite documents of your own, there is a
+separate kit for that at L<podlite.org|https://podlite.org>.
+
+=end pod
