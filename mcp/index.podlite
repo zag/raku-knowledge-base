@@ -1,8 +1,8 @@
 =begin pod  
 = :puburl</mcp>
-=TITLE Connect this knowledge base to your AI assistant
+=TITLE Connect this knowledge base to your AI agent
 
-Your assistant knows Raku the way it knows everything else: from whatever it
+Your agent knows Raku the way it knows everything else: from whatever it
 absorbed once. It cannot open a page, and it cannot tell you which document an
 answer came from. This knowledge base ships an MCP server that changes both.
 
@@ -49,12 +49,12 @@ For a client other than Claude Code, point it at the same file:
   C<raku_kb_sections>   nothing            top-level sections with page counts
 =end table
 
-Search finds the page. C<raku_kb_page> opens it. Together they let the assistant
+Search finds the page. C<raku_kb_page> opens it. Together they let the agent
 answer from a document you can then open yourself.
 
 =head2 Check it worked
 
-Ask your assistant something that needs more than one file:
+Ask your agent something that needs more than one file:
 
 =begin code
 How does an action class share state between rules in a Raku grammar?
@@ -63,11 +63,11 @@ How does an action class share state between rules in a Raku grammar?
 A working answer looks like this:
 
 =item Search returns a handful of hits, with C</doc/language/grammars> among the first.
-=item The page carries the answer in two named sections: "Dynamic variables in grammars" and "Attributes in grammars".
+=item The answer sits under B<"Always succeed" assertion>, a subsection of B<Special tokens> — not under the sections whose names sound closer.
 =item The example to look at is C<Digifier> with its C<Devanagari> action class: it declares C<< has @!numbers >>, and both the C<digit> and C<succ> methods write to it. That is the shared state.
-=item The page also states the limit: grammar attributes are reachable only from methods, and mutating one inside a token changes it for that token's match object alone.
+=item B<Attributes in grammars>, further down, states the neighbouring limit: grammar attributes are reachable only from methods, and changing one inside a method called from a token changes it for that token's own match object alone.
 
-If your assistant names the page and the section, the server is connected. If it
+If your agent names the page and the section, the server is connected. If it
 answers without naming a source, it is answering from memory — which is the
 thing this server exists to replace.
 
@@ -76,13 +76,21 @@ Or hand it the whole check at once — paste this:
 =begin code
 Use the raku-kb MCP server to answer this, and answer only from it: how does an
 action class share state between rules in a Raku grammar? Give me the page url
-you used, the section the answer came from, and the lines you are relying on.
-If the collection does not hold the answer, say so instead of filling it in.
+you used, the section the answer came from, and quote the passage you are
+relying on. If the collection does not hold the answer, say so instead of
+filling it in.
 =end code
 
-The last two sentences carry the weight. Asking for the url and the section is
-how you tell a sourced answer from a remembered one; asking it to say when the
-collection comes up empty is how you find the edges of what it holds.
+The last two sentences carry the weight. Asking for the url, the section and the
+quoted passage is how you tell a sourced answer from a remembered one; asking it
+to say when the collection comes up empty is how you find the edges of what it
+holds. Ask for a quote rather than line numbers: C<raku_kb_page> returns the text
+of a page, not numbered lines.
+
+One note if you script the check instead of typing it. A client running without
+a person to approve tool calls may refuse to reach the server at all and report
+that it cannot answer. That is the approval policy, not the collection. In Codex,
+C<--approve-for-me> is what let the call through.
 
 =head2 What is in the collection, and how fresh
 
@@ -111,9 +119,9 @@ keeps its structure through the build: sections stay sections, and a search hit
 can be traced back to the document it came from. The same markup that publishes
 the site feeds the index the server reads.
 
-If you want your assistant to handle Podlite documents of your own — parse them,
+If you want your agent to handle Podlite documents of your own — parse them,
 check them, query them — there is a separate kit for that:
-L<Podlite for your assistant|https://podlite.org/for-agents>. This page hands
+L<Podlite for your agent|https://podlite.org/for-agents>. This page hands
 over a document collection; that one hands over a parser.
 
 =end pod
