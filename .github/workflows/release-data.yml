@@ -87,7 +87,7 @@ jobs:
 
       - name: Pack the corpus a site release builds from
         run: |
-          node ./bin/corpus-manifest.mjs --image podlite/podlite-web:0.10.17
+          node ./bin/corpus-manifest.mjs --image podlite/podlite-web:0.10.20
           # the pods go with the trees: without them the index of terms loses
           # entries, and they weigh a fraction of what the trees do
           # one NUL-separated list and nothing else on the command line: a name may
