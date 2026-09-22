@@ -77,19 +77,24 @@ Or hand it the whole check at once — paste this:
 Use the raku-kb MCP server to answer this, and answer only from it: how does an
 action class share state between rules in a Raku grammar? Give me the page url
 you used, the section the answer came from, and the lines you are relying on.
-If the corpus does not hold the answer, say so instead of filling it in.
+If the collection does not hold the answer, say so instead of filling it in.
 =end code
 
 The last two sentences carry the weight. Asking for the url and the section is
-how you tell a corpus answer from a remembered one; asking it to say when the
-corpus comes up empty is how you find the edges of what it holds.
+how you tell a sourced answer from a remembered one; asking it to say when the
+collection comes up empty is how you find the edges of what it holds.
 
-=head2 What is in the corpus, and how fresh
+=head2 What is in the collection, and how fresh
 
-The corpus is Raku: the official documentation, module documentation from both
-ecosystems, and the examples repository. Ask the server for its sections and it
+What the server reads is the document collection available through it: the
+official Raku documentation, module documentation from both ecosystems, and the
+examples repository. It does not necessarily include every page on this site,
+and it holds nothing about other languages. Ask the server for its sections and it
 will tell you how many pages each holds — that count is the honest one, because
 it comes from the index the server actually reads.
+
+Do not read a miss as an absence: if this service does not find something, that
+is a fact about the collection, not about Raku.
 
 The bundled index is a snapshot taken when the data release was cut. It can
 therefore trail the live site by up to a month, and that is deliberate: the
@@ -109,6 +114,6 @@ the site feeds the index the server reads.
 If you want your assistant to handle Podlite documents of your own — parse them,
 check them, query them — there is a separate kit for that:
 L<Podlite for your assistant|https://podlite.org/for-agents>. This page hands
-over a corpus; that one hands over a parser.
+over a document collection; that one hands over a parser.
 
 =end pod
