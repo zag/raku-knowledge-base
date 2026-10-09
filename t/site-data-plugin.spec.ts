@@ -7,12 +7,11 @@ import stateVersionPlugin from '@podlite/publisher/lib/state-version-plugin'
 
 import {
   composePlugins,
-  parseSources,
   PluginConfig,
-  processFile,
   processPlugin,
   publishRecord,
 } from '@podlite/publisher'
+import { parseSources, processFile } from '@podlite/publisher/lib/node-utils'
 import path from 'path'
 import fs from 'fs'
 const glob = require('glob')

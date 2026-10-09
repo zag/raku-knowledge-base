@@ -1,10 +1,10 @@
 import {
   PodliteWebPlugin,
   PodliteWebPluginContext,
-  processFile,
   processPlugin,
   publishRecord,
 } from '@podlite/publisher'
+import { processFile } from '@podlite/publisher/lib/node-utils'
 
 // import { examplesPlugin } from '../src'
 import {

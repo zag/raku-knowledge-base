@@ -5,7 +5,7 @@ import glob from 'glob'
 import { makeCollector, writeReport } from './stats.mjs'
 
 const require = createRequire(import.meta.url)
-const { processFile } = require('@podlite/publisher')
+const { processFile } = require('@podlite/publisher/lib/node-utils')
 
 async function run() {
   const atpath = process.argv[2]

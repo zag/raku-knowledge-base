@@ -1,4 +1,5 @@
-import { processFile, publishRecord } from '@podlite/publisher'
+import { publishRecord } from '@podlite/publisher'
+import { processFile } from '@podlite/publisher/lib/node-utils'
 import {
   getTextContentFromNode,
   makeInterator,

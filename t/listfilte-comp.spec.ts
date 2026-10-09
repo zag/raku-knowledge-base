@@ -1,4 +1,5 @@
-import { processFile, publishRecord } from '@podlite/publisher'
+import { publishRecord } from '@podlite/publisher'
+import { processFile } from '@podlite/publisher/lib/node-utils'
 
 // import React from 'react'
 // import { renderToStaticMarkup } from 'react-dom/server'
@@ -61,6 +62,7 @@ Object {
       "description": "",
       "file": "src/file2.podlite",
       "footer": "",
+      "isPage": false,
       "kind": "Language",
       "pubdate": undefined,
       "publishUrl": null,
@@ -71,6 +73,10 @@ Object {
       "title": "test
 ",
       "type": "page",
+      Symbol(@podlite/publisher:source/1): Object {
+        "file": "src/file2.podlite",
+        "mime": "text/podlite",
+      },
     },
     Object {
       "author": undefined,
@@ -78,6 +84,7 @@ Object {
       "description": "",
       "file": "src/file1.podlite",
       "footer": "",
+      "isPage": false,
       "kind": "Language",
       "pubdate": undefined,
       "publishUrl": null,
@@ -88,6 +95,10 @@ Object {
       "title": "test2
 ",
       "type": "page",
+      Symbol(@podlite/publisher:source/1): Object {
+        "file": "src/file1.podlite",
+        "mime": "text/podlite",
+      },
     },
   ],
 }

@@ -3,10 +3,10 @@ import fs from 'fs'
 import {
   PodliteWebPlugin,
   PodliteWebPluginContext,
-  processFile,
   processPlugin,
   publishRecord,
 } from '@podlite/publisher'
+import { processFile } from '@podlite/publisher/lib/node-utils'
 import { docPlugin } from '../src'
 const glob = require('glob')
 

@@ -4,9 +4,9 @@ import {
   PluginConfig,
   PodliteWebPlugin,
   PodliteWebPluginContext,
-  processFile,
   publishRecord,
 } from '@podlite/publisher'
+import { processFile } from '@podlite/publisher/lib/node-utils'
 import * as CRC32 from 'crc-32'
 import React from 'react'
 import * as fs from 'fs'
