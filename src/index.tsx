@@ -89,6 +89,9 @@ export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
   // a name with control characters cannot be carried through a publish url
   const isPublishableName = (name: string) => Boolean(name) && !/[\u0000-\u001f"]/.test(name)
   const oneLine = (value: unknown) => String(value ?? '').replace(/\s+/g, ' ').trim()
+  // the registry's line is what a search result should show for a module page; the page
+  // carries it only as a subtitle, which no description is ever taken from
+  const descriptionBlock = (value: unknown) => (oneLine(value) ? `\n    =DESCRIPTION ${oneLine(value)}` : '')
 
   const onProcess = (recs: publishRecord[]) => {
     // filter out files without docuemntation
@@ -185,7 +188,7 @@ export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
       return `
     =begin pod :puburl("${item.url}")
     =TITLE ${oneLine(item.meta.name)}
-    =SUBTITLE ${oneLine(item.meta.description)}
+    =SUBTITLE ${oneLine(item.meta.description)}${descriptionBlock(item.meta.description)}
     =useReact {RenderItem} from 'raku-knowledge/components'
     =begin React :component<RenderItem>
     =begin data
@@ -248,7 +251,7 @@ export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
       return `
     =begin pod :puburl("${url}")
     =TITLE ${oneLine(meta.name)}
-    =SUBTITLE ${oneLine(meta.description)}
+    =SUBTITLE ${oneLine(meta.description)}${descriptionBlock(meta.description)}
 
     This module ships no documentation. What the ecosystem registry knows about it:
 
@@ -583,47 +586,55 @@ export const plugin = (): PodliteWebPlugin => {
   return [onProcess, onExit]
 }
 
-export const fillDescriptionPlugin = ({ rootdir }): PodliteWebPlugin => {
+const DESCRIPTION_MAX = 160
+// shorter paragraphs are badges, version lines and the like more often than a description
+const DESCRIPTION_MIN = 40
+// headings are not the text under them, and a comment is not shown at all
+const notText = /^(head\d*|TITLE|SUBTITLE|comment)$/
 
+// Cuts on a sentence boundary when one is close enough to the limit, on a word otherwise.
+const trimDescription = (text: string): string => {
+  if (text.length <= DESCRIPTION_MAX) return text
+  const head = text.slice(0, DESCRIPTION_MAX)
+  const sentence = Math.max(head.lastIndexOf('. '), head.lastIndexOf('! '), head.lastIndexOf('? '))
+  if (sentence > DESCRIPTION_MAX / 2) return head.slice(0, sentence + 1)
+  const word = head.lastIndexOf(' ')
+  return (word > 0 ? head.slice(0, word) : head) + '…'
+}
+
+// The first paragraph long enough to say something, else the first one at all: where a
+// document has no long paragraph, its short first line still beats the title repeated
+// (measured on the corpus, 17.10.2026). The text comes from the rendered node: `text` on a
+// para is the raw source in a pod file and the literal word "text" in a Markdown one.
+export const describeNode = (root: unknown): string => {
+  const paras: string[] = []
+  const walk = (node: any) => {
+    if (!node) return
+    if (Array.isArray(node)) return node.forEach(walk)
+    if (typeof node !== 'object') return
+    if (node.type === 'block' && notText.test(node.name)) return
+    if (node.type === 'para') {
+      const text = getTextContentFromNode(node).replace(/\s+/g, ' ').trim()
+      if (text) paras.push(text)
+      return
+    }
+    walk(node.content)
+  }
+  walk(root)
+  return trimDescription(paras.find(p => p.length >= DESCRIPTION_MIN) || paras[0] || '')
+}
+
+// A record without a description of its own gets one from its text; with none to take,
+// it gets none, and the engine writes its own fallback.
+export const fillDescriptionPlugin = ({ rootdir }): PodliteWebPlugin => {
   const outCtx: PodliteWebPluginContext = {}
   const onExit = ctx => ({ ...ctx, ...outCtx })
-  const onProcess = (recs: publishRecord[]) => {
-    const res = recs.map((item) => {
-    const { node,description, ...attrs } = item
-    if (description) {
-        return item
-    }
-    // get pod node
-      const blocks: PodNode[] = []
-      const para: PodNode[] = []
-      const processNode = (node: PodNode) => {
-        const rules = {
-          ':para': node => {
-            const { text, location, type } = node
-            para.push(text)
-          },
-   
-      ':block': (node, ctx, interator) => {
-        // ctx.parent = node
-        if (node.content) {
-          // provess root block content
-          return interator(node.content, { ...ctx, parent: node })
-        }
-          },
-        }
-        return makeInterator(rules)(node, {})
-      }
-
-    const r = processNode(node)
-
-    const new_description = getTextContentFromNode(mkBlock({name:'para'}, para))
-    
-    return {...item, description: mkBlock({name:'para'},[  new_description.length > 150 ? new_description.substring(0, 150) : new_description])}
-  })
-    
-    return [...res]
-  }
-
+  const onProcess = (recs: publishRecord[]) =>
+    recs.map(item => {
+      if (item.description) return item
+      const text = describeNode(item.node)
+      return text ? { ...item, description: mkBlock({ name: 'para' }, [text]) } : item
+    })
   return [onProcess, onExit]
 }
 

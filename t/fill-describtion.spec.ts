@@ -1,87 +1,70 @@
 import { publishRecord } from '@podlite/publisher'
 import { processFile } from '@podlite/publisher/lib/node-utils'
-import {
-  getTextContentFromNode,
-  makeInterator,
-  mkBlock,
-  mkRootBlock,
-  PodNode,
-} from '@podlite/schema'
-// import React from 'react'
-// import { renderToStaticMarkup } from 'react-dom/server'
-import { getFromTree, makeAttrs } from '@podlite/schema'
+import { getTextContentFromNode } from '@podlite/schema'
+import { fillDescriptionPlugin } from '../src'
 
-// const root = { innerHTML: '' }
-// function render(jsx) {
-//   root.innerHTML = renderToStaticMarkup(jsx)
-//   return root.innerHTML
-// }
+// the plugin as the build runs it: records from the publisher, the description it leaves
+const describe1 = (file: string, text: string, mime: 'text/podlite' | 'text/markdown' = 'text/podlite') => {
+  const [onProcess] = fillDescriptionPlugin({ rootdir: '.' }) as any
+  const [rec] = onProcess([processFile(file, text, mime)]) as publishRecord[]
+  // the engine shows it with its whitespace folded
+  return rec.description ? getTextContentFromNode(rec.description).replace(/\s+/g, ' ').trim() : undefined
+}
+const md = (text: string) => describe1('work_mods/zef/X/README.md', text, 'text/markdown')
+const pod = (text: string) => describe1('work_mods/zef/X/lib/X.rakumod', text)
 
-const file1 = `
-  =begin pod :kind("Language") :subkind("Language") :category("fundamental")
-  =TITLE test
-  =SUBTITLE subtitle
-  =para test
-  asdadasdasd
-  adad
-  ad
-  asdas
-  dad
-  ad
-  asd
+const LONG = 'This module reads the configuration and keeps it for the whole program.'
 
-  =end pod
-`
-
-const file2 = `
-=begin pod :kind("Language") :subkind("Language") :category("fundamental")
-  =TITLE  test2
-  =DESCRIPTION
-  This is a description
-  =SUBTITLE subtitle2
-  =para
-  =end pod
-`
-
-
-const tctx = { testing: true }
-it('fill description comp: parse', () => {
-  const state = [
-    processFile('src/file2.podlite', file1, 'text/podlite'),
-    processFile('src/file1.podlite', file2, 'text/podlite'),
-  ]
-  const res = state.map((item) => {
-    const { node,description, ...attrs } = item
-    if (description) {
-        return item
-    }
-    // get pod node
-      const blocks: PodNode[] = []
-      const para: PodNode[] = []
-      const processNode = (node: PodNode) => {
-        const rules = {
-          ':para': node => {
-            const { text, location, type } = node
-            para.push(text)
-          },
-   
-      ':block': (node, ctx, interator) => {
-        // ctx.parent = node
-        if (node.content) {
-          // provess root block content
-          return interator(node.content, { ...ctx, parent: node })
-        }
-          },
-        }
-        return makeInterator(rules)(node, {})
-      }
-
-    const r = processNode(node)
-
-    const new_description = getTextContentFromNode(mkBlock({name:'para'}, para))
-    
-    return {...item, description: mkBlock({name:'para'},[  new_description.length > 150 ? new_description.substring(0, 150) : new_description])}
+describe('the description of a page built from its text', () => {
+  // reproduce the defects of the description: each of these failed before the fix
+  it('takes the text of a Markdown paragraph, not the word "text"', () => {
+    expect(md(`# X\n\n${LONG}\n`)).toBe(LONG)
   })
-  console.log(JSON.stringify(res, null, 2))
-//   expect(res).toMatchInlineSnapshot()
+
+  it('takes the rendered text of a pod paragraph, not its raw codes', () => {
+    expect(pod(`=begin pod\n=head1 DESCRIPTION\n\nL<X::Base> keeps the configuration of B<every> run in one place.\n=end pod\n`)).toBe(
+      'X::Base keeps the configuration of every run in one place.',
+    )
+  })
+
+  it('does not open with the word of a heading', () => {
+    const d = pod(`=begin pod\n=head1 NAME\n\nX - short\n\n=head1 SYNOPSIS\n\n=begin code\nuse X;\n=end code\n\n=head1 DESCRIPTION\n\n${LONG}\n=end pod\n`)
+    expect(d).toBe(LONG)
+  })
+
+  it('leaves a document with no paragraph without a description', () => {
+    expect(pod(`=begin pod\n=head1 SYNOPSIS\n\n=begin code\nuse X;\n=end code\n=end pod\n`)).toBeUndefined()
+  })
+
+  it('takes the short first paragraph when there is no long one', () => {
+    expect(pod(`=begin pod\n=head1 NAME\n\nX - keeps configuration\n\n=head1 SYNOPSIS\n\n=begin code\nuse X;\n=end code\n=end pod\n`)).toBe(
+      'X - keeps configuration',
+    )
+  })
+
+  it('cuts a long paragraph on a word', () => {
+    const d = md(`# X\n\n${'word '.repeat(60)}end\n`) as string
+    expect(d.length).toBeLessThanOrEqual(161)
+    expect(d.endsWith('word…')).toBe(true)
+  })
+
+  it('cuts on a sentence when one ends close to the limit', () => {
+    const first = 'A first sentence that runs long enough to pass the middle of the limit, well past eighty characters.'
+    // the last sentence that ends within the limit: the first one and the next, not a word more
+    expect(md(`# X\n\n${first} ${'More words follow here and here. '.repeat(4)}\n`)).toBe(`${first} More words follow here and here.`)
+  })
+
+  it('does not take the text of a comment', () => {
+    expect(pod(`=begin pod\n=begin comment\nA note to the author that is long enough to be taken as text.\n=end comment\n\n${LONG}\n=end pod\n`)).toBe(LONG)
+  })
+
+  // what already held and must keep holding
+  it('keeps a description the document gives itself', () => {
+    expect(pod(`=begin pod\n=TITLE X\n=DESCRIPTION Written by the author.\n\n${LONG}\n=end pod\n`)).toBe('Written by the author.')
+  })
+
+  it('reads a DESCRIPTION written after a SUBTITLE in an indented page, as a module page carries it', () => {
+    const page = `\n    =begin pod :puburl("/mods/zef/X")\n    =TITLE X\n    =SUBTITLE The registry line\n    =DESCRIPTION The registry line\n    =end pod\n    `
+    expect(describe1('virtual/src/X.podlite', page)).toBe('The registry line')
+  })
 })
