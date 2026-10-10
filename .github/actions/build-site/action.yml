@@ -22,6 +22,10 @@ runs:
         docker rm -f site-build >/dev/null
         echo "pages: $(find out -name '*.html' | wc -l)"
 
+    - name: Name the sitemap in robots.txt
+      shell: bash
+      run: node ./bin/robots-sitemap.mjs out https://raku-knowledge-base.podlite.org
+
     - name: Check the digest links against the built site
       shell: bash
       run: |
