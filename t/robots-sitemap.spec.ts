@@ -52,6 +52,12 @@ describe('the Sitemap line of robots.txt', () => {
     expect(robots(dir)).toBe('User-agent: *\n')
   })
 
+  it('keeps the CRLF line endings of a file written with them', () => {
+    const dir = site('User-agent: *\r\nAllow: /\r\n')
+    run(dir)
+    expect(robots(dir)).toBe(`User-agent: *\r\nAllow: /\r\n${LINE}\r\n`)
+  })
+
   it('ends the line of a file without a final newline before adding its own', () => {
     const dir = site('User-agent: *')
     run(dir)

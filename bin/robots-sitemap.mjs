@@ -29,6 +29,8 @@ if (foreign.length) {
 if (named.length) {
   console.log(`  ${robots} already names the map`)
 } else {
-  fs.writeFileSync(robots, (text && !text.endsWith('\n') ? text + '\n' : text) + line + '\n')
+  // a file written with CRLF keeps its line endings
+  const eol = text.includes('\r\n') ? '\r\n' : '\n'
+  fs.writeFileSync(robots, (text && !text.endsWith('\n') ? text + eol : text) + line + eol)
   console.log(`  ${robots}: ${line}`)
 }
