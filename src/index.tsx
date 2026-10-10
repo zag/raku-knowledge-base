@@ -590,8 +590,10 @@ export const plugin = (): PodliteWebPlugin => {
 const DESCRIPTION_MAX = 160
 // shorter paragraphs are badges, version lines and the like more often than a description
 const DESCRIPTION_MIN = 40
-// headings are not the text under them, and a comment is not shown at all
-const notText = /^(head\d*|TITLE|SUBTITLE|comment)$/
+// headings are not the text under them, a comment is not shown at all, and an
+// include, a component of the site and its data are not prose: an index page holds
+// =include doc:RAKU_DOCS_PLUGIN_DATA#index-category inside a React block
+const notText = /^(head\d*|TITLE|SUBTITLE|comment|include|React|useReact|data)$/
 
 // Cuts on a sentence boundary when one is close enough to the limit, on a word otherwise.
 const trimDescription = (text: string): string => {
@@ -605,7 +607,8 @@ const trimDescription = (text: string): string => {
 
 // The first paragraph long enough to say something, else the first one at all: where a
 // document has no long paragraph, its short first line still beats the title repeated
-// (measured on the corpus, 17.10.2026). The text comes from the rendered node: `text` on a
+// (measured on the corpus, 17.10.2026). A page with no paragraph at all is described by
+// its subtitle, the author's own line about it, when it has one. The text comes from the rendered node: `text` on a
 // para is the raw source in a pod file and the literal word "text" in a Markdown one.
 export const describeNode = (root: unknown): string => {
   const paras: string[] = []
@@ -622,7 +625,10 @@ export const describeNode = (root: unknown): string => {
     walk(node.content)
   }
   walk(root)
-  return trimDescription(paras.find(p => p.length >= DESCRIPTION_MIN) || paras[0] || '')
+  const found = paras.find(p => p.length >= DESCRIPTION_MIN) || paras[0]
+  if (found) return trimDescription(found)
+  const [subtitle] = getFromTree(root as PodNode, 'SUBTITLE')
+  return subtitle ? trimDescription(getTextContentFromNode(subtitle).replace(/\s+/g, ' ').trim()) : ''
 }
 
 // A README may open a paragraph with a bold label instead of a heading — **Description**

@@ -73,6 +73,15 @@ describe('the description of a page built from its text', () => {
     expect(pod(`=begin pod\n=begin DESCRIPTION\n=end DESCRIPTION\n\n${LONG}\n=end pod\n`)).toBe(LONG)
   })
 
+  it('does not take the target of an include or the content of a component', () => {
+    const page = `=begin pod\n=useReact {ListFiles} from 'raku-knowledge/components'\n=TITLE Language References\n=SUBTITLE Broader explanations of fundamental topics\n\n=begin React :component<ListFiles>\n=include doc:RAKU_DOCS_PLUGIN_DATA#index-category\n=end React\n=end pod\n`
+    expect(pod(page)).toBe('Broader explanations of fundamental topics')
+  })
+
+  it('leaves a page with neither a paragraph nor a subtitle without a description', () => {
+    expect(pod(`=begin pod\n=TITLE Documentation\n=begin React :component<IndexAllDocs>\n=include doc:RAKU_DOCS_PLUGIN_DATA#control\n=end React\n=end pod\n`)).toBeUndefined()
+  })
+
   // what already held and must keep holding
   it('keeps a description the document gives itself', () => {
     expect(pod(`=begin pod\n=TITLE X\n=DESCRIPTION Written by the author.\n\n${LONG}\n=end pod\n`)).toBe('Written by the author.')
