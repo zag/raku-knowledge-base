@@ -11,7 +11,7 @@ network required.
 =item L<Releases|https://github.com/zag/raku-knowledge-base/releases> — take the newest tag starting with C<data->.
 =item L<How to connect it|file:../mcp/index.podlite> — three commands, what the server can do, and what it will not answer.
 
-=begin nested :notify<note>
+=begin nested :notice<note>
 Downloads of the site itself are still to come.
 =end nested
 
