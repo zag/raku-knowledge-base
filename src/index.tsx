@@ -614,7 +614,7 @@ export const describeNode = (root: unknown): string => {
     if (typeof node !== 'object') return
     if (node.type === 'block' && notText.test(node.name)) return
     if (node.type === 'para') {
-      const text = getTextContentFromNode(node).replace(/\s+/g, ' ').trim()
+      const text = paraText(node)
       if (text) paras.push(text)
       return
     }
@@ -624,6 +624,19 @@ export const describeNode = (root: unknown): string => {
   return trimDescription(paras.find(p => p.length >= DESCRIPTION_MIN) || paras[0] || '')
 }
 
+// A README may open a paragraph with a bold label instead of a heading — **Description**
+// Distribution to… — and the label is a heading word all the same. Only a label that is
+// the word alone goes, with a heading line repeating it; "Description of a message" stays.
+const headingWord = /^(name|synopsis|description):?$/i
+const paraText = (node: any): string => {
+  const [first, ...rest] = Array.isArray(node.content) ? node.content : []
+  const label =
+    first && typeof first === 'object' && first.type === 'fcode' && /^[BI]$/.test(first.name) &&
+    headingWord.test(getTextContentFromNode(first).trim())
+  const text = getTextContentFromNode(label ? { ...node, content: rest } : node).replace(/\s+/g, ' ').trim()
+  return label ? text.replace(/^#+\s*(name|synopsis|description)\b:?\s*/i, '') : text
+}
+
 // A record without a description of its own gets one from its text; with none to take,
 // it gets none, and the engine writes its own fallback.
 export const fillDescriptionPlugin = ({ rootdir }): PodliteWebPlugin => {
@@ -631,7 +644,8 @@ export const fillDescriptionPlugin = ({ rootdir }): PodliteWebPlugin => {
   const onExit = ctx => ({ ...ctx, ...outCtx })
   const onProcess = (recs: publishRecord[]) =>
     recs.map(item => {
-      if (item.description) return item
+      // the publisher may leave an empty description, and an empty one says nothing
+      if (item.description && getTextContentFromNode(item.description).trim()) return item
       const text = describeNode(item.node)
       return text ? { ...item, description: mkBlock({ name: 'para' }, [text]) } : item
     })

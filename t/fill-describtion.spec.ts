@@ -58,6 +58,21 @@ describe('the description of a page built from its text', () => {
     expect(pod(`=begin pod\n=begin comment\nA note to the author that is long enough to be taken as text.\n=end comment\n\n${LONG}\n=end pod\n`)).toBe(LONG)
   })
 
+  it('drops a bold label that is a heading word, and the heading line repeating it', () => {
+    expect(md(`# X\n\n**Description** Distribution to set up Raku Documentation website.\n`)).toBe('Distribution to set up Raku Documentation website.')
+    expect(md(`# X\n\n**DESCRIPTION** # DESCRIPTION\nSoftware to collect content files written in Rakudoc.\n`)).toBe(
+      'Software to collect content files written in Rakudoc.',
+    )
+  })
+
+  it('keeps a sentence that only begins with such a word', () => {
+    expect(md(`# X\n\nDescription of an AWS Simple Notification Service message.\n`)).toBe('Description of an AWS Simple Notification Service message.')
+  })
+
+  it('builds a description where the document gives an empty one', () => {
+    expect(pod(`=begin pod\n=begin DESCRIPTION\n=end DESCRIPTION\n\n${LONG}\n=end pod\n`)).toBe(LONG)
+  })
+
   // what already held and must keep holding
   it('keeps a description the document gives itself', () => {
     expect(pod(`=begin pod\n=TITLE X\n=DESCRIPTION Written by the author.\n\n${LONG}\n=end pod\n`)).toBe('Written by the author.')
