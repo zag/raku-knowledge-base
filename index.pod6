@@ -53,7 +53,7 @@ say Parser.parse: 'I love Perl';
 
 =end code
 
-=begin code :lang<raku> :caption<Async & Parallelism>
+=begin code :lang<raku> :caption('Async & Parallelism')
 start { sleep 1.5; print "hi" }
 await Supply.from-list(<A B C D E F>).throttle: 2, {
     sleep 0.5;

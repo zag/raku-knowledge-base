@@ -45,7 +45,7 @@ This site is built with L<Podlite|https://podlite.org>, a markup language design
 for flexibility and ease of use — the knowledge base doubles as a real-world showcase
 of designing information systems with it.
 
-=begin nested :notice<note> :caption<Heads up! >
+=begin nested :notice<note> :caption('Heads up!')
 👋 It's possible to develop and provide support for information systems like this for commercial use. 
 Got a project in mind? Email info@podlite.org with your ideas. 🤝
 =end nested
