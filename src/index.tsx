@@ -23,6 +23,41 @@ const linkFromText = (text: string): string =>
     .replace(/\\/g, '/')
     .trim()
 
+// A module file without a title of its own was named by its file alone, and 2 329 pages
+// were all called README. Every file now carries its module: a code file under lib/ is
+// named by the package its module provides from that very path, and a package that does
+// not start with the module's name keeps the module in front of it; any other file, and
+// code no package claims, is named by its module and its own name or path. A title of
+// the author's stays, unless it is only the file name again.
+const codeFile = /\.(rakumod|pm6|pm|pod6|pod|rakudoc|raku|p6)$/
+// a provides key may carry adverbs (RKDS:api<2>); they are not part of the name
+const packageName = (key: string) => key.replace(/(:(api|ver|auth)<[^>]*>)+$/, '')
+const startsWithModule = (pkg: string, module: string) => {
+  const p = pkg.toLowerCase().split('::')
+  const m = module.toLowerCase().split('::')
+  return m.length <= p.length && m.every((part, i) => part === p[i])
+}
+export const moduleFileTitle = (file: string, ownTitle: unknown, meta?: { provides?: Record<string, string> }) => {
+  const parts = file.split('/') // work_mods/<zef|all>/<module>/…
+  const module = parts[2]
+  const name = parts[parts.length - 1]
+  const base = name.replace(/\.[^.]*$/, '')
+  const own = String(ownTitle ?? '').replace(/\s+/g, ' ').trim()
+  if (own && own.toLowerCase() !== base.toLowerCase()) return own
+  const lib = parts.indexOf('lib', 3)
+  if (lib < 0 || !codeFile.test(name)) return `${module} — ${base}`
+  const path = parts.slice(lib).join('/')
+  const names = [
+    ...new Set(
+      Object.entries(meta?.provides || {})
+        .filter(([, value]) => value === path)
+        .map(([key]) => packageName(key)),
+    ),
+  ]
+  if (names.length !== 1) return `${module} — ${path}`
+  return startsWithModule(names[0], module) ? names[0] : `${module} — ${names[0]}`
+}
+
 export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
   const mods_state = require('../built/mods-tree.json') //.splice(0, 10);
   const all_mods = require('../built/ecosystem.json')
@@ -267,17 +302,15 @@ ${modsInfoData}
     const storeDoc = processFile('virtual/raku-mods-data-plugin.podlite', storeFile)
 
     console.log('[modPlugin] collect all doc records - ok')
-    const all = [...recs, ...addedUrls, ...modulePages]
     console.log('[modPlugin] fix title')
-    // fix title
+    // a module file is named with its module; the rest keep the file name as before
+    addedUrls.forEach(i => (i.title = moduleFileTitle(i.file, i.title, metaOf.get(i.file))))
+    const all = [...recs, ...modulePages]
     all.forEach(
       i =>
         (i.title =
           i.title ||
-          i.file
-            .split('/')
-            .pop()
-            .replace(/\.\S+$/, '')),
+          (i.file.split('/').pop() || '').replace(/\.\S+$/, '')),
     )
     console.log('finishg modPlugin')
     return [...recs, ...addedUrls, ...modulePages, ...stubPages, storeDoc]
