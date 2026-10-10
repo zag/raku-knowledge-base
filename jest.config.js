@@ -40,7 +40,6 @@ module.exports = {
   moduleNameMapper: {
     '\\.css$': path.resolve(__dirname, 'jest-css-stub.js'),
     '^mermaid$': path.resolve(__dirname, 'jest-mermaid-stub.js'),
-    '^@podlite/publisher/lib/(.*)$': path.resolve(__dirname, '../podlite/packages/podlite-publisher/lib/$1'),
   },
   globals: {
     'ts-jest': {
