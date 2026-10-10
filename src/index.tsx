@@ -38,7 +38,8 @@ const startsWithModule = (pkg: string, module: string) => {
   return m.length <= p.length && m.every((part, i) => part === p[i])
 }
 export const moduleFileTitle = (file: string, ownTitle: unknown, meta?: { provides?: Record<string, string> }) => {
-  const parts = file.split('/') // work_mods/<zef|all>/<module>/…
+  // some distributions were packed on windows and name a file by a backslash path
+  const parts = file.split(/[\\/]/) // work_mods/<zef|all>/<module>/…
   const module = parts[2]
   const name = parts[parts.length - 1]
   const base = name.replace(/\.[^.]*$/, '')

@@ -64,6 +64,10 @@ describe('the title of a module file page', () => {
     expect(moduleFileTitle('work_mods/zef/X/README.md', '  \n ')).toBe('X — README')
   })
 
+  it('reads a backslash in a file name as a path, as the address of the page does', () => {
+    expect(moduleFileTitle('work_mods/zef/Statistics/dist/docs\\correlation.md', undefined)).toBe('Statistics — correlation')
+  })
+
   it('takes only the last extension off', () => {
     expect(moduleFileTitle('work_mods/zef/MUGS/MUGS-0.1.4/docs/announce/v0.1.3.md', undefined)).toBe('MUGS — v0.1.3')
   })
