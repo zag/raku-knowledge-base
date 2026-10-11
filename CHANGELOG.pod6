@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item keep the files of fixture directories (fixtures, test_things) off the site, a README among them: they are sample inputs for a tool, not documentation of the module. A spec directory stays.
+
 =item give a forward slash to the address of a module file whose name carries backslashes from an archive packed on windows, so the sitemap lists an address that answers
 
 =item link a module's description in the module index to the module page, as its name already is: the description led to an address that does not exist

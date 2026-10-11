@@ -1,7 +1,7 @@
 // Chooses which module files carry documentation worth a page.
 //
 // Documentation files (.md, .pod6, .rakudoc) are taken unless they sit in a test
-// directory, where they are samples for other people's documentation generators
+// or fixture directory, where they are samples for other people's documentation generators
 // rather than documentation of this module; a README there is kept, since it
 // describes whatever the fixtures around it are. Source files are taken only when
 // their pod says something the README does not: almost every module ships both,
@@ -19,6 +19,9 @@ const MIN_LINES = Number(process.env.RAKU_KB_MIN_POD_LINES ?? 4)
 const DOC_EXT = new Set(['.md', '.pod6', '.rakudoc'])
 const SRC_EXT = new Set(['.rakumod', '.pm6', '.raku', '.pl6', '.pod'])
 const TEST_DIR = /(^|\/)(t|xt|test|tests|t-[^/]*)(\/|$)/
+// sample inputs for a tool, a README among them included; a spec directory stays,
+// since one module keeps the specification of its language there
+const FIXTURE_DIR = /(^|\/)(fixtures|test_things)(\/|$)/
 const POD_START = /^=(begin\s+pod|pod\b|head\d|NAME\b|TITLE\b|SYNOPSIS\b)/m
 // =cut and =over exist in Perl 5 pod and never in Podlite
 const PERL5 = /^=(cut|over|back)\b/m
@@ -93,9 +96,10 @@ let skippedTestSamples = 0
 for (const mp of modules) {
   const files = walk(mp)
   const inTestDir = f => TEST_DIR.test(path.relative(mp, f).split(path.sep).join('/'))
+  const inFixtureDir = f => FIXTURE_DIR.test(path.relative(mp, f).split(path.sep).join('/'))
   const isReadme = f => path.basename(f).toLowerCase().startsWith('readme')
   const allDocs = files.filter(f => DOC_EXT.has(path.extname(f).toLowerCase()))
-  const docs = allDocs.filter(f => !inTestDir(f) || isReadme(f))
+  const docs = allDocs.filter(f => !inFixtureDir(f) && (!inTestDir(f) || isReadme(f)))
   skippedTestSamples += allDocs.length - docs.length
   chosen.push(...docs)
 
@@ -106,7 +110,7 @@ for (const mp of modules) {
 
   for (const f of files) {
     if (!SRC_EXT.has(path.extname(f).toLowerCase())) continue
-    if (inTestDir(f)) continue
+    if (inTestDir(f) || inFixtureDir(f)) continue
     const text = read(f)
     if (!text || !POD_START.test(text) || PERL5.test(text)) continue
     const pod = podOf(text)
