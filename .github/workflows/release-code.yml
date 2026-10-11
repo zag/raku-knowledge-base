@@ -89,7 +89,7 @@ jobs:
         run: |
           DATE=$(date -u +%Y-%m-%d)
           mkdir -p blog
-          node scripts/extract-changelog.mjs --entry "blog/$DATE-release-${{ steps.tag.outputs.version }}.podlite"
+          node scripts/extract-changelog.mjs --entry "blog/$DATE-release-${{ steps.tag.outputs.version }}.podlite" --date "$DATE"
 
       - name: Keep the entry on the data branch
         if: steps.tag.outputs.prerelease != 'true'

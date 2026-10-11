@@ -13,6 +13,7 @@ Forked from podlite monorepo — simplified (no aggregate, no workspaces).
   --update     Rename 'Upcoming' → current version, insert new 'Upcoming'
   --summary    Extract changes for current version (Markdown output)
   --entry FILE Write the same changes as a blog entry in podlite
+  --date DATE  YYYY-MM-DD for that entry (default: today)
   --dry-run    Show what would change without writing (use with --update)
 
 =NOTE
@@ -164,7 +165,13 @@ function run() {
       console.error('ERROR: --entry needs a file to write')
       process.exit(1)
     }
-    writeBlogEntry(changelog, version, new Date().toISOString().slice(0, 10), file)
+    const dateAt = args.indexOf('--date')
+    const date = dateAt > -1 ? args[dateAt + 1] : new Date().toISOString().slice(0, 10)
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+      console.error(`ERROR: --date wants YYYY-MM-DD, got: ${date}`)
+      process.exit(1)
+    }
+    writeBlogEntry(changelog, version, date, file)
   }
 }
 
