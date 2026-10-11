@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item call the program that reads these documents for you an AI agent on the about and download pages, in the footer and in the READMEs, and describe the offline archive by what it holds: the MCP server and a prebuilt search index
+
 =item show the notes on the about, download and routines pages as notifications again: they were written with C<:notify>, a misspelling of C<:notice>, which the current renderer no longer reads
 
 =item the titles of the note on the about page, of the notice on the routines page and of the parallelism example on the home page are whole again: a title with spaces is written in quotes, C<:caption('Heads up!')>, because in angle brackets it reads as a list and only its first word was shown

@@ -1,6 +1,6 @@
 # raku-kb-mcp
 
-MCP server that exposes the [Raku Knowledge Base](https://raku-knowledge-base.podlite.org) to AI agents and editors: search the corpus, fetch a page, list sections.
+MCP server for the [Raku Knowledge Base](https://raku-knowledge-base.podlite.org). It lets AI agents and editors search the document collection, fetch a page and list its sections. If the collection finds nothing, the page may still be on the site, and Raku may still have it.
 
 ## Connect
 
@@ -31,18 +31,18 @@ Each release ships `raku-kb-mcp-offline.tar.gz` — the server plus a prebuilt i
 site build required. The commands for it, together with what to check afterwards, live
 on the knowledge base itself:
 
-**[Connect this knowledge base to your AI assistant](https://raku-knowledge-base.podlite.org/mcp)**
+**[Connect this knowledge base to your AI agent](https://raku-knowledge-base.podlite.org/mcp)**
 
 That page is the single source for the bundle route; this file keeps the checkout route
 above and the internals below, so the two do not drift apart.
 
-The bundled index is a snapshot taken when the release was cut. To refresh it against a newer corpus, rebuild the site and regenerate the index as described below.
+The bundled index is a snapshot taken when the release was cut. To refresh it, rebuild the site and regenerate the index as described below.
 
 ## Tools
 
 Three: `raku_kb_search`, `raku_kb_page`, `raku_kb_sections`. What each takes and
 returns is listed on
-[Connect this knowledge base to your AI assistant](https://raku-knowledge-base.podlite.org/mcp),
+[Connect this knowledge base to your AI agent](https://raku-knowledge-base.podlite.org/mcp),
 which is the single source for both the bundle route and the tool signatures.
 
 ## Index

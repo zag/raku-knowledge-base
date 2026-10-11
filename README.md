@@ -29,7 +29,7 @@ The content is written in the Podlite markup language. Its specification is at [
 ## Beyond the website
 
 - **Monthly ecosystem digest**: what changed in the module ecosystem since the previous release, with links to the module pages.
-- **MCP server**: search the corpus, fetch a page, list its sections, from an editor or an AI agent. See [mcp-server/README.md](mcp-server/README.md).
+- **MCP server**: search the document collection, fetch a page, list its sections, from an editor or an AI agent. If the search finds nothing, the page may still be on the site, and Raku may still have it. See [mcp-server/README.md](mcp-server/README.md).
 - **Offline bundle**: the search index and the server packed together, for use without a network.
 - **Dated data releases**: each release keeps a snapshot of module versions, so any two releases can be compared.
 
