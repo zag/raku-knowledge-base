@@ -12,6 +12,7 @@ import React from 'react'
 import * as fs from 'fs'
 import { getFromTree, getTextContentFromNode, makeAttrs, makeInterator, mkBlock, mkRootBlock, PodNode } from '@podlite/schema'
 import { url } from 'inspector'
+import { exampleRatingPlugin } from './ratings'
 
 // README markdown leaks brackets and emphasis into the target
 const linkFromText = (text: string): string =>
@@ -669,6 +670,10 @@ const makePlugins = ({ rootdir }) => {
     plugin: modPlugin({ rootdir }),
     includePatterns: '.*',
   }
+  const makeExampleRatingPlugin: PluginConfig = {
+    plugin: exampleRatingPlugin({ rootdir }),
+    includePatterns: '.*',
+  }
   const makeExamplesPlugin: PluginConfig = {
     plugin: examplesPlugin({ rootdir }),
     includePatterns: '.*',
@@ -678,7 +683,10 @@ const makePlugins = ({ rootdir }) => {
         includePatterns: '.*',
     }
 
-  return composePlugins([makeDocPlugin, makeModsPlugin, makeExamplesPlugin,makeFillDescriptionPlugin ], {})
+  return composePlugins(
+    [makeDocPlugin, makeModsPlugin, makeExampleRatingPlugin, makeExamplesPlugin, makeFillDescriptionPlugin],
+    {},
+  )
   //   return composePlugins([makeDocPlugin, makeExamplesPlugin], {});
 }
 

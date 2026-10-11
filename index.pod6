@@ -129,6 +129,9 @@ L<Get started| file:./getting-started/getting-started.podlite>
 =head3 L<Index all modules|/mods>
 =para       Index of all modules in the modules section for both zef and ecosystem
 
+=head3 L<Code blocks in module documentation|/mods/code-examples>
+=para       Which modules have a code block in their documentation, counted from the newest measurement.
+
 
 =end nested
 =end React

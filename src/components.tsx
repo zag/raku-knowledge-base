@@ -6,7 +6,7 @@ import listModsStyles from './listmods.module.css'
 import lastEntriesStyles from './lastentries.module.css'
 import Switcher from './Switcher'
 import Breadcrumb from './Breadcrumb'
-import { getFromTree, getTextContentFromNode } from '@podlite/schema'
+import { getFromTree, getTextContentFromNode, PodNode } from '@podlite/schema'
 import Link from 'next/link'
 export * from './footer'
 import SearchComponentIn from './SearchComponent'
@@ -522,6 +522,49 @@ export const ListMods = ({ id, children, item, renderNode, getThisNode }) => {
         ))}
       </>
     </div>
+  )
+}
+
+type ModulesWithoutCodeProps = {
+  getThisNode: () => PodNode
+}
+
+type ModulesWithoutCodeItem = {
+  name: string
+  url: string | null
+}
+
+const isObject = (value: unknown): value is Record<string, unknown> =>
+  Boolean(value) && typeof value === 'object' && !Array.isArray(value)
+
+const isModulesWithoutCodeItem = (value: unknown): value is ModulesWithoutCodeItem =>
+  isObject(value) && typeof value.name === 'string' && (typeof value.url === 'string' || value.url === null)
+
+export const ModulesWithoutCode: React.FC<ModulesWithoutCodeProps> = ({ getThisNode }) => {
+  const [dataNode] = getFromTree(getThisNode(), 'data')
+  if (!dataNode) {
+    console.warn('[ModulesWithoutCode] no JSON found in data block')
+    return null
+  }
+
+  let data: unknown
+  try {
+    data = JSON.parse(getTextContentFromNode(dataNode))
+  } catch (error) {
+    console.warn(`[ModulesWithoutCode] invalid JSON in data block: ${String(error)}`)
+    return null
+  }
+  if (!Array.isArray(data) || !data.every(isModulesWithoutCodeItem)) {
+    console.warn('[ModulesWithoutCode] invalid module list in data block')
+    return null
+  }
+
+  return (
+    <ul data-pagefind-ignore="">
+      {data.map(({ name, url }) => (
+        <li key={`${name}:${url || ''}`}>{url ? <a href={url}>{name}</a> : name}</li>
+      ))}
+    </ul>
   )
 }
 

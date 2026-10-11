@@ -6,6 +6,7 @@
 
 =TITLE Raku Modules Documentation
 
+=para L<Which modules have a code block in their documentation|/mods/code-examples>
 
 =begin React :component<ListMods>
 =Include doc:RAKU_MODS_PLUGIN_DATA#mods-info
