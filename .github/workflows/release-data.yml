@@ -119,8 +119,8 @@ jobs:
             echo 'claude mcp add raku-kb -- node "$PWD/bin/raku-kb-mcp.mjs"'
             echo '```'
             echo
-            echo 'The bundle and the image hold the site as it stood on this date.'
-            echo 'A later site release may have moved the pages on without them.'
+            echo 'The bundle and the image contain the MCP server and a search index built on this date.'
+            echo 'A missing search result does not mean the information is absent from the site or from Raku.'
             echo
             echo 'Or run the server image directly:'
             echo

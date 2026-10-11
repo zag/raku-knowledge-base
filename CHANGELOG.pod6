@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item describe the offline bundle and the server image in the data release notes by what they hold, the MCP server and a search index, and say that a missing search result does not mean the site or Raku lacks the answer
+
 =item call the program that reads these documents for you an AI agent on the about and download pages, in the footer and in the READMEs, and describe the offline archive by what it holds: the MCP server and a prebuilt search index
 
 =item show the notes on the about, download and routines pages as notifications again: they were written with C<:notify>, a misspelling of C<:notice>, which the current renderer no longer reads
