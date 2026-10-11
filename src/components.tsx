@@ -513,7 +513,7 @@ export const ListMods = ({ id, children, item, renderNode, getThisNode }) => {
                       <a href={activelist[prop]?.url}>{prop} </a>
                     </span>
                     <span className={listModsStyles.subtitle}>
-                      <a href={'/mods/' + prop}>{activelist[prop]?.meta?.description}</a>{' '}
+                      <a href={activelist[prop]?.url}>{activelist[prop]?.meta?.description}</a>{' '}
                     </span>
                   </li>
                 ))}
