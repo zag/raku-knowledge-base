@@ -78,6 +78,16 @@ describe('the description of a page built from its text', () => {
     expect(pod(page)).toBe('Broader explanations of fundamental topics')
   })
 
+  it('does not take the entries of a table of contents', () => {
+    const page = `=begin pod\n=TITLE Language References\n=SUBTITLE Broader explanations of fundamental topics\n\n=toc\n\n=head2 Fundamental topics\n=begin React :component<ListFiles>\n=include doc:RAKU_DOCS_PLUGIN_DATA#index-category\n=end React\n=end pod\n`
+    expect(pod(page)).toBe('Broader explanations of fundamental topics')
+  })
+
+  it('takes the prose a component shows as its children', () => {
+    const page = `=begin pod\n=TITLE X\n=SUBTITLE A subtitle\n=begin React :component<ModulePage>\n${LONG}\n=end React\n=end pod\n`
+    expect(pod(page)).toBe(LONG)
+  })
+
   it('leaves a page with neither a paragraph nor a subtitle without a description', () => {
     expect(pod(`=begin pod\n=TITLE Documentation\n=begin React :component<IndexAllDocs>\n=include doc:RAKU_DOCS_PLUGIN_DATA#control\n=end React\n=end pod\n`)).toBeUndefined()
   })

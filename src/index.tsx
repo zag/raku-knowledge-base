@@ -590,10 +590,11 @@ export const plugin = (): PodliteWebPlugin => {
 const DESCRIPTION_MAX = 160
 // shorter paragraphs are badges, version lines and the like more often than a description
 const DESCRIPTION_MIN = 40
-// headings are not the text under them, a comment is not shown at all, and an
-// include, a component of the site and its data are not prose: an index page holds
-// =include doc:RAKU_DOCS_PLUGIN_DATA#index-category inside a React block
-const notText = /^(head\d*|TITLE|SUBTITLE|comment|include|React|useReact|data)$/
+// headings are not the text under them, a comment is not shown at all, a table of
+// contents repeats the headings, and an include and the data of a component are not
+// prose: an index page holds =include doc:RAKU_DOCS_PLUGIN_DATA#index-category inside a
+// React block. The prose a component shows as its children stays readable.
+const notText = /^(head\d*|TITLE|SUBTITLE|comment|toc|Toc|include|useReact|data)$/
 
 // Cuts on a sentence boundary when one is close enough to the limit, on a word otherwise.
 const trimDescription = (text: string): string => {
