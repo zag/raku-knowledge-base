@@ -161,7 +161,7 @@ describe('rateExamples', () => {
     expectMutationToFail(assertRating, { modules: 1, undocumented: 2 })
   })
 
-  it('sorts missing names from the generated page and renders hard names as text', () => {
+  it('sorts missing names from the generated page and renders hard names as text and as links', () => {
     const names = ['b', 'A', 'Foo::<b>Foo', 'Raku doc', "Acme::Don't", 'A|B', 'A&B']
     const declarations = Object.fromEntries(names.map(name => [`zef:${name}`, {}]))
     writeMeasurement(
@@ -172,7 +172,15 @@ describe('rateExamples', () => {
         names.map(name => page(`zef:${name}`)),
       ),
     )
-    const [item] = generatedPage().slice(-1)
+    const built = [
+      ['A&B', '/mods/zef/A&B'],
+      ['Foo::<b>Foo', '/mods/all/Foo::<b>Foo'],
+    ].map(([name, url]) =>
+      Object.assign(processFile(`virtual/${url}.podlite`, '=begin pod\n=end pod', 'text/podlite'), {
+        pluginsData: { moduleInfo: { meta: { name }, url } },
+      }),
+    )
+    const [item] = generatedPage(built).slice(-1)
     const [reactNode] = getFromTree(item.node, 'React')
     const dataNode = getFromTree(reactNode, 'data')[0]
     const data: unknown = JSON.parse(getTextContentFromNode(dataNode))
@@ -190,12 +198,24 @@ describe('rateExamples', () => {
       React.createElement(ModulesWithoutCode, { getThisNode: () => reactNode }),
     )
     expect(html).toContain('data-pagefind-ignore=""')
-    expect(html).toContain('<li>Foo::&lt;b&gt;Foo</li>')
-    expect(html).toContain('<li>A&amp;B</li>')
+    const assertLinks = (value: unknown) => {
+      expect(value).toContain('<li><a href="/mods/all/Foo::&lt;b&gt;Foo">Foo::&lt;b&gt;Foo</a></li>')
+      expect(value).toContain('<li><a href="/mods/zef/A&amp;B">A&amp;B</a></li>')
+    }
+    assertLinks(html)
+    expectMutationToFail(assertLinks, html.replace('href="/mods/zef/A&amp;B"', 'href="/mods/zef/A&amp;amp;B"'))
     expect(html).toContain('<li>Acme::Don&#x27;t</li>')
     expect(html).toContain('<li>Raku doc</li>')
     expect(html).not.toContain('<b>Foo</b>')
-    expect(items.every(({ url }) => url === null)).toBe(true)
+    expect(Object.fromEntries(items.map(({ name, url }) => [name, url]))).toEqual({
+      A: null,
+      'A&B': '/mods/zef/A&B',
+      'A|B': null,
+      "Acme::Don't": null,
+      b: null,
+      'Foo::<b>Foo': '/mods/all/Foo::<b>Foo',
+      'Raku doc': null,
+    })
   })
 })
 
