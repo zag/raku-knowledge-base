@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item give a forward slash to the address of a module file whose name carries backslashes from an archive packed on windows, so the sitemap lists an address that answers
+
 =item link a module's description in the module index to the module page, as its name already is: the description led to an address that does not exist
 
 =item add a page that counts the modules with a code block in their documentation and lists the modules with none. Every build uses the newest measurement, and a site release now takes it from the data branch.

@@ -60,6 +60,20 @@ export const moduleFileTitle = (file: string, ownTitle: unknown, meta?: { provid
   return startsWithModule(names[0], module) ? names[0] : `${module} — ${names[0]}`
 }
 
+// some distributions were packed on windows and carry the backslash inside the file name;
+// an address keeps the forward slash, under which the page is served all the same
+export const moduleFileUrl = (file: string) => file.replace(/^work_mods/, '/mods').replace(/\\/g, '/')
+
+export const realAddresses = (items: { file: string; publishUrl: string }[]) =>
+  new Set(items.filter(item => !item.file.includes('\\')).map(item => item.publishUrl))
+
+// a file named with backslashes must not take the address of a real path in the same module
+export const keepAddress = (file: string, publishUrl: string, real: Set<string>) => {
+  if (!file.includes('\\') || !real.has(publishUrl)) return true
+  console.log(`[modPlugin] skipped ${file}: its address belongs to a file of the same path`)
+  return false
+}
+
 export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
   const mods_state = require('../built/mods-tree.json') //.splice(0, 10);
   const all_mods = require('../built/ecosystem.json')
@@ -114,10 +128,12 @@ export const modPlugin = ({ rootdir }): PodliteWebPlugin => {
         },
       })(node, {})
 
-    const withUrls = filesWithDocs.map(item => {
-      const publishUrl = item.file.replace(/^work_mods/g, '/mods')
+    const addressed = filesWithDocs.map(item => {
+      const publishUrl = moduleFileUrl(item.file)
       return { ...item, publishUrl, node: cleanModuleLinks(item.node) }
     })
+    const real = realAddresses(addressed)
+    const withUrls = addressed.filter(item => keepAddress(item.file, item.publishUrl, real))
 
     // A checkout the registry does not know about gets no pages at all: one such
     // directory used to stop the whole build. The lookup runs once here, so nothing
