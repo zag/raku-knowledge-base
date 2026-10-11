@@ -59,24 +59,30 @@ jobs:
           yarn install --immutable || yarn install
           yarn build
 
-      - name: Take the entries from the data branch
+      - name: Take the entries and the measurements from the data branch
         run: |
           if git ls-remote --exit-code --heads origin "$DATA_BRANCH" >/dev/null 2>&1; then
             git fetch --depth=1 origin "$DATA_BRANCH"
-            # only blog: the site reads no snapshots, and asking for a path the
-            # branch does not carry would fail the whole step. The branch is the
-            # source once it exists, so what the checkout carried goes first —
-            # otherwise a stale copy from the code would pass for an entry.
-            rm -rf blog
+            # The branch is the source of blog entries and measurement records once it exists,
+            # so what the checkout carried goes first: a stale copy would pass for current data.
+            # A path the branch does not carry would fail the whole step, hence the type check.
+            # All records come over: the build skips an unusable newest one and takes the next.
+            rm -rf blog snapshots/corpus
             if [ "$(git cat-file -t FETCH_HEAD:blog 2>/dev/null)" = tree ]; then
               git checkout FETCH_HEAD -- blog
             else
               echo "the data branch carries no entries yet"
             fi
+            if [ "$(git cat-file -t FETCH_HEAD:snapshots/corpus 2>/dev/null)" = tree ]; then
+              git checkout FETCH_HEAD -- snapshots/corpus
+            else
+              echo "the data branch carries no corpus record"
+            fi
           else
             echo "no data branch yet — starting from what the repository carries"
           fi
           echo "entries: $(ls blog/*.podlite 2>/dev/null | wc -l)"
+          echo "corpus records: $(ls snapshots/corpus/*.json 2>/dev/null | wc -l)"
 
       - name: Take the corpus from the newest data release that carries one
         id: corpus

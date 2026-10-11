@@ -2,6 +2,8 @@
 
 =head1 Upcoming
 
+=item add a page that counts the modules with a code block in their documentation and lists the modules with none. Every build uses the newest measurement, and a site release now takes it from the data branch.
+
 =item describe the offline bundle and the server image in the data release notes by what they hold, the MCP server and a search index, and say that a missing search result does not mean the site or Raku lacks the answer
 
 =item call the program that reads these documents for you an AI agent on the about and download pages, in the footer and in the READMEs, and describe the offline archive by what it holds: the MCP server and a prebuilt search index
