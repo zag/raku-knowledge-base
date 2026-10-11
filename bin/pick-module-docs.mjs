@@ -1,9 +1,10 @@
 // Chooses which module files carry documentation worth a page.
 //
 // Documentation files (.md, .pod6, .rakudoc) are taken unless they sit in a test
-// or fixture directory, where they are samples for other people's documentation generators
+// directory, where they are samples for other people's documentation generators
 // rather than documentation of this module; a README there is kept, since it
-// describes whatever the fixtures around it are. Source files are taken only when
+// describes whatever the fixtures around it are. A fixture directory gives nothing,
+// its README included. Source files are taken only when
 // their pod says something the README does not: almost every module ships both,
 // and in most of them the two texts are the same.
 //
@@ -134,7 +135,7 @@ const publishable = chosen.filter(f => !CONTROL.test(f))
 const unnameable = chosen.length - publishable.length
 
 console.warn(
-  `modules ${modules.length}, files ${publishable.length}, from sources ${sourcePages}, skipped as same as README ${skippedSame}, skipped as too thin ${skippedThin}, skipped as test samples ${skippedTestSamples}, skipped as unnameable ${unnameable}`,
+  `modules ${modules.length}, files ${publishable.length}, from sources ${sourcePages}, skipped as same as README ${skippedSame}, skipped as too thin ${skippedThin}, skipped as test or fixture samples ${skippedTestSamples}, skipped as unnameable ${unnameable}`,
 )
 // separated by NUL: a file name may hold any byte except this one
 process.stdout.write(publishable.join('\0') + '\0')

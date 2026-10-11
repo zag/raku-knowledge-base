@@ -11,7 +11,10 @@ const pick = (files: string[]) => {
   for (const file of files) {
     const full = path.join(module, file)
     fs.mkdirSync(path.dirname(full), { recursive: true })
-    fs.writeFileSync(full, `# ${file}\n\nText of ${file}.\n`)
+    const text = file.endsWith('.rakumod')
+      ? `=begin pod\n=head1 ${file}\nFirst line of ${file} documentation.\nSecond line of ${file} documentation.\nThird line of ${file} documentation.\n=end pod\n`
+      : `# ${file}\n\nText of ${file}.\n`
+    fs.writeFileSync(full, text)
   }
   const run = spawnSync('node', [script, root], { encoding: 'utf8' })
   expect(run.status).toBe(0)
@@ -35,7 +38,16 @@ describe('module files taken for pages', () => {
       't/fixtures/README.md',
       't/README.md',
       't/sample.md',
+      'resources/fixtures/Sample.rakumod',
+      'lib/Sample.rakumod',
     ])
-    expect(taken).toEqual(['README.md', 'docs/usage.md', 'openspec/plan.md', 'spec/01-grammar.md', 't/README.md'])
+    expect(taken).toEqual([
+      'README.md',
+      'docs/usage.md',
+      'lib/Sample.rakumod',
+      'openspec/plan.md',
+      'spec/01-grammar.md',
+      't/README.md',
+    ])
   })
 })
